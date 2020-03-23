@@ -1,0 +1,423 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+
+
+
+
+<html>
+<head>
+<title>Medula Eczane</title>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-9">
+<meta name="GENERATOR" content="Rational Software Architect">
+<link rel="stylesheet" type="text/css" href="/eczane/theme/stylesheet.css" title="Style">
+<link rel="stylesheet" href="/eczane/theme/styles.css" type="text/css">
+<script type="text/javascript">
+var deg1=0; var deg2=0; var deg3=0; var deg4=0;
+var aktifTextId;
+function karekodOku(thisObj, thisEvent) {
+	onkeydawn();
+    var ua = navigator.userAgent.toLowerCase();
+    if ( ua.indexOf( "msie" ) != -1 ) {
+		if (thisEvent.keyCode==29 || thisEvent.keyCode==119) { document.getElementById(aktifTextId).value += '-'; deg1 = 0; deg2 = 0; deg3 = 0; deg4 = 0;
+		} else if(thisEvent.keyCode == 17) { deg1 = 17; deg2 = 0; deg3 = 0; deg4 = 0;
+		} else if(thisEvent.keyCode == 18) { deg1 = 18; deg2 = 0; deg3 = 0; deg4 = 0;
+		} else if(thisEvent.keyCode == 96 && deg1 == 18) { deg2 = 96; deg3 = 0; deg4 = 0;
+		} else if(thisEvent.keyCode == 98 && deg1 == 18 && deg2 == 96) { deg3 = 98;
+		} else if(thisEvent.keyCode == 105 && deg1 == 18 && deg2 == 96 && deg3 == 98) { deg4 = 105;
+		} else if(thisEvent.keyCode == 221) { if(deg1 == 17) { document.getElementById(aktifTextId).value += '-'; } deg1 = 0; deg2 = 0; deg3 = 0; deg4 = 0; }
+		if(deg1 == 18 && deg2 == 96 && deg3 == 98 && deg4 == 105) { document.getElementById(aktifTextId).value += '-'; deg1 = 0; deg2 = 0; deg3 = 0; deg4 = 0; }
+	} else {
+		if (thisEvent.which==29 || thisEvent.which==119) { document.getElementById(aktifTextId).value += '-'; deg1 = 0; deg2 = 0; deg3 = 0; deg4 = 0;
+		} else if(thisEvent.which == 17) { deg1 = 17; deg2 = 0; deg3 = 0; deg4 = 0;
+		} else if(thisEvent.which == 18) { deg1 = 18; deg2 = 0; deg3 = 0; deg4 = 0;
+		} else if(thisEvent.which == 96 && deg1 == 18) { deg2 = 96; deg3 = 0; deg4 = 0;
+		} else if(thisEvent.which == 98 && deg1 == 18 && deg2 == 96) { deg3 = 98;
+		} else if(thisEvent.which == 105 && deg1 == 18 && deg2 == 96 && deg3 == 98) { deg4 = 105;
+		} else if(thisEvent.which == 221) { if(deg1 == 17) { document.getElementById(aktifTextId).value += '-'; } deg1 = 0; deg2 = 0; deg3 = 0; deg4 = 0; }
+		if(deg1 == 18 && deg2 == 96 && deg3 == 98 && deg4 == 105) { document.getElementById(aktifTextId).value += '-'; deg1 = 0; deg2 = 0; deg3 = 0; deg4 = 0; }	
+	}
+}
+function func_1(thisObj, thisEvent) {
+	newwindow=window.open("/eczane/HtmlReportServlet",'name','height=1024,width=768');
+	if (window.focus) {newwindow.focus()}
+	return false;
+}
+function func_2(thisObj, thisEvent) {
+//use 'thisObj' to refer directly to this component instead of keyword 'this'
+//use 'thisEvent' to refer to the event generated instead of keyword 'event'
+aktifTextId = thisObj.id;
+}
+
+function checkBox(selectOneCheckBox) {
+      var id = selectOneCheckBox.name.substring(selectOneCheckBox.name.lastIndexOf(':'));
+      var el = selectOneCheckBox.form.elements;
+      for (var i = 0; i < el.length; i++) {
+            if (el[i].name.substring(el[i].name.lastIndexOf(':')) == id) {
+                  el[i].checked = false;
+            }
+      }
+      selectOneCheckBox.checked = true;
+}
+</script>
+<script src="/eczane/scripts/medula.js" language="javascript"></script>
+</head>
+
+	<body bgcolor="#FFFFFF" text="#000000" leftmargin="0" marginwidth="0" topmargin="5" background="/eczane/images/background.gif" onkeydown="return karekodOku(this, event);" onload="onlood(); var ua = navigator.userAgent.toLowerCase(); if ( ua.indexOf( 'msie' ) != -1 ) { if(document.getElementById('f:hiddenOdak').value == 1) {document.getElementById('f:t18').focus();document.getElementById('f:hiddenOdak').value = 0;} else if(document.getElementById('f:hiddenOdak').value == 2) {document.getElementById('f:tbl1:0:t1').focus();document.getElementById('f:hiddenOdak').value = 0;} }">
+	<form id="f" name="f" method="post" action="/eczane/faces/pages/recete/ReceteIslem2.jsp" enctype="application/x-www-form-urlencoded" class="form">
+			<table width="100%" border="0" cellspacing="0" cellpadding="0" height="450">
+				<tbody>
+					<tr>
+						<td align="center" valign="top" style="padding:10 10 10 10;" class="paragraph" bgcolor="#EEEEEE">
+
+
+
+<br>
+						<table width="960px" bgcolor="#F5F5F5" border="0" cellpadding="5" cellspacing="0">
+							<tr height="20">
+								<td class="menuHeader">Re&#231;ete</td>
+							</tr>
+							<tr>
+								<td>
+								<table width="100%" cellpadding="1" cellspacing="1" class="borderTable">
+									<tr class="row1">
+										<td class="label" colspan="11"><table id="f:box20" class="panelBox"><tr><td><input type="submit" value="Geri D&ouml;n" id="f:buttonGeriDon" name="f:buttonGeriDon" class="commandExButton" /></td><td><input type="submit" value="Ana Sayfa" id="f:buttonAnaSayfa" name="f:buttonAnaSayfa" class="commandExButton" /></td><td><input type="submit" value="&#304;la&#231;" id="f:buttonIlacListesi" name="f:buttonIlacListesi" style="width: 75px" class="commandExButton" /></td><td><input type="submit" value="Rapor" id="f:buttonRaporListesi" name="f:buttonRaporListesi" style="width: 75px" class="commandExButton" /></td><td><input type="submit" value="Muayene" id="f:buttonMuayeneListesi" name="f:buttonMuayeneListesi" class="commandExButton" /></td><td><span id="f:t12" style="font-size:10px" class="outputText">Re&#231;ete No :</span></td><td><span id="f:t13" style="color: blue; font-size:10px" class="outputText">28MS1IH</span></td><td><span id="f:text20" style="font-size:10px" class="outputText">Karekod Durumu :</span></td><td><span id="f:text21" style="color: blue; font-size:10px" class="outputText">Re&#231;ete Sonland&#305;r&#305;ld&#305;</span></td><td><span id="f:t19" style="font-size:10px" class="outputText">Kapsam :</span></td><td><span id="f:text29" style="color: blue; font-size:10px" class="outputText">4A Sigortal&#305; (S.S.K.)</span></td><td><span id="f:text32" style="color: blue; font-size:10px" class="outputText">&#199;al&#305;&#351;an</span></td><td><span id="f:text52" style="color: blue; font-size:10px" class="outputText"></span></td></tr></table></td>
+									</tr>
+									<tr class="row2">
+										<td class="label" width="160px">&nbsp;<span id="f:t17" class="outputText">Re&#231;ete Sahibi T.C. (*)</span></td>
+										<td align="center" width="5px"><strong>:</strong></td>
+										<td class="label">
+
+<script type="text/JavaScript" language="JavaScript" src="/eczane/.ibmjsfres/hxclient_core_v3_1_16.js"></script>
+
+<script type="text/JavaScript" language="JavaScript" src="/eczane/.ibmjsfres/hxclient_S_v3_1_16_tr.js?viewLocale=tr_TR"></script>
+<script type="text/JavaScript" language="JavaScript">
+if (hX_6) hX_6.setResourceServer("/eczane/.ibmjsfres");
+if(hX_6 && hX_6.setLocale) hX_6.setLocale("tr_TR");
+
+</script><input id="f:t18" name="f:t18" type="text" value="26893234872" maxlength="11" class="inputText" /></td>
+										<td align="center" width="5px"><strong></strong></td>
+										<td class="label" width="160px">&nbsp;<span id="f:text36" class="outputText">Teslim Alan T.C. (*)</span></td>
+										<td align="center" width="5px"><strong>:</strong></td>
+										<td class="label"><input id="f:text37" name="f:text37" type="text" value="26893234872" class="inputText" /></td>
+										<td align="center" width="5px"><strong></strong></td>
+										<td class="label" width="160px">&nbsp;<span id="f:text25" class="outputText">&#304;la&#231;lar&#305; Teslim Alan</span></td>
+										<td align="center" width="5px"><strong>:</strong></td>
+										<td class="label">&nbsp;<select id="f:menu4" name="f:menu4" size="1" class="selectOneMenu">	<option value="0">Se&#231;iniz</option>	<option value="K" selected="selected">Kendisi</option>	<option value="Y">Yak&#305;n&#305;</option>	<option value="D">Di&#287;er</option></select></td>
+									</tr>
+									<tr class="row1">
+										<td class="label" width="160px">&nbsp;<span id="f:text38" class="outputText">Re&#231;ete Sahibi Ad&#305;/Soy.</span></td>
+										<td align="center" width="5px"><strong>:</strong></td>
+										<td class="label"><table id="f:box34" class="panelBox"><tr><td><span id="f:t15" style="color: blue" class="outputText">G&Uuml;L&#199;E</span></td><td><span id="f:t16" style="color: blue" class="outputText">GEZER</span></td></tr></table></td>
+										<td align="center" width="5px"><strong></strong></td>
+										<td class="label" width="160px">&nbsp;<span id="f:text23" class="outputText">Teslim Alan Ad&#305;/Soy.</span></td>
+										<td align="center" width="5px"><strong>:</strong></td>
+										<td class="label"><table id="f:box43" class="panelBox"><tr><td><span id="f:text40" style="color: blue" class="outputText">G&Uuml;L&#199;E</span></td><td><span id="f:text39" style="color: blue" class="outputText">GEZER</span></td></tr></table></td>
+										<td align="center" width="5px"><strong></strong></td>
+										<td class="label" width="160px">&nbsp;</td>
+										<td align="center" width="5px"><strong>:</strong></td>
+										<td class="label">&nbsp;</td>
+									</tr>									
+									<tr class="row2">
+										<td class="label" width="160px">&nbsp;<span id="f:text17" class="outputText">Provizyon Tipi</span></td>
+										<td align="center" width="5px"><strong>:</strong></td>
+										<td class="label"><select id="f:menu2" name="f:menu2" size="1" class="selectOneMenu">	<option value="1" selected="selected">Normal</option>	<option value="2">Trafik Kazas&#305;</option>	<option value="3">Do&#287;al Afet</option>	<option value="4">Adli Vaka</option>	<option value="5">&#304;&#351; Kazas&#305;</option>	<option value="6">Meslek Hastal&#305;&#287;&#305;</option>	<option value="7">Anal&#305;k Hali</option>	<option value="8">3713/21</option></select></td>
+										<td align="center" width="5px"><strong></strong></td>
+										<td class="label" width="160px">&nbsp;<span id="f:t23" class="outputText">Protokol No (*)</span></td>
+										<td align="center" width="5px"><strong>:</strong></td>
+										<td class="label"><input id="f:t24" name="f:t24" type="text" value="R180926" maxlength="50" class="inputText" /></td>
+										<td align="center" width="5px"><strong></strong></td>
+										<td class="label" width="160px">&nbsp;<span id="f:t32" class="outputText">Tesis Kodu (*)</span></td>
+										<td align="center" width="5px"><strong>:</strong></td>
+										<td class="label"><table id="f:box33" class="panelBox"><tr><td><input id="f:t33" name="f:t33" type="text" value="12345658" maxlength="8" size="9" class="inputText" /></td><td><input type="submit" value="Ara" id="f:button1" name="f:button1" class="commandExButton" /></td><td><input type="submit" value="B&ouml;l&uuml;mler" id="f:buttonBolumler" name="f:buttonBolumler" style="width: 60px" class="commandExButton" /></td></tr></table></td>
+									</tr>
+									<tr class="row1">
+										<td class="label" width="160px" onclick="">&nbsp;<span id="f:t28" class="outputText">Re&#231;ete Tarihi (*)</span></td>
+										<td align="center" width="5px"><strong>:</strong></td>
+										<td class="label"><input id="f:t29" name="f:t29" type="text" value="18/03/2020" class="inputText" /></td>
+										<td align="center" width="5px"><strong></strong></td>
+										<td class="label" width="160px">&nbsp;<span id="f:t30" class="outputText">&#304;la&#231; Al&#305;m Tarihi (*)</span></td>
+										<td align="center" width="5px"><strong>:</strong></td>
+										<td class="label"><input id="f:t31" name="f:t31" type="text" value="18/03/2020" class="inputText" /></td>
+										<td align="center" width="5px"><strong></strong></td>
+										<td class="label" width="160px">&nbsp;<span id="f:text42" class="outputText">e-Re&#231;ete No</span>
+													</td>
+										<td align="center" width="5px"><strong>:</strong></td>
+										<td class="label">&nbsp;<span id="f:text45" style="color: blue" class="outputText">1BE5G9P</span>
+													</td>
+									</tr>
+									<tr class="row2">
+										<td class="label" width="160px">&nbsp;<span id="f:t34" class="outputText">Re&#231;ete T&uuml;r&uuml;</span></td>
+										<td align="center" width="5px"><strong>:</strong></td>
+										<td class="label"><select id="f:m4" name="f:m4" size="1" class="selectOneMenu">	<option value="1" selected="selected">Normal</option>	<option value="2">K&#305;rm&#305;z&#305;</option>	<option value="3">Turuncu</option>	<option value="4">Mor</option>	<option value="5">Ye&#351;il</option>	<option value="Z">Tan&#305;ml&#305; De&#287;il</option></select></td>
+										<td align="center" width="5px"><strong></strong></td>
+										<td class="label" width="160px">&nbsp;<span id="f:t35" class="outputText">Re&#231;ete Alt T&uuml;r&uuml;</span></td>
+										<td align="center" width="5px"><strong>:</strong></td>
+										<td class="label"><select id="f:m8" name="f:m8" size="1" class="selectOneMenu">	<option value="1" selected="selected">Ayaktan</option>	<option value="2">Yatan</option>	<option value="3">Taburcu</option>	<option value="4">G&uuml;n&uuml;birlik</option>	<option value="5">Acil</option>	<option value="6">Ye&#351;il Alan</option>	<option value="7">Evde Bak&#305;m</option>	<option value="8">Gezici Sa&#287;l&#305;k Hizmeti</option></select></td>
+										<td align="center" width="5px"><strong></strong></td>
+										<td class="label" width="160px">&nbsp;<span id="f:t36" class="outputText">Hasta T&uuml;r&uuml;</span></td>
+										<td align="center" width="5px"><strong>:</strong></td>
+										<td class="label">&nbsp;<span id="f:text33" style="color: blue" class="outputText">Normal</span></td>
+									</tr>
+									<tr class="row1">
+										<td class="label" colspan="11"><table id="f:box27" class="panelBox"><tr><td><span id="f:t37" class="outputText">Dip.Tesc.No :</span></td><td><input id="f:t43" name="f:t43" type="text" value="110986" maxlength="16" size="10" title="Doktor'un &uuml;niversiteden mezun olurken ald&#305;&#287;&#305; ilk tescil numaras&#305; girilmelidir. " class="inputText" /></td><td><select id="f:m6" name="f:m6" size="1" class="selectOneMenu">	<option value="1" selected="selected">Hekim</option>	<option value="2">Di&#351; Hekimi</option></select></td><td><input type="submit" value="Ara" id="f:buttonDoktorArama" name="f:buttonDoktorArama" style="width: 60px" class="commandExButton" /></td><td><span id="f:t38" class="outputText">Dr.Dip.No/Dip.Tesc.No (*) :</span></td><td><input id="f:t39" name="f:t39" type="text" value="3018" maxlength="20" size="12" class="inputText" /></td><td><span id="f:t40" class="outputText">Dr. Ad/Soyad (*) :</span></td><td><input id="f:t41" name="f:t41" type="text" value="&Uuml;NAL" maxlength="30" size="12" class="inputText" /></td><td><input id="f:t42" name="f:t42" type="text" value="&#304;SAO&#286;LU" maxlength="30" size="12" class="inputText" /></td></tr></table></td>
+									</tr>
+									<tr class="row2">
+										<td class="label" colspan="11">
+										   <table id="f:box26" class="panelBox"><tr><td><span id="f:t44" class="outputText">Bran&#351; (*) :</span></td><td><span id="f:t45" style="color: blue" class="outputText">Kad&#305;n Hastal&#305;klar&#305; ve Do&#287;um (Ana Bran&#351;)</span></td><td><input type="submit" value="Se&#231;" id="f:buttonBransSec" name="f:buttonBransSec" style="width: 50px" class="commandExButton" /></td><td><span id="f:t46" class="outputText">Sertifika (*) :</span></td><td><select id="f:m7" name="f:m7" size="1" class="selectOneMenu">	<option value="0" selected="selected">Yok</option>	<option value="56">Hemodiyaliz</option>	<option value="109">Aile Hekimli&#287;i</option></select></td><td><input type="submit" value="Uyar&#305; Kodu" id="f:buttonReceteTeshis" name="f:buttonReceteTeshis" class="commandExButton" /></td><td><span id="f:t47" style="color: blue" class="outputText"></span></td><td><span id="f:t49" class="outputText">Karekodlu :</span></td><td><input id="f:checkbox1" type="checkbox" name="f:checkbox1" value="true" class="selectBooleanCheckbox" /></td><td><span id="f:text35" class="outputText">S&#305;ral&#305; da&#287;&#305;t&#305;m re&#231;etesi :</span></td><td><input id="f:checkbox2" type="checkbox" name="f:checkbox2" value="true" class="selectBooleanCheckbox" /></td></tr></table></td>
+									</tr>
+								</table>
+								</td>
+							</tr>
+							<tr>
+								<td>
+								<table width="100%" cellpadding="1" cellspacing="1"
+									class="borderTable">
+									<tr class="headerRow">
+										<td colspan="7">&#304;la&#231; Bilgileri</td>
+									</tr>
+									<tr class="row1">
+										<td class="label" colspan="7"><table id="f:box21" class="panelBox"><tr><td><input type="submit" value="&Ouml;zel Durum" id="f:buttonOzelDurum" name="f:buttonOzelDurum" class="commandExButton" /></td><td><input type="submit" value="E&#351;de&#287;er" id="f:buttonIlacEsdeger" name="f:buttonIlacEsdeger" class="commandExButton" /></td><td><input type="submit" value="&#304;la&#231; Bilgi" id="f:buttonIlacBilgiGorme" name="f:buttonIlacBilgiGorme" class="commandExButton" /></td><td><input type="submit" value="Sil" id="f:buttonIlacSil" name="f:buttonIlacSil" style="width: 80px" class="commandExButton" /></td><td><input type="submit" value="&#304;la&#231; Ara" id="f:buttonIlacArama" name="f:buttonIlacArama" style="width: 80px" class="commandExButton" /></td><td><input type="submit" value="&#304;la&#231; Ekle" id="f:buttonIlacEkle" name="f:buttonIlacEkle" style="width: 80px" class="commandExButton" /></td><td><input type="submit" value="Rapor" id="f:buttonRaporGoruntule" name="f:buttonRaporGoruntule" style="width: 80px" class="commandExButton" /></td><td><span id="f:text34" class="outputText">||</span></td><td><input type="submit" value="Ted.&#350;ema" id="f:buttonIlacTedaviSema" name="f:buttonIlacTedaviSema" class="commandExButton" /></td><td><input type="submit" value="Maj.&#304;la&#231;" id="f:buttonMajistralIlacEkle" name="f:buttonMajistralIlacEkle" class="commandExButton" /></td><td><input type="submit" value="Rapor Se&#231;" id="f:buttonRaporSecim" name="f:buttonRaporSecim" class="commandExButton" /></td></tr></table></td>
+									</tr>
+								</table>
+								</td>
+							</tr>
+							<tr>
+								<td height="100%">
+									
+								</td>
+							</tr>
+							<tr>
+								<td>
+								<table height="100%" width="100%" cellpadding="1"
+									cellspacing="1" class="borderTable">
+									<tr class="row1">
+										<td colspan="7"><table id="f:tbl1" class="dataTableEx" width="100%" border="0" cellpadding="2" cellspacing="0" ><thead ><tr ><th class="headerClass" scope="col" ><span id="f:tbl1:text48" class="outputText">&#160;</span></th><th align="center" class="headerClass" scope="col" ><span id="f:tbl1:t52" class="outputText">Barkod</span></th><th align="center" class="headerClass" scope="col" ><span id="f:tbl1:t53" class="outputText">Adet / Periyot / Doz</span></th><th align="center" class="headerClass" scope="col" ><span id="f:tbl1:t54" class="outputText">Ad&#305;</span></th><th align="center" class="headerClass" scope="col" ><span id="f:tbl1:t55" class="outputText">Tutar</span></th><th align="center" class="headerClass" scope="col" ><span id="f:tbl1:t56" class="outputText">Fark</span></th><th align="center" class="headerClass" scope="col" ><span id="f:tbl1:t57" class="outputText">Rapor</span></th><th align="center" class="headerClass" scope="col" ><span id="f:tbl1:t58" class="outputText">Verilebilece&#287;i</span></th><th align="center" class="headerClass" scope="col" ><span id="f:tbl1:t59" class="outputText">Msj</span></th></tr>
+</thead><tbody >
+<tr class="rowClass1" ><td ><input id="f:tbl1:0:checkbox7" type="checkbox" name="f:tbl1:0:checkbox7" value="true" onclick="checkBox(this);" class="selectBooleanCheckbox" /></td>
+<td align="center" ><input id="f:tbl1:0:t1" name="f:tbl1:0:t1" type="text" value="8699525151469" onfocus="return func_2(this, event);" size="15" class="inputText" /></td>
+<td align="center" ><table id="f:tbl1:0:box32" class="panelBox"><tr><td><input id="f:tbl1:0:t2" name="f:tbl1:0:t2" type="text" value="1" size="4" class="inputText" /></td><td><span id="f:tbl1:0:text24" class="outputText"> / </span></td><td><input id="f:tbl1:0:t5" name="f:tbl1:0:t5" type="text" value="1" size="4" class="inputText" /></td><td><select id="f:tbl1:0:m1" name="f:tbl1:0:m1" size="1" class="selectOneMenu">	<option value="3" selected="selected">G&uuml;nde</option>	<option value="4">Haftada</option>	<option value="5">Ayda</option>	<option value="6">Y&#305;lda</option></select></td><td><span id="f:tbl1:0:text22" class="outputText"> / </span></td><td><input id="f:tbl1:0:t3" name="f:tbl1:0:t3" type="text" value="2" size="4" class="inputText" /></td><td><span id="f:tbl1:0:text150" class="outputText">x</span></td><td><input id="f:tbl1:0:t4" name="f:tbl1:0:t4" type="text" value="1,0" size="8" class="inputText" /></td></tr></table></td>
+<td align="center" ><span id="f:tbl1:0:t6" class="outputText">MONODOKS 14 KAPSUL</span></td>
+<td align="center" ><span id="f:tbl1:0:t7" class="outputText">9,87</span></td>
+<td align="center" ><span id="f:tbl1:0:t8" class="outputText">0,00</span></td>
+<td align="center" ><span id="f:tbl1:0:t9" class="outputText"></span></td>
+<td align="center" ><span id="f:tbl1:0:t10" class="outputText">25/03/2020</span></td>
+<td align="center" ><span id="f:tbl1:0:t11" class="outputText">yok</span></td>
+</tr>
+<tr class="rowClass2" ><td ><input id="f:tbl1:1:checkbox7" type="checkbox" name="f:tbl1:1:checkbox7" value="true" onclick="checkBox(this);" class="selectBooleanCheckbox" /></td>
+<td align="center" ><input id="f:tbl1:1:t1" name="f:tbl1:1:t1" type="text" value="8699536160078" onfocus="return func_2(this, event);" size="15" class="inputText" /></td>
+<td align="center" ><table id="f:tbl1:1:box32" class="panelBox"><tr><td><input id="f:tbl1:1:t2" name="f:tbl1:1:t2" type="text" value="1" size="4" class="inputText" /></td><td><span id="f:tbl1:1:text24" class="outputText"> / </span></td><td><input id="f:tbl1:1:t5" name="f:tbl1:1:t5" type="text" value="1" size="4" class="inputText" /></td><td><select id="f:tbl1:1:m1" name="f:tbl1:1:m1" size="1" class="selectOneMenu">	<option value="3" selected="selected">G&uuml;nde</option>	<option value="4">Haftada</option>	<option value="5">Ayda</option>	<option value="6">Y&#305;lda</option></select></td><td><span id="f:tbl1:1:text22" class="outputText"> / </span></td><td><input id="f:tbl1:1:t3" name="f:tbl1:1:t3" type="text" value="1" size="4" class="inputText" /></td><td><span id="f:tbl1:1:text150" class="outputText">x</span></td><td><input id="f:tbl1:1:t4" name="f:tbl1:1:t4" type="text" value="1,0" size="8" class="inputText" /></td></tr></table></td>
+<td align="center" ><span id="f:tbl1:1:t6" class="outputText">LANSOR 15 MG.30 KAPSUL</span></td>
+<td align="center" ><span id="f:tbl1:1:t7" class="outputText">23,83</span></td>
+<td align="center" ><span id="f:tbl1:1:t8" class="outputText">0,00</span></td>
+<td align="center" ><span id="f:tbl1:1:t9" class="outputText"></span></td>
+<td align="center" ><span id="f:tbl1:1:t10" class="outputText">17/04/2020</span></td>
+<td align="center" ><span id="f:tbl1:1:t11" class="outputText">yok</span></td>
+</tr>
+<tr class="rowClass1" ><td ><input id="f:tbl1:2:checkbox7" type="checkbox" name="f:tbl1:2:checkbox7" value="true" onclick="checkBox(this);" class="selectBooleanCheckbox" /></td>
+<td align="center" ><input id="f:tbl1:2:t1" name="f:tbl1:2:t1" type="text" value="8699525094681" onfocus="return func_2(this, event);" size="15" class="inputText" /></td>
+<td align="center" ><table id="f:tbl1:2:box32" class="panelBox"><tr><td><input id="f:tbl1:2:t2" name="f:tbl1:2:t2" type="text" value="1" size="4" class="inputText" /></td><td><span id="f:tbl1:2:text24" class="outputText"> / </span></td><td><input id="f:tbl1:2:t5" name="f:tbl1:2:t5" type="text" value="1" size="4" class="inputText" /></td><td><select id="f:tbl1:2:m1" name="f:tbl1:2:m1" size="1" class="selectOneMenu">	<option value="3" selected="selected">G&uuml;nde</option>	<option value="4">Haftada</option>	<option value="5">Ayda</option>	<option value="6">Y&#305;lda</option></select></td><td><span id="f:tbl1:2:text22" class="outputText"> / </span></td><td><input id="f:tbl1:2:t3" name="f:tbl1:2:t3" type="text" value="2" size="4" class="inputText" /></td><td><span id="f:tbl1:2:text150" class="outputText">x</span></td><td><input id="f:tbl1:2:t4" name="f:tbl1:2:t4" type="text" value="1,0" size="8" class="inputText" /></td></tr></table></td>
+<td align="center" ><span id="f:tbl1:2:t6" class="outputText">BITERAL 500 MG 10 FTB</span></td>
+<td align="center" ><span id="f:tbl1:2:t7" class="outputText">25,08</span></td>
+<td align="center" ><span id="f:tbl1:2:t8" class="outputText">1,87</span></td>
+<td align="center" ><span id="f:tbl1:2:t9" class="outputText"></span></td>
+<td align="center" ><span id="f:tbl1:2:t10" class="outputText">23/03/2020</span></td>
+<td align="center" ><span id="f:tbl1:2:t11" class="outputText">yok</span></td>
+</tr>
+<tr class="rowClass2" ><td ><input id="f:tbl1:3:checkbox7" type="checkbox" name="f:tbl1:3:checkbox7" value="true" onclick="checkBox(this);" class="selectBooleanCheckbox" /></td>
+<td align="center" ><input id="f:tbl1:3:t1" name="f:tbl1:3:t1" type="text" value="8680008010120" onfocus="return func_2(this, event);" size="15" class="inputText" /></td>
+<td align="center" ><table id="f:tbl1:3:box32" class="panelBox"><tr><td><input id="f:tbl1:3:t2" name="f:tbl1:3:t2" type="text" value="1" size="4" class="inputText" /></td><td><span id="f:tbl1:3:text24" class="outputText"> / </span></td><td><input id="f:tbl1:3:t5" name="f:tbl1:3:t5" type="text" value="1" size="4" class="inputText" /></td><td><select id="f:tbl1:3:m1" name="f:tbl1:3:m1" size="1" class="selectOneMenu">	<option value="3" selected="selected">G&uuml;nde</option>	<option value="4">Haftada</option>	<option value="5">Ayda</option>	<option value="6">Y&#305;lda</option></select></td><td><span id="f:tbl1:3:text22" class="outputText"> / </span></td><td><input id="f:tbl1:3:t3" name="f:tbl1:3:t3" type="text" value="1" size="4" class="inputText" /></td><td><span id="f:tbl1:3:text150" class="outputText">x</span></td><td><input id="f:tbl1:3:t4" name="f:tbl1:3:t4" type="text" value="1,0" size="8" class="inputText" /></td></tr></table></td>
+<td align="center" ><span id="f:tbl1:3:t6" class="outputText">EXAGYN 7 VAJINAL TB</span></td>
+<td align="center" ><span id="f:tbl1:3:t7" class="outputText">19,52</span></td>
+<td align="center" ><span id="f:tbl1:3:t8" class="outputText">1,74</span></td>
+<td align="center" ><span id="f:tbl1:3:t9" class="outputText"></span></td>
+<td align="center" ><span id="f:tbl1:3:t10" class="outputText">25/03/2020</span></td>
+<td align="center" ><span id="f:tbl1:3:t11" class="outputText">yok</span></td>
+</tr>
+<tr class="rowClass1" ><td ><input id="f:tbl1:4:checkbox7" type="checkbox" name="f:tbl1:4:checkbox7" value="true" onclick="checkBox(this);" class="selectBooleanCheckbox" /></td>
+<td align="center" ><input id="f:tbl1:4:t1" name="f:tbl1:4:t1" type="text" value="" onfocus="return func_2(this, event);" size="15" class="inputText" /></td>
+<td align="center" ><table id="f:tbl1:4:box32" class="panelBox"><tr><td><input id="f:tbl1:4:t2" name="f:tbl1:4:t2" type="text" value="0" size="4" class="inputText" /></td><td><span id="f:tbl1:4:text24" class="outputText"> / </span></td><td><input id="f:tbl1:4:t5" name="f:tbl1:4:t5" type="text" value="0" size="4" class="inputText" /></td><td><select id="f:tbl1:4:m1" name="f:tbl1:4:m1" size="1" class="selectOneMenu">	<option value="3" selected="selected">G&uuml;nde</option>	<option value="4">Haftada</option>	<option value="5">Ayda</option>	<option value="6">Y&#305;lda</option></select></td><td><span id="f:tbl1:4:text22" class="outputText"> / </span></td><td><input id="f:tbl1:4:t3" name="f:tbl1:4:t3" type="text" value="0" size="4" class="inputText" /></td><td><span id="f:tbl1:4:text150" class="outputText">x</span></td><td><input id="f:tbl1:4:t4" name="f:tbl1:4:t4" type="text" value="0,0" size="8" class="inputText" /></td></tr></table></td>
+<td align="center" ><span id="f:tbl1:4:t6" class="outputText"></span></td>
+<td align="center" ><span id="f:tbl1:4:t7" class="outputText">0,00</span></td>
+<td align="center" ><span id="f:tbl1:4:t8" class="outputText">0,00</span></td>
+<td align="center" ><span id="f:tbl1:4:t9" class="outputText"></span></td>
+<td align="center" ><span id="f:tbl1:4:t10" class="outputText"></span></td>
+<td align="center" ><span id="f:tbl1:4:t11" class="outputText"></span></td>
+</tr>
+</tbody>
+</table>
+    
+										</td>
+									</tr>
+									<tr class="row1">
+										<td class="label" colspan="7" height="100%">
+																					
+										  <table id="f:box30" class="panelBox"><tr><td><input type="submit" value="Ekle" id="f:buttonEkle" name="f:buttonEkle" style="width: 100px" class="commandExButton" /></td><td><input id="f:text15" name="f:text15" type="text" value="" maxlength="10" class="inputText" /></td><td><input type="submit" value="ICD-10 Sorgula" id="f:buttonIcd10Sorgula" name="f:buttonIcd10Sorgula" class="commandExButton" /></td><td><span id="f:text9" class="outputText">(Maksimum 50 kay&#305;t geri d&ouml;ner)</span></td></tr></table></td>
+									</tr>									
+									<tr class="row1">
+										<td class="label" colspan="7" height="100%">
+											<table id="f:tableEx1" class="dataTableEx" border="0" cellpadding="2" cellspacing="0" ><thead ><tr ><th align="left" class="headerClass" scope="col" ><span id="f:tableEx1:text5" class="outputText">ICD-10</span></th><th align="left" class="headerClass" scope="col" width="100%" ><div style="overflow: -moz-scrollbars-none; overflow-x: hidden; width: 100%;" ><span id="f:tableEx1:text2" class="outputText">Tan&#305;lar</span></div></th></tr>
+</thead><tbody >
+<tr class="rowClass1" ><td align="left" ><input id="f:tableEx1:0:text7" name="f:tableEx1:0:text7" type="text" value="N76.8" maxlength="10" size="12" class="inputText" /></td>
+<td width="100%" align="left" ><div style="overflow: -moz-scrollbars-none; overflow-x: hidden; width: 100%;" ><input id="f:tableEx1:0:text3" name="f:tableEx1:0:text3" type="text" value="VAJ&#304;NA VE VULVANIN TANIMLANMI&#350; D&#304;&#286;ER ENFLAMASYONLARI" maxlength="150" size="150" class="inputText" /></div></td>
+</tr>
+<tr class="rowClass2" ><td align="left" ><input id="f:tableEx1:1:text7" name="f:tableEx1:1:text7" type="text" value="" maxlength="10" size="12" class="inputText" /></td>
+<td width="100%" align="left" ><div style="overflow: -moz-scrollbars-none; overflow-x: hidden; width: 100%;" ><input id="f:tableEx1:1:text3" name="f:tableEx1:1:text3" type="text" value="" maxlength="150" size="150" class="inputText" /></div></td>
+</tr>
+<tr class="rowClass1" ><td align="left" ><input id="f:tableEx1:2:text7" name="f:tableEx1:2:text7" type="text" value="" maxlength="10" size="12" class="inputText" /></td>
+<td width="100%" align="left" ><div style="overflow: -moz-scrollbars-none; overflow-x: hidden; width: 100%;" ><input id="f:tableEx1:2:text3" name="f:tableEx1:2:text3" type="text" value="" maxlength="150" size="150" class="inputText" /></div></td>
+</tr>
+</tbody>
+</table>
+
+										</td>
+									</tr>									
+									<tr class="row1">
+										<td class="label" colspan="7"></td>
+									</tr>
+									<tr class="row1">
+										<td class="label" colspan="7" align="center"><table id="f:box25" class="panelBox" align="center" width="100%"><tr><td><table id="f:box42" class="panelBox" width="100%"><tr><td>
+													<table width="100%" cellpadding="1" cellspacing="1"
+														class="borderTable">
+														<tr>
+															<td>
+															<table width="100%" cellpadding="1" cellspacing="1"
+																class="borderTable">
+																<tr class="headerRow">
+																	<td colspan="15">Re&#231;ete Tutarlar&#305; <span id="f:text122" style="color: white" class="outputText">        (&#304;la&#231; kat&#305;l&#305;m pay&#305; elden tahsil edilecek)</span></td>
+																</tr>
+																<tr class="row1">
+																	<td class="label" width="160px">&nbsp;<span id="f:text6" class="outputText">Re&#231;.Kat.Pay&#305; (Elden)</span></td>
+																	<td align="center" width="5px"><strong>:</strong></td>
+																	<td class="label" align="right"><span id="f:text831" style="color: blue" class="outputText">4,00</span>&nbsp;</td>
+																	<td align="center" width="5px"><strong></strong></td>
+																	<td class="label" width="160px">&nbsp;<span id="f:text57EczIndirimTutari" class="outputText">Ecz.&#304;ndirim Tutar&#305;</span></td>
+																	<td align="center" width="5px"><strong>:</strong></td>
+																	<td class="label" align="right"><span id="f:text62" style="color: blue" class="outputText">0,00</span></td>
+																	<td align="center" width="5px"><strong></strong></td>
+																	<td class="label" width="160px">&nbsp;</td>
+																	<td align="center" width="5px"><strong>:</strong></td>
+																	<td class="label" align="right"></td>
+																	<td align="center" width="5px"><strong></strong></td>
+																	<td class="label" width="160px">&nbsp;</td>
+																	<td align="center" width="5px"><strong>:</strong></td>
+																	<td class="label" align="right">&nbsp;</td>
+																</tr>			
+																<tr class="row2">
+																	<td class="label" width="160px">&nbsp;<span id="f:text26" class="outputText">Re&#231;.Kat.Pay&#305; (Maa&#351;tan)</span></td>
+																	<td align="center" width="5px"><strong>:</strong></td>
+																	<td class="label" align="right"><span id="f:text27" style="color: blue" class="outputText">0,00</span>&nbsp;</td>
+																	<td align="center" width="5px"><strong></strong></td>
+																	<td class="label" width="160px">&nbsp;<span id="f:text58" class="outputText">&#304;l.Kat.Pay&#305; Tutar&#305;</span></td>
+																	<td align="center" width="5px"><strong>:</strong></td>
+																	<td class="label" align="right"><span id="f:text63" style="color: blue" class="outputText">15,66</span></td>
+																	<td align="center" width="5px"><strong></strong></td>
+																	<td class="label" width="160px">&nbsp;<span id="f:text28" class="outputText">Toplam Tutar</span></td>
+																	<td align="center" width="5px"><strong>:</strong></td>
+																	<td class="label" align="right"><span id="f:text65" style="color: blue" class="outputText">78,30</span></td>
+																	<td align="center" width="5px"><strong></strong></td>
+																	<td class="label" width="160px"><span id="f:text59" class="outputText">&Ouml;denecek Tutar</span>&nbsp;</td>
+																	<td align="center" width="5px"><strong>:</strong></td>
+																	<td class="label" align="right"><span id="f:text64" style="color: blue" class="outputText">62,64</span>&nbsp;</td>
+																</tr>																													
+																<tr class="row1">
+																	<td class="label" width="160px">&nbsp;<span id="f:text13" class="outputText">Mua.Kat.Pay&#305; (Elden)</span></td>
+																	<td align="center" width="5px"><strong>:</strong></td>
+																	<td class="label" align="right"><span id="f:text83" style="color: blue" class="outputText">0,00</span>&nbsp;</td>
+																	<td align="center" width="5px"><strong></strong></td>
+																	<td class="label" width="160px">&nbsp;<span id="f:text97" class="outputText">Fiyat Fark&#305;</span></td>
+																	<td align="center" width="5px"><strong>:</strong></td>
+																	<td class="label" align="right"><span id="f:text98" style="color: blue" class="outputText">3,61</span></td>
+																	<td align="center" width="5px"><strong></strong></td>
+																	<td class="label" width="160px">&nbsp;</td>
+																	<td align="center" width="5px"><strong>:</strong></td>
+																	<td class="label" align="right"></td>
+																	<td align="center" width="5px"><strong></strong></td>
+																	<td class="label" width="160px">&nbsp;</td>
+																	<td align="center" width="5px"><strong>:</strong></td>
+																	<td class="label" align="right">&nbsp;</td>
+																</tr>
+																<tr class="row2">
+																	<td class="label" width="160px">&nbsp;<span id="f:text53" class="outputText">Mua.Kat.Pay&#305; (Maa&#351;tan)</span></td>
+																	<td align="center" width="5px"><strong>:</strong></td>
+																	<td class="label" align="right"><span id="f:text82" style="color: blue" class="outputText">0,00</span>&nbsp;</td>
+																	<td align="center" width="5px"><strong></strong></td>
+																	<td class="label" colspan="11" align="right"><table id="f:box28" class="panelBox"><tr><td><span id="f:text10" class="outputText">Hastan&#305;n eczaneye &ouml;demesi gereken toplam tutar :</span></td><td><span id="f:text16" style="color: blue" class="outputText">23,27</span></td></tr></table></td>
+																</tr>
+															</table>
+															</td>
+														</tr>
+													</table>
+												</td></tr></table></td></tr><tr><td><table id="f:box23" class="panelBox" align="center"><tr><td><input type="submit" value="E-Re&#231;ete Kaydet" id="f:button2" name="f:button2" class="commandExButton" /></td><td><input type="submit" value="E-Re&#231;ete G&ouml;r&uuml;nt&uuml;le" id="f:buttonEreceteGoruntule" name="f:buttonEreceteGoruntule" class="commandExButton" /></td><td><input type="submit" value="Sil" id="f:buttonReceteSil" name="f:buttonReceteSil" style="width: 100px" class="commandExButton" /></td><td><input type="submit" value="Yazd&#305;r" id="f:buttonReceteYazdir" name="f:buttonReceteYazdir" style="width: 100px" class="commandExButton" /></td><td><input type="submit" value="Bilgi" id="f:buttonReceteBilgi" name="f:buttonReceteBilgi" style="width: 100px" class="commandExButton" /></td><td><input type="submit" value="Yeni Re&#231;ete" id="f:buttonYeniRecete" name="f:buttonYeniRecete" class="commandExButton" /></td><td><input type="submit" value="E-Re&#231;ete Sorgu" id="f:buttonEreceteSorgu" name="f:buttonEreceteSorgu" class="commandExButton" /></td></tr></table></td></tr><tr><td><table id="f:box24" class="panelBox" align="center"><tr><td><input type="submit" value="ITS Karekod &#304;&#351;lemleri" id="f:buttonKarekodIslemleri" name="f:buttonKarekodIslemleri" class="commandExButton" /></td><td><input type="submit" value="Karekod Sonland&#305;rma &#304;ptal" id="f:buttonKarekodIptal" name="f:buttonKarekodIptal" class="commandExButton" /></td><td><input type="submit" value="Re&#231;eteye Dok&uuml;man Ekle" id="f:buttonDokumanEkle" name="f:buttonDokumanEkle" style="width: 180px" class="commandExButton" /></td></tr></table></td></tr><tr><td><table id="f:box22" class="panelBox" align="center"><tr><td><input type="submit" value="&Ouml;nceki Re&#231;ete" id="f:buttonOncekiRecete" name="f:buttonOncekiRecete" class="commandExButton" /></td><td><input type="submit" value="Sonraki Re&#231;ete" id="f:buttonSonraki" name="f:buttonSonraki" class="commandExButton" /></td><td><span id="f:text173" style="color: blue; font-size:10px" class="outputText"></span></td></tr></table></td></tr></table>
+										</td>
+									</tr>
+									<tr class="row1">
+										<td class="label" colspan="7" align="left">
+										
+										<table id="f:box31" class="panelBox"><tr><td><table id="f:box44" class="panelBox"><tr><td><span id="f:text79" class="outputText">M&uuml;stehakl&#305;k sorgusunu ayn&#305; g&uuml;n i&#231;in tekrar yap :</span></td><td><input id="f:checkbox4" type="checkbox" name="f:checkbox4" value="true" title="Hak Sahibi g&uuml;n i&#231;inde bilgilerini g&uuml;ncellettiyse bu se&#231;ene&#287;i kullan&#305;n&#305;z." class="selectBooleanCheckbox" /></td></tr></table></td></tr><tr><td><table id="f:box45" class="panelBox"><tr><td><span id="f:text41" style="color: blue" class="outputText">Bilgi g&uuml;venli&#287;i nedeniyle yapm&#305;&#351; oldu&#287;unuz sorgulamalar kay&#305;t alt&#305;na al&#305;nmaktad&#305;r.</span></td></tr></table></td></tr></table></td>
+									</tr>
+								</table>
+								</td>
+							</tr>
+						</table>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			
+<table width="100%" border="0" cellspacing="0" cellpadding="0" height="23" bgcolor="#333333" style="margin-top:1px;">
+  <tr> 
+	<td width="200" style="color: #333333">
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		uygmedecz9
+	</td>
+    <td align="center" class="footerText">Sosyal G&#252;venlik Kurumu &copy; 2010-2020</td>
+	<td width="200" align="right" class="footerText">S&#252;r&#252;m : 1.867&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+  </tr>  
+</table>
+				
+				<br>
+			<input type="hidden" id="f:hiddenOdak" name="f:hiddenOdak" value="0" /><input type="hidden" name="f_SUBMIT" value="1" /><input type="hidden" name="javax.faces.ViewState" id="javax.faces.ViewState" value="2WRDwtKPPI3XiFp987U8dth+lB6B2MWuyS4fnTwXUTWF5fC/iK8mo6eSMwJYByBLaH3OuRMCSxWeZfZKutu92gyTCUcTv6P1ApXBHotMSyEICdbwfOyvTiZ/Tog1A1/FsdM6V1dRgqR9Ko43" /></form>
+<script type="text/javascript" src="/eczane/.ibmjsfres/hxclient_be_v3_1_16.js"></script>
+<script type="text/javascript" src="/eczane/.ibmjsfres/hxclient_im_v3_1_16.js"></script>
+
+<script type="text/javascript" src="/eczane/.ibmjsfres/hxclient_S_v3_1_16_tr.js?viewLocale=tr"></script><script type="text/javascript">
+hX_6.addConverter("0", new hX_6.DateTimeConverter("strict:1", "format:dd/MM/yyyy", "locale:tr"));
+hX_6.addBehavior("f:t31", "oninput", new hX_6.JSFBehaviorAssist("converter:0", "auto-tab:0", "prompt-char:default"));
+hX_6.addBehavior("f:t29", "oninput", new hX_6.JSFBehaviorAssist("converter:0", "auto-tab:0", "prompt-char:default"));
+hX_6.addConverter("1", new hX_6.NumberConverter("ICU4J", "strict:1", "pattern:##########0", "locale:.,%\u2030-TL"));
+hX_6.addBehavior("f:text37", "oninput", new hX_6.JSFBehaviorAssist("converter:1", "auto-tab:0", "prompt-char:default"));
+hX_6.addBehavior("f:t18", "oninput", new hX_6.JSFBehaviorAssist("converter:1", "auto-tab:0", "prompt-char:default"));
+hX_6.addConverter("5", new hX_6.NumberConverter("ICU4J", "strict:1", "pattern:#######0", "locale:.,%\u2030-TL"));
+hX_6.addBehavior("f:t33", "oninput", new hX_6.JSFBehaviorAssist("converter:5", "auto-tab:0", "prompt-char:default"));
+hX_6.addConverter("2", new hX_6.NumberConverter("ICU4J", "strict:1", "pattern:##0", "locale:.,%\u2030-TL"));
+hX_6.addBehavior("f:tbl1:0:t2", "oninput", new hX_6.JSFBehaviorAssist("converter:2", "prompt-char:default"));
+hX_6.addBehavior("f:tbl1:0:t5", "oninput", new hX_6.JSFBehaviorAssist("converter:2", "prompt-char:default"));
+hX_6.addConverter("3", new hX_6.NumberConverter("ICU4J", "strict:1", "pattern:###0", "locale:.,%\u2030-TL"));
+hX_6.addBehavior("f:tbl1:0:t3", "oninput", new hX_6.JSFBehaviorAssist("converter:3", "prompt-char:default"));
+hX_6.addConverter("4", new hX_6.NumberConverter("ICU4J", "strict:1", "pattern:####0.0###", "locale:.,%\u2030-TL"));
+hX_6.addBehavior("f:tbl1:0:t4", "oninput", new hX_6.JSFBehaviorAssist("converter:4", "prompt-char:default"));
+hX_6.addBehavior("f:tbl1:1:t2", "oninput", new hX_6.JSFBehaviorAssist("converter:2", "prompt-char:default"));
+hX_6.addBehavior("f:tbl1:1:t5", "oninput", new hX_6.JSFBehaviorAssist("converter:2", "prompt-char:default"));
+hX_6.addBehavior("f:tbl1:1:t3", "oninput", new hX_6.JSFBehaviorAssist("converter:3", "prompt-char:default"));
+hX_6.addBehavior("f:tbl1:1:t4", "oninput", new hX_6.JSFBehaviorAssist("converter:4", "prompt-char:default"));
+hX_6.addBehavior("f:tbl1:2:t2", "oninput", new hX_6.JSFBehaviorAssist("converter:2", "prompt-char:default"));
+hX_6.addBehavior("f:tbl1:2:t5", "oninput", new hX_6.JSFBehaviorAssist("converter:2", "prompt-char:default"));
+hX_6.addBehavior("f:tbl1:2:t3", "oninput", new hX_6.JSFBehaviorAssist("converter:3", "prompt-char:default"));
+hX_6.addBehavior("f:tbl1:2:t4", "oninput", new hX_6.JSFBehaviorAssist("converter:4", "prompt-char:default"));
+hX_6.addBehavior("f:tbl1:3:t2", "oninput", new hX_6.JSFBehaviorAssist("converter:2", "prompt-char:default"));
+hX_6.addBehavior("f:tbl1:3:t5", "oninput", new hX_6.JSFBehaviorAssist("converter:2", "prompt-char:default"));
+hX_6.addBehavior("f:tbl1:3:t3", "oninput", new hX_6.JSFBehaviorAssist("converter:3", "prompt-char:default"));
+hX_6.addBehavior("f:tbl1:3:t4", "oninput", new hX_6.JSFBehaviorAssist("converter:4", "prompt-char:default"));
+hX_6.addBehavior("f:tbl1:4:t2", "oninput", new hX_6.JSFBehaviorAssist("converter:2", "prompt-char:default"));
+hX_6.addBehavior("f:tbl1:4:t5", "oninput", new hX_6.JSFBehaviorAssist("converter:2", "prompt-char:default"));
+hX_6.addBehavior("f:tbl1:4:t3", "oninput", new hX_6.JSFBehaviorAssist("converter:3", "prompt-char:default"));
+hX_6.addBehavior("f:tbl1:4:t4", "oninput", new hX_6.JSFBehaviorAssist("converter:4", "prompt-char:default"));
+hX_6.addBehavior("f:button2", "onclick", new hX_6.JSFBehaviorGeneric("action:confirm","target:Receteyi kaydetmek istediginizden emin misiniz?"));
+
+hX_6.addBehavior("f:buttonReceteSil", "onclick", new hX_6.JSFBehaviorGeneric("action:confirm","target:Receteyi silmek istediginizden emin misiniz?"));
+
+hX_6.addBehavior("f:buttonKarekodIptal", "onclick", new hX_6.JSFBehaviorGeneric("action:confirm","target:Karekod sonlandirma iptali yapmak istediginize emin misiniz? Tusa bastiktan sonra lutfen bekleyiniz."));
+
+hX_6.onPageLoad();</script></body>
+
+</html>

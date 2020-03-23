@@ -1,0 +1,302 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+
+
+
+
+<html>
+<head>
+<title>Medula Eczane</title>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-9">
+<meta name="GENERATOR" content="Rational Software Architect">
+<link rel="stylesheet" type="text/css"
+	href="/eczane/theme/stylesheet.css"
+	title="Style">
+<link rel="stylesheet"
+	href="/eczane/theme/styles.css"
+	type="text/css">		
+<script type="text/javascript">
+	var deg1 = 0;
+	var deg2 = 0;
+	var deg3 = 0;
+	var deg4 = 0;
+
+	function karekodOku(thisObj, thisEvent) {
+	//use 'thisObj' to refer directly to this component instead of keyword 'this'
+	//use 'thisEvent' to refer to the event generated instead of keyword 'event'
+	  var ua = navigator.userAgent.toLowerCase();
+      if ( ua.indexOf( "msie" ) != -1 ) {
+		if (thisEvent.keyCode==29 || thisEvent.keyCode==119) {
+			document.getElementById('form1:textarea1').value += '-';
+			deg1 = 0;
+			deg2 = 0;
+			deg3 = 0;
+			deg4 = 0;		
+		} else if(thisEvent.keyCode == 17) {
+			deg1 = 17;
+			deg2 = 0;
+			deg3 = 0;
+			deg4 = 0;
+		} else if(thisEvent.keyCode == 18) {
+			deg1 = 18;
+			deg2 = 0;
+			deg3 = 0;
+			deg4 = 0;
+		} else if(thisEvent.keyCode == 96 && deg1 == 18) {
+			deg2 = 96;
+			deg3 = 0;
+			deg4 = 0;
+		} else if(thisEvent.keyCode == 98 && deg1 == 18 && deg2 == 96) {
+			deg3 = 98;
+		} else if(thisEvent.keyCode == 105 && deg1 == 18 && deg2 == 96 && deg3 == 98) {
+			deg4 = 105;
+		} else if(thisEvent.keyCode == 221) {
+			if(deg1 == 17) {
+				document.getElementById('form1:textarea1').value += '-';
+			}
+			deg1 = 0;
+			deg2 = 0;
+			deg3 = 0;
+			deg4 = 0;
+		}
+		if(deg1 == 18 && deg2 == 96 && deg3 == 98 && deg4 == 105) {
+			document.getElementById('form1:textarea1').value += '-';	
+			deg1 = 0;
+			deg2 = 0;
+			deg3 = 0;
+			deg4 = 0;		
+		}          
+      } else {
+		if (thisEvent.which==29 || thisEvent.which==119) {
+			document.getElementById('form1:textarea1').value += '-';
+			deg1 = 0;
+			deg2 = 0;
+			deg3 = 0;
+			deg4 = 0;		
+		} else if(thisEvent.which == 17) {
+			deg1 = 17;
+			deg2 = 0;
+			deg3 = 0;
+			deg4 = 0;
+		} else if(thisEvent.which == 18) {
+			deg1 = 18;
+			deg2 = 0;
+			deg3 = 0;
+			deg4 = 0;
+		} else if(thisEvent.which == 96 && deg1 == 18) {
+			deg2 = 96;
+			deg3 = 0;
+			deg4 = 0;
+		} else if(thisEvent.which == 98 && deg1 == 18 && deg2 == 96) {
+			deg3 = 98;
+		} else if(thisEvent.which == 105 && deg1 == 18 && deg2 == 96 && deg3 == 98) {
+			deg4 = 105;
+		} else if(thisEvent.which == 221) {
+			if(deg1 == 17) {
+				document.getElementById('form1:textarea1').value += '-';
+			}
+			deg1 = 0;
+			deg2 = 0;
+			deg3 = 0;
+			deg4 = 0;
+		}
+		if(deg1 == 18 && deg2 == 96 && deg3 == 98 && deg4 == 105) {
+			document.getElementById('form1:textarea1').value += '-';	
+			deg1 = 0;
+			deg2 = 0;
+			deg3 = 0;
+			deg4 = 0;		
+		}           
+      }
+	}
+	
+	var globalVar = 0;
+	var intervalId = 0;
+
+	function yazdir() {
+		globalVar = globalVar - 1;
+		if(globalVar == 0) {
+            document.getElementById("form1:buttonListele").disabled = false;
+            document.getElementById("form1:buttonSatisIptali").disabled = false;
+            if(document.getElementById("form1:buttonSatisBildirimi") != null) {
+	            document.getElementById("form1:buttonSatisBildirimi").disabled = false;
+            }
+            clearInterval(intervalId);
+        }
+    }
+        
+	function baslat() {
+		if (document.getElementById("form1:hidden1").value == "10") {
+			document.getElementById("form1:buttonListele").disabled = true;
+			document.getElementById("form1:buttonSatisIptali").disabled = true;
+           	if(document.getElementById("form1:buttonSatisBildirimi") != null) {	
+				document.getElementById("form1:buttonSatisBildirimi").disabled = true;
+			}
+			globalVar = document.getElementById("form1:hidden1").value;
+			intervalId = setInterval ("yazdir()", 1000);
+		}
+	}
+	
+	function getCookie(Name) {
+		var re=new RegExp(Name+"=[^;]+", "i"); 
+		if (document.cookie.match(re)) 
+			return document.cookie.match(re)[0].split("=")[1] ;
+		return ""
+	}
+
+	function setCookie(name, value, days) {
+		var expireDate = new Date();
+		var expstring=expireDate.setDate(expireDate.getDate()+parseInt(days));
+		document.cookie = name+"="+value+"; expires="+expireDate.toGMTString()+";path=/";
+	}	
+
+</script></head>
+
+	<body bgcolor="#FFFFFF" text="#000000" leftmargin="0" marginwidth="0" topmargin="5" background="/eczane/images/background.gif" onkeydown="return karekodOku(this, event);" onload='baslat();'>
+	<form id="form1" name="form1" method="post" action="/eczane/faces/pages/recete/KarekodIslem.jsp" enctype="application/x-www-form-urlencoded" class="form">
+			<table width="100%" border="0" cellspacing="0" cellpadding="0"
+				height="450">
+				<tbody>
+					<tr>
+						<td width="165" valign="top"
+							style="padding-top:5; padding-left:5; padding-right:5; padding-bottom:5;"
+							bgcolor="#EEEEEE">
+						<table width="100%" border="0" cellspacing="1" cellpadding="10"
+							class="menuText" bgcolor="#AFAFAF" style="margin-bottom:4px;">							
+							<tr>
+								<td align="center" class="loggedInUserMenu"><span class="outputText">YE&#350;&#304;L ECZANES&#304; (18341063)</span></td>
+							</tr>
+						</table>
+						
+
+<script type="text/JavaScript" language="JavaScript" src="/eczane/.ibmjsfres/hxclient_core_v3_1_16.js"></script>
+
+<script type="text/JavaScript" language="JavaScript" src="/eczane/.ibmjsfres/hxclient_S_v3_1_16_tr.js?viewLocale=tr_TR"></script>
+<script type="text/JavaScript" language="JavaScript">
+if (hX_6) hX_6.setResourceServer("/eczane/.ibmjsfres");
+if(hX_6 && hX_6.setLocale) hX_6.setLocale("tr_TR");
+
+</script><table id="form1:menu" class="panelActionbar" border="0" cellspacing="0" cellpadding="0" style="background-color: #637595"><tr><td colspan="2"><span id="form1:menuHtmlOutputText01" style="vertical-align: middle; width: 165px; line-height: 20px" class="headerRow">&#160;&#160;:: Re&#231;ete</span></td></tr><tr><td colspan="2"><input type="image" src="/eczane/theme/button.png" value="&#160;&#160;&#160;&#160;e-Re&#231;ete Sorgu" id="form1:menuHtmlCommandExButton11" name="form1:menuHtmlCommandExButton11" style="vertical-align: middle; font-size: 11pt; color: #000000;" /></td></tr><tr><td colspan="2"><input type="image" src="/eczane/theme/button.png" value="&#160;&#160;&#160;&#160;Re&#231;ete Giri&#351;" id="form1:menuHtmlCommandExButton21" name="form1:menuHtmlCommandExButton21" style="vertical-align: middle; font-size: 11pt; color: #000000;" /></td></tr><tr><td colspan="2"><input type="image" src="/eczane/theme/button.png" value="&#160;&#160;&#160;&#160;Re&#231;ete Listesi" id="form1:menuHtmlCommandExButton31" name="form1:menuHtmlCommandExButton31" style="vertical-align: middle; font-size: 11pt; color: #000000;" /></td></tr><tr><td colspan="2"><input type="image" src="/eczane/theme/button.png" value="&#160;&#160;&#160;&#160;Re&#231;ete Listesi (G&uuml;nl&uuml;k)" id="form1:menuHtmlCommandExButton41" name="form1:menuHtmlCommandExButton41" style="vertical-align: middle; font-size: 11pt; color: #000000;" /></td></tr><tr><td colspan="2"><input type="image" src="/eczane/theme/button.png" value="&#160;&#160;&#160;&#160;Re&#231;ete Sorgu" id="form1:menuHtmlCommandExButton51" name="form1:menuHtmlCommandExButton51" style="vertical-align: middle; font-size: 11pt; color: #000000;" /></td></tr><tr><td colspan="2"><input type="image" src="/eczane/theme/button.png" value="&#160;&#160;&#160;&#160;&#304;ade Re&#231;ete Sorgu/D&uuml;zeltme" id="form1:menuHtmlCommandExButton61" name="form1:menuHtmlCommandExButton61" style="vertical-align: middle; font-size: 11pt; color: #000000;" /></td></tr><tr><td colspan="2"><input type="image" src="/eczane/theme/button.png" value="&#160;&#160;&#160;&#160;&#304;la&#231; Bilgisi" id="form1:menuHtmlCommandExButton71" name="form1:menuHtmlCommandExButton71" style="vertical-align: middle; font-size: 11pt; color: #000000;" /></td></tr><tr><td colspan="2"><input type="image" src="/eczane/theme/button.png" value="&#160;&#160;&#160;&#160;Silinmi&#351; Karekod" id="form1:menuHtmlCommandExButton81" name="form1:menuHtmlCommandExButton81" style="vertical-align: middle; font-size: 11pt; color: #000000;" /></td></tr><tr><td colspan="2"><input type="image" src="/eczane/theme/button.png" value="&#160;&#160;&#160;&#160;Manuel Re&#231;ete Giri&#351;" id="form1:menuHtmlCommandExButton91" name="form1:menuHtmlCommandExButton91" style="vertical-align: middle; font-size: 11pt; color: #000000;" /></td></tr><tr><td colspan="2"><input type="image" src="/eczane/theme/button.png" value="&#160;&#160;&#160;&#160;Manuel Re&#231;ete Liste" id="form1:menuHtmlCommandExButton101" name="form1:menuHtmlCommandExButton101" style="vertical-align: middle; font-size: 11pt; color: #000000;" /></td></tr><tr><td colspan="2"><span id="form1:menuHtmlOutputText111" style="vertical-align: middle; width: 165px; line-height: 20px" class="headerRow">&#160;&#160;:: Fatura</span></td></tr><tr><td colspan="2"><input type="image" src="/eczane/theme/button.png" value="&#160;&#160;&#160;&#160;Fatura Sonland&#305;rma" id="form1:menuHtmlCommandExButton121" name="form1:menuHtmlCommandExButton121" style="vertical-align: middle; font-size: 11pt; color: #000000;" /></td></tr><tr><td colspan="2"><input type="image" src="/eczane/theme/button.png" value="&#160;&#160;&#160;&#160;Eski Fatura Sorgu" id="form1:menuHtmlCommandExButton131" name="form1:menuHtmlCommandExButton131" style="vertical-align: middle; font-size: 11pt; color: #000000;" /></td></tr><tr><td colspan="2"><input type="image" src="/eczane/theme/button.png" value="&#160;&#160;&#160;&#160;&#304;ade/Kesinti Sorgu" id="form1:menuHtmlCommandExButton141" name="form1:menuHtmlCommandExButton141" style="vertical-align: middle; font-size: 11pt; color: #000000;" /></td></tr><tr><td colspan="2"><input type="image" src="/eczane/theme/button.png" value="&#160;&#160;&#160;&#160;Emekli &#304;la&#231; Kat&#305;l&#305;m" id="form1:menuHtmlCommandExButton151" name="form1:menuHtmlCommandExButton151" style="vertical-align: middle; font-size: 11pt; color: #000000;" /></td></tr><tr><td colspan="2"><span id="form1:menuHtmlOutputText161" style="vertical-align: middle; width: 165px; line-height: 20px" class="headerRow">&#160;&#160;:: Hak Sahibi</span></td></tr><tr><td colspan="2"><input type="image" src="/eczane/theme/button.png" value="&#160;&#160;&#160;&#160;&#304;la&#231; Sorgu" id="form1:menuHtmlCommandExButton171" name="form1:menuHtmlCommandExButton171" style="vertical-align: middle; font-size: 11pt; color: #000000;" /></td></tr><tr><td colspan="2"><input type="image" src="/eczane/theme/button.png" value="&#160;&#160;&#160;&#160;Rapor Sorgu/Giri&#351;" id="form1:menuHtmlCommandExButton181" name="form1:menuHtmlCommandExButton181" style="vertical-align: middle; font-size: 11pt; color: #000000;" /></td></tr><tr><td colspan="2"><input type="image" src="/eczane/theme/button.png" value="&#160;&#160;&#160;&#160;Muayene Sorgu" id="form1:menuHtmlCommandExButton191" name="form1:menuHtmlCommandExButton191" style="vertical-align: middle; font-size: 11pt; color: #000000;" /></td></tr><tr><td colspan="2"><input type="image" src="/eczane/theme/button.png" value="&#160;&#160;&#160;&#160;M&uuml;stehakl&#305;k Sorgu" id="form1:menuHtmlCommandExButton201" name="form1:menuHtmlCommandExButton201" style="vertical-align: middle; font-size: 11pt; color: #000000;" /></td></tr><tr><td colspan="2"><input type="image" src="/eczane/theme/button.png" value="&#160;&#160;&#160;&#160;Yurtd&#305;&#351;&#305; Sigortal&#305;" id="form1:menuHtmlCommandExButton211" name="form1:menuHtmlCommandExButton211" style="vertical-align: middle; font-size: 11pt; color: #000000;" /></td></tr><tr><td colspan="2"><span id="form1:menuHtmlOutputText221" style="vertical-align: middle; width: 165px; line-height: 20px" class="headerRow">&#160;&#160;:: Mesaj</span></td></tr><tr><td colspan="2"><input type="image" src="/eczane/theme/button.png" value="&#160;&#160;&#160;&#160;Mesaj G&ouml;r&uuml;nt&uuml;leme" id="form1:menuHtmlCommandExButton231" name="form1:menuHtmlCommandExButton231" style="vertical-align: middle; font-size: 11pt; color: #000000;" /></td></tr><tr><td colspan="2"><span id="form1:menuHtmlOutputText241" style="vertical-align: middle; width: 165px; line-height: 20px" class="headerRow">&#160;&#160;:: Kullan&#305;c&#305; &#304;&#351;lemleri</span></td></tr><tr><td colspan="2"><input type="image" src="/eczane/theme/button.png" value="&#160;&#160;&#160;&#160;&#304;statistik Bilgisi *" id="form1:menuHtmlCommandExButton251" name="form1:menuHtmlCommandExButton251" style="vertical-align: middle; font-size: 11pt; color: #000000;" /></td></tr><tr><td colspan="2"><input type="image" src="/eczane/theme/button.png" value="&#160;&#160;&#160;&#160;&#350;ifre De&#287;i&#351;tir" id="form1:menuHtmlCommandExButton261" name="form1:menuHtmlCommandExButton261" style="vertical-align: middle; font-size: 11pt; color: #000000;" /></td></tr><tr><td colspan="2"><input type="image" src="/eczane/theme/button.png" value="&#160;&#160;&#160;&#160;Bilgi G&uuml;ncelleme" id="form1:menuHtmlCommandExButton271" name="form1:menuHtmlCommandExButton271" style="vertical-align: middle; font-size: 11pt; color: #000000;" /></td></tr><tr><td colspan="2"><input type="image" src="/eczane/theme/button.png" value="&#160;&#160;&#160;&#160;&#199;&#305;k&#305;&#351; Yap" id="form1:menuHtmlCommandExButton281" name="form1:menuHtmlCommandExButton281" style="vertical-align: middle; font-size: 11pt; color: #000000;" /></td></tr></table>
+
+
+
+
+
+
+</td>
+						<td align="center" valign="top" style="padding:10 10 10 10;"
+							class="paragraph" bgcolor="#EEEEEE">
+							
+
+
+
+<br>														
+						<table width="790px" bgcolor="#F5F5F5" border="0" cellpadding="5" cellspacing="0">
+							<tr height="20">
+								<td class="menuHeader">Karekod &#304;&#351;lemleri</td>
+							</tr>
+							<tr>
+								<td>
+								<table width="100%" cellpadding="1" cellspacing="1"
+									class="borderTable">
+									<tr class="row1">
+										<td class="label">&nbsp;<input type="submit" value="Geri D&ouml;n" id="form1:buttonGeriDon" name="form1:buttonGeriDon" class="commandExButton" /></td>
+									</tr>
+								</table>
+								</td>
+							</tr>
+							<tr>
+								<td>
+								<table width="100%" cellpadding="1" cellspacing="1"
+									class="borderTable">
+									<tr class="row1">
+										<td class="label" colspan="7"><textarea id="form1:textarea1" name="form1:textarea1" cols="120" rows="20" class="inputTextarea"></textarea></td>
+									</tr>
+								</table>
+								</td>
+							</tr>
+							<tr class="row1">
+								<td class="label" colspan="7" align="center">
+									 <table id="form1:box1" class="panelBox"><tr><td><input type="submit" value="Listele" id="form1:buttonListele" name="form1:buttonListele" style="width: 100px" class="commandExButton" /></td><td><input type="submit" value="ITS Sat&#305;&#351; &#304;ptali" id="form1:buttonSatisIptali" name="form1:buttonSatisIptali" style="width: 150px" class="commandExButton" /></td></tr></table></td>						
+							</tr>	
+							
+							<tr>
+								<td class="label" colspan="7" align="center">
+																																													
+								</td>
+							</tr>															
+						</table><br>
+						</td>
+					</tr>
+					
+				</tbody>
+			</table>
+			
+<table width="100%" border="0" cellspacing="0" cellpadding="0" height="23" bgcolor="#333333" style="margin-top:1px;">
+  <tr> 
+	<td width="200" style="color: #333333">
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		uygmedecz9
+	</td>
+    <td align="center" class="footerText">Sosyal G&#252;venlik Kurumu &copy; 2010-2020</td>
+	<td width="200" align="right" class="footerText">S&#252;r&#252;m : 1.867&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+  </tr>  
+</table>
+			<input type="hidden" id="form1:hidden1" name="form1:hidden1" value="0" /><input type="hidden" name="form1_SUBMIT" value="1" /><input type="hidden" name="javax.faces.ViewState" id="javax.faces.ViewState" value="2WRDwtKPPI3XiFp987U8dth+lB6B2MWuyS4fnTwXUTWF5fC/iK8mo6eSMwJYByBLE+746TwjeKieZfZKutu92mKII8p8SOuYSv9IH/CdMWEICdbwfOyvTgCNqPnAoof+pIXpeN9ShoSZoiKK" /></form>
+<script type="text/javascript" src="/eczane/.ibmjsfres/hxclient_be_v3_1_16.js"></script>
+<script type="text/javascript" src="/eczane/.ibmjsfres/hxclient_im_v3_1_16.js"></script>
+<script type="text/javascript">
+hX_6.addComponent("form1:menuHtmlCommandExButton11", new hX_6.JSFImage("normal:url('/eczane/theme/button.png')","moused:url('/eczane/theme/button_highlighted.png')","label:&#160;&#160;&#160;&#160;e-Re&#231;ete Sorgu"));
+
+hX_6.addComponent("form1:menuHtmlCommandExButton21", new hX_6.JSFImage("normal:url('/eczane/theme/button.png')","moused:url('/eczane/theme/button_highlighted.png')","label:&#160;&#160;&#160;&#160;Re&#231;ete Giri&#351;"));
+
+hX_6.addComponent("form1:menuHtmlCommandExButton31", new hX_6.JSFImage("normal:url('/eczane/theme/button.png')","moused:url('/eczane/theme/button_highlighted.png')","label:&#160;&#160;&#160;&#160;Re&#231;ete Listesi"));
+
+hX_6.addComponent("form1:menuHtmlCommandExButton41", new hX_6.JSFImage("normal:url('/eczane/theme/button.png')","moused:url('/eczane/theme/button_highlighted.png')","label:&#160;&#160;&#160;&#160;Re&#231;ete Listesi (G&#252;nl&#252;k)"));
+
+hX_6.addComponent("form1:menuHtmlCommandExButton51", new hX_6.JSFImage("normal:url('/eczane/theme/button.png')","moused:url('/eczane/theme/button_highlighted.png')","label:&#160;&#160;&#160;&#160;Re&#231;ete Sorgu"));
+
+hX_6.addComponent("form1:menuHtmlCommandExButton61", new hX_6.JSFImage("normal:url('/eczane/theme/button.png')","moused:url('/eczane/theme/button_highlighted.png')","label:&#160;&#160;&#160;&#160;&#304;ade Re&#231;ete Sorgu/D&#252;zeltme"));
+
+hX_6.addComponent("form1:menuHtmlCommandExButton71", new hX_6.JSFImage("normal:url('/eczane/theme/button.png')","moused:url('/eczane/theme/button_highlighted.png')","label:&#160;&#160;&#160;&#160;&#304;la&#231; Bilgisi"));
+
+hX_6.addComponent("form1:menuHtmlCommandExButton81", new hX_6.JSFImage("normal:url('/eczane/theme/button.png')","moused:url('/eczane/theme/button_highlighted.png')","label:&#160;&#160;&#160;&#160;Silinmi&#351; Karekod"));
+
+hX_6.addComponent("form1:menuHtmlCommandExButton91", new hX_6.JSFImage("normal:url('/eczane/theme/button.png')","moused:url('/eczane/theme/button_highlighted.png')","label:&#160;&#160;&#160;&#160;Manuel Re&#231;ete Giri&#351;"));
+
+hX_6.addComponent("form1:menuHtmlCommandExButton101", new hX_6.JSFImage("normal:url('/eczane/theme/button.png')","moused:url('/eczane/theme/button_highlighted.png')","label:&#160;&#160;&#160;&#160;Manuel Re&#231;ete Liste"));
+
+hX_6.addComponent("form1:menuHtmlCommandExButton121", new hX_6.JSFImage("normal:url('/eczane/theme/button.png')","moused:url('/eczane/theme/button_highlighted.png')","label:&#160;&#160;&#160;&#160;Fatura Sonland&#305;rma"));
+
+hX_6.addComponent("form1:menuHtmlCommandExButton131", new hX_6.JSFImage("normal:url('/eczane/theme/button.png')","moused:url('/eczane/theme/button_highlighted.png')","label:&#160;&#160;&#160;&#160;Eski Fatura Sorgu"));
+
+hX_6.addComponent("form1:menuHtmlCommandExButton141", new hX_6.JSFImage("normal:url('/eczane/theme/button.png')","moused:url('/eczane/theme/button_highlighted.png')","label:&#160;&#160;&#160;&#160;&#304;ade/Kesinti Sorgu"));
+
+hX_6.addComponent("form1:menuHtmlCommandExButton151", new hX_6.JSFImage("normal:url('/eczane/theme/button.png')","moused:url('/eczane/theme/button_highlighted.png')","label:&#160;&#160;&#160;&#160;Emekli &#304;la&#231; Kat&#305;l&#305;m"));
+
+hX_6.addComponent("form1:menuHtmlCommandExButton171", new hX_6.JSFImage("normal:url('/eczane/theme/button.png')","moused:url('/eczane/theme/button_highlighted.png')","label:&#160;&#160;&#160;&#160;&#304;la&#231; Sorgu"));
+
+hX_6.addComponent("form1:menuHtmlCommandExButton181", new hX_6.JSFImage("normal:url('/eczane/theme/button.png')","moused:url('/eczane/theme/button_highlighted.png')","label:&#160;&#160;&#160;&#160;Rapor Sorgu/Giri&#351;"));
+
+hX_6.addComponent("form1:menuHtmlCommandExButton191", new hX_6.JSFImage("normal:url('/eczane/theme/button.png')","moused:url('/eczane/theme/button_highlighted.png')","label:&#160;&#160;&#160;&#160;Muayene Sorgu"));
+
+hX_6.addComponent("form1:menuHtmlCommandExButton201", new hX_6.JSFImage("normal:url('/eczane/theme/button.png')","moused:url('/eczane/theme/button_highlighted.png')","label:&#160;&#160;&#160;&#160;M&#252;stehakl&#305;k Sorgu"));
+
+hX_6.addComponent("form1:menuHtmlCommandExButton211", new hX_6.JSFImage("normal:url('/eczane/theme/button.png')","moused:url('/eczane/theme/button_highlighted.png')","label:&#160;&#160;&#160;&#160;Yurtd&#305;&#351;&#305; Sigortal&#305;"));
+
+hX_6.addComponent("form1:menuHtmlCommandExButton231", new hX_6.JSFImage("normal:url('/eczane/theme/button.png')","moused:url('/eczane/theme/button_highlighted.png')","label:&#160;&#160;&#160;&#160;Mesaj G&#246;r&#252;nt&#252;leme"));
+
+hX_6.addComponent("form1:menuHtmlCommandExButton251", new hX_6.JSFImage("normal:url('/eczane/theme/button.png')","moused:url('/eczane/theme/button_highlighted.png')","label:&#160;&#160;&#160;&#160;&#304;statistik Bilgisi *"));
+
+hX_6.addComponent("form1:menuHtmlCommandExButton261", new hX_6.JSFImage("normal:url('/eczane/theme/button.png')","moused:url('/eczane/theme/button_highlighted.png')","label:&#160;&#160;&#160;&#160;&#350;ifre De&#287;i&#351;tir"));
+
+hX_6.addComponent("form1:menuHtmlCommandExButton271", new hX_6.JSFImage("normal:url('/eczane/theme/button.png')","moused:url('/eczane/theme/button_highlighted.png')","label:&#160;&#160;&#160;&#160;Bilgi G&#252;ncelleme"));
+
+hX_6.addComponent("form1:menuHtmlCommandExButton281", new hX_6.JSFImage("normal:url('/eczane/theme/button.png')","moused:url('/eczane/theme/button_highlighted.png')","label:&#160;&#160;&#160;&#160;&#199;&#305;k&#305;&#351; Yap"));
+
+hX_6.addBehavior("form1:buttonSatisIptali", "onclick", new hX_6.JSFBehaviorGeneric("action:confirm","target:ITS Satis Bildirim Iptali yapmak istediginizden emin misiniz? Tusa bastiktan sonra lutfen bekleyiniz."));
+
+hX_6.onPageLoad();</script>
+	</body>
+
+</html>
