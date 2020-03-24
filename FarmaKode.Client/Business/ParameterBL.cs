@@ -35,12 +35,28 @@ namespace FarmaKode.Client.Business
         {
             try
             {
+<<<<<<< HEAD
                 
                 string jsonContent = File.ReadAllText(ConfigFilePath);
                 List<Parameter> parameterList = JsonConvert.DeserializeObject<List<Parameter>>(jsonContent).ToList();
                 int i = 1;
                 parameterList.ForEach(p => p.Id = i++);
                 return parameterList;
+=======
+                if(File.Exists(ConfigFilePath))
+                {
+                    string jsonContent = File.ReadAllText(ConfigFilePath);
+                    List<Parameter> parameterList = JsonConvert.DeserializeObject<List<Parameter>>(jsonContent).ToList();
+                    int i = 1;
+                    parameterList.ForEach(p => p.Id = i++);
+                    return parameterList;
+                }
+                else
+                {
+                    return new List<Parameter>();
+                }
+               
+>>>>>>> Add project files.
             }
             catch (Exception ex)
             {

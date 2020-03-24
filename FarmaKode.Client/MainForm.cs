@@ -27,7 +27,11 @@ namespace FarmaKode.Client
 
         private void button1_Click(object sender, EventArgs e)
         {
+<<<<<<< HEAD
             new frmSettings().ShowDialog();
+=======
+            new FormSettings().ShowDialog();
+>>>>>>> Add project files.
         }
 
         private void button2_Click(object sender, EventArgs e)

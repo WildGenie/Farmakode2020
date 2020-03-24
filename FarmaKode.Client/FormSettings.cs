@@ -3,26 +3,26 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Text;
 using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using DevExpress.XtraEditors;
 using FarmaKode.Client.Properties;
 
 namespace FarmaKode.Client
 {
-    public partial class frmSettings : DevExpress.XtraEditors.XtraForm
+    public partial class FormSettings : Form
     {
         bool isChanged = false;
-<<<<<<< HEAD
-        string keyLastChangedProperty = string.Empty;
-=======
->>>>>>> Add project files.
-        public frmSettings()
+        public FormSettings()
         {
             InitializeComponent();
             Settings.Default.SettingChanging += Default_SettingChanging;
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -31,7 +31,7 @@ namespace FarmaKode.Client
             isChanged = false;
         }
 
-        private void txtSourceFolder_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        private void btnSelectSourceFolder_Click(object sender, EventArgs e)
         {
             FolderBrowserDialog folder = new FolderBrowserDialog();
             folder.RootFolder = Environment.SpecialFolder.DesktopDirectory;
@@ -39,7 +39,7 @@ namespace FarmaKode.Client
             txtSourceFolder.Text = folder.SelectedPath;
         }
 
-        private void txtDestinationFolder_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        private void btnSelectDestinationFolder_Click(object sender, EventArgs e)
         {
             FolderBrowserDialog folder = new FolderBrowserDialog();
             folder.RootFolder = Environment.SpecialFolder.DesktopDirectory;
@@ -47,7 +47,7 @@ namespace FarmaKode.Client
             txtDestinationFolder.Text = folder.SelectedPath;
         }
 
-        private void frmSettings_FormClosing(object sender, FormClosingEventArgs e)
+        private void FormSettings_FormClosing(object sender, FormClosingEventArgs e)
         {
             if (isChanged)
             {
@@ -65,12 +65,10 @@ namespace FarmaKode.Client
             {
                 Settings.Default.Save();
             }
-
-
         }
 
         private void Default_SettingChanging(object sender, System.Configuration.SettingChangingEventArgs e)
-        {           
+        {
             isChanged = true;
         }
     }

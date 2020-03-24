@@ -30,6 +30,10 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+<<<<<<< HEAD
+=======
+            this.chkEditable = new System.Windows.Forms.CheckBox();
+>>>>>>> Add project files.
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnClear = new System.Windows.Forms.Button();
             this.btnAddNew = new System.Windows.Forms.Button();
@@ -51,10 +55,13 @@
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.grid = new System.Windows.Forms.DataGridView();
+<<<<<<< HEAD
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
             this.chkEditable = new System.Windows.Forms.CheckBox();
+=======
+>>>>>>> Add project files.
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -65,6 +72,12 @@
             this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column9 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.Column10 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+<<<<<<< HEAD
+=======
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.btnSave = new System.Windows.Forms.Button();
+            this.btnClose = new System.Windows.Forms.Button();
+>>>>>>> Add project files.
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.spinRecursiveCount)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -103,13 +116,30 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Parametre";
             // 
+<<<<<<< HEAD
+=======
+            // chkEditable
+            // 
+            this.chkEditable.AutoSize = true;
+            this.chkEditable.Location = new System.Drawing.Point(279, 62);
+            this.chkEditable.Name = "chkEditable";
+            this.chkEditable.Size = new System.Drawing.Size(89, 17);
+            this.chkEditable.TabIndex = 5;
+            this.chkEditable.Text = "Editable Field";
+            this.chkEditable.UseVisualStyleBackColor = true;
+            // 
+>>>>>>> Add project files.
             // btnDelete
             // 
             this.btnDelete.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnDelete.Location = new System.Drawing.Point(678, 106);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(51, 23);
+<<<<<<< HEAD
             this.btnDelete.TabIndex = 5;
+=======
+            this.btnDelete.TabIndex = 12;
+>>>>>>> Add project files.
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = true;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
@@ -120,7 +150,11 @@
             this.btnClear.Location = new System.Drawing.Point(564, 106);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(51, 23);
+<<<<<<< HEAD
             this.btnClear.TabIndex = 4;
+=======
+            this.btnClear.TabIndex = 10;
+>>>>>>> Add project files.
             this.btnClear.Text = "Clear";
             this.btnClear.UseVisualStyleBackColor = true;
             this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
@@ -131,7 +165,11 @@
             this.btnAddNew.Location = new System.Drawing.Point(564, 77);
             this.btnAddNew.Name = "btnAddNew";
             this.btnAddNew.Size = new System.Drawing.Size(165, 23);
+<<<<<<< HEAD
             this.btnAddNew.TabIndex = 4;
+=======
+            this.btnAddNew.TabIndex = 9;
+>>>>>>> Add project files.
             this.btnAddNew.Text = "New Parameter";
             this.btnAddNew.UseVisualStyleBackColor = true;
             this.btnAddNew.Click += new System.EventHandler(this.btnAddNew_Click);
@@ -142,7 +180,11 @@
             this.btnUpdate.Location = new System.Drawing.Point(621, 106);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(51, 23);
+<<<<<<< HEAD
             this.btnUpdate.TabIndex = 4;
+=======
+            this.btnUpdate.TabIndex = 11;
+>>>>>>> Add project files.
             this.btnUpdate.Text = "Update";
             this.btnUpdate.UseVisualStyleBackColor = true;
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
@@ -152,7 +194,11 @@
             this.spinRecursiveCount.Location = new System.Drawing.Point(401, 106);
             this.spinRecursiveCount.Name = "spinRecursiveCount";
             this.spinRecursiveCount.Size = new System.Drawing.Size(50, 20);
+<<<<<<< HEAD
             this.spinRecursiveCount.TabIndex = 3;
+=======
+            this.spinRecursiveCount.TabIndex = 8;
+>>>>>>> Add project files.
             // 
             // chkCombobox
             // 
@@ -160,7 +206,11 @@
             this.chkCombobox.Location = new System.Drawing.Point(279, 85);
             this.chkCombobox.Name = "chkCombobox";
             this.chkCombobox.Size = new System.Drawing.Size(76, 17);
+<<<<<<< HEAD
             this.chkCombobox.TabIndex = 2;
+=======
+            this.chkCombobox.TabIndex = 6;
+>>>>>>> Add project files.
             this.chkCombobox.Text = "Combobox";
             this.chkCombobox.UseVisualStyleBackColor = true;
             // 
@@ -170,7 +220,11 @@
             this.chkParameterEnabled.Location = new System.Drawing.Point(279, 36);
             this.chkParameterEnabled.Name = "chkParameterEnabled";
             this.chkParameterEnabled.Size = new System.Drawing.Size(119, 17);
+<<<<<<< HEAD
             this.chkParameterEnabled.TabIndex = 2;
+=======
+            this.chkParameterEnabled.TabIndex = 4;
+>>>>>>> Add project files.
             this.chkParameterEnabled.Text = "Parameter is enable";
             this.chkParameterEnabled.UseVisualStyleBackColor = true;
             this.chkParameterEnabled.CheckedChanged += new System.EventHandler(this.chkParameterEnabled_CheckedChanged);
@@ -181,7 +235,11 @@
             this.chkIsRecursive.Location = new System.Drawing.Point(279, 108);
             this.chkIsRecursive.Name = "chkIsRecursive";
             this.chkIsRecursive.Size = new System.Drawing.Size(74, 17);
+<<<<<<< HEAD
             this.chkIsRecursive.TabIndex = 2;
+=======
+            this.chkIsRecursive.TabIndex = 7;
+>>>>>>> Add project files.
             this.chkIsRecursive.Text = "Recursive";
             this.chkIsRecursive.UseVisualStyleBackColor = true;
             // 
@@ -190,7 +248,11 @@
             this.txtVariableName.Location = new System.Drawing.Point(88, 82);
             this.txtVariableName.Name = "txtVariableName";
             this.txtVariableName.Size = new System.Drawing.Size(159, 20);
+<<<<<<< HEAD
             this.txtVariableName.TabIndex = 1;
+=======
+            this.txtVariableName.TabIndex = 2;
+>>>>>>> Add project files.
             // 
             // txtLabel
             // 
@@ -204,14 +266,22 @@
             this.txtXPath.Location = new System.Drawing.Point(88, 106);
             this.txtXPath.Name = "txtXPath";
             this.txtXPath.Size = new System.Drawing.Size(159, 20);
+<<<<<<< HEAD
             this.txtXPath.TabIndex = 1;
+=======
+            this.txtXPath.TabIndex = 3;
+>>>>>>> Add project files.
             // 
             // txtGroup
             // 
             this.txtGroup.Location = new System.Drawing.Point(88, 34);
             this.txtGroup.Name = "txtGroup";
             this.txtGroup.Size = new System.Drawing.Size(159, 20);
+<<<<<<< HEAD
             this.txtGroup.TabIndex = 1;
+=======
+            this.txtGroup.TabIndex = 0;
+>>>>>>> Add project files.
             // 
             // lblSelectedId
             // 
@@ -319,6 +389,7 @@
             this.grid.TabIndex = 0;
             this.grid.RowStateChanged += new System.Windows.Forms.DataGridViewRowStateChangedEventHandler(this.grid_RowStateChanged);
             // 
+<<<<<<< HEAD
             // groupBox3
             // 
             this.groupBox3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
@@ -363,6 +434,8 @@
             this.chkEditable.Text = "Editable Field";
             this.chkEditable.UseVisualStyleBackColor = true;
             // 
+=======
+>>>>>>> Add project files.
             // Column1
             // 
             this.Column1.DataPropertyName = "ID";
@@ -455,6 +528,43 @@
             this.Column10.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.Column10.Width = 71;
             // 
+<<<<<<< HEAD
+=======
+            // groupBox3
+            // 
+            this.groupBox3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox3.Controls.Add(this.btnSave);
+            this.groupBox3.Controls.Add(this.btnClose);
+            this.groupBox3.Location = new System.Drawing.Point(13, 404);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(738, 61);
+            this.groupBox3.TabIndex = 2;
+            this.groupBox3.TabStop = false;
+            // 
+            // btnSave
+            // 
+            this.btnSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSave.Location = new System.Drawing.Point(505, 19);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(119, 29);
+            this.btnSave.TabIndex = 0;
+            this.btnSave.Text = "Save Changes";
+            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            // 
+            // btnClose
+            // 
+            this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnClose.Location = new System.Drawing.Point(641, 19);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(73, 29);
+            this.btnClose.TabIndex = 1;
+            this.btnClose.Text = "Close";
+            this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            // 
+>>>>>>> Add project files.
             // FormParameter
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
