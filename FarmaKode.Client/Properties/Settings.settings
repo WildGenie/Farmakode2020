@@ -23,11 +23,7 @@
     <Setting Name="ApiURL" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
-<<<<<<< HEAD
-    <Setting Name="NotificationDuration" Type="System.Int32" Scope="User">
-=======
     <Setting Name="NotificationDuration" Type="System.Decimal" Scope="User">
->>>>>>> Add project files.
       <Value Profile="(Default)">5</Value>
     </Setting>
     <Setting Name="NotificationPosition" Type="System.String" Scope="User">
@@ -36,13 +32,8 @@
     <Setting Name="NotificationBrowser" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
-<<<<<<< HEAD
-    <Setting Name="NotificationMaxCount" Type="System.Int32" Scope="User">
-      <Value Profile="(Default)">0</Value>
-=======
     <Setting Name="NotificationMaxCount" Type="System.Decimal" Scope="User">
       <Value Profile="(Default)">5</Value>
->>>>>>> Add project files.
     </Setting>
     <Setting Name="IsEnableNotification" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>

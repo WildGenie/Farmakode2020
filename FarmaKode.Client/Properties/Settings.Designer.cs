@@ -110,15 +110,9 @@ namespace FarmaKode.Client.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("5")]
-<<<<<<< HEAD
-        public int NotificationDuration {
-            get {
-                return ((int)(this["NotificationDuration"]));
-=======
         public decimal NotificationDuration {
             get {
                 return ((decimal)(this["NotificationDuration"]));
->>>>>>> Add project files.
             }
             set {
                 this["NotificationDuration"] = value;
@@ -151,17 +145,10 @@ namespace FarmaKode.Client.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-<<<<<<< HEAD
-        [global::System.Configuration.DefaultSettingValueAttribute("0")]
-        public int NotificationMaxCount {
-            get {
-                return ((int)(this["NotificationMaxCount"]));
-=======
         [global::System.Configuration.DefaultSettingValueAttribute("5")]
         public decimal NotificationMaxCount {
             get {
                 return ((decimal)(this["NotificationMaxCount"]));
->>>>>>> Add project files.
             }
             set {
                 this["NotificationMaxCount"] = value;

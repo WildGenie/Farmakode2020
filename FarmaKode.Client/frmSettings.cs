@@ -15,10 +15,6 @@ namespace FarmaKode.Client
     public partial class frmSettings : DevExpress.XtraEditors.XtraForm
     {
         bool isChanged = false;
-<<<<<<< HEAD
-        string keyLastChangedProperty = string.Empty;
-=======
->>>>>>> Add project files.
         public frmSettings()
         {
             InitializeComponent();
