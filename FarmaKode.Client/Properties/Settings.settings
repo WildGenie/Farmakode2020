@@ -17,8 +17,8 @@
     <Setting Name="DestinationFolder" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
-    <Setting Name="ClearDestinationType" Type="System.Int32" Scope="User">
-      <Value Profile="(Default)">2</Value>
+    <Setting Name="ClearDestinationType" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
     </Setting>
     <Setting Name="ApiURL" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
@@ -45,7 +45,7 @@
       <Value Profile="(Default)">Data\XPathConfig.json</Value>
     </Setting>
     <Setting Name="LogPath" Type="System.String" Scope="User">
-      <Value Profile="(Default)">C:\Users\Ahmet\Desktop\Test</Value>
+      <Value Profile="(Default)" />
     </Setting>
   </Settings>
 </SettingsFile>

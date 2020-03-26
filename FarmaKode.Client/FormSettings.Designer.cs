@@ -37,33 +37,33 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.spinNotificationCount = new System.Windows.Forms.NumericUpDown();
-            this.comboNotificationBrowser = new System.Windows.Forms.ComboBox();
-            this.comboNotificationPosition = new System.Windows.Forms.ComboBox();
-            this.comboDefaultBarcodePrinter = new System.Windows.Forms.ComboBox();
+            this.comboCahce = new System.Windows.Forms.ComboBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.btnSelectSourceFolder = new System.Windows.Forms.Button();
-            this.btnSelectDestinationFolder = new System.Windows.Forms.Button();
             this.btnHide = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
+            this.btnSelectDestinationFolder = new System.Windows.Forms.Button();
             this.txtExtension = new System.Windows.Forms.TextBox();
             this.chkCopyDestinationFolder = new System.Windows.Forms.CheckBox();
             this.txtSourceFolder = new System.Windows.Forms.TextBox();
             this.txtDestinationFolder = new System.Windows.Forms.TextBox();
             this.txtApiURL = new System.Windows.Forms.TextBox();
+            this.comboDefaultBarcodePrinter = new System.Windows.Forms.ComboBox();
             this.spinNotificationDuration = new System.Windows.Forms.NumericUpDown();
+            this.spinNotificationCount = new System.Windows.Forms.NumericUpDown();
             this.chkNotificationEnable = new System.Windows.Forms.CheckBox();
+            this.comboNotificationPosition = new System.Windows.Forms.ComboBox();
+            this.comboNotificationBrowser = new System.Windows.Forms.ComboBox();
             this.txtPharmacyID = new System.Windows.Forms.TextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.spinNotificationCount)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.spinNotificationDuration)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.spinNotificationCount)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -151,89 +151,20 @@
             this.label5.TabIndex = 0;
             this.label5.Text = "Cache Temizleme";
             // 
-            // comboBox1
+            // comboCahce
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.comboCahce.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::FarmaKode.Client.Properties.Settings.Default, "ClearDestinationType", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.comboCahce.FormattingEnabled = true;
+            this.comboCahce.Items.AddRange(new object[] {
             "Okuma işlemi bittikten sonra sil",
             "Günde 1 kere sil",
             "Silme işlemi yapma"});
-            this.comboBox1.Location = new System.Drawing.Point(102, 141);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(201, 21);
-            this.comboBox1.TabIndex = 6;
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
-            // 
-            // spinNotificationCount
-            // 
-            this.spinNotificationCount.DataBindings.Add(new System.Windows.Forms.Binding("Value", global::FarmaKode.Client.Properties.Settings.Default, "NotificationMaxCount", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.spinNotificationCount.DataBindings.Add(new System.Windows.Forms.Binding("Enabled", global::FarmaKode.Client.Properties.Settings.Default, "IsEnableNotification", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.spinNotificationCount.Enabled = global::FarmaKode.Client.Properties.Settings.Default.IsEnableNotification;
-            this.spinNotificationCount.Location = new System.Drawing.Point(197, 116);
-            this.spinNotificationCount.Maximum = new decimal(new int[] {
-            10,
-            0,
-            0,
-            0});
-            this.spinNotificationCount.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.spinNotificationCount.Name = "spinNotificationCount";
-            this.spinNotificationCount.Size = new System.Drawing.Size(56, 22);
-            this.spinNotificationCount.TabIndex = 4;
-            this.spinNotificationCount.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.spinNotificationCount.Value = global::FarmaKode.Client.Properties.Settings.Default.NotificationMaxCount;
-            // 
-            // comboNotificationBrowser
-            // 
-            this.comboNotificationBrowser.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::FarmaKode.Client.Properties.Settings.Default, "NotificationBrowser", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.comboNotificationBrowser.DataBindings.Add(new System.Windows.Forms.Binding("Enabled", global::FarmaKode.Client.Properties.Settings.Default, "IsEnableNotification", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.comboNotificationBrowser.Enabled = global::FarmaKode.Client.Properties.Settings.Default.IsEnableNotification;
-            this.comboNotificationBrowser.FormattingEnabled = true;
-            this.comboNotificationBrowser.Items.AddRange(new object[] {
-            "Okuma işlemi bittikten sonra sil",
-            "Günde 1 kere sil",
-            "Silme işlemi yapma"});
-            this.comboNotificationBrowser.Location = new System.Drawing.Point(197, 74);
-            this.comboNotificationBrowser.Name = "comboNotificationBrowser";
-            this.comboNotificationBrowser.Size = new System.Drawing.Size(120, 21);
-            this.comboNotificationBrowser.TabIndex = 2;
-            this.comboNotificationBrowser.Text = global::FarmaKode.Client.Properties.Settings.Default.NotificationBrowser;
-            this.comboNotificationBrowser.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
-            // 
-            // comboNotificationPosition
-            // 
-            this.comboNotificationPosition.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::FarmaKode.Client.Properties.Settings.Default, "NotificationBrowser", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.comboNotificationPosition.DataBindings.Add(new System.Windows.Forms.Binding("Enabled", global::FarmaKode.Client.Properties.Settings.Default, "IsEnableNotification", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.comboNotificationPosition.Enabled = global::FarmaKode.Client.Properties.Settings.Default.IsEnableNotification;
-            this.comboNotificationPosition.FormattingEnabled = true;
-            this.comboNotificationPosition.Items.AddRange(new object[] {
-            "Okuma işlemi bittikten sonra sil",
-            "Günde 1 kere sil",
-            "Silme işlemi yapma"});
-            this.comboNotificationPosition.Location = new System.Drawing.Point(31, 117);
-            this.comboNotificationPosition.Name = "comboNotificationPosition";
-            this.comboNotificationPosition.Size = new System.Drawing.Size(120, 21);
-            this.comboNotificationPosition.TabIndex = 3;
-            this.comboNotificationPosition.Text = global::FarmaKode.Client.Properties.Settings.Default.NotificationBrowser;
-            this.comboNotificationPosition.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
-            // 
-            // comboDefaultBarcodePrinter
-            // 
-            this.comboDefaultBarcodePrinter.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::FarmaKode.Client.Properties.Settings.Default, "DefaultBarcodePrinter", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.comboDefaultBarcodePrinter.FormattingEnabled = true;
-            this.comboDefaultBarcodePrinter.Items.AddRange(new object[] {
-            "Okuma işlemi bittikten sonra sil",
-            "Günde 1 kere sil",
-            "Silme işlemi yapma"});
-            this.comboDefaultBarcodePrinter.Location = new System.Drawing.Point(27, 25);
-            this.comboDefaultBarcodePrinter.Name = "comboDefaultBarcodePrinter";
-            this.comboDefaultBarcodePrinter.Size = new System.Drawing.Size(307, 21);
-            this.comboDefaultBarcodePrinter.TabIndex = 0;
-            this.comboDefaultBarcodePrinter.Text = global::FarmaKode.Client.Properties.Settings.Default.DefaultBarcodePrinter;
-            this.comboDefaultBarcodePrinter.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            this.comboCahce.Location = new System.Drawing.Point(102, 141);
+            this.comboCahce.Name = "comboCahce";
+            this.comboCahce.Size = new System.Drawing.Size(201, 21);
+            this.comboCahce.TabIndex = 6;
+            this.comboCahce.Text = global::FarmaKode.Client.Properties.Settings.Default.ClearDestinationType;
+            this.comboCahce.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // groupBox1
             // 
@@ -281,7 +212,7 @@
             this.groupBox4.Controls.Add(this.label2);
             this.groupBox4.Controls.Add(this.label3);
             this.groupBox4.Controls.Add(this.label4);
-            this.groupBox4.Controls.Add(this.comboBox1);
+            this.groupBox4.Controls.Add(this.comboCahce);
             this.groupBox4.Controls.Add(this.label5);
             this.groupBox4.Controls.Add(this.chkCopyDestinationFolder);
             this.groupBox4.Controls.Add(this.txtSourceFolder);
@@ -303,18 +234,6 @@
             this.btnSelectSourceFolder.UseVisualStyleBackColor = true;
             this.btnSelectSourceFolder.Click += new System.EventHandler(this.btnSelectSourceFolder_Click);
             // 
-            // btnSelectDestinationFolder
-            // 
-            this.btnSelectDestinationFolder.DataBindings.Add(new System.Windows.Forms.Binding("Enabled", global::FarmaKode.Client.Properties.Settings.Default, "IsCopyFileToDestination", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.btnSelectDestinationFolder.Enabled = global::FarmaKode.Client.Properties.Settings.Default.IsCopyFileToDestination;
-            this.btnSelectDestinationFolder.Location = new System.Drawing.Point(306, 112);
-            this.btnSelectDestinationFolder.Name = "btnSelectDestinationFolder";
-            this.btnSelectDestinationFolder.Size = new System.Drawing.Size(28, 22);
-            this.btnSelectDestinationFolder.TabIndex = 5;
-            this.btnSelectDestinationFolder.Text = "...";
-            this.btnSelectDestinationFolder.UseVisualStyleBackColor = true;
-            this.btnSelectDestinationFolder.Click += new System.EventHandler(this.btnSelectDestinationFolder_Click);
-            // 
             // btnHide
             // 
             this.btnHide.Location = new System.Drawing.Point(304, 589);
@@ -333,6 +252,18 @@
             this.btnSave.Text = "Kaydet";
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            // 
+            // btnSelectDestinationFolder
+            // 
+            this.btnSelectDestinationFolder.DataBindings.Add(new System.Windows.Forms.Binding("Enabled", global::FarmaKode.Client.Properties.Settings.Default, "IsCopyFileToDestination", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.btnSelectDestinationFolder.Enabled = global::FarmaKode.Client.Properties.Settings.Default.IsCopyFileToDestination;
+            this.btnSelectDestinationFolder.Location = new System.Drawing.Point(306, 112);
+            this.btnSelectDestinationFolder.Name = "btnSelectDestinationFolder";
+            this.btnSelectDestinationFolder.Size = new System.Drawing.Size(28, 22);
+            this.btnSelectDestinationFolder.TabIndex = 5;
+            this.btnSelectDestinationFolder.Text = "...";
+            this.btnSelectDestinationFolder.UseVisualStyleBackColor = true;
+            this.btnSelectDestinationFolder.Click += new System.EventHandler(this.btnSelectDestinationFolder_Click);
             // 
             // txtExtension
             // 
@@ -385,6 +316,21 @@
             this.txtApiURL.TabIndex = 0;
             this.txtApiURL.Text = global::FarmaKode.Client.Properties.Settings.Default.ApiURL;
             // 
+            // comboDefaultBarcodePrinter
+            // 
+            this.comboDefaultBarcodePrinter.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::FarmaKode.Client.Properties.Settings.Default, "DefaultBarcodePrinter", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.comboDefaultBarcodePrinter.FormattingEnabled = true;
+            this.comboDefaultBarcodePrinter.Items.AddRange(new object[] {
+            "A1",
+            "A2",
+            "A3"});
+            this.comboDefaultBarcodePrinter.Location = new System.Drawing.Point(27, 25);
+            this.comboDefaultBarcodePrinter.Name = "comboDefaultBarcodePrinter";
+            this.comboDefaultBarcodePrinter.Size = new System.Drawing.Size(307, 21);
+            this.comboDefaultBarcodePrinter.TabIndex = 0;
+            this.comboDefaultBarcodePrinter.Text = global::FarmaKode.Client.Properties.Settings.Default.DefaultBarcodePrinter;
+            this.comboDefaultBarcodePrinter.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
             // spinNotificationDuration
             // 
             this.spinNotificationDuration.DataBindings.Add(new System.Windows.Forms.Binding("Value", global::FarmaKode.Client.Properties.Settings.Default, "NotificationDuration", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
@@ -407,6 +353,28 @@
             this.spinNotificationDuration.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.spinNotificationDuration.Value = global::FarmaKode.Client.Properties.Settings.Default.NotificationDuration;
             // 
+            // spinNotificationCount
+            // 
+            this.spinNotificationCount.DataBindings.Add(new System.Windows.Forms.Binding("Value", global::FarmaKode.Client.Properties.Settings.Default, "NotificationMaxCount", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.spinNotificationCount.DataBindings.Add(new System.Windows.Forms.Binding("Enabled", global::FarmaKode.Client.Properties.Settings.Default, "IsEnableNotification", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.spinNotificationCount.Enabled = global::FarmaKode.Client.Properties.Settings.Default.IsEnableNotification;
+            this.spinNotificationCount.Location = new System.Drawing.Point(197, 116);
+            this.spinNotificationCount.Maximum = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+            this.spinNotificationCount.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.spinNotificationCount.Name = "spinNotificationCount";
+            this.spinNotificationCount.Size = new System.Drawing.Size(56, 22);
+            this.spinNotificationCount.TabIndex = 4;
+            this.spinNotificationCount.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.spinNotificationCount.Value = global::FarmaKode.Client.Properties.Settings.Default.NotificationMaxCount;
+            // 
             // chkNotificationEnable
             // 
             this.chkNotificationEnable.AutoSize = true;
@@ -418,6 +386,42 @@
             this.chkNotificationEnable.TabIndex = 0;
             this.chkNotificationEnable.Text = "İşlem tamamlandığında bildirim göster";
             this.chkNotificationEnable.UseVisualStyleBackColor = true;
+            // 
+            // comboNotificationPosition
+            // 
+            this.comboNotificationPosition.DataBindings.Add(new System.Windows.Forms.Binding("Enabled", global::FarmaKode.Client.Properties.Settings.Default, "IsEnableNotification", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.comboNotificationPosition.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::FarmaKode.Client.Properties.Settings.Default, "NotificationPosition", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.comboNotificationPosition.Enabled = global::FarmaKode.Client.Properties.Settings.Default.IsEnableNotification;
+            this.comboNotificationPosition.FormattingEnabled = true;
+            this.comboNotificationPosition.Items.AddRange(new object[] {
+            "Sağ üst",
+            "Sağ alt",
+            "Sol alt",
+            "Sol üst"});
+            this.comboNotificationPosition.Location = new System.Drawing.Point(31, 117);
+            this.comboNotificationPosition.Name = "comboNotificationPosition";
+            this.comboNotificationPosition.Size = new System.Drawing.Size(120, 21);
+            this.comboNotificationPosition.TabIndex = 3;
+            this.comboNotificationPosition.Text = global::FarmaKode.Client.Properties.Settings.Default.NotificationPosition;
+            this.comboNotificationPosition.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
+            // comboNotificationBrowser
+            // 
+            this.comboNotificationBrowser.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::FarmaKode.Client.Properties.Settings.Default, "NotificationBrowser", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.comboNotificationBrowser.DataBindings.Add(new System.Windows.Forms.Binding("Enabled", global::FarmaKode.Client.Properties.Settings.Default, "IsEnableNotification", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.comboNotificationBrowser.Enabled = global::FarmaKode.Client.Properties.Settings.Default.IsEnableNotification;
+            this.comboNotificationBrowser.FormattingEnabled = true;
+            this.comboNotificationBrowser.Items.AddRange(new object[] {
+            "Internet Explorer",
+            "Chrome",
+            "Firefox",
+            "Opera"});
+            this.comboNotificationBrowser.Location = new System.Drawing.Point(197, 74);
+            this.comboNotificationBrowser.Name = "comboNotificationBrowser";
+            this.comboNotificationBrowser.Size = new System.Drawing.Size(120, 21);
+            this.comboNotificationBrowser.TabIndex = 2;
+            this.comboNotificationBrowser.Text = global::FarmaKode.Client.Properties.Settings.Default.NotificationBrowser;
+            this.comboNotificationBrowser.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // txtPharmacyID
             // 
@@ -451,7 +455,6 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Ayarlar";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormSettings_FormClosing);
-            ((System.ComponentModel.ISupportInitialize)(this.spinNotificationCount)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
@@ -460,6 +463,7 @@
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.spinNotificationDuration)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.spinNotificationCount)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -482,7 +486,7 @@
         private System.Windows.Forms.TextBox txtApiURL;
         private System.Windows.Forms.CheckBox chkCopyDestinationFolder;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox comboCahce;
         private System.Windows.Forms.CheckBox chkNotificationEnable;
         private System.Windows.Forms.NumericUpDown spinNotificationDuration;
         private System.Windows.Forms.NumericUpDown spinNotificationCount;

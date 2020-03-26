@@ -1,5 +1,6 @@
 ﻿using FarmaKode.Client.Business;
 using FarmaKode.Client.Model;
+using FarmaKode.Client.Properties;
 using FastMember;
 using System;
 using System.Collections.Generic;
@@ -20,6 +21,11 @@ namespace FarmaKode.Client
         {
             InitializeComponent();
             bindGrid();
+
+
+
+
+
         }
 
         void bindGrid()
@@ -50,6 +56,8 @@ namespace FarmaKode.Client
                 chkParameterEnabled.Checked = selectedParameter.Enabled;
                 chkEditable.Checked = selectedParameter.IsEditable;
 
+
+
                 btnAddNew.Enabled = false;
                 btnUpdate.Enabled = true;
                 btnDelete.Enabled = true;
@@ -78,7 +86,8 @@ namespace FarmaKode.Client
             else
             {
                 currentParameter = new Parameter();
-                currentParameter.Id = CacheBL.parameterList.Select(p => p.Id).Max() + 1;
+
+                currentParameter.Id = CacheBL.parameterList.Count == 0 ? 1 : CacheBL.parameterList.Select(p => p.Id).Max() + 1;
                 currentParameter.Enabled = chkParameterEnabled.Checked;
                 currentParameter.IsEditable = chkEditable.Checked;
                 currentParameter.Group = txtGroup.Text;
@@ -100,9 +109,9 @@ namespace FarmaKode.Client
         {
             selectedParameter = null;
             grid.ClearSelection();
-            lblSelectedId.Text =            
-            txtGroup.Text =
+            lblSelectedId.Text =
             txtLabel.Text =
+            txtGroup.Text =
             txtVariableName.Text =
             txtXPath.Text = string.Empty;
             chkCombobox.Checked = false;
@@ -115,6 +124,8 @@ namespace FarmaKode.Client
             btnAddNew.Enabled = true;
             btnUpdate.Enabled = false;
             btnDelete.Enabled = false;
+
+            errorProvider1.Clear();
 
         }
 
@@ -144,15 +155,22 @@ namespace FarmaKode.Client
 
         private void btnAddNew_Click(object sender, EventArgs e)
         {
-            selectedParameter = null;
-            setParameter();
-            clear();
+            if (validation())
+            {
+                selectedParameter = null;
+                setParameter();
+                clear();
+            }
+
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            setParameter();
-            clear();
+            if (validation())
+            {
+                setParameter();
+                clear();
+            }
         }
 
         private void btnClear_Click(object sender, EventArgs e)
@@ -162,15 +180,15 @@ namespace FarmaKode.Client
 
         private void chkParameterEnabled_CheckedChanged(object sender, EventArgs e)
         {
-          lblSelectedId.Enabled =
-          chkEditable.Enabled =
-          txtGroup.Enabled =
-          txtLabel.Enabled =
-          txtVariableName.Enabled =
-          txtXPath.Enabled =
-          chkCombobox.Enabled =
-          chkIsRecursive.Enabled =
-          spinRecursiveCount.Enabled = chkParameterEnabled.Checked;
+            lblSelectedId.Enabled =
+            chkEditable.Enabled =
+            txtGroup.Enabled =
+            txtLabel.Enabled =
+            txtVariableName.Enabled =
+            txtXPath.Enabled =
+            chkCombobox.Enabled =
+            chkIsRecursive.Enabled =
+            spinRecursiveCount.Enabled = chkParameterEnabled.Checked;
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -184,7 +202,7 @@ namespace FarmaKode.Client
 
         private void btnClose_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Close();
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
@@ -199,6 +217,76 @@ namespace FarmaKode.Client
                     bindGrid();
                 }
             }
+        }
+
+        private void chkEditable_CheckedChanged(object sender, EventArgs e)
+        {
+            //chkCombobox.Enabled = false;
+            chkCombobox.Checked = false;
+        }
+
+        private void chkCombobox_CheckedChanged(object sender, EventArgs e)
+        {
+            //chkEditable.Enabled = false;
+            chkEditable.Checked = false;
+        }
+
+
+
+        bool validation()
+        {
+            bool isValid = true;
+
+            if (string.IsNullOrEmpty(txtGroup.Text.Trim()))
+            {
+                errorProvider1.SetError(txtGroup, "Bu alan boş geçilemez");
+                isValid = false;
+            }
+
+
+            if (string.IsNullOrEmpty(txtVariableName.Text.Trim()))
+            {
+                errorProvider1.SetError(txtVariableName, "Bu alan boş geçilemez");
+                isValid = false;
+            }
+
+
+            if (string.IsNullOrEmpty(txtXPath.Text.Trim()))
+            {
+                errorProvider1.SetError(txtXPath, "Bu alan boş geçilemez");
+                isValid = false;
+            }
+
+            if (string.IsNullOrEmpty(txtLabel.Text.Trim()))
+            {
+                errorProvider1.SetError(txtLabel, "Bu alan boş geçilemez");
+                isValid = false;
+            }
+
+            if (chkIsRecursive.Checked)
+            {
+                if (txtXPath.Text.Trim().IndexOf("{") == -1 || txtXPath.Text.Trim().IndexOf("}") == -1)
+                {
+                    errorProvider1.SetError(txtXPath, "Bu alanda \"{0}\" notasyonu olmalıdır");
+                    isValid = false;
+                }
+
+                if(spinRecursiveCount.Value==0)
+                {
+                    errorProvider1.SetError(spinRecursiveCount, "Döngü sayısı 1-10 arasında olmalıdır");
+                    isValid = false;
+                }
+
+            }
+
+            return isValid;
+
+
+        }
+
+        private void chkIsRecursive_CheckedChanged(object sender, EventArgs e)
+        {
+            spinRecursiveCount.Enabled = chkIsRecursive.Checked;
         }
     }
 }

@@ -85,10 +85,10 @@ namespace FarmaKode.Client.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("2")]
-        public int ClearDestinationType {
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string ClearDestinationType {
             get {
-                return ((int)(this["ClearDestinationType"]));
+                return ((string)(this["ClearDestinationType"]));
             }
             set {
                 this["ClearDestinationType"] = value;
@@ -193,7 +193,7 @@ namespace FarmaKode.Client.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("C:\\Users\\Ahmet\\Desktop\\Test")]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
         public string LogPath {
             get {
                 return ((string)(this["LogPath"]));

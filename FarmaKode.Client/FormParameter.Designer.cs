@@ -28,7 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.chkEditable = new System.Windows.Forms.CheckBox();
             this.btnDelete = new System.Windows.Forms.Button();
@@ -42,7 +43,6 @@
             this.txtVariableName = new System.Windows.Forms.TextBox();
             this.txtLabel = new System.Windows.Forms.TextBox();
             this.txtXPath = new System.Windows.Forms.TextBox();
-            this.txtGroup = new System.Windows.Forms.TextBox();
             this.lblSelectedId = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -65,11 +65,14 @@
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
+            this.txtGroup = new System.Windows.Forms.TextBox();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.spinRecursiveCount)).BeginInit();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grid)).BeginInit();
             this.groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -86,9 +89,9 @@
             this.groupBox1.Controls.Add(this.chkParameterEnabled);
             this.groupBox1.Controls.Add(this.chkIsRecursive);
             this.groupBox1.Controls.Add(this.txtVariableName);
+            this.groupBox1.Controls.Add(this.txtGroup);
             this.groupBox1.Controls.Add(this.txtLabel);
             this.groupBox1.Controls.Add(this.txtXPath);
-            this.groupBox1.Controls.Add(this.txtGroup);
             this.groupBox1.Controls.Add(this.lblSelectedId);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.label5);
@@ -98,7 +101,7 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(12, 22);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(739, 141);
+            this.groupBox1.Size = new System.Drawing.Size(967, 145);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Parametre";
@@ -106,17 +109,18 @@
             // chkEditable
             // 
             this.chkEditable.AutoSize = true;
-            this.chkEditable.Location = new System.Drawing.Point(279, 62);
+            this.chkEditable.Location = new System.Drawing.Point(279, 65);
             this.chkEditable.Name = "chkEditable";
             this.chkEditable.Size = new System.Drawing.Size(89, 17);
             this.chkEditable.TabIndex = 5;
             this.chkEditable.Text = "Editable Field";
             this.chkEditable.UseVisualStyleBackColor = true;
+            this.chkEditable.CheckedChanged += new System.EventHandler(this.chkEditable_CheckedChanged);
             // 
             // btnDelete
             // 
             this.btnDelete.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnDelete.Location = new System.Drawing.Point(678, 106);
+            this.btnDelete.Location = new System.Drawing.Point(906, 106);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(51, 23);
             this.btnDelete.TabIndex = 12;
@@ -127,7 +131,7 @@
             // btnClear
             // 
             this.btnClear.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnClear.Location = new System.Drawing.Point(564, 106);
+            this.btnClear.Location = new System.Drawing.Point(792, 106);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(51, 23);
             this.btnClear.TabIndex = 10;
@@ -138,7 +142,7 @@
             // btnAddNew
             // 
             this.btnAddNew.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAddNew.Location = new System.Drawing.Point(564, 77);
+            this.btnAddNew.Location = new System.Drawing.Point(792, 77);
             this.btnAddNew.Name = "btnAddNew";
             this.btnAddNew.Size = new System.Drawing.Size(165, 23);
             this.btnAddNew.TabIndex = 9;
@@ -149,7 +153,7 @@
             // btnUpdate
             // 
             this.btnUpdate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnUpdate.Location = new System.Drawing.Point(621, 106);
+            this.btnUpdate.Location = new System.Drawing.Point(849, 106);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(51, 23);
             this.btnUpdate.TabIndex = 11;
@@ -159,25 +163,38 @@
             // 
             // spinRecursiveCount
             // 
-            this.spinRecursiveCount.Location = new System.Drawing.Point(401, 106);
+            this.spinRecursiveCount.Location = new System.Drawing.Point(401, 111);
+            this.spinRecursiveCount.Maximum = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
             this.spinRecursiveCount.Name = "spinRecursiveCount";
             this.spinRecursiveCount.Size = new System.Drawing.Size(50, 20);
             this.spinRecursiveCount.TabIndex = 8;
+            this.spinRecursiveCount.Value = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
             // 
             // chkCombobox
             // 
             this.chkCombobox.AutoSize = true;
-            this.chkCombobox.Location = new System.Drawing.Point(279, 85);
+            this.chkCombobox.Location = new System.Drawing.Point(279, 89);
             this.chkCombobox.Name = "chkCombobox";
             this.chkCombobox.Size = new System.Drawing.Size(76, 17);
             this.chkCombobox.TabIndex = 6;
             this.chkCombobox.Text = "Combobox";
             this.chkCombobox.UseVisualStyleBackColor = true;
+            this.chkCombobox.CheckedChanged += new System.EventHandler(this.chkCombobox_CheckedChanged);
             // 
             // chkParameterEnabled
             // 
             this.chkParameterEnabled.AutoSize = true;
-            this.chkParameterEnabled.Location = new System.Drawing.Point(279, 36);
+            this.chkParameterEnabled.Checked = true;
+            this.chkParameterEnabled.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chkParameterEnabled.Location = new System.Drawing.Point(279, 41);
             this.chkParameterEnabled.Name = "chkParameterEnabled";
             this.chkParameterEnabled.Size = new System.Drawing.Size(119, 17);
             this.chkParameterEnabled.TabIndex = 4;
@@ -188,54 +205,49 @@
             // chkIsRecursive
             // 
             this.chkIsRecursive.AutoSize = true;
-            this.chkIsRecursive.Location = new System.Drawing.Point(279, 108);
+            this.chkIsRecursive.Location = new System.Drawing.Point(279, 113);
             this.chkIsRecursive.Name = "chkIsRecursive";
             this.chkIsRecursive.Size = new System.Drawing.Size(74, 17);
             this.chkIsRecursive.TabIndex = 7;
             this.chkIsRecursive.Text = "Recursive";
             this.chkIsRecursive.UseVisualStyleBackColor = true;
+            this.chkIsRecursive.CheckedChanged += new System.EventHandler(this.chkIsRecursive_CheckedChanged);
             // 
             // txtVariableName
             // 
-            this.txtVariableName.Location = new System.Drawing.Point(88, 82);
+            this.txtVariableName.Location = new System.Drawing.Point(88, 87);
             this.txtVariableName.Name = "txtVariableName";
             this.txtVariableName.Size = new System.Drawing.Size(159, 20);
             this.txtVariableName.TabIndex = 2;
             // 
             // txtLabel
             // 
-            this.txtLabel.Location = new System.Drawing.Point(88, 58);
+            this.txtLabel.Location = new System.Drawing.Point(88, 63);
             this.txtLabel.Name = "txtLabel";
             this.txtLabel.Size = new System.Drawing.Size(159, 20);
             this.txtLabel.TabIndex = 1;
             // 
             // txtXPath
             // 
-            this.txtXPath.Location = new System.Drawing.Point(88, 106);
+            this.txtXPath.Location = new System.Drawing.Point(88, 111);
             this.txtXPath.Name = "txtXPath";
             this.txtXPath.Size = new System.Drawing.Size(159, 20);
             this.txtXPath.TabIndex = 3;
             // 
-            // txtGroup
-            // 
-            this.txtGroup.Location = new System.Drawing.Point(88, 34);
-            this.txtGroup.Name = "txtGroup";
-            this.txtGroup.Size = new System.Drawing.Size(159, 20);
-            this.txtGroup.TabIndex = 0;
-            // 
             // lblSelectedId
             // 
             this.lblSelectedId.AutoSize = true;
+            this.lblSelectedId.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.lblSelectedId.Location = new System.Drawing.Point(85, 18);
             this.lblSelectedId.Name = "lblSelectedId";
-            this.lblSelectedId.Size = new System.Drawing.Size(18, 13);
+            this.lblSelectedId.Size = new System.Drawing.Size(20, 13);
             this.lblSelectedId.TabIndex = 0;
             this.lblSelectedId.Text = "ID";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(360, 110);
+            this.label7.Location = new System.Drawing.Point(360, 115);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(35, 13);
             this.label7.TabIndex = 0;
@@ -244,7 +256,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(46, 110);
+            this.label5.Location = new System.Drawing.Point(49, 115);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(36, 13);
             this.label5.TabIndex = 0;
@@ -253,7 +265,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(6, 87);
+            this.label4.Location = new System.Drawing.Point(9, 91);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(76, 13);
             this.label4.TabIndex = 0;
@@ -262,7 +274,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(49, 64);
+            this.label3.Location = new System.Drawing.Point(52, 67);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(33, 13);
             this.label3.TabIndex = 0;
@@ -271,7 +283,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(46, 38);
+            this.label2.Location = new System.Drawing.Point(49, 43);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(36, 13);
             this.label2.TabIndex = 0;
@@ -280,9 +292,10 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label1.Location = new System.Drawing.Point(66, 18);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(16, 13);
+            this.label1.Size = new System.Drawing.Size(18, 13);
             this.label1.TabIndex = 0;
             this.label1.Text = "Id";
             // 
@@ -295,7 +308,7 @@
             this.groupBox2.Location = new System.Drawing.Point(12, 169);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(10);
-            this.groupBox2.Size = new System.Drawing.Size(739, 229);
+            this.groupBox2.Size = new System.Drawing.Size(967, 229);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Parametre Listesi";
@@ -325,7 +338,7 @@
             this.grid.Name = "grid";
             this.grid.ReadOnly = true;
             this.grid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.grid.Size = new System.Drawing.Size(719, 196);
+            this.grid.Size = new System.Drawing.Size(947, 196);
             this.grid.TabIndex = 0;
             this.grid.RowStateChanged += new System.Windows.Forms.DataGridViewRowStateChangedEventHandler(this.grid_RowStateChanged);
             // 
@@ -365,8 +378,8 @@
             // Column5
             // 
             this.Column5.DataPropertyName = "XPath";
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.Column5.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Column5.DefaultCellStyle = dataGridViewCellStyle6;
             this.Column5.HeaderText = "XPath";
             this.Column5.Name = "Column5";
             this.Column5.ReadOnly = true;
@@ -429,14 +442,14 @@
             this.groupBox3.Controls.Add(this.btnClose);
             this.groupBox3.Location = new System.Drawing.Point(13, 404);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(738, 61);
+            this.groupBox3.Size = new System.Drawing.Size(966, 61);
             this.groupBox3.TabIndex = 2;
             this.groupBox3.TabStop = false;
             // 
             // btnSave
             // 
             this.btnSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSave.Location = new System.Drawing.Point(505, 19);
+            this.btnSave.Location = new System.Drawing.Point(733, 19);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(119, 29);
             this.btnSave.TabIndex = 0;
@@ -447,7 +460,7 @@
             // btnClose
             // 
             this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnClose.Location = new System.Drawing.Point(641, 19);
+            this.btnClose.Location = new System.Drawing.Point(869, 19);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(73, 29);
             this.btnClose.TabIndex = 1;
@@ -455,11 +468,30 @@
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
+            // txtGroup
+            // 
+            this.txtGroup.AutoCompleteCustomSource.AddRange(new string[] {
+            "Header Section",
+            "Drug Section",
+            "ICD Section",
+            "Price Section",
+            "Other Section"});
+            this.txtGroup.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.txtGroup.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.txtGroup.Location = new System.Drawing.Point(88, 39);
+            this.txtGroup.Name = "txtGroup";
+            this.txtGroup.Size = new System.Drawing.Size(159, 20);
+            this.txtGroup.TabIndex = 1;
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
             // FormParameter
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(763, 477);
+            this.ClientSize = new System.Drawing.Size(991, 477);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -473,6 +505,7 @@
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.grid)).EndInit();
             this.groupBox3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -489,7 +522,6 @@
         private System.Windows.Forms.TextBox txtVariableName;
         private System.Windows.Forms.TextBox txtLabel;
         private System.Windows.Forms.TextBox txtXPath;
-        private System.Windows.Forms.TextBox txtGroup;
         private System.Windows.Forms.Label lblSelectedId;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label5;
@@ -515,5 +547,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
         private System.Windows.Forms.DataGridViewCheckBoxColumn Column9;
         private System.Windows.Forms.DataGridViewCheckBoxColumn Column10;
+        private System.Windows.Forms.TextBox txtGroup;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

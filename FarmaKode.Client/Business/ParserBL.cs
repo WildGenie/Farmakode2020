@@ -6,6 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web;
 
 namespace FarmaKode.Client.Business
 {
@@ -23,15 +24,29 @@ namespace FarmaKode.Client.Business
             return instance;
         }
 
+        private string RecursiveHtmlDecode(string str)
+        {
+            if (string.IsNullOrWhiteSpace(str))
+                return str;
+            var tmp = HttpUtility.HtmlDecode(str);
+            while (tmp != str)
+            {
+                str = tmp;
+                tmp = HttpUtility.HtmlDecode(str);
+            }
+            return str; //completely decoded string
+        }
 
-        public void Parse(string filePath)
+        public Section Parse(string filePath)
         {
             string content = File.ReadAllText(filePath, Encoding.Default);
             HtmlDocument dokuman = new HtmlDocument();
             dokuman.LoadHtml(content);
 
-            List<RequestData> requestDatas = new List<RequestData>();
-             
+            List<ParsedData> data = new List<ParsedData>();
+            
+
+
             foreach (var parameter in CacheBL.parameterList)
             {
                 try
@@ -58,13 +73,14 @@ namespace FarmaKode.Client.Business
                                         value = dokuman.DocumentNode.SelectSingleNode(xpath).InnerHtml;
                                 }
 
-                                RequestData data = new RequestData();
-                                data.LoopId = ++i;
-                                data.Group = parameter.Group;
-                                data.Label = parameter.Label;
-                                data.VariableName = parameter.VariableName;
-                                data.Value = value;
-                                requestDatas.Add(data);
+                                ParsedData item = new ParsedData();
+                                item.LoopId =i;
+                                item.Group = parameter.Group;
+                                item.Label = parameter.Label;
+                                item.VariableName = parameter.VariableName;
+                                item.Value = RecursiveHtmlDecode(value);
+                                data.Add(item);
+
                             }
                             
                         }
@@ -82,23 +98,37 @@ namespace FarmaKode.Client.Business
                                     value = dokuman.DocumentNode.SelectSingleNode(parameter.XPath).InnerHtml;
                             }
 
-                            RequestData data = new RequestData();
-                            data.LoopId = 0;
-                            data.Group = parameter.Group;
-                            data.Label = parameter.Label;
-                            data.VariableName = parameter.VariableName;
-                            data.Value = value;
-                            requestDatas.Add(data);
+                            ParsedData item = new ParsedData();
+                            item.LoopId = 0;
+                            item.Group = parameter.Group;
+                            item.Label = parameter.Label;
+                            item.VariableName = parameter.VariableName;
+                            item.Value = RecursiveHtmlDecode(value);
+                            data.Add(item);
                         }
                     }
                 }
                 catch (Exception ex)
                 {
-
-
+                    throw new Exception(string.Format("{0} parametresi okunurken hata oluştu.",parameter.VariableName));
                 }
             }
 
+
+
+            Section section = new Section();
+            section.DrugSection = new List<ParsedData>();
+            section.HeaderSection = new List<ParsedData>();
+            foreach (var item in data)
+            {
+                if (item.Group == "HeaderSection")
+                    section.HeaderSection.Add(item);
+                else if (item.Group == "DrugSection")
+                    section.DrugSection.Add(item);
+
+            }
+
+            return section;
 
         }
     }
