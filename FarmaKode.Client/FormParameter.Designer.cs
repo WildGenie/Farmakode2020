@@ -29,7 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormParameter));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.chkEditable = new System.Windows.Forms.CheckBox();
             this.btnDelete = new System.Windows.Forms.Button();
@@ -41,6 +42,7 @@
             this.chkParameterEnabled = new System.Windows.Forms.CheckBox();
             this.chkIsRecursive = new System.Windows.Forms.CheckBox();
             this.txtVariableName = new System.Windows.Forms.TextBox();
+            this.txtGroup = new System.Windows.Forms.TextBox();
             this.txtLabel = new System.Windows.Forms.TextBox();
             this.txtXPath = new System.Windows.Forms.TextBox();
             this.lblSelectedId = new System.Windows.Forms.Label();
@@ -65,7 +67,6 @@
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
-            this.txtGroup = new System.Windows.Forms.TextBox();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.spinRecursiveCount)).BeginInit();
@@ -219,6 +220,21 @@
             this.txtVariableName.Name = "txtVariableName";
             this.txtVariableName.Size = new System.Drawing.Size(159, 20);
             this.txtVariableName.TabIndex = 2;
+            // 
+            // txtGroup
+            // 
+            this.txtGroup.AutoCompleteCustomSource.AddRange(new string[] {
+            "Header Section",
+            "Drug Section",
+            "ICD Section",
+            "Price Section",
+            "Other Section"});
+            this.txtGroup.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.txtGroup.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.txtGroup.Location = new System.Drawing.Point(88, 39);
+            this.txtGroup.Name = "txtGroup";
+            this.txtGroup.Size = new System.Drawing.Size(159, 20);
+            this.txtGroup.TabIndex = 1;
             // 
             // txtLabel
             // 
@@ -378,8 +394,8 @@
             // Column5
             // 
             this.Column5.DataPropertyName = "XPath";
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.Column5.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Column5.DefaultCellStyle = dataGridViewCellStyle1;
             this.Column5.HeaderText = "XPath";
             this.Column5.Name = "Column5";
             this.Column5.ReadOnly = true;
@@ -468,21 +484,6 @@
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
-            // txtGroup
-            // 
-            this.txtGroup.AutoCompleteCustomSource.AddRange(new string[] {
-            "Header Section",
-            "Drug Section",
-            "ICD Section",
-            "Price Section",
-            "Other Section"});
-            this.txtGroup.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.txtGroup.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-            this.txtGroup.Location = new System.Drawing.Point(88, 39);
-            this.txtGroup.Name = "txtGroup";
-            this.txtGroup.Size = new System.Drawing.Size(159, 20);
-            this.txtGroup.TabIndex = 1;
-            // 
             // errorProvider1
             // 
             this.errorProvider1.ContainerControl = this;
@@ -495,6 +496,7 @@
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormParameter";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Parameter Settings";

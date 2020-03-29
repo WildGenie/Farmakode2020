@@ -17,6 +17,8 @@ namespace FarmaKode.Client.Business
 
         public static void LoadCache()
         {
+            
+
             parameterList = ParameterBL.GetInstance().GetParameters();
         }
 

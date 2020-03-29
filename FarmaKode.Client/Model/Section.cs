@@ -9,6 +9,6 @@ namespace FarmaKode.Client.Model
     public class Section
     {
         public List<ParsedData> HeaderSection { get; set; }
-        public List<ParsedData> DrugSection { get; set; }
+        public List<Drug> DrugSection { get; set; }
     }
 }

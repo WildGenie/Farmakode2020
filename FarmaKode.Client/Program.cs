@@ -15,9 +15,12 @@ namespace FarmaKode.Client
         static void Main()
         {
             CacheBL.LoadCache();
+
+           
+
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MainForm());
+            Application.Run(new FormButton());
         }
 
 

@@ -37,7 +37,7 @@ namespace FarmaKode.Client.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        [global::System.Configuration.DefaultSettingValueAttribute("*.htm")]
         public string FileExtension {
             get {
                 return ((string)(this["FileExtension"]));
@@ -85,13 +85,13 @@ namespace FarmaKode.Client.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
-        public string ClearDestinationType {
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int ClearCacheType {
             get {
-                return ((string)(this["ClearDestinationType"]));
+                return ((int)(this["ClearCacheType"]));
             }
             set {
-                this["ClearDestinationType"] = value;
+                this["ClearCacheType"] = value;
             }
         }
         
@@ -121,10 +121,10 @@ namespace FarmaKode.Client.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
-        public string NotificationPosition {
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int NotificationPosition {
             get {
-                return ((string)(this["NotificationPosition"]));
+                return ((int)(this["NotificationPosition"]));
             }
             set {
                 this["NotificationPosition"] = value;
@@ -133,10 +133,10 @@ namespace FarmaKode.Client.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
-        public string NotificationBrowser {
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int NotificationBrowser {
             get {
-                return ((string)(this["NotificationBrowser"]));
+                return ((int)(this["NotificationBrowser"]));
             }
             set {
                 this["NotificationBrowser"] = value;
@@ -157,7 +157,7 @@ namespace FarmaKode.Client.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
         public bool IsEnableNotification {
             get {
                 return ((bool)(this["IsEnableNotification"]));
@@ -193,13 +193,49 @@ namespace FarmaKode.Client.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Log")]
         public string LogPath {
             get {
                 return ((string)(this["LogPath"]));
             }
             set {
                 this["LogPath"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool AppIsEnabled {
+            get {
+                return ((bool)(this["AppIsEnabled"]));
+            }
+            set {
+                this["AppIsEnabled"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("/eczane/faces/pages/recete/ReceteIslem2.jsp")]
+        public string IsParseableKeyword {
+            get {
+                return ((string)(this["IsParseableKeyword"]));
+            }
+            set {
+                this["IsParseableKeyword"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data/LatestPost")]
+        public string LatestPostPath {
+            get {
+                return ((string)(this["LatestPostPath"]));
+            }
+            set {
+                this["LatestPostPath"] = value;
             }
         }
     }
