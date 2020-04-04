@@ -14,6 +14,7 @@ namespace FarmaKode.Client
         [STAThread]
         static void Main()
         {
+            //FarmaKode.Client_TemporaryKey parolası FarmaKode
             CacheBL.LoadCache();
 
            
@@ -21,6 +22,7 @@ namespace FarmaKode.Client
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new FormButton());
+            //Application.Run(new MainForm());
         }
 
 

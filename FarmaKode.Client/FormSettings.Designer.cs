@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormSettings));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -50,6 +51,7 @@
             this.comboNotificationPosition = new System.Windows.Forms.ComboBox();
             this.chkCopyDestinationFolder = new System.Windows.Forms.CheckBox();
             this.spinNotificationCount = new System.Windows.Forms.NumericUpDown();
+            this.label12 = new System.Windows.Forms.Label();
             this.spinNotificationDuration = new System.Windows.Forms.NumericUpDown();
             this.comboCahce = new System.Windows.Forms.ComboBox();
             this.txtApiURL = new System.Windows.Forms.TextBox();
@@ -60,10 +62,12 @@
             this.label11 = new System.Windows.Forms.Label();
             this.lblAppStatus = new System.Windows.Forms.Label();
             this.btnIsAppEnabled = new System.Windows.Forms.Button();
-            this.label12 = new System.Windows.Forms.Label();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.btnAdmin = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.spinNotificationCount)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spinNotificationDuration)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -260,7 +264,7 @@
             this.comboDefaultBarcodePrinter.Size = new System.Drawing.Size(307, 21);
             this.comboDefaultBarcodePrinter.TabIndex = 0;
             this.comboDefaultBarcodePrinter.Text = global::FarmaKode.Client.Properties.Settings.Default.DefaultBarcodePrinter;
-             // 
+            // 
             // txtSourceFolder
             // 
             this.txtSourceFolder.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::FarmaKode.Client.Properties.Settings.Default, "SourceFolder", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
@@ -320,6 +324,16 @@
             this.spinNotificationCount.TabIndex = 4;
             this.spinNotificationCount.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.spinNotificationCount.Value = global::FarmaKode.Client.Properties.Settings.Default.NotificationMaxCount;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.ForeColor = System.Drawing.Color.Black;
+            this.label12.Location = new System.Drawing.Point(86, 204);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(47, 13);
+            this.label12.TabIndex = 0;
+            this.label12.Text = "Api URL";
             // 
             // spinNotificationDuration
             // 
@@ -406,6 +420,7 @@
             // 
             this.chkNotificationEnable.AutoSize = true;
             this.chkNotificationEnable.Checked = global::FarmaKode.Client.Properties.Settings.Default.IsEnableNotification;
+            this.chkNotificationEnable.CheckState = System.Windows.Forms.CheckState.Checked;
             this.chkNotificationEnable.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::FarmaKode.Client.Properties.Settings.Default, "IsEnableNotification", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.chkNotificationEnable.Location = new System.Drawing.Point(140, 246);
             this.chkNotificationEnable.Name = "chkNotificationEnable";
@@ -444,15 +459,19 @@
             this.btnIsAppEnabled.UseVisualStyleBackColor = true;
             this.btnIsAppEnabled.Click += new System.EventHandler(this.btnIsAppEnabled_Click);
             // 
-            // label12
+            // errorProvider1
             // 
-            this.label12.AutoSize = true;
-            this.label12.ForeColor = System.Drawing.Color.Black;
-            this.label12.Location = new System.Drawing.Point(86, 204);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(47, 13);
-            this.label12.TabIndex = 0;
-            this.label12.Text = "Api URL";
+            this.errorProvider1.ContainerControl = this;
+            // 
+            // btnAdmin
+            // 
+            this.btnAdmin.Location = new System.Drawing.Point(28, 466);
+            this.btnAdmin.Name = "btnAdmin";
+            this.btnAdmin.Size = new System.Drawing.Size(91, 26);
+            this.btnAdmin.TabIndex = 1;
+            this.btnAdmin.Text = "Admin";
+            this.btnAdmin.UseVisualStyleBackColor = true;
+            this.btnAdmin.Click += new System.EventHandler(this.btnAdmin_Click);
             // 
             // FormSettings
             // 
@@ -461,6 +480,7 @@
             this.ClientSize = new System.Drawing.Size(531, 504);
             this.Controls.Add(this.btnIsAppEnabled);
             this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.btnAdmin);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.btnHide);
             this.Controls.Add(this.lblAppStatus);
@@ -476,6 +496,7 @@
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.spinNotificationCount)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.spinNotificationDuration)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -515,5 +536,7 @@
         private System.Windows.Forms.Label lblAppStatus;
         private System.Windows.Forms.Button btnIsAppEnabled;
         private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.Button btnAdmin;
     }
 }

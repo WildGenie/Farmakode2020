@@ -32,7 +32,7 @@
     <Setting Name="NotificationBrowser" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">0</Value>
     </Setting>
-    <Setting Name="NotificationMaxCount" Type="System.Decimal" Scope="User">
+    <Setting Name="NotificationMaxCount" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">5</Value>
     </Setting>
     <Setting Name="IsEnableNotification" Type="System.Boolean" Scope="User">

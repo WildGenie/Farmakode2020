@@ -19,20 +19,7 @@ namespace FarmaKode.Client
     public partial class FormButton : Form
     {
 
-        #region SCREEN TOP
-        static readonly IntPtr HWND_TOPMOST = new IntPtr(-1);
-        static readonly IntPtr HWND_NOTOPMOST = new IntPtr(-2);
-        static readonly IntPtr HWND_TOP = new IntPtr(0);
-        static readonly IntPtr HWND_BOTTOM = new IntPtr(1);
-        const UInt32 SWP_NOSIZE = 0x0001;
-        const UInt32 SWP_NOMOVE = 0x0002;
-        const UInt32 TOPMOST_FLAGS = SWP_NOMOVE | SWP_NOSIZE;
-
-        [DllImport("user32.dll")]
-        [return: MarshalAs(UnmanagedType.Bool)]
-        public static extern bool SetWindowPos(IntPtr hWnd, IntPtr hWndInsertAfter, int X, int Y, int cx, int cy, uint uFlags);
-
-        #endregion
+       
 
 
         #region VARIABLES
@@ -43,17 +30,40 @@ namespace FarmaKode.Client
         #endregion
 
         public FormButton()
-
         {
+            
             InitializeComponent();
-
             notifyIcon = notifyIcon1;
 
+            if (!CacheBL.CheckSettings())
+            {
+                MessageBox.Show("Lütfen öncelikle uygulama için gereki olan bilgileri giriniz", "Uyarı");
+                new FormSettings().ShowDialog();
+            }
+
+           
             initializeWatchDog();
+            locationForm();
 
         }
 
-        void initializeWatchDog()
+        private void locationForm()
+        {
+            TopMost = true;
+            StartPosition = FormStartPosition.Manual;
+            this.Size = new Size(20, 50);
+
+            foreach (var scrn in Screen.AllScreens)
+            {
+                if (scrn.Bounds.Contains(this.Location))
+                {
+                    this.Location = new Point(scrn.Bounds.Right - 60, scrn.Bounds.Height - this.Height - 350);
+                    return;
+                }
+            }
+        }
+
+        private void initializeWatchDog()
         {
             watchDog = new WatchDogBL(Settings.Default.SourceFolder,
                Settings.Default.DestinationFolder,
@@ -75,24 +85,7 @@ namespace FarmaKode.Client
                 watchDog.Start();
             }
         }
-
-
-        private void FormButton_Load(object sender, EventArgs e)
-        {
-            this.Size = new Size(50, 50);
-
-            foreach (var scrn in Screen.AllScreens)
-            {
-                if (scrn.Bounds.Contains(this.Location))
-                {
-                    this.Location = new Point(scrn.Bounds.Right - 60, scrn.Bounds.Height - this.Height - 350);
-                    SetWindowPos(this.Handle, HWND_TOPMOST, 0, 0, 0, 0, TOPMOST_FLAGS);
-                    return;
-                }
-            }
-
-
-        }
+            
 
         private void btnShowPostList_Click(object sender, EventArgs e)
         {

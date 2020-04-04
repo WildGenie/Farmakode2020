@@ -146,9 +146,9 @@ namespace FarmaKode.Client.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("5")]
-        public decimal NotificationMaxCount {
+        public int NotificationMaxCount {
             get {
-                return ((decimal)(this["NotificationMaxCount"]));
+                return ((int)(this["NotificationMaxCount"]));
             }
             set {
                 this["NotificationMaxCount"] = value;

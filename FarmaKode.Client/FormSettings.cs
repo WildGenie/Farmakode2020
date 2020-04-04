@@ -28,28 +28,63 @@ namespace FarmaKode.Client
             }
             else
             {
-                btnIsAppEnabled.Text = "Uygulamayı PASİF yap"; 
+                btnIsAppEnabled.Text = "Uygulamayı PASİF yap";
                 lblAppStatus.Text = "AKTİF";
                 lblAppStatus.ForeColor = Color.Green;
             }
 
-            if(string.IsNullOrEmpty(Settings.Default.SourceFolder))
+            if (string.IsNullOrEmpty(Settings.Default.SourceFolder))
             {
                 Settings.Default.SourceFolder = Environment.GetFolderPath(Environment.SpecialFolder.InternetCache);
                 Settings.Default.Save();
             }
 
             comboCahce.SelectedIndex = Settings.Default.ClearCacheType;
-            comboNotificationBrowser.SelectedIndex= Settings.Default.NotificationBrowser;
-            comboNotificationPosition.SelectedIndex= Settings.Default.NotificationPosition;
+            comboNotificationBrowser.SelectedIndex = Settings.Default.NotificationBrowser;
+            comboNotificationPosition.SelectedIndex = Settings.Default.NotificationPosition;
         }
 
- 
+
+        bool validation()
+        {
+            bool isValid = true;
+
+            if (string.IsNullOrEmpty(txtPharmacyID.Text.Trim()))
+            {
+                errorProvider1.SetError(txtPharmacyID, "Bu alan boş geçilemez");
+                isValid = false;
+            }
+
+
+            if (string.IsNullOrEmpty(txtExtension.Text.Trim()))
+            {
+                errorProvider1.SetError(txtExtension, "Bu alan boş geçilemez");
+                isValid = false;
+            }
+
+
+            if (string.IsNullOrEmpty(txtSourceFolder.Text.Trim()))
+            {
+                errorProvider1.SetError(txtSourceFolder, "Bu alan boş geçilemez");
+                isValid = false;
+            }
+
+
+
+            return isValid;
+
+
+        }
+
+
         private void btnSave_Click(object sender, EventArgs e)
         {
-            Settings.Default.Save();
-            isChanged = false;
-            MessageBox.Show("Ayarlar kayıt edilmiştir", "Farmakode", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+            if (validation())
+            {
+                Settings.Default.Save();
+                isChanged = false;
+                MessageBox.Show("Ayarlar kayıt edilmiştir", "Farmakode", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+            }
 
         }
 
@@ -69,7 +104,7 @@ namespace FarmaKode.Client
             txtDestinationFolder.Text = folder.SelectedPath;
         }
 
-       
+
 
         private void Default_SettingChanging(object sender, System.Configuration.SettingChangingEventArgs e)
         {
@@ -79,18 +114,28 @@ namespace FarmaKode.Client
         }
 
         private void btnHide_Click(object sender, EventArgs e)
-        {             
-            this.Close();
+        {
+            if (validation())
+            {
+                this.Close();
+            }
         }
 
         private void FormSettings_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (isChanged)
+            if (validation())
             {
-                DialogResult r = MessageBox.Show("Değişiklik var", "Uyarı", MessageBoxButtons.YesNo);
-                if (r == DialogResult.No)
+                if (isChanged)
                 {
-                    Settings.Default.Reload();
+                    DialogResult r = MessageBox.Show("Değişiklik var", "Uyarı", MessageBoxButtons.YesNo);
+                    if (r == DialogResult.No)
+                    {
+                        Settings.Default.Reload();
+                    }
+                    else
+                    {
+                        Settings.Default.Save();
+                    }
                 }
                 else
                 {
@@ -99,7 +144,8 @@ namespace FarmaKode.Client
             }
             else
             {
-                Settings.Default.Save();
+                MessageBox.Show("Lütfen ilgili alanlara gerekli bilgileri giriniz","Uyarı");
+                e.Cancel = true;
             }
         }
 
@@ -110,7 +156,7 @@ namespace FarmaKode.Client
 
         private void btnIsAppEnabled_Click(object sender, EventArgs e)
         {
-             if (Settings.Default.AppIsEnabled)
+            if (Settings.Default.AppIsEnabled)
             {
                 btnIsAppEnabled.Text = "Uygulamayı AKTİF yap";
                 Settings.Default.AppIsEnabled = false;
@@ -139,6 +185,11 @@ namespace FarmaKode.Client
         private void comboNotificationPosition_SelectedIndexChanged(object sender, EventArgs e)
         {
             Settings.Default.NotificationPosition = comboNotificationPosition.SelectedIndex;
+        }
+
+        private void btnAdmin_Click(object sender, EventArgs e)
+        {
+            new FormParameter().ShowDialog();
         }
     }
 }

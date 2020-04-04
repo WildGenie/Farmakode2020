@@ -77,7 +77,7 @@
             this.toolStripSeparator1,
             this.menuItemExit});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(205, 154);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(205, 132);
             this.contextMenuStrip1.Text = "Arayüzü Aç";
             // 
             // menuItemOpenSettings
@@ -134,16 +134,19 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.OliveDrab;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(50, 50);
             this.Controls.Add(this.btnShowPostList);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.MaximumSize = new System.Drawing.Size(50, 50);
+            this.MinimumSize = new System.Drawing.Size(50, 50);
             this.Name = "FormButton";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "FormButton";
-            this.Load += new System.EventHandler(this.FormButton_Load);
             this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
 

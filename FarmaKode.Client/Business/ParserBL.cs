@@ -40,7 +40,19 @@ namespace FarmaKode.Client.Business
             return str; //completely decoded string
         }
 
-      
+        public List<ParsedData> ParseFromFile(string jsonFilePath)
+        {
+            try
+            {
+                string content = File.ReadAllText(jsonFilePath, Encoding.Default);
+                return JsonConvert.DeserializeObject<List<ParsedData>>(content) ;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(jsonFilePath +" dosyası okunamadı", ex);
+            }
+        }
+
         public List<ParsedData> Parse(string content)
         {
            
