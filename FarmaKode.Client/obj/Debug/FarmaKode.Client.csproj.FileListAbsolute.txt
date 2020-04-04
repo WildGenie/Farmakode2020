@@ -180,3 +180,7 @@ C:\Users\Ahmet\Desktop\Farmakode2020\FarmaKode.Client\bin\Debug\pt\Microsoft.Rep
 C:\Users\Ahmet\Desktop\Farmakode2020\FarmaKode.Client\bin\Debug\ru\Microsoft.ReportViewer.WinForms.resources.dll
 C:\Users\Ahmet\Desktop\Farmakode2020\FarmaKode.Client\bin\Debug\zh-CHS\Microsoft.ReportViewer.WinForms.resources.dll
 C:\Users\Ahmet\Desktop\Farmakode2020\FarmaKode.Client\bin\Debug\zh-CHT\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\Ahmet\Desktop\Farmakode2020\FarmaKode.Client\bin\Debug\FarmaKode.Client.exe.manifest
+C:\Users\Ahmet\Desktop\Farmakode2020\FarmaKode.Client\bin\Debug\FarmaKode.Client.application
+C:\Users\Ahmet\Desktop\Farmakode2020\FarmaKode.Client\obj\Debug\FarmaKode.Client.exe.manifest
+C:\Users\Ahmet\Desktop\Farmakode2020\FarmaKode.Client\obj\Debug\FarmaKode.Client.application
