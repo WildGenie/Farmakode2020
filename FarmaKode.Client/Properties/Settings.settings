@@ -6,7 +6,7 @@
       <Value Profile="(Default)" />
     </Setting>
     <Setting Name="FileExtension" Type="System.String" Scope="User">
-      <Value Profile="(Default)" />
+      <Value Profile="(Default)">*.htm</Value>
     </Setting>
     <Setting Name="SourceFolder" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
@@ -17,8 +17,8 @@
     <Setting Name="DestinationFolder" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
-    <Setting Name="ClearDestinationType" Type="System.String" Scope="User">
-      <Value Profile="(Default)" />
+    <Setting Name="ClearCacheType" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">0</Value>
     </Setting>
     <Setting Name="ApiURL" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
@@ -26,17 +26,17 @@
     <Setting Name="NotificationDuration" Type="System.Decimal" Scope="User">
       <Value Profile="(Default)">5</Value>
     </Setting>
-    <Setting Name="NotificationPosition" Type="System.String" Scope="User">
-      <Value Profile="(Default)" />
+    <Setting Name="NotificationPosition" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">0</Value>
     </Setting>
-    <Setting Name="NotificationBrowser" Type="System.String" Scope="User">
-      <Value Profile="(Default)" />
+    <Setting Name="NotificationBrowser" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">0</Value>
     </Setting>
-    <Setting Name="NotificationMaxCount" Type="System.Decimal" Scope="User">
+    <Setting Name="NotificationMaxCount" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">5</Value>
     </Setting>
     <Setting Name="IsEnableNotification" Type="System.Boolean" Scope="User">
-      <Value Profile="(Default)">False</Value>
+      <Value Profile="(Default)">True</Value>
     </Setting>
     <Setting Name="DefaultBarcodePrinter" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
@@ -45,7 +45,16 @@
       <Value Profile="(Default)">Data\XPathConfig.json</Value>
     </Setting>
     <Setting Name="LogPath" Type="System.String" Scope="User">
-      <Value Profile="(Default)" />
+      <Value Profile="(Default)">Log</Value>
+    </Setting>
+    <Setting Name="AppIsEnabled" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="IsParseableKeyword" Type="System.String" Scope="User">
+      <Value Profile="(Default)">/eczane/faces/pages/recete/ReceteIslem2.jsp</Value>
+    </Setting>
+    <Setting Name="LatestPostPath" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Data/LatestPost</Value>
     </Setting>
   </Settings>
 </SettingsFile>

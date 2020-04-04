@@ -1,5 +1,7 @@
-﻿using FarmaKode.Client.Util;
+﻿using FarmaKode.Client.Model;
+using FarmaKode.Client.Util;
 using System;
+using System.ComponentModel;
 using System.IO;
 
 namespace FarmaKode.Client.Business
@@ -12,6 +14,11 @@ namespace FarmaKode.Client.Business
         string destination = null;
         string extension = null;
         bool copyToDestination = false;
+
+        [Browsable(true)]
+        [Category("Olaylar")]
+        [Description("Yeni bir dosya oluştuğunda dosya içeriği parse edilir")]
+        public event EventHandler<ParseEventArgs> ParseFileEvent;
 
         public WatchDogBL(string source, string destination, string extension, bool copyToDestination)
         {
@@ -32,8 +39,8 @@ namespace FarmaKode.Client.Business
 
 
                 fsw.Created += new FileSystemEventHandler(Created);
-                fsw.Changed += new FileSystemEventHandler(Changed);
-                fsw.Renamed += new RenamedEventHandler(Renamed);
+                //fsw.Changed += new FileSystemEventHandler(Changed);
+                //fsw.Renamed += new RenamedEventHandler(Renamed);
                 fsw.Deleted += new FileSystemEventHandler(Deleted);
                 //
                 fsw.EnableRaisingEvents = true;
@@ -58,7 +65,8 @@ namespace FarmaKode.Client.Business
         {
             Logger.GetInstance().Info(string.Format("{0} dizininde {1} adında yeni dosya olusturuldu", source, e.Name));
             CopyDestination(e.FullPath);
-            ParseFile(e.FullPath);
+
+            ParseFileEvent?.Invoke(this, new ParseEventArgs(e.FullPath));
         }
 
         void Changed(object gelen, FileSystemEventArgs e)
@@ -95,10 +103,7 @@ namespace FarmaKode.Client.Business
             }
         }
 
-        void ParseFile(string path)
-        {
-
-        }
+        
 
     }
 }

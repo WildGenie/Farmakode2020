@@ -8,10 +8,10 @@ namespace FarmaKode.Client.Model
 {
     public class ParsedData
     {
-        public string Group { get; set; }
+        public string Section { get; set; }
         public string Label { get; set; }
         public string VariableName { get; set; }
         public string Value { get; set; }
-        public int LoopId { get; set; }
+        public int GroupId { get; set; }
     }
 }
