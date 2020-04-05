@@ -164,7 +164,8 @@ namespace FarmaKode.Client.Business
 
                 string path = Path.Combine(folder, DateTime.Now.ToString("yyyyMMddHHmmss")+ ".json");
                 string jsonContent = JsonConvert.SerializeObject(data, Formatting.Indented);
-                File.WriteAllText(path, jsonContent, Encoding.UTF8);
+                File.WriteAllText(path, jsonContent, Encoding.Default);
+                System.Threading.Thread.Sleep(1000);
             }
             catch (Exception ex)
             {

@@ -52,10 +52,10 @@ namespace FarmaKode.Client
 
             //PopupNotifier popupNotifier1 = new PopupNotifier();
             //popupNotifier1.TitleText = "Title";
-            //popupNotifier1.ContentText ="Context" + DateTime.Now.Second;
+            //popupNotifier1.ContentText = "Context" + DateTime.Now.Second;
             //popupNotifier1.ShowCloseButton = true;
             //popupNotifier1.ShowOptionsButton = false;
-            //popupNotifier1.ShowGrip =true;
+            //popupNotifier1.ShowGrip = true;
             //popupNotifier1.Delay = 2000;
             //popupNotifier1.AnimationInterval = 1;
             //popupNotifier1.AnimationDuration = 300;
@@ -63,14 +63,15 @@ namespace FarmaKode.Client
             //popupNotifier1.ContentPadding = new Padding(0);
             //popupNotifier1.ImagePadding = new Padding(0);
             //popupNotifier1.Scroll = true;
-            //popupNotifier1.Size = new Size(200, 100);             
+            //popupNotifier1.Size = new Size(200, 100);
             //popupNotifier1.Popup();// show  
 
 
-            FormNotification bil = new FormNotification();
-            bil.lblBildirim.Text = "FarmaKode Aktif";
-            bil.ShowDialog();
+            //FormNotification bil = new FormNotification();
+            //bil.lblBildirim.Text = "FarmaKode Aktif";
+            //bil.ShowDialog();
 
+          
 
         }
 

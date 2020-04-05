@@ -94,7 +94,7 @@ namespace FarmaKode.Client
 
         private void notifyIcon1_BalloonTipClicked(object sender, EventArgs e)
         {
-
+            MessageBox.Show("Uyarı tıklandı");
         }
 
         private void notifyIcon1_Click(object sender, EventArgs e)
