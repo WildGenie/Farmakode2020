@@ -41,6 +41,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <TargetPlatformVersion>10.0</TargetPlatformVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -67,12 +68,18 @@
   <PropertyGroup>
     <GenerateManifests>true</GenerateManifests>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>FarmaKode.Client.Program</StartupObject>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="FastMember, Version=1.5.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\FastMember.1.5.0\lib\net461\FastMember.dll</HintPath>
     </Reference>
     <Reference Include="HtmlAgilityPack, Version=1.11.23.0, Culture=neutral, PublicKeyToken=bd319b19eaf3b43a, processorArchitecture=MSIL">
       <HintPath>..\packages\HtmlAgilityPack.1.11.23\lib\Net45\HtmlAgilityPack.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp, Version=5.5.13.1, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\iTextSharp.5.5.13.1\lib\itextsharp.dll</HintPath>
     </Reference>
     <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
       <HintPath>..\packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
@@ -98,6 +105,9 @@
     <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
+    <Reference Include="RestSharp, Version=106.0.0.0, Culture=neutral, PublicKeyToken=598062e77f915f75, processorArchitecture=MSIL">
+      <HintPath>..\packages\RestSharp.106.10.1\lib\net452\RestSharp.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Web" />
@@ -114,8 +124,32 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FormShowPreview.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormShowPreview.designer.cs">
+      <DependentUpon>FormShowPreview.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Request\RequestBarcode.cs" />
+    <Compile Include="Model\Response\ResponseData.cs" />
+    <Compile Include="Model\Response\ResponseDrug.cs" />
+    <Compile Include="Model\Response\ResponseBarcode.cs" />
+    <Compile Include="Model\Section\RequestDrugSection.cs" />
+    <Compile Include="Model\Section\RequestHeaderSection.cs" />
+    <Compile Include="Model\Section\RequestICDSection.cs" />
+    <Compile Include="Model\Section\RequestPharmacySection.cs" />
+    <Compile Include="Model\Section\RequestPriceSection.cs" />
+    <Compile Include="Util\Common.cs" />
+    <EmbeddedResource Include="bin\Debug\Data\Report\rptAllEmployees.rdlc" />
+    <EmbeddedResource Include="bin\Debug\Data\Report\rptEmployeeFamily.rdlc" />
     <EmbeddedResource Include="FormButton.resx">
       <DependentUpon>FormButton.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormNotification.resx">
+      <DependentUpon>FormNotification.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormShowPreview.resx">
+      <DependentUpon>FormShowPreview.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormPostList.resx">
       <DependentUpon>FormPostList.cs</DependentUpon>
@@ -185,8 +219,8 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="Util\LocalReportExtensions.cs" />
     <Compile Include="Util\Constants.cs" />
+    <Compile Include="Util\LocalReportExtensions.cs" />
     <Compile Include="Util\Logger.cs" />
     <EmbeddedResource Include="FormParameter.resx">
       <DependentUpon>FormParameter.cs</DependentUpon>
@@ -198,7 +232,7 @@
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="App.config" />
-    <None Include="FarmaKode.Client_TemporaryKey.pfx" />
+    <None Include="bin\Debug\Data\response.json" />
     <None Include="packages.config" />
     <None Include="Properties\DataSources\FarmaKode.Client.Model.ReportData.datasource" />
     <None Include="Properties\Settings.settings">

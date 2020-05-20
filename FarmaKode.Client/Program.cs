@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Windows.Forms;
 using FarmaKode.Client.Business;
-
+using FarmaKode.Client.Model.Section;
+using HtmlAgilityPack;
 namespace FarmaKode.Client
 {
     static class Program
@@ -21,6 +23,9 @@ namespace FarmaKode.Client
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+
+           
+
             Application.Run(new FormButton());
             //Application.Run(new MainForm());
         }

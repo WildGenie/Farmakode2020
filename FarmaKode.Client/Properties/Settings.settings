@@ -21,15 +21,12 @@
       <Value Profile="(Default)">0</Value>
     </Setting>
     <Setting Name="ApiURL" Type="System.String" Scope="User">
-      <Value Profile="(Default)" />
+      <Value Profile="(Default)">https://farmakode.com/api/post-recipe</Value>
     </Setting>
     <Setting Name="NotificationDuration" Type="System.Decimal" Scope="User">
       <Value Profile="(Default)">5</Value>
     </Setting>
     <Setting Name="NotificationPosition" Type="System.Int32" Scope="User">
-      <Value Profile="(Default)">0</Value>
-    </Setting>
-    <Setting Name="NotificationBrowser" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">0</Value>
     </Setting>
     <Setting Name="NotificationMaxCount" Type="System.Int32" Scope="User">
@@ -55,6 +52,15 @@
     </Setting>
     <Setting Name="LatestPostPath" Type="System.String" Scope="User">
       <Value Profile="(Default)">Data/LatestPost</Value>
+    </Setting>
+    <Setting Name="IsManuelMode" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="IPAddressServer" Type="System.String" Scope="User">
+      <Value Profile="(Default)">https://ipinfo.io/ip</Value>
+    </Setting>
+    <Setting Name="PharmacyPCNO" Type="System.String" Scope="User">
+      <Value Profile="(Default)">PC-02</Value>
     </Setting>
   </Settings>
 </SettingsFile>

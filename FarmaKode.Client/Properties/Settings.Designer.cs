@@ -97,7 +97,7 @@ namespace FarmaKode.Client.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        [global::System.Configuration.DefaultSettingValueAttribute("https://farmakode.com/api/post-recipe")]
         public string ApiURL {
             get {
                 return ((string)(this["ApiURL"]));
@@ -128,18 +128,6 @@ namespace FarmaKode.Client.Properties {
             }
             set {
                 this["NotificationPosition"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("0")]
-        public int NotificationBrowser {
-            get {
-                return ((int)(this["NotificationBrowser"]));
-            }
-            set {
-                this["NotificationBrowser"] = value;
             }
         }
         
@@ -236,6 +224,42 @@ namespace FarmaKode.Client.Properties {
             }
             set {
                 this["LatestPostPath"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool IsManuelMode {
+            get {
+                return ((bool)(this["IsManuelMode"]));
+            }
+            set {
+                this["IsManuelMode"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("https://ipinfo.io/ip")]
+        public string IPAddressServer {
+            get {
+                return ((string)(this["IPAddressServer"]));
+            }
+            set {
+                this["IPAddressServer"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("PC-02")]
+        public string PharmacyPCNO {
+            get {
+                return ((string)(this["PharmacyPCNO"]));
+            }
+            set {
+                this["PharmacyPCNO"] = value;
             }
         }
     }

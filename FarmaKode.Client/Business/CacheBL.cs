@@ -1,5 +1,6 @@
 ﻿using FarmaKode.Client.Model;
 using FarmaKode.Client.Properties;
+using FarmaKode.Client.Util;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -13,11 +14,13 @@ namespace FarmaKode.Client.Business
     public class CacheBL
     {
         public static List<Parameter> parameterList = null;
+        public static string IPAddress = string.Empty;
 
 
         public static void LoadCache()
         {
             parameterList = ParameterBL.GetInstance().GetParameters();
+            IPAddress = Common.GetPublicIp(Settings.Default.IPAddressServer);
         }
 
 

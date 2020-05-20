@@ -35,6 +35,7 @@
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.button4 = new System.Windows.Forms.Button();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.popupNotifier1 = new Tulpep.NotificationWindow.PopupNotifier();
             this.SuspendLayout();
             // 
             // button1
@@ -95,6 +96,21 @@
             this.reportViewer1.Size = new System.Drawing.Size(615, 316);
             this.reportViewer1.TabIndex = 4;
             // 
+            // popupNotifier1
+            // 
+            this.popupNotifier1.ContentColor = System.Drawing.Color.Green;
+            this.popupNotifier1.ContentFont = new System.Drawing.Font("Tahoma", 12F);
+            this.popupNotifier1.ContentText = null;
+            this.popupNotifier1.HeaderColor = System.Drawing.Color.Maroon;
+            this.popupNotifier1.Image = null;
+            this.popupNotifier1.IsRightToLeft = false;
+            this.popupNotifier1.OptionsMenu = null;
+            this.popupNotifier1.ShowOptionsButton = true;
+            this.popupNotifier1.Size = new System.Drawing.Size(400, 100);
+            this.popupNotifier1.TitleColor = System.Drawing.Color.Magenta;
+            this.popupNotifier1.TitleFont = new System.Drawing.Font("Segoe UI", 9F);
+            this.popupNotifier1.TitleText = null;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -122,5 +138,6 @@
         private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.Button button4;
         private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
+        private Tulpep.NotificationWindow.PopupNotifier popupNotifier1;
     }
 }

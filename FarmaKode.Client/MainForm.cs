@@ -1,20 +1,18 @@
 ﻿using FarmaKode.Client.Business;
 using FarmaKode.Client.Model;
-using FarmaKode.Client.Util;
+using iTextSharp.text.pdf;
 using Microsoft.Reporting.WinForms;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.Drawing.Imaging;
 using System.Drawing.Printing;
 using System.IO;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using Tulpep.NotificationWindow;
+using System.Xml;
+using System.Xml.Linq;
+using static FarmaKode.Client.Util.Constants;
 
 namespace FarmaKode.Client
 {
@@ -25,13 +23,15 @@ namespace FarmaKode.Client
         {
             InitializeComponent();
 
-            DirectoryInfo ornekFolder = new DirectoryInfo(Path.Combine(Application.StartupPath, "Data", "OrnekHtm"));
+            //DirectoryInfo ornekFolder = new DirectoryInfo(Path.Combine(Application.StartupPath, "Data", "OrnekHtm"));
 
-            FileInfo[] files = ornekFolder.GetFiles("*.htm");
+            //FileInfo[] files = ornekFolder.GetFiles("*.htm");
 
-            listBox1.DataSource = files;
-            listBox1.DisplayMember = "Name";
-            listBox1.ValueMember = "FullName";
+            //listBox1.DataSource = files;
+            //listBox1.DisplayMember = "Name";
+            //listBox1.ValueMember = "FullName";
+
+            
 
         }
 
@@ -46,15 +46,27 @@ namespace FarmaKode.Client
             new FormParameter().ShowDialog();
 
         }
+      
 
         private void button3_Click(object sender, EventArgs e)
         {
+            FormNotification frm = new FormNotification();
+            frm.ShowAlert("Ahmet YAĞBASAN reçetesi hazır", NotificationType.Success);
+            //var xmdock = CreateToast();
+            //ToastNotification toast = new ToastNotification(xmdock);
 
-            //PopupNotifier popupNotifier1 = new PopupNotifier();
+            //toast.Activated += ToastNotification_Activated;
+            //toast.Dismissed += ToastNotification_Dismissed;
+            //Toast.Failed += ToastNotification_Failed;
+            //ToastNotificationManager.CreateToastNotifier().Show(toast);
+
+            //var notifi = ToastNotificationManager.CreateToastNotifier();
+            //notifi.Show(toast);
+
             //popupNotifier1.TitleText = "Title";
             //popupNotifier1.ContentText = "Context" + DateTime.Now.Second;
             //popupNotifier1.ShowCloseButton = true;
-            //popupNotifier1.ShowOptionsButton = false;
+            //popupNotifier1.ShowOptionsButton = true;
             //popupNotifier1.ShowGrip = true;
             //popupNotifier1.Delay = 2000;
             //popupNotifier1.AnimationInterval = 1;
@@ -62,18 +74,50 @@ namespace FarmaKode.Client
             //popupNotifier1.TitlePadding = new Padding(0);
             //popupNotifier1.ContentPadding = new Padding(0);
             //popupNotifier1.ImagePadding = new Padding(0);
-            //popupNotifier1.Scroll = true;
+            //popupNotifier1.Scroll = false;
             //popupNotifier1.Size = new Size(200, 100);
+            ////popupNotifier1.p
             //popupNotifier1.Popup();// show  
+            //                       //System.Diagnostics.Process pro = System.Diagnostics.Process.GetCurrentProcess();
+            //                       // ToastNotificationManager.CreateToastNotifier(pro.ProcessName).Show(toast);
+
+            //// toast.Activated += toast_Activated;
+
+
 
 
             //FormNotification bil = new FormNotification();
             //bil.lblBildirim.Text = "FarmaKode Aktif";
             //bil.ShowDialog();
 
-          
+
+            // ToastTemplateType toastTemplate = ToastTemplateType.ToastImageAndText01;
+            // Windows.Data.Xml.Dom.XmlDocument toastXml = ToastNotificationManager.GetTemplateContent(toastTemplate);
+            // Windows.Data.Xml.Dom.XmlNodeList toastTextElements = toastXml.GetElementsByTagName("text");
+            // toastTextElements[0].AppendChild(toastXml.CreateTextNode("Hello!I am an awesome cat… Awesome cats make Windows 8 awesomer!!"));
+            // XmlElement tileImage = toastXml.GetElementsByTagName("image")[0] as XmlElement;
+            // tileImage.SetAttribute("src","http://placekitten.com/256/256");
+            // tileImage.SetAttribute("alt", "awesome cat");
+            // // Display the toast for 25 seconds
+            // Windows.Data.Xml.Dom.XmlElement toastNode = (Windows.Data.Xml.Dom.XmlElement)toastXml.SelectSingleNode("/ toast");
+            // toastNode.SetAttribute("duration", "long");
+            // // Add a looping sound
+            // Windows.Data.Xml.Dom.XmlElement audio = toastXml.CreateElement("audio");
+            // audio.SetAttribute("src", "ms - winsoundevent:Notification.Looping.Call");
+            // audio.SetAttribute("loop", "true");
+            // toastNode.AppendChild(audio);
+            // ToastNotification toast = new ToastNotification(toastXml);
+            // // ToastNotification events
+            //// toast.Activated += ToastNotification_Activated;
+            // //toast.Dismissed += ToastNotification_Dismissed;
+            // //toast.Failed += ToastNotification_Failed;
+            // ToastNotificationManager.CreateToastNotifier().Show(toast);
+
+
 
         }
+
+       
 
         private void listBox1_DoubleClick(object sender, EventArgs e)
         {
@@ -106,8 +150,57 @@ namespace FarmaKode.Client
 
         private void button4_Click(object sender, EventArgs e)
         {
+             
+                string fileNameExisting = @"C:\Users\Ahmet\Desktop\1234.pdf";
+                string fileNameNew = @"C:\Users\Ahmet\Desktop\abc.pdf";
 
-           
+                using (var existingFileStream = new FileStream(fileNameExisting, FileMode.Open))
+                using (var newFileStream = new FileStream(fileNameNew, FileMode.Create))
+                {
+                    // Open existing PDF
+                    var pdfReader = new PdfReader(existingFileStream);
+
+                
+                PdfDictionary root = pdfReader.Catalog;
+                PdfDictionary form = root.GetAsDict(PdfName.ACROFORM);
+                PdfArray fields = form.GetAsArray(PdfName.FIELDS);
+
+                PdfDictionary page;
+                PdfArray annots;
+                for (int i = 1; i <= pdfReader.NumberOfPages; i++)
+                {
+                    page = pdfReader.GetPageN(i);
+                    annots = page.GetAsArray(PdfName.ANNOTS);
+                    for (int j = 0; j < annots.Size; j++)
+                    {
+                        fields.Add(annots.GetAsIndirectObject(j));
+                    }
+                }
+                
+
+                // PdfStamper, which will create
+                var stamper = new PdfStamper(pdfReader, newFileStream);
+
+                    var form1 = stamper.AcroFields;
+                    var fieldKeys = form1.Fields.Keys;
+
+                    foreach (string fieldKey in fieldKeys)
+                    {
+                        form1.SetField(fieldKey, "REPLACED!");
+                    }
+
+                    // "Flatten" the form so it wont be editable/usable anymore
+                    stamper.FormFlattening = true;
+
+                    // You can also specify fields to be flattened, which
+                    // leaves the rest of the form still be editable/usable
+                    stamper.PartialFormFlattening("field1");
+
+                    stamper.Close();
+                    pdfReader.Close();
+                }
+            
+
 
         }
 

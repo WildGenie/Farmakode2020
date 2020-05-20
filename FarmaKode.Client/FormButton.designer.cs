@@ -41,6 +41,7 @@
             this.menuItemCheckUpdate = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.menuItemExit = new System.Windows.Forms.ToolStripMenuItem();
+            this.testSayfasıToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -75,9 +76,10 @@
             this.toolStripSeparator2,
             this.menuItemCheckUpdate,
             this.toolStripSeparator1,
-            this.menuItemExit});
+            this.menuItemExit,
+            this.testSayfasıToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(205, 132);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(205, 176);
             this.contextMenuStrip1.Text = "Arayüzü Aç";
             // 
             // menuItemOpenSettings
@@ -130,6 +132,13 @@
             this.menuItemExit.Text = "Çıkış";
             this.menuItemExit.Click += new System.EventHandler(this.menuItemExit_Click);
             // 
+            // testSayfasıToolStripMenuItem
+            // 
+            this.testSayfasıToolStripMenuItem.Name = "testSayfasıToolStripMenuItem";
+            this.testSayfasıToolStripMenuItem.Size = new System.Drawing.Size(204, 22);
+            this.testSayfasıToolStripMenuItem.Text = "Test Sayfası";
+            this.testSayfasıToolStripMenuItem.Click += new System.EventHandler(this.testSayfasıToolStripMenuItem_Click);
+            // 
             // FormButton
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -166,5 +175,6 @@
         private System.Windows.Forms.ToolStripMenuItem menuItemCheckUpdate;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripMenuItem menuItemExit;
+        private System.Windows.Forms.ToolStripMenuItem testSayfasıToolStripMenuItem;
     }
 }

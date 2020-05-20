@@ -30,10 +30,10 @@
         {
             this.components = new System.ComponentModel.Container();
             this.lblName = new System.Windows.Forms.Label();
-            this.btnGoToWeb = new System.Windows.Forms.Button();
             this.btnPrint = new System.Windows.Forms.Button();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.lblNo = new System.Windows.Forms.Label();
+            this.btnGoToWeb = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblName
@@ -47,26 +47,6 @@
             this.lblName.TabIndex = 1;
             this.lblName.Text = "#Hasta Adı#";
             this.lblName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // btnGoToWeb
-            // 
-            this.btnGoToWeb.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(161)))), ((int)(((byte)(19)))));
-            this.btnGoToWeb.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnGoToWeb.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(161)))), ((int)(((byte)(19)))));
-            this.btnGoToWeb.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(161)))), ((int)(((byte)(19)))));
-            this.btnGoToWeb.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(161)))), ((int)(((byte)(19)))));
-            this.btnGoToWeb.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(45)))), ((int)(((byte)(55)))));
-            this.btnGoToWeb.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnGoToWeb.Font = new System.Drawing.Font("Segoe UI", 6.75F, System.Drawing.FontStyle.Bold);
-            this.btnGoToWeb.ForeColor = System.Drawing.Color.White;
-            this.btnGoToWeb.Location = new System.Drawing.Point(167, 0);
-            this.btnGoToWeb.Name = "btnGoToWeb";
-            this.btnGoToWeb.Size = new System.Drawing.Size(75, 26);
-            this.btnGoToWeb.TabIndex = 3;
-            this.btnGoToWeb.Text = "GÖRÜNTÜLE";
-            this.toolTip1.SetToolTip(this.btnGoToWeb, "Web\'de görüntüle");
-            this.btnGoToWeb.UseVisualStyleBackColor = false;
-            this.btnGoToWeb.Click += new System.EventHandler(this.btnGoToWeb_Click);
             // 
             // btnPrint
             // 
@@ -100,6 +80,26 @@
             this.lblNo.Text = "1";
             this.lblNo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // btnGoToWeb
+            // 
+            this.btnGoToWeb.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(161)))), ((int)(((byte)(19)))));
+            this.btnGoToWeb.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnGoToWeb.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(161)))), ((int)(((byte)(19)))));
+            this.btnGoToWeb.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(161)))), ((int)(((byte)(19)))));
+            this.btnGoToWeb.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(161)))), ((int)(((byte)(19)))));
+            this.btnGoToWeb.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(45)))), ((int)(((byte)(55)))));
+            this.btnGoToWeb.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnGoToWeb.Font = new System.Drawing.Font("Segoe UI", 6.75F, System.Drawing.FontStyle.Bold);
+            this.btnGoToWeb.ForeColor = System.Drawing.Color.White;
+            this.btnGoToWeb.Location = new System.Drawing.Point(167, 0);
+            this.btnGoToWeb.Name = "btnGoToWeb";
+            this.btnGoToWeb.Size = new System.Drawing.Size(75, 26);
+            this.btnGoToWeb.TabIndex = 3;
+            this.btnGoToWeb.Text = "GÖRÜNTÜLE";
+            this.toolTip1.SetToolTip(this.btnGoToWeb, "Web\'de görüntüle");
+            this.btnGoToWeb.UseVisualStyleBackColor = false;
+            this.btnGoToWeb.Click += new System.EventHandler(this.btnGoToWeb_Click);
+            // 
             // PostListItem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -122,7 +122,7 @@
         public System.Windows.Forms.Label lblName;
         public System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.Button btnPrint;
-        private System.Windows.Forms.Button btnGoToWeb;
         private System.Windows.Forms.Label lblNo;
+        private System.Windows.Forms.Button btnGoToWeb;
     }
 }

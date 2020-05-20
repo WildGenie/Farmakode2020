@@ -16,16 +16,12 @@ namespace FarmaKode.Client
 {
     public partial class FormParameter : Form
     {
+        
         Parameter selectedParameter = null;
         public FormParameter()
         {
             InitializeComponent();
             bindGrid();
-
-
-
-
-
         }
 
         void bindGrid()
@@ -135,6 +131,8 @@ namespace FarmaKode.Client
             if (e.StateChanged != DataGridViewElementStates.Selected)
                 return;
 
+            
+
             DataRowView row = e.Row.DataBoundItem as DataRowView;
             selectedParameter = new Parameter();
             selectedParameter.Enabled = Convert.ToBoolean(row["Enabled"]);
@@ -149,6 +147,7 @@ namespace FarmaKode.Client
             selectedParameter.XPath = row["XPath"].ToString();
 
             fillParameter();
+          
 
 
         }
@@ -169,7 +168,8 @@ namespace FarmaKode.Client
             if (validation())
             {
                 setParameter();
-                clear();
+                clear(); 
+
             }
         }
 
@@ -220,14 +220,12 @@ namespace FarmaKode.Client
         }
 
         private void chkEditable_CheckedChanged(object sender, EventArgs e)
-        {
-            //chkCombobox.Enabled = false;
+        {            
             chkCombobox.Checked = false;
         }
 
         private void chkCombobox_CheckedChanged(object sender, EventArgs e)
-        {
-            //chkEditable.Enabled = false;
+        {           
             chkEditable.Checked = false;
         }
 

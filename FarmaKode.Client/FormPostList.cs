@@ -19,6 +19,9 @@ using FarmaKode.Client.Component;
 using FarmaKode.Client.Model;
 using FarmaKode.Client.Business;
 using FarmaKode.Client.Util;
+using FarmaKode.Client.Model.Request;
+using FarmaKode.Client.Model.Response;
+using Newtonsoft.Json;
 
 namespace FarmaKode.Client
 {
@@ -36,24 +39,28 @@ namespace FarmaKode.Client
         void initializeForm()
         {
             DirectoryInfo di = new DirectoryInfo(Path.Combine(Application.StartupPath, Settings.Default.LatestPostPath));
-            List<FileInfo> latestFiles = di.GetFiles("*.json").ToList().OrderByDescending(p => p.CreationTime).ToList();
+            List<FileInfo> latestFiles = di.GetFiles("*_Response.json").ToList().OrderByDescending(p => p.CreationTime).ToList();
 
             PostListItem postListItem = null;
-            List<ParsedData> tmpParsedData = null;
+            ResponseBarcode tmpParsedData = null;
             try
             {
-                panel1.Controls.Clear();
+                panel1.Controls.Clear(); 
                 int i = 1;
+                JsonSerializerSettings serializerSettings = new JsonSerializerSettings();
+                serializerSettings.Culture = new System.Globalization.CultureInfo("tr-TR");
+                serializerSettings.DateFormatString = "dd.MM.YYYY";
+
                 foreach (var item in latestFiles)
                 {
-                    tmpParsedData = ParserBL.GetInstance().ParseFromFile(item.FullName);
+                    tmpParsedData = ParserBL.GetInstance().GetObjectFromJsonFile<ResponseBarcode>(item.FullName, serializerSettings);
                     if(tmpParsedData!=null)
                     {
                         postListItem = new PostListItem(i,tmpParsedData);                        
                         postListItem.Dock = DockStyle.Top;
                         postListItem.Name = item.Name;
                         postListItem.Height = 28;
-                        //postListItem.Width = 315;
+                        postListItem.Width = 315;
                         panel1.Controls.Add(postListItem);
                        
                     }
@@ -72,7 +79,7 @@ namespace FarmaKode.Client
             catch (Exception ex)
             {
                 Logger.GetInstance().Error("Son işlem yapılan reçete dosyaları okunamadı", ex);
-                FormButton.notifyIcon.ShowBalloonTip(1000, ",Hata", "Son işlem yapılan reçete dosyaları okunamadı", ToolTipIcon.Error);
+                FormButton.notifyIcon.ShowBalloonTip(1000, "Hata", "Son işlem yapılan reçete dosyaları okunamadı", ToolTipIcon.Error);
                 this.Close();
             }
         }

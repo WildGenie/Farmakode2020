@@ -1,7 +1,11 @@
 ﻿using FarmaKode.Client.Business;
 using FarmaKode.Client.Model;
+using FarmaKode.Client.Model.Request;
+using FarmaKode.Client.Model.Response;
 using FarmaKode.Client.Properties;
 using FarmaKode.Client.Util;
+using Newtonsoft.Json;
+using RestSharp;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,13 +17,14 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static FarmaKode.Client.Util.Constants;
 
 namespace FarmaKode.Client
 {
     public partial class FormButton : Form
     {
 
-       
+
 
 
         #region VARIABLES
@@ -31,7 +36,7 @@ namespace FarmaKode.Client
 
         public FormButton()
         {
-            
+
             InitializeComponent();
             notifyIcon = notifyIcon1;
 
@@ -41,9 +46,12 @@ namespace FarmaKode.Client
                 new FormSettings().ShowDialog();
             }
 
-           
+
             initializeWatchDog();
             locationForm();
+
+
+
 
         }
 
@@ -85,7 +93,7 @@ namespace FarmaKode.Client
                 watchDog.Start();
             }
         }
-            
+
 
         private void btnShowPostList_Click(object sender, EventArgs e)
         {
@@ -94,7 +102,7 @@ namespace FarmaKode.Client
 
         private void notifyIcon1_BalloonTipClicked(object sender, EventArgs e)
         {
-            MessageBox.Show("Uyarı tıklandı");
+            //
         }
 
         private void notifyIcon1_Click(object sender, EventArgs e)
@@ -172,16 +180,21 @@ namespace FarmaKode.Client
                 if (content.Contains(Settings.Default.IsParseableKeyword))
                 {
                     List<ParsedData> parsedData = ParserBL.GetInstance().Parse(content);
+                    RequestBarcode requestBarcode = ParserBL.GetInstance().CreateRequestModel(parsedData);
+                    ResponseBarcode responseBarcode = ParserBL.GetInstance().PostRequest(requestBarcode);
 
                     string latestPostFolder = Path.Combine(Application.StartupPath, Settings.Default.LatestPostPath);
-                    ParserBL.GetInstance().SavePost(latestPostFolder, parsedData);
+                    ParserBL.GetInstance().SaveRequestAndResponse(latestPostFolder, requestBarcode, responseBarcode);
 
-                    notifyIcon.ShowBalloonTip(1000, "FarmaKode Reçete", "Reçete hazır", ToolTipIcon.Info);
+                    //notifyIcon.ShowBalloonTip(1000, "FarmaKode Reçete", "Reçete hazır", ToolTipIcon.Info);
 
                     if (Settings.Default.ClearCacheType == Constants.ClearCahceType.AfterParse)
                     {
                         File.Delete(e.FilePath);
                     }
+
+                    FormNotification formNotification = new FormNotification(responseBarcode);
+                    formNotification.ShowDialog();
                 }
 
             }
@@ -193,8 +206,11 @@ namespace FarmaKode.Client
 
         }
 
-
-
-
+        private void testSayfasıToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new MainForm().ShowDialog();
+        }
     }
+     
+
 }
