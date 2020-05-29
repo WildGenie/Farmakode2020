@@ -24,6 +24,9 @@ namespace FarmaKode.Client
  
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+
+           
+
             Application.Run(new FormButton());
         }
 
