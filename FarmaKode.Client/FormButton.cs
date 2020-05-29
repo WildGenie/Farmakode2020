@@ -1,7 +1,11 @@
 ﻿using FarmaKode.Client.Business;
 using FarmaKode.Client.Model;
+using FarmaKode.Client.Model.Request;
+using FarmaKode.Client.Model.Response;
 using FarmaKode.Client.Properties;
 using FarmaKode.Client.Util;
+using Newtonsoft.Json;
+using RestSharp;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,27 +17,31 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static FarmaKode.Client.Util.Constants;
 
 namespace FarmaKode.Client
 {
     public partial class FormButton : Form
     {
 
-       
-
 
         #region VARIABLES
 
-        public static NotifyIcon notifyIcon;
         public WatchDogBL watchDog = null;
+        RequestBarcode lastRequestBarcode = null;
+        Timer manuelModeTimer = null;
+        Timer manuelBarcodePostTimer = null;
+        Timer manuelBarcodeCleanTimer = null;
+        DateTime _lastKeystroke = new DateTime(0);
+        List<char> _barcode = new List<char>();
+        List<string> manuelBarcods = new List<string>();
 
         #endregion
 
         public FormButton()
         {
-            
+
             InitializeComponent();
-            notifyIcon = notifyIcon1;
 
             if (!CacheBL.CheckSettings())
             {
@@ -41,13 +49,93 @@ namespace FarmaKode.Client
                 new FormSettings().ShowDialog();
             }
 
-           
-            initializeWatchDog();
-            locationForm();
+
+            InitializeWatchDog();
+            LocationForm();
+            ManuelModeCheck();
+            CatchManuelBarcode();
+
+
 
         }
 
-        private void locationForm()
+
+
+
+        #region Alt Yordamlar
+
+        void CatchManuelBarcode()
+        {
+
+            manuelBarcodePostTimer = new Timer();
+            manuelBarcodePostTimer.Enabled = true;
+            manuelBarcodePostTimer.Interval = 1000 * 60 * (int)Settings.Default.BarcodePostDuration;
+            manuelBarcodePostTimer.Tick += ManuelBarcodePostTimer_Tick;
+
+            manuelBarcodeCleanTimer = new Timer();
+            manuelBarcodeCleanTimer.Enabled = true;
+            manuelBarcodeCleanTimer.Interval = 1000 * 60 * (int)Settings.Default.BarcodeClearDuration;
+            manuelBarcodeCleanTimer.Tick += ManuelBarcodeCleanTimer_Tick; ;
+
+            KeyboardListener.s_KeyEventHandler += new EventHandler(KeyboardListener_s_KeyEventHandler);
+
+        }
+        protected override void WndProc(ref Message m)
+        {
+            if (m.Msg == 0x0312 && m.WParam.ToInt32() == Hotkeys.MYACTION_HOTKEY_ID)
+            {
+                if (lastRequestBarcode == null)
+                {
+                    MessageBox.Show("Son " + Settings.Default.ManuelModeTimerInterval + " dakika içinde reçe işlemi yapılmaıdğı için işlem yapılamıyor", "Uyarı");
+                }
+                else
+                {
+                    Post(lastRequestBarcode);
+                }
+            }
+
+            base.WndProc(ref m);
+        }
+        void Post(RequestBarcode requestBarcode)
+        {
+            string latestPostFolder = Path.Combine(Application.StartupPath, Settings.Default.LatestPostPath);
+            ResponseBarcode responseBarcode = ParserBL.GetInstance().PostRequest(requestBarcode);
+            ParserBL.GetInstance().SaveResponse(latestPostFolder, responseBarcode);
+            //if (Settings.Default.ClearCacheType == Constants.ClearCahceType.AfterParse)
+            //{
+            //    File.Delete(e.FilePath);
+            //}
+
+            FormNotification formNotification = new FormNotification(responseBarcode);
+            formNotification.ShowDialog();
+        }
+
+
+        void ManuelModeCheck()
+        {
+            if (Settings.Default.IsManuelMode)
+            {
+                Hotkeys.SetHotKeys(this.Handle);
+                manuelModeTimer = new Timer();
+                manuelModeTimer.Enabled = true;
+                manuelModeTimer.Interval = 1000 * 60 * (int)Settings.Default.ManuelModeTimerInterval;
+                manuelModeTimer.Tick += ManuelModeTimer_Tick;
+            }
+            else
+            {
+                Hotkeys.UnsetHotKeys(this.Handle);
+                if (manuelModeTimer != null)
+                {
+                    manuelModeTimer.Stop();
+                    manuelModeTimer.Enabled = false;
+                    manuelModeTimer = null;
+                }
+
+            }
+
+        }
+
+        private void LocationForm()
         {
             TopMost = true;
             StartPosition = FormStartPosition.Manual;
@@ -63,7 +151,7 @@ namespace FarmaKode.Client
             }
         }
 
-        private void initializeWatchDog()
+        private void InitializeWatchDog()
         {
             watchDog = new WatchDogBL(Settings.Default.SourceFolder,
                Settings.Default.DestinationFolder,
@@ -74,34 +162,79 @@ namespace FarmaKode.Client
             if (!Settings.Default.AppIsEnabled)
             {
                 menuItemAppStatus.Text = "Uygulamayı AKTİF yap";
-                notifyIcon.ShowBalloonTip(1000, "FarmaKode", "Uygulama pasif modda başladı" +
-                    "", ToolTipIcon.Info);
+                new FormNotification().ShowAlert("Uygulama pasif modda başladı", NotificationType.Info);
 
             }
             else
             {
                 menuItemAppStatus.Text = "Uygulamayı pasif yap";
-                notifyIcon.ShowBalloonTip(1000, "FarmaKode", "Uygulama aktif modda başladı", ToolTipIcon.Info);
+                // new FormNotification().ShowAlert("FarmaKode uygulaması başladı", NotificationType.Info);
                 watchDog.Start();
             }
         }
-            
+
+        #endregion
+
+        private void KeyboardListener_s_KeyEventHandler(object sender, EventArgs e)
+        {
+            KeyboardListener.UniversalKeyEventArgs eventArgs = (KeyboardListener.UniversalKeyEventArgs)e;
+
+            if (eventArgs.m_Msg == 256)
+            {
+                //Console.Out.WriteLine(string.Format("Key = {0}  Msg = {1}  Text = {2}", eventArgs.m_Key, eventArgs.m_Msg, eventArgs.KeyData));
+
+                TimeSpan elapsed = (DateTime.Now - _lastKeystroke);
+                if (elapsed.TotalMilliseconds > (int)Settings.Default.BarcodeSpeed)
+                    _barcode.Clear();
+
+
+                if (char.IsNumber((char)eventArgs.KeyData) || char.IsLetter((char)eventArgs.KeyData))
+                {
+                    _barcode.Add((char)eventArgs.KeyData);
+                    _lastKeystroke = DateTime.Now;
+                }
+
+                if (eventArgs.m_Key == 13 && _barcode.Count > 0)
+                {
+                    string msg = new string(_barcode.ToArray());
+                    manuelBarcods.Add(msg);
+                    _barcode.Clear();
+                }
+
+            }
+
+
+        }
+
+        private void ManuelBarcodeCleanTimer_Tick(object sender, EventArgs e)
+        {
+            _barcode.Clear();
+            manuelBarcods.Clear();
+            // new FormNotification().ShowAlert("Perakende önbellek temizlendi",NotificationType.Info);
+        }
+
+        private void ManuelBarcodePostTimer_Tick(object sender, EventArgs e)
+        {
+            if (manuelBarcods.Count > 0)
+            {
+
+                RequestBarcode requestBarcode = ParserBL.GetInstance().CreatRetailRequest(manuelBarcods);
+                ResponseBarcode responseBarcode = ParserBL.GetInstance().PostRetailRequest(requestBarcode);
+
+                FormNotification formNotification = new FormNotification(responseBarcode);
+                formNotification.ShowDialog();
+            }
+
+        }
+
+        private void ManuelModeTimer_Tick(object sender, EventArgs e)
+        {
+            lastRequestBarcode = null;
+        }
 
         private void btnShowPostList_Click(object sender, EventArgs e)
         {
             new FormPostList().ShowDialog();
-        }
-
-        private void notifyIcon1_BalloonTipClicked(object sender, EventArgs e)
-        {
-            MessageBox.Show("Uyarı tıklandı");
-        }
-
-        private void notifyIcon1_Click(object sender, EventArgs e)
-        {
-            contextMenuStrip1.Show(Control.MousePosition);
-
-
         }
 
         private void menuItemOpenSettings_Click(object sender, EventArgs e)
@@ -109,21 +242,11 @@ namespace FarmaKode.Client
             FormSettings formSettings = new FormSettings();
             formSettings.FormClosed += (x, y) =>
             {
-                initializeWatchDog();
+                InitializeWatchDog();
             };
 
             formSettings.ShowDialog();
-        }
-
-        private void menuItemCache_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void menuItemCheckUpdate_Click(object sender, EventArgs e)
-        {
-
-        }
+        }        
 
         private void menuItemExit_Click(object sender, EventArgs e)
         {
@@ -131,7 +254,7 @@ namespace FarmaKode.Client
 
             if (dr == DialogResult.Yes)
             {
-                notifyIcon.ShowBalloonTip(1000, "FarmaKode", "Uygulama Kapatıldı", ToolTipIcon.Info);
+                new FormNotification().ShowAlert("Uygulama kapatıldı", NotificationType.Info);
                 Application.Exit();
             }
 
@@ -142,7 +265,8 @@ namespace FarmaKode.Client
         {
             if (Settings.Default.AppIsEnabled)
             {
-                notifyIcon.ShowBalloonTip(1000, "FarmaKode", "Uygulama pasif edildi", ToolTipIcon.Info);
+                new FormNotification().ShowAlert("Uygulama pasif moda geçti", NotificationType.Info);
+
                 Settings.Default.AppIsEnabled = false;
                 menuItemAppStatus.Text = "Uygulamayı AKTİF yap";
 
@@ -151,7 +275,7 @@ namespace FarmaKode.Client
             }
             else
             {
-                notifyIcon.ShowBalloonTip(1000, "FarmaKode", "Uygulama aktif edildi", ToolTipIcon.Info);
+                new FormNotification().ShowAlert("Uygulama aktif moda geçti", NotificationType.Info);
                 Settings.Default.AppIsEnabled = true;
                 menuItemAppStatus.Text = "Uygulamayı pasif yap";
                 if (watchDog != null)
@@ -171,30 +295,35 @@ namespace FarmaKode.Client
 
                 if (content.Contains(Settings.Default.IsParseableKeyword))
                 {
+                    string latestPostFolder = Path.Combine(Application.StartupPath, Settings.Default.LatestPostPath);
+
                     List<ParsedData> parsedData = ParserBL.GetInstance().Parse(content);
 
-                    string latestPostFolder = Path.Combine(Application.StartupPath, Settings.Default.LatestPostPath);
-                    ParserBL.GetInstance().SavePost(latestPostFolder, parsedData);
+                    RequestBarcode requestBarcode = ParserBL.GetInstance().CreateRequestModel(parsedData);
+                    ParserBL.GetInstance().SaveRequest(latestPostFolder, requestBarcode);
+                    lastRequestBarcode = requestBarcode;
 
-                    notifyIcon.ShowBalloonTip(1000, "FarmaKode Reçete", "Reçete hazır", ToolTipIcon.Info);
-
-                    if (Settings.Default.ClearCacheType == Constants.ClearCahceType.AfterParse)
+                    if (!Settings.Default.IsManuelMode)
                     {
-                        File.Delete(e.FilePath);
+                        Post(requestBarcode);
                     }
                 }
 
             }
             catch (Exception ex)
             {
-
-                notifyIcon.ShowBalloonTip(1000, "FarmaKode Hata", ex.Message, ToolTipIcon.Error);
+                new FormNotification().ShowAlert("FarmaKode hata. " + ex.Message, NotificationType.Error);
             }
 
         }
 
-
-
-
+        private void FormButton_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            watchDog = null;
+            lastRequestBarcode = null;
+            manuelModeTimer = null;
+            manuelBarcodePostTimer = null;
+            manuelBarcodeCleanTimer = null;
+        }
     }
 }

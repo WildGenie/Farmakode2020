@@ -116,7 +116,6 @@
             this.chkEditable.TabIndex = 5;
             this.chkEditable.Text = "Editable Field";
             this.chkEditable.UseVisualStyleBackColor = true;
-            this.chkEditable.CheckedChanged += new System.EventHandler(this.chkEditable_CheckedChanged);
             // 
             // btnDelete
             // 
@@ -188,7 +187,6 @@
             this.chkCombobox.TabIndex = 6;
             this.chkCombobox.Text = "Combobox";
             this.chkCombobox.UseVisualStyleBackColor = true;
-            this.chkCombobox.CheckedChanged += new System.EventHandler(this.chkCombobox_CheckedChanged);
             // 
             // chkParameterEnabled
             // 

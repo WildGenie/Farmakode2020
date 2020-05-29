@@ -1,4 +1,6 @@
-﻿using System;
+﻿using FarmaKode.Client.Model.Response;
+using FarmaKode.Client.Properties;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -8,53 +10,171 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static FarmaKode.Client.Util.Constants;
 
 namespace FarmaKode.Client
 {
-     
+
 
     public partial class FormNotification : Form
     {
-        static readonly IntPtr HWND_TOPMOST = new IntPtr(-1);
-        static readonly IntPtr HWND_NOTOPMOST = new IntPtr(-2);
-        static readonly IntPtr HWND_TOP = new IntPtr(0);
-        static readonly IntPtr HWND_BOTTOM = new IntPtr(1);
-        const UInt32 SWP_NOSIZE = 0x0001;
-        const UInt32 SWP_NOMOVE = 0x0002;
-        const UInt32 TOPMOST_FLAGS = SWP_NOMOVE | SWP_NOSIZE;
-
-        [DllImport("user32.dll")]
-        [return: MarshalAs(UnmanagedType.Bool)]
-        public static extern bool SetWindowPos(IntPtr hWnd, IntPtr hWndInsertAfter, int X, int Y, int cx, int cy, uint uFlags);
+        private NotificationAction action;
+        private int x, y;
+        ResponseBarcode selectedResponseBarcode;
 
         public FormNotification()
         {
             InitializeComponent();
 
+            btnEnglish.Visible = false;
+            btnMobil.Visible = false;
+            btnBarkod.Visible = false;
         }
 
-        private void Bildirim_Load(object sender, EventArgs e)
+        public FormNotification(ResponseBarcode responseBarcode)
         {
-            foreach (var scrn in Screen.AllScreens)
+            InitializeComponent();
+            btnBarkod.Visible = true;
+            btnEnglish.Visible = responseBarcode.Data.Supported_multi_lang;
+            btnMobil.Visible = responseBarcode.Data.Has_mobile_app;
+
+            selectedResponseBarcode = responseBarcode;
+
+            TopMost = true;
+            this.Opacity = 0.0;
+            this.StartPosition = FormStartPosition.Manual;
+            string fname;
+
+            for (int i = 1; i < 10; i++)
             {
-                if (scrn.Bounds.Contains(this.Location))
-                {
-                    this.Location = new Point(scrn.Bounds.Right - this.Width - 20, scrn.Bounds.Top + 20);
-                    SetWindowPos(this.Handle, HWND_TOPMOST, 0, 0, 0, 0, TOPMOST_FLAGS);
-                    return;
-                }
-            }
+                fname = "alert" + i.ToString();
+                FormNotification frm = (FormNotification)Application.OpenForms[fname];
 
+                if (frm == null)
+                {
+                    this.Name = fname;
+                    this.x = Screen.PrimaryScreen.WorkingArea.Width - this.Width + 15;
+                    this.y = Screen.PrimaryScreen.WorkingArea.Height - this.Height * i - 5 * i;
+                    this.Location = new Point(this.x, this.y);
+                    break;
+
+                }
+
+            }
+            this.x = Screen.PrimaryScreen.WorkingArea.Width - base.Width - 5;
+
+            string messsage = string.Format("{0} reçetesi hazır", responseBarcode.Data.Patient_name);
+            this.pictureBox1.Image = Resources.success;
+            this.BackColor = Color.SeaGreen;
+            this.lblMsg.Text = messsage;
+            this.action = NotificationAction.start;
+            this.timer1.Interval = 1;
+            this.timer1.Start();
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
-            Close();
+            
         }
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            Close();
+            switch (this.action)
+            {
+                case NotificationAction.wait:
+                    timer1.Interval = 5000;
+                    action = NotificationAction.close;
+                    break;
+                case NotificationAction.start:
+                    this.timer1.Interval = 1;
+                    this.Opacity += 0.1;
+                    if (this.x < this.Location.X)
+                    {
+                        this.Left--;
+                    }
+                    else
+                    {
+                        if (this.Opacity == 1.0)
+                        {
+                            action = NotificationAction.wait;
+                        }
+                    }
+                    break;
+                case NotificationAction.close:
+                    timer1.Interval = 1;
+                    this.Opacity -= 0.1;
+
+                    this.Left -= 3;
+                    if (base.Opacity == 0.0)
+                    {
+                        base.Close();
+                    }
+                    break;
+            }
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            timer1.Interval = 1;
+            action = NotificationAction.close;
+        }
+
+        private void btnBarkod_Click(object sender, EventArgs e)
+        {
+            new FormPostList(selectedResponseBarcode).ShowDialog();
+        }
+
+        public void ShowAlert(string msg, NotificationType type)
+        {
+            this.Opacity = 0.0;
+            this.StartPosition = FormStartPosition.Manual;
+            string fname;
+            TopMost = true;
+            for (int i = 1; i < 10; i++)
+            {
+                fname = "alert" + i.ToString();
+                FormNotification frm = (FormNotification)Application.OpenForms[fname];
+
+                if (frm == null)
+                {
+                    this.Name = fname;
+                    this.x = Screen.PrimaryScreen.WorkingArea.Width - this.Width + 15;
+                    this.y = Screen.PrimaryScreen.WorkingArea.Height - this.Height * i - 5 * i;
+                    this.Location = new Point(this.x, this.y);
+                    break;
+
+                }
+
+            }
+            this.x = Screen.PrimaryScreen.WorkingArea.Width - base.Width - 5;
+
+            switch (type)
+            {
+                case NotificationType.Success:
+                    this.pictureBox1.Image = Resources.success;
+                    this.BackColor = Color.SeaGreen;
+                    break;
+                case NotificationType.Error:
+                    this.pictureBox1.Image = Resources.error;
+                    this.BackColor = Color.DarkRed;
+                    break;
+                case NotificationType.Info:
+                    this.pictureBox1.Image = Resources.info;
+                    this.BackColor = Color.RoyalBlue;
+                    break;
+                case NotificationType.Warning:
+                    this.pictureBox1.Image = Resources.warning;
+                    this.BackColor = Color.DarkOrange;
+                    break;
+            }
+
+
+            this.lblMsg.Text = msg;
+
+            this.Show();
+            this.action = NotificationAction.start;
+            this.timer1.Interval = 1;
+            this.timer1.Start();
         }
 
     }

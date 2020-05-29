@@ -30,9 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             this.lblName = new System.Windows.Forms.Label();
-            this.btnGoToWeb = new System.Windows.Forms.Button();
-            this.btnPrint = new System.Windows.Forms.Button();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.btnGoToWeb = new System.Windows.Forms.Button();
             this.lblNo = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
@@ -43,7 +42,7 @@
             this.lblName.ForeColor = System.Drawing.Color.White;
             this.lblName.Location = new System.Drawing.Point(20, 0);
             this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(147, 26);
+            this.lblName.Size = new System.Drawing.Size(205, 26);
             this.lblName.TabIndex = 1;
             this.lblName.Text = "#Hasta Adı#";
             this.lblName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -59,7 +58,7 @@
             this.btnGoToWeb.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnGoToWeb.Font = new System.Drawing.Font("Segoe UI", 6.75F, System.Drawing.FontStyle.Bold);
             this.btnGoToWeb.ForeColor = System.Drawing.Color.White;
-            this.btnGoToWeb.Location = new System.Drawing.Point(167, 0);
+            this.btnGoToWeb.Location = new System.Drawing.Point(225, 0);
             this.btnGoToWeb.Name = "btnGoToWeb";
             this.btnGoToWeb.Size = new System.Drawing.Size(75, 26);
             this.btnGoToWeb.TabIndex = 3;
@@ -67,26 +66,6 @@
             this.toolTip1.SetToolTip(this.btnGoToWeb, "Web\'de görüntüle");
             this.btnGoToWeb.UseVisualStyleBackColor = false;
             this.btnGoToWeb.Click += new System.EventHandler(this.btnGoToWeb_Click);
-            // 
-            // btnPrint
-            // 
-            this.btnPrint.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(161)))), ((int)(((byte)(19)))));
-            this.btnPrint.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnPrint.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(161)))), ((int)(((byte)(19)))));
-            this.btnPrint.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(161)))), ((int)(((byte)(19)))));
-            this.btnPrint.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(161)))), ((int)(((byte)(19)))));
-            this.btnPrint.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(45)))), ((int)(((byte)(55)))));
-            this.btnPrint.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnPrint.Font = new System.Drawing.Font("Segoe UI", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnPrint.ForeColor = System.Drawing.Color.White;
-            this.btnPrint.Location = new System.Drawing.Point(242, 0);
-            this.btnPrint.Name = "btnPrint";
-            this.btnPrint.Size = new System.Drawing.Size(58, 26);
-            this.btnPrint.TabIndex = 4;
-            this.btnPrint.Text = "YAZDIR";
-            this.toolTip1.SetToolTip(this.btnPrint, "Barkodu yazdır");
-            this.btnPrint.UseVisualStyleBackColor = false;
-            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
             // 
             // lblNo
             // 
@@ -109,7 +88,6 @@
             this.Controls.Add(this.lblName);
             this.Controls.Add(this.lblNo);
             this.Controls.Add(this.btnGoToWeb);
-            this.Controls.Add(this.btnPrint);
             this.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "PostListItem";
@@ -121,8 +99,7 @@
         #endregion
         public System.Windows.Forms.Label lblName;
         public System.Windows.Forms.ToolTip toolTip1;
-        private System.Windows.Forms.Button btnPrint;
-        private System.Windows.Forms.Button btnGoToWeb;
         private System.Windows.Forms.Label lblNo;
+        private System.Windows.Forms.Button btnGoToWeb;
     }
 }

@@ -97,7 +97,7 @@ namespace FarmaKode.Client.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        [global::System.Configuration.DefaultSettingValueAttribute("https://farmakode.com/api/post-recipe")]
         public string ApiURL {
             get {
                 return ((string)(this["ApiURL"]));
@@ -133,18 +133,6 @@ namespace FarmaKode.Client.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("0")]
-        public int NotificationBrowser {
-            get {
-                return ((int)(this["NotificationBrowser"]));
-            }
-            set {
-                this["NotificationBrowser"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("5")]
         public int NotificationMaxCount {
             get {
@@ -157,7 +145,7 @@ namespace FarmaKode.Client.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
         public bool IsEnableNotification {
             get {
                 return ((bool)(this["IsEnableNotification"]));
@@ -236,6 +224,222 @@ namespace FarmaKode.Client.Properties {
             }
             set {
                 this["LatestPostPath"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool IsManuelMode {
+            get {
+                return ((bool)(this["IsManuelMode"]));
+            }
+            set {
+                this["IsManuelMode"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("https://ipinfo.io/ip")]
+        public string IPAddressServer {
+            get {
+                return ((string)(this["IPAddressServer"]));
+            }
+            set {
+                this["IPAddressServer"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("PC-02")]
+        public string PharmacyPCNO {
+            get {
+                return ((string)(this["PharmacyPCNO"]));
+            }
+            set {
+                this["PharmacyPCNO"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool ShowPrinterDilaog {
+            get {
+                return ((bool)(this["ShowPrinterDilaog"]));
+            }
+            set {
+                this["ShowPrinterDilaog"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("60")]
+        public decimal PaperWidth {
+            get {
+                return ((decimal)(this["PaperWidth"]));
+            }
+            set {
+                this["PaperWidth"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("40")]
+        public decimal PaperHeight {
+            get {
+                return ((decimal)(this["PaperHeight"]));
+            }
+            set {
+                this["PaperHeight"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public decimal MarginLeft {
+            get {
+                return ((decimal)(this["MarginLeft"]));
+            }
+            set {
+                this["MarginLeft"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public decimal MarginRight {
+            get {
+                return ((decimal)(this["MarginRight"]));
+            }
+            set {
+                this["MarginRight"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public decimal MarginTop {
+            get {
+                return ((decimal)(this["MarginTop"]));
+            }
+            set {
+                this["MarginTop"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public decimal MarginBottom {
+            get {
+                return ((decimal)(this["MarginBottom"]));
+            }
+            set {
+                this["MarginBottom"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool ManuelKeysCTRL {
+            get {
+                return ((bool)(this["ManuelKeysCTRL"]));
+            }
+            set {
+                this["ManuelKeysCTRL"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool ManuelKeysSHIFT {
+            get {
+                return ((bool)(this["ManuelKeysSHIFT"]));
+            }
+            set {
+                this["ManuelKeysSHIFT"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool ManuelKeysALT {
+            get {
+                return ((bool)(this["ManuelKeysALT"]));
+            }
+            set {
+                this["ManuelKeysALT"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string ManuelKeysCustom {
+            get {
+                return ((string)(this["ManuelKeysCustom"]));
+            }
+            set {
+                this["ManuelKeysCustom"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("3")]
+        public decimal ManuelModeTimerInterval {
+            get {
+                return ((decimal)(this["ManuelModeTimerInterval"]));
+            }
+            set {
+                this["ManuelModeTimerInterval"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("100")]
+        public decimal BarcodeSpeed {
+            get {
+                return ((decimal)(this["BarcodeSpeed"]));
+            }
+            set {
+                this["BarcodeSpeed"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("2")]
+        public decimal BarcodePostDuration {
+            get {
+                return ((decimal)(this["BarcodePostDuration"]));
+            }
+            set {
+                this["BarcodePostDuration"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("3")]
+        public decimal BarcodeClearDuration {
+            get {
+                return ((decimal)(this["BarcodeClearDuration"]));
+            }
+            set {
+                this["BarcodeClearDuration"] = value;
             }
         }
     }

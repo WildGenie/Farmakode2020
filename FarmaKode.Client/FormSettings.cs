@@ -1,13 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
+using System.Diagnostics;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Printing;
 using System.Windows.Forms;
+using FarmaKode.Client.Business;
 using FarmaKode.Client.Properties;
+using FarmaKode.Client.Util;
 
 namespace FarmaKode.Client
 {
@@ -40,8 +39,29 @@ namespace FarmaKode.Client
             }
 
             comboCahce.SelectedIndex = Settings.Default.ClearCacheType;
-            comboNotificationBrowser.SelectedIndex = Settings.Default.NotificationBrowser;
             comboNotificationPosition.SelectedIndex = Settings.Default.NotificationPosition;
+
+
+            System.Drawing.Printing.PrinterSettings.StringCollection printerList = System.Drawing.Printing.PrinterSettings.InstalledPrinters;
+            List<string> _printerList = new List<string>();
+
+            foreach (string printer in printerList)
+            {
+                _printerList.Add(printer);
+                comboDefaultBarcodePrinter.Items.Add(printer);
+            }
+
+            if (!_printerList.Contains(Settings.Default.DefaultBarcodePrinter))
+            {
+                comboDefaultBarcodePrinter.SelectedItem = LocalPrintServer.GetDefaultPrintQueue().FullName;
+            }
+
+            var values = Enum.GetValues(typeof(Keys));
+            foreach (var item in values)
+            {
+                comboManuelKey.Items.Add(item.ToString());
+            }
+
         }
 
 
@@ -83,15 +103,24 @@ namespace FarmaKode.Client
             {
                 Settings.Default.Save();
                 isChanged = false;
-                MessageBox.Show("Ayarlar kayıt edilmiştir", "Farmakode", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+                MessageBox.Show("Ayarlar kayıt edilmiştir. Uygulama yeniden başlatılacaktır", "Farmakode", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+                errorProvider1.Clear();
+             
+                Application.Exit(); 
+                Process.Start(Application.ExecutablePath, "/restart" + Process.GetCurrentProcess().Id);
             }
 
         }
 
+        
         private void btnSelectSourceFolder_Click(object sender, EventArgs e)
         {
             FolderBrowserDialog folder = new FolderBrowserDialog();
-            folder.RootFolder = Environment.SpecialFolder.DesktopDirectory;
+            if (string.IsNullOrEmpty(txtSourceFolder.Text))
+                folder.RootFolder = Environment.SpecialFolder.DesktopDirectory;
+            else
+                folder.SelectedPath = txtSourceFolder.Text;
+
             folder.ShowDialog();
             txtSourceFolder.Text = folder.SelectedPath;
         }
@@ -103,8 +132,6 @@ namespace FarmaKode.Client
             folder.ShowDialog();
             txtDestinationFolder.Text = folder.SelectedPath;
         }
-
-
 
         private void Default_SettingChanging(object sender, System.Configuration.SettingChangingEventArgs e)
         {
@@ -144,14 +171,14 @@ namespace FarmaKode.Client
             }
             else
             {
-                MessageBox.Show("Lütfen ilgili alanlara gerekli bilgileri giriniz","Uyarı");
+                MessageBox.Show("Lütfen ilgili alanlara gerekli bilgileri giriniz", "Uyarı");
                 e.Cancel = true;
             }
         }
 
         private void FormSettings_FormClosed(object sender, FormClosedEventArgs e)
         {
-            FormButton.notifyIcon.ShowBalloonTip(1000, "FarmaKode", "Uygulama çalışıyor", ToolTipIcon.Info);
+            //FormButton.notifyIcon.ShowBalloonTip(1000, "FarmaKode", "Uygulama çalışıyor", ToolTipIcon.Info);
         }
 
         private void btnIsAppEnabled_Click(object sender, EventArgs e)
@@ -177,11 +204,6 @@ namespace FarmaKode.Client
             Settings.Default.ClearCacheType = comboCahce.SelectedIndex;
         }
 
-        private void comboNotificationBrowser_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            Settings.Default.NotificationBrowser = comboNotificationBrowser.SelectedIndex;
-        }
-
         private void comboNotificationPosition_SelectedIndexChanged(object sender, EventArgs e)
         {
             Settings.Default.NotificationPosition = comboNotificationPosition.SelectedIndex;
@@ -191,5 +213,20 @@ namespace FarmaKode.Client
         {
             new FormParameter().ShowDialog();
         }
+
+        private void FormSettings_Load(object sender, EventArgs e)
+        {
+            this.Text = "Ayarlar | " + CacheBL.IPAddress;
+        }
+
+        private void comboDefaultBarcodePrinter_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (comboDefaultBarcodePrinter.SelectedIndex > -1)
+                Settings.Default.DefaultBarcodePrinter = comboDefaultBarcodePrinter.SelectedItem.ToString();
+        }
+
+        
+
+        
     }
 }

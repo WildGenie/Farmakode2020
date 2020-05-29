@@ -53,7 +53,6 @@ namespace FarmaKode.Client.Util
                 log.Debug(message);
         }
 
-
         public void Error(string message, Exception ex)
         {
             if (log.IsErrorEnabled)

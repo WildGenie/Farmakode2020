@@ -8,6 +8,7 @@ namespace FarmaKode.Client.Util
 {
     public class Constants
     {
+
         public const string XPathConfigFileName = "XPathConfig.xml";
 
         public  struct ClearCahceType
@@ -24,5 +25,21 @@ namespace FarmaKode.Client.Util
             public const int Firefox = 2;
             public const int Opera = 3;
         }
+
+        public enum NotificationAction
+        {
+            wait,
+            start,
+            close
+        }
+
+        public enum NotificationType
+        {
+            Success,
+            Warning,
+            Error,
+            Info
+        }
+
     }
 }
