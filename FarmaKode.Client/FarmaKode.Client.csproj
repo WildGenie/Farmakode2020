@@ -24,9 +24,9 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <InstallUrl>https://raw.githubusercontent.com/ayagbasan/Farmakode2020/master/FarmaKode/FarmaKode.Client/publish/</InstallUrl>
-    <UpdateUrl>https://raw.githubusercontent.com/ayagbasan/Farmakode2020/master/FarmaKode/FarmaKode.Client/publish/</UpdateUrl>
-    <ApplicationRevision>9</ApplicationRevision>
+    <InstallUrl>https://raw.githubusercontent.com/ayagbasan/Farmakode2020/master/Farmakode2020/FarmaKode.Client/publish/</InstallUrl>
+    <UpdateUrl>https://raw.githubusercontent.com/ayagbasan/Farmakode2020/master/Farmakode2020/FarmaKode.Client/publish/</UpdateUrl>
+    <ApplicationRevision>10</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
