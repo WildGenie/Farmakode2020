@@ -86,7 +86,7 @@ namespace FarmaKode.Client
             {
                 if (lastRequestBarcode == null)
                 {
-                    MessageBox.Show("Son " + Settings.Default.ManuelModeTimerInterval + " dakika içinde reçe işlemi yapılmaıdğı için işlem yapılamıyor", "Uyarı");
+                    MessageBox.Show("Son " + Settings.Default.ManuelModeTimerInterval + " dakika içinde reçete işlemi yapılmadığı için işlem yapılamıyor", "Uyarı");
                 }
                 else
                 {
@@ -96,18 +96,21 @@ namespace FarmaKode.Client
 
             base.WndProc(ref m);
         }
-        void Post(RequestBarcode requestBarcode)
+        ResponseBarcode Post(RequestBarcode requestBarcode)
         {
-            string latestPostFolder = Path.Combine(Application.StartupPath, Settings.Default.LatestPostPath);
-            ResponseBarcode responseBarcode = ParserBL.GetInstance().PostRequest(requestBarcode);
-            ParserBL.GetInstance().SaveResponse(latestPostFolder, responseBarcode);
-            //if (Settings.Default.ClearCacheType == Constants.ClearCahceType.AfterParse)
-            //{
-            //    File.Delete(e.FilePath);
-            //}
+            try
+            {
+                string latestPostFolder = Path.Combine(Application.StartupPath, Settings.Default.LatestPostPath);
+                ResponseBarcode responseBarcode = ParserBL.GetInstance().PostRequest(requestBarcode);
+                ParserBL.GetInstance().SaveResponse(latestPostFolder, responseBarcode);
+                return responseBarcode;
 
-            FormNotification formNotification = new FormNotification(responseBarcode);
-            formNotification.ShowDialog();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
         }
 
 
@@ -155,14 +158,13 @@ namespace FarmaKode.Client
         {
             watchDog = new WatchDogBL(Settings.Default.SourceFolder,
                Settings.Default.DestinationFolder,
-               Settings.Default.FileExtension,
-               Settings.Default.IsCopyFileToDestination);
+               Settings.Default.FileExtension);
             watchDog.ParseFileEvent += WatchDog_ParseFileEvent;
 
             if (!Settings.Default.AppIsEnabled)
             {
                 menuItemAppStatus.Text = "Uygulamayı AKTİF yap";
-                new FormNotification().ShowAlert("Uygulama pasif modda başladı", NotificationType.Info);
+                new FormNotification("Uygulama pasif modda başladı", NotificationType.Info).ShowDialog(); ;
 
             }
             else
@@ -217,7 +219,6 @@ namespace FarmaKode.Client
         {
             if (manuelBarcods.Count > 0)
             {
-
                 RequestBarcode requestBarcode = ParserBL.GetInstance().CreatRetailRequest(manuelBarcods);
                 ResponseBarcode responseBarcode = ParserBL.GetInstance().PostRetailRequest(requestBarcode);
 
@@ -246,7 +247,7 @@ namespace FarmaKode.Client
             };
 
             formSettings.ShowDialog();
-        }        
+        }
 
         private void menuItemExit_Click(object sender, EventArgs e)
         {
@@ -254,7 +255,7 @@ namespace FarmaKode.Client
 
             if (dr == DialogResult.Yes)
             {
-                new FormNotification().ShowAlert("Uygulama kapatıldı", NotificationType.Info);
+                new FormNotification("Uygulama kapatıldı", NotificationType.Info).ShowDialog();
                 Application.Exit();
             }
 
@@ -265,7 +266,7 @@ namespace FarmaKode.Client
         {
             if (Settings.Default.AppIsEnabled)
             {
-                new FormNotification().ShowAlert("Uygulama pasif moda geçti", NotificationType.Info);
+                new FormNotification("Uygulama pasif moda geçti", NotificationType.Info).ShowDialog();
 
                 Settings.Default.AppIsEnabled = false;
                 menuItemAppStatus.Text = "Uygulamayı AKTİF yap";
@@ -275,7 +276,7 @@ namespace FarmaKode.Client
             }
             else
             {
-                new FormNotification().ShowAlert("Uygulama aktif moda geçti", NotificationType.Info);
+                new FormNotification("Uygulama aktif moda geçti", NotificationType.Info).ShowDialog();
                 Settings.Default.AppIsEnabled = true;
                 menuItemAppStatus.Text = "Uygulamayı pasif yap";
                 if (watchDog != null)
@@ -305,14 +306,15 @@ namespace FarmaKode.Client
 
                     if (!Settings.Default.IsManuelMode)
                     {
-                        Post(requestBarcode);
+                        ResponseBarcode responseBarcode = Post(requestBarcode);
+                        new FormNotification(responseBarcode).ShowDialog();
                     }
                 }
 
             }
             catch (Exception ex)
             {
-                new FormNotification().ShowAlert("FarmaKode hata. " + ex.Message, NotificationType.Error);
+                new FormNotification("FarmaKode hata. " + ex.Message, NotificationType.Error).ShowDialog();
             }
 
         }

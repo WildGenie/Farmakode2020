@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Drawing;
+using System.IO;
 using System.Printing;
 using System.Windows.Forms;
 using FarmaKode.Client.Business;
@@ -35,6 +36,14 @@ namespace FarmaKode.Client
             if (string.IsNullOrEmpty(Settings.Default.SourceFolder))
             {
                 Settings.Default.SourceFolder = Environment.GetFolderPath(Environment.SpecialFolder.InternetCache);
+                Settings.Default.Save();
+            }
+
+            if (string.IsNullOrEmpty(Settings.Default.DestinationFolder))
+            {
+                Settings.Default.DestinationFolder = Path.Combine(Application.StartupPath, Settings.Default.LatestPostPath);
+                if (!Directory.Exists(Settings.Default.DestinationFolder))
+                    Directory.CreateDirectory(Settings.Default.DestinationFolder); 
                 Settings.Default.Save();
             }
 
@@ -171,8 +180,9 @@ namespace FarmaKode.Client
             }
             else
             {
-                MessageBox.Show("Lütfen ilgili alanlara gerekli bilgileri giriniz", "Uyarı");
-                e.Cancel = true;
+                MessageBox.Show("Gerekli alanlar girilmediği için uygulama çalışmayacaktır", "Uyarı");
+                Application.Exit();
+                //e.Cancel = true;
             }
         }
 
@@ -225,8 +235,9 @@ namespace FarmaKode.Client
                 Settings.Default.DefaultBarcodePrinter = comboDefaultBarcodePrinter.SelectedItem.ToString();
         }
 
-        
+        private void chkCopyDestinationFolder_CheckedChanged(object sender, EventArgs e)
+        {
 
-        
+        }
     }
 }

@@ -61,18 +61,6 @@ namespace FarmaKode.Client.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("False")]
-        public bool IsCopyFileToDestination {
-            get {
-                return ((bool)(this["IsCopyFileToDestination"]));
-            }
-            set {
-                this["IsCopyFileToDestination"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("")]
         public string DestinationFolder {
             get {
@@ -217,7 +205,7 @@ namespace FarmaKode.Client.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data/LatestPost")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data\\LatestPost")]
         public string LatestPostPath {
             get {
                 return ((string)(this["LatestPostPath"]));

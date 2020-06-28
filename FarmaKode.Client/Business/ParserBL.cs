@@ -436,17 +436,36 @@ namespace FarmaKode.Client.Business
                 request.AddJsonBody(requestBarcode);
                 var response = client.Post(request);
 
-                string responseContent = File.ReadAllText(System.Windows.Forms.Application.StartupPath + "\\Data\\response.json");
-                JsonSerializerSettings settings = new JsonSerializerSettings();
-                settings.Culture = new System.Globalization.CultureInfo("tr-TR");
-                settings.DateFormatString = "dd.MM.yyyy";
-                ResponseBarcode responseBarcode = JsonConvert.DeserializeObject<ResponseBarcode>(responseContent, settings) ;
+                //string responseContent = File.ReadAllText(System.Windows.Forms.Application.StartupPath + "\\Data\\response.json");
+                //JsonSerializerSettings settings = new JsonSerializerSettings();
+                //settings.Culture = new System.Globalization.CultureInfo("tr-TR");
+                //settings.DateFormatString = "dd.MM.yyyy";
+                //ResponseBarcode responseBarcode = JsonConvert.DeserializeObject<ResponseBarcode>(responseContent, settings);
 
-                responseBarcode.ReceteNo = requestBarcode.HeaderSection.ReceteNo;
-                return responseBarcode;
+                //responseBarcode.ReceteNo = requestBarcode.HeaderSection.ReceteNo;
+                //return responseBarcode;
+
+                if (response.IsSuccessful)
+                {
+                    //string responseContent = File.ReadAllText(System.Windows.Forms.Application.StartupPath + "\\Data\\response.json");
+                    JsonSerializerSettings settings = new JsonSerializerSettings();
+                    settings.Culture = new System.Globalization.CultureInfo("tr-TR");
+                    settings.DateFormatString = "dd.MM.yyyy";
+                    ResponseBarcode responseBarcode = JsonConvert.DeserializeObject<ResponseBarcode>(response.Content, settings);
+
+                    responseBarcode.ReceteNo = requestBarcode.HeaderSection.ReceteNo;
+                    return responseBarcode;
+                }
+                else
+                {
+                    throw new Exception("Web servisten reçete detayları alınamadı");
+                }
+
+
             }
             catch (Exception ex)
             {
+                Logger.GetInstance().Error("Post metodu çalışırken hata oluştu",ex);
                 throw ex;
             }
            

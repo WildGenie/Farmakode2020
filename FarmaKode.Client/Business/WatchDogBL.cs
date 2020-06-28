@@ -8,24 +8,22 @@ namespace FarmaKode.Client.Business
 {
     public class WatchDogBL
     {
-        
+
         FileSystemWatcher fsw = null;
         string source = null;
         string destination = null;
         string extension = null;
-        bool copyToDestination = false;
 
         [Browsable(true)]
         [Category("Olaylar")]
         [Description("Yeni bir dosya oluştuğunda dosya içeriği parse edilir")]
         public event EventHandler<ParseEventArgs> ParseFileEvent;
 
-        public WatchDogBL(string source, string destination, string extension, bool copyToDestination)
+        public WatchDogBL(string source, string destination, string extension)
         {
             this.source = source;
             this.extension = extension;
             this.destination = destination;
-            this.copyToDestination = copyToDestination;
         }
 
         public void Start()
@@ -48,7 +46,7 @@ namespace FarmaKode.Client.Business
             }
             catch
             {
-                Logger.GetInstance().Error("Yol adını giriniz.örnek,C:\\dosya",null);
+                Logger.GetInstance().Error("Yol adını giriniz.örnek,C:\\dosya", null);
             }
         }
 
@@ -88,22 +86,20 @@ namespace FarmaKode.Client.Business
 
         void CopyDestination(string source)
         {
-            if (copyToDestination)
+            try
             {
-                try
-                {
-                    string fileName = Path.GetFileName(source);
-                    string destFileName = Path.Combine(this.destination, fileName);
-                    File.Copy(source, destFileName, true);
-                }
-                catch (Exception ex)
-                {
-                    Logger.GetInstance().Error("Dosya hedef klasöre taşınamadı", ex);
-                }
+                string fileName = Path.GetFileName(source);
+                string destFileName = Path.Combine(this.destination, fileName);
+                File.Copy(source, destFileName, true);
             }
+            catch (Exception ex)
+            {
+                Logger.GetInstance().Error("Dosya hedef klasöre taşınamadı", ex);
+            }
+
         }
 
-        
+
 
     }
 }

@@ -84,7 +84,7 @@ namespace FarmaKode.Client
             catch (Exception ex)
             {
                 Logger.GetInstance().Error("Son işlem yapılan reçete dosyaları okunamadı", ex);
-                new FormNotification().ShowAlert("Son işlem yapılan reçete dosyaları okunamadı", NotificationType.Error);
+                new FormNotification("Son işlem yapılan reçete dosyaları okunamadı", NotificationType.Error).ShowDialog();
                 this.Close();
             }
         }

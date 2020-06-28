@@ -11,9 +11,6 @@
     <Setting Name="SourceFolder" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
-    <Setting Name="IsCopyFileToDestination" Type="System.Boolean" Scope="User">
-      <Value Profile="(Default)">False</Value>
-    </Setting>
     <Setting Name="DestinationFolder" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
@@ -51,7 +48,7 @@
       <Value Profile="(Default)">/eczane/faces/pages/recete/ReceteIslem2.jsp</Value>
     </Setting>
     <Setting Name="LatestPostPath" Type="System.String" Scope="User">
-      <Value Profile="(Default)">Data/LatestPost</Value>
+      <Value Profile="(Default)">Data\LatestPost</Value>
     </Setting>
     <Setting Name="IsManuelMode" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>

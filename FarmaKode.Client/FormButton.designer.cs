@@ -29,12 +29,14 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormButton));
             this.btnShowPostList = new System.Windows.Forms.Button();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.menuItemOpenSettings = new System.Windows.Forms.ToolStripMenuItem();
             this.menuItemAppStatus = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.menuItemExit = new System.Windows.Forms.ToolStripMenuItem();
+            this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -59,7 +61,7 @@
             this.toolStripSeparator1,
             this.menuItemExit});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(188, 98);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(188, 76);
             this.contextMenuStrip1.Text = "Arayüzü Aç";
             // 
             // menuItemOpenSettings
@@ -72,21 +74,28 @@
             // menuItemAppStatus
             // 
             this.menuItemAppStatus.Name = "menuItemAppStatus";
-            this.menuItemAppStatus.Size = new System.Drawing.Size(204, 22);
+            this.menuItemAppStatus.Size = new System.Drawing.Size(187, 22);
             this.menuItemAppStatus.Text = "Uygulamayı Pasif Yap";
             this.menuItemAppStatus.Click += new System.EventHandler(this.menuItemAppStatus_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(201, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(184, 6);
             // 
             // menuItemExit
             // 
             this.menuItemExit.Name = "menuItemExit";
-            this.menuItemExit.Size = new System.Drawing.Size(204, 22);
+            this.menuItemExit.Size = new System.Drawing.Size(187, 22);
             this.menuItemExit.Text = "Çıkış";
             this.menuItemExit.Click += new System.EventHandler(this.menuItemExit_Click);
+            // 
+            // notifyIcon1
+            // 
+            this.notifyIcon1.ContextMenuStrip = this.contextMenuStrip1;
+            this.notifyIcon1.Icon = ((System.Drawing.Icon)(resources.GetObject("notifyIcon1.Icon")));
+            this.notifyIcon1.Text = "notifyIcon1";
+            this.notifyIcon1.Visible = true;
             // 
             // FormButton
             // 
@@ -121,5 +130,6 @@
         private System.Windows.Forms.ToolStripMenuItem menuItemAppStatus;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripMenuItem menuItemExit;
+        private System.Windows.Forms.NotifyIcon notifyIcon1;
     }
 }
