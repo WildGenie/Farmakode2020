@@ -430,5 +430,29 @@ namespace FarmaKode.Client.Properties {
                 this["BarcodeClearDuration"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("8")]
+        public decimal BarcodeMinlength {
+            get {
+                return ((decimal)(this["BarcodeMinlength"]));
+            }
+            set {
+                this["BarcodeMinlength"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool BarcodeOnlyNumber {
+            get {
+                return ((bool)(this["BarcodeOnlyNumber"]));
+            }
+            set {
+                this["BarcodeOnlyNumber"] = value;
+            }
+        }
     }
 }

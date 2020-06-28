@@ -16,7 +16,11 @@ namespace FarmaKode.Client.Component
         public ResponseDrug Drug { get; set; }
 
 
-        
+        public DrugPreview()
+        {
+            InitializeComponent();
+           
+        }
         public DrugPreview(ResponseDrug responseDrug)
         {
             InitializeComponent();
@@ -52,7 +56,7 @@ namespace FarmaKode.Client.Component
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
-            BackColor = chkIsPrint.Checked ? Color.FromArgb(103, 161, 19) : Color.DarkGray;
+            BackColor = chkIsPrint.Checked ? Color.SeaGreen: Color.DarkGray;
             this.Drug.IsPrint = chkIsPrint.Checked;
         }
 

@@ -123,28 +123,28 @@ namespace FarmaKode.Client.Util
 				public void* hwndTarget;
 			};
 
-			internal unsafe struct RAWINPUTHEADER 
-			{
-				public uint dwType;
-				public uint dwSize;
-				public void* hDevice;
-				public void* wParam;
-			};
+            internal unsafe struct RAWINPUTHEADER
+            {
+                public uint dwType;
+                public uint dwSize;
+                public void* hDevice;
+                public void* wParam;
+            };
 
-			internal unsafe struct RAWINPUTHKEYBOARD 
-			{
-				public RAWINPUTHEADER header;
-				public ushort MakeCode;
-				public ushort Flags;
-				public ushort Reserved;
-				public ushort VKey;
-				public uint Message;
-				public uint ExtraInformation;
+            internal unsafe struct RAWINPUTHKEYBOARD
+            {
+                public RAWINPUTHEADER header;
+                public ushort MakeCode;
+                public ushort Flags;
+                public ushort Reserved;
+                public ushort VKey;
+                public uint Message;
+                public uint ExtraInformation;
 
-			};
-			#endregion
+            };
+            #endregion
 
-			public ListeningWindow(KeyDelegate keyHandlerFunction)
+            public ListeningWindow(KeyDelegate keyHandlerFunction)
 			{
 				m_KeyHandler = keyHandlerFunction;
 

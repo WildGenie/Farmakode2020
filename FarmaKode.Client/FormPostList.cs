@@ -163,10 +163,13 @@ namespace FarmaKode.Client
             if (selectedResponseBarcode.Result == "success")
             {
                 List<ReportData> dataList = new List<ReportData>();
+                int width = selectedResponseBarcode.Data.Drugs.Count > 2 ? 320 : 340;
+
                 foreach (var drug in selectedResponseBarcode.Data.Drugs)
                 {
                     DrugPreview drugPreview = new DrugPreview(drug);
-                    flowLayoutPanel1.Controls.Add(drugPreview);
+                    drugPreview.Width = width;
+                    flowLayoutPanel1.Controls.Add(drugPreview); 
                 }
 
                 locationForm(380, 450);

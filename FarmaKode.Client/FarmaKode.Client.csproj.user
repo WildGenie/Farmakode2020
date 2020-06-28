@@ -3,9 +3,9 @@
   <PropertyGroup>
     <ProjectView>ProjectFiles</ProjectView>
     <PublishUrlHistory>publish\</PublishUrlHistory>
-    <InstallUrlHistory>https://raw.githubusercontent.com/ayagbasan/Farmakode2020/master/FarmaKode/FarmaKode.Client/publish/|https://github.com/ayagbasan/Farmakode2020/master/FarmaKode/FarmaKode.Client/publish/</InstallUrlHistory>
+    <InstallUrlHistory>https://raw.githubusercontent.com/ayagbasan/Farmakode2020/master/FarmaKode/FarmaKode.Client/publish/|https://raw.githubusercontent.com/ayagbasan/Farmakode2020/master/FarmaKode.Client/publish/|https://raw.githubusercontent.com/ayagbasan/Farmakode2020/master/Farmakode2020/FarmaKode.Client/publish/|https://raw.githubusercontent.com/ayagbasan/Farmakode2020/master/[solution_name]/FarmaKode.Client/publish/|https://github.com/ayagbasan/Farmakode2020/master/FarmaKode/FarmaKode.Client/publish/</InstallUrlHistory>
     <SupportUrlHistory />
-    <UpdateUrlHistory>https://github.com/ayagbasan/Farmakode2020/master/FarmaKode/FarmaKode.Client/publish/</UpdateUrlHistory>
+    <UpdateUrlHistory>https://raw.githubusercontent.com/ayagbasan/Farmakode2020/master/FarmaKode/FarmaKode.Client/publish/|https://github.com/ayagbasan/Farmakode2020/master/FarmaKode/FarmaKode.Client/publish/</UpdateUrlHistory>
     <BootstrapperUrlHistory />
     <ErrorReportUrlHistory />
     <FallbackCulture>en-US</FallbackCulture>

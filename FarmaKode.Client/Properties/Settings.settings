@@ -104,5 +104,11 @@
     <Setting Name="BarcodeClearDuration" Type="System.Decimal" Scope="User">
       <Value Profile="(Default)">3</Value>
     </Setting>
+    <Setting Name="BarcodeMinlength" Type="System.Decimal" Scope="User">
+      <Value Profile="(Default)">8</Value>
+    </Setting>
+    <Setting Name="BarcodeOnlyNumber" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

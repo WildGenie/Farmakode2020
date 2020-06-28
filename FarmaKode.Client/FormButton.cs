@@ -19,14 +19,18 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using static FarmaKode.Client.Util.Constants;
 
+
+
 namespace FarmaKode.Client
 {
+
     public partial class FormButton : Form
     {
 
 
         #region VARIABLES
 
+        public ParserBL BL = ParserBL.GetInstance();
         public WatchDogBL watchDog = null;
         RequestBarcode lastRequestBarcode = null;
         Timer manuelModeTimer = null;
@@ -90,28 +94,23 @@ namespace FarmaKode.Client
                 }
                 else
                 {
-                    Post(lastRequestBarcode);
+                    try
+                    {
+                        ResponseBarcode responseBarcode = BL.PostRequest(lastRequestBarcode);
+                        new FormNotification(responseBarcode).ShowDialog();
+                    }
+                    catch (Exception ex)
+                    {
+                        new FormNotification("FarmaKode hata. " + ex.Message, NotificationType.Error).ShowDialog();
+
+                    }
+
                 }
             }
 
             base.WndProc(ref m);
         }
-        ResponseBarcode Post(RequestBarcode requestBarcode)
-        {
-            try
-            {
-                string latestPostFolder = Path.Combine(Application.StartupPath, Settings.Default.LatestPostPath);
-                ResponseBarcode responseBarcode = ParserBL.GetInstance().PostRequest(requestBarcode);
-                ParserBL.GetInstance().SaveResponse(latestPostFolder, responseBarcode);
-                return responseBarcode;
 
-            }
-            catch (Exception ex)
-            {
-
-                throw ex;
-            }
-        }
 
 
         void ManuelModeCheck()
@@ -184,24 +183,37 @@ namespace FarmaKode.Client
             if (eventArgs.m_Msg == 256)
             {
                 //Console.Out.WriteLine(string.Format("Key = {0}  Msg = {1}  Text = {2}", eventArgs.m_Key, eventArgs.m_Msg, eventArgs.KeyData));
-
                 TimeSpan elapsed = (DateTime.Now - _lastKeystroke);
                 if (elapsed.TotalMilliseconds > (int)Settings.Default.BarcodeSpeed)
                     _barcode.Clear();
 
 
-                if (char.IsNumber((char)eventArgs.KeyData) || char.IsLetter((char)eventArgs.KeyData))
+                if(Settings.Default.BarcodeOnlyNumber)
                 {
-                    _barcode.Add((char)eventArgs.KeyData);
-                    _lastKeystroke = DateTime.Now;
+                    if (char.IsNumber((char)eventArgs.KeyData))
+                    {
+                        _barcode.Add((char)eventArgs.KeyData);
+                    }
+                }
+                else
+                {
+                    if (char.IsNumber((char)eventArgs.KeyData) || char.IsLetter((char)eventArgs.KeyData))
+                    {
+                        _barcode.Add((char)eventArgs.KeyData);
+                    }
+                }
+               
+                string barcode = new string(_barcode.ToArray());
+
+                if (eventArgs.m_Key == 13 && _barcode.Count > 0 && barcode.Length>= Settings.Default.BarcodeMinlength)
+                {
+                    manuelBarcods.Add(barcode);
+                    _barcode.Clear();
+                    Console.Out.WriteLine(string.Format("Son Barkod: {0} ", barcode));
+
                 }
 
-                if (eventArgs.m_Key == 13 && _barcode.Count > 0)
-                {
-                    string msg = new string(_barcode.ToArray());
-                    manuelBarcods.Add(msg);
-                    _barcode.Clear();
-                }
+                _lastKeystroke = DateTime.Now;
 
             }
 
@@ -217,14 +229,25 @@ namespace FarmaKode.Client
 
         private void ManuelBarcodePostTimer_Tick(object sender, EventArgs e)
         {
-            if (manuelBarcods.Count > 0)
+            try
             {
-                RequestBarcode requestBarcode = ParserBL.GetInstance().CreatRetailRequest(manuelBarcods);
-                ResponseBarcode responseBarcode = ParserBL.GetInstance().PostRetailRequest(requestBarcode);
+                if (manuelBarcods.Count > 0)
+                {
+                    RequestBarcode requestBarcode = BL.CreatRetailRequest(manuelBarcods);
+                    ResponseBarcode responseBarcode = BL.PostRetailRequest(requestBarcode);
+                    responseBarcode.ReceteNo = requestBarcode.HeaderSection.ReceteNo;
 
-                FormNotification formNotification = new FormNotification(responseBarcode);
-                formNotification.ShowDialog();
+                    new FormNotification(responseBarcode).ShowDialog();
+
+                    _barcode.Clear();
+                    manuelBarcods.Clear();
+                }
             }
+            catch (Exception ex)
+            {
+                new FormNotification("Perakende işlemine ait barkod işlemi web servisten okunamadı", NotificationType.Error).ShowDialog();
+            }
+
 
         }
 
@@ -296,17 +319,14 @@ namespace FarmaKode.Client
 
                 if (content.Contains(Settings.Default.IsParseableKeyword))
                 {
-                    string latestPostFolder = Path.Combine(Application.StartupPath, Settings.Default.LatestPostPath);
+                    List<ParsedData> parsedData = BL.Parse(content);
 
-                    List<ParsedData> parsedData = ParserBL.GetInstance().Parse(content);
-
-                    RequestBarcode requestBarcode = ParserBL.GetInstance().CreateRequestModel(parsedData);
-                    ParserBL.GetInstance().SaveRequest(latestPostFolder, requestBarcode);
+                    RequestBarcode requestBarcode = BL.CreateRequestModel(parsedData);
                     lastRequestBarcode = requestBarcode;
 
                     if (!Settings.Default.IsManuelMode)
                     {
-                        ResponseBarcode responseBarcode = Post(requestBarcode);
+                        ResponseBarcode responseBarcode = BL.PostRequest(requestBarcode);
                         new FormNotification(responseBarcode).ShowDialog();
                     }
                 }

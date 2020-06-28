@@ -1,8 +1,11 @@
-﻿using System;
+﻿using FarmaKode.Client.Properties;
+using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace FarmaKode.Client.Util
 {
@@ -10,7 +13,7 @@ namespace FarmaKode.Client.Util
     {
 
         public const string XPathConfigFileName = "XPathConfig.xml";
-
+        public static string LatestPostFolder = Path.Combine(Application.StartupPath, Settings.Default.LatestPostPath);
         public  struct ClearCahceType
         {
             public const int AfterParse = 0;

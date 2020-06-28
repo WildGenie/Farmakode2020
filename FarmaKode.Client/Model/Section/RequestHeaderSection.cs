@@ -13,6 +13,7 @@ namespace FarmaKode.Client.Model.Section
         public string IlaciTeslimAlan { get; set; }
         public string ReceteSahibiAd { get; set; }
         public string ReceteSahibiSoyad { get; set; }
+        public string ReceteSahibiAdSoyad { get; set; }        
         public string TeslimAlanAd { get; set; }
         public string TeslimAlanSoyad { get; set; }
         public string ProvizyonTipi { get; set; }

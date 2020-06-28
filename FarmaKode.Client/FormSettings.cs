@@ -85,11 +85,11 @@ namespace FarmaKode.Client
             }
 
 
-            if (string.IsNullOrEmpty(txtExtension.Text.Trim()))
-            {
-                errorProvider1.SetError(txtExtension, "Bu alan boş geçilemez");
-                isValid = false;
-            }
+            //if (string.IsNullOrEmpty(txtExtension.Text.Trim()))
+            //{
+            //    errorProvider1.SetError(txtExtension, "Bu alan boş geçilemez");
+            //    isValid = false;
+            //}
 
 
             if (string.IsNullOrEmpty(txtSourceFolder.Text.Trim()))

@@ -49,7 +49,7 @@
             // 
             // btnGoToWeb
             // 
-            this.btnGoToWeb.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(161)))), ((int)(((byte)(19)))));
+            this.btnGoToWeb.BackColor = System.Drawing.Color.SeaGreen;
             this.btnGoToWeb.Dock = System.Windows.Forms.DockStyle.Right;
             this.btnGoToWeb.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(161)))), ((int)(((byte)(19)))));
             this.btnGoToWeb.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(161)))), ((int)(((byte)(19)))));

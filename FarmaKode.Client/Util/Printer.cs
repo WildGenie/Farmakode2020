@@ -93,7 +93,7 @@ namespace FarmaKode.Client.Util
                             item.Suggestions,
                             item.Warnings,
                             barcode.Data.Patient_name,
-                            item.Expiration_date.ToString("dd.MM.yyyy"),
+                            item.Expiration_date,
                             barcode.Data.Pharmacy_name,
                             barcode.Data.Pharmacy_phone);
 
