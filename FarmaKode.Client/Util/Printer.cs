@@ -77,8 +77,8 @@ namespace FarmaKode.Client.Util
             try
             {
                 byte[] pdf;
-                var cssText = File.ReadAllText(Application.StartupPath + "\\Data\\ReportTemplate\\barkod.css");
-                var htmlTemplate = File.ReadAllText(Application.StartupPath + "\\Data\\ReportTemplate\\barkod.html");
+                var cssText = File.ReadAllText(Settings.Default.DestinationFolder + "\\ReportTemplate\\barcode.css");
+                var htmlTemplate = File.ReadAllText(Settings.Default.DestinationFolder + "\\ReportTemplate\\barcode.html");
 
                 StringBuilder sb = new StringBuilder();
 
@@ -93,7 +93,7 @@ namespace FarmaKode.Client.Util
                             item.Suggestions,
                             item.Warnings,
                             barcode.Data.Patient_name,
-                            item.Expiration_date,
+                            item.Expiration_date.ToString("dd.MM.yyyy"),
                             barcode.Data.Pharmacy_name,
                             barcode.Data.Pharmacy_phone);
 
@@ -130,7 +130,7 @@ namespace FarmaKode.Client.Util
                     pdf = memoryStream.ToArray();
                 }
 
-                string path = Application.StartupPath + "\\Data\\Barcods\\" + barcode.ReceteNo + "_Barcode.pdf";
+                string path = Settings.Default.DestinationFolder + "\\Barcods\\" + barcode.ReceteNo + "_Barcode.pdf";
                 FileStream fs = new FileStream(path, FileMode.Create);
                 fs.Write(pdf, 0, pdf.Length);
                 fs.Flush();

@@ -42,7 +42,7 @@ namespace FarmaKode.Client
 
         void initializeForm()
         {
-            DirectoryInfo di = new DirectoryInfo(Path.Combine(Application.StartupPath, Settings.Default.LatestPostPath));
+            DirectoryInfo di = new DirectoryInfo(Path.Combine(Settings.Default.DestinationFolder, Settings.Default.LatestPostFolderName));
             List<FileInfo> latestFiles = di.GetFiles("*_Response.json").ToList().OrderByDescending(p => p.CreationTime).ToList();
 
             PostListItem postListItem = null;
@@ -65,7 +65,8 @@ namespace FarmaKode.Client
                         postListItem.Name = item.Name;
                         postListItem.Height = 28;
                         postListItem.Width = 315;
-                        postListItem.PosItemDetailClicked += PostListItem_PosItemDetailClicked;
+                        postListItem.PostItemDetailClicked += PostListItem_PostItemDetailClicked;
+                        postListItem.PostItemPrint += PostListItem_PostItemPrint;
                         panel1.Controls.Add(postListItem);
 
                     }
@@ -89,10 +90,41 @@ namespace FarmaKode.Client
             }
         }
 
-        private void PostListItem_PosItemDetailClicked(object sender, EventArgs e)
+        private void PostListItem_PostItemPrint(object sender, EventArgs e)
         {
-            selectedResponseBarcode = sender as ResponseBarcode;
-            ShowResponseDetails();
+            try
+            {
+                selectedResponseBarcode = sender as ResponseBarcode;
+                if (selectedResponseBarcode.Data != null)
+                {
+                    string tmpPDFPath = Printer.GetInstance().CreatePDF(selectedResponseBarcode);
+                    Printer.GetInstance().Print(tmpPDFPath);
+                }
+                else
+                {
+                    MessageBox.Show("Aradığınız ilaç için veriler henüz eklenmedi. En kısa sürede eklenecektir", "Uyarı");
+                }
+
+            }
+            catch (Exception ex)
+            {
+                Logger.GetInstance().Error("Barkod yazdırılamadı", ex);
+            }
+
+        }
+
+        private void PostListItem_PostItemDetailClicked(object sender, EventArgs e)
+        {
+           
+                selectedResponseBarcode = sender as ResponseBarcode;
+            if (selectedResponseBarcode.Data != null)
+            {
+                ShowResponseDetails();
+            }
+            else
+            {
+                MessageBox.Show("Aradığınız ilaç için veriler henüz eklenmedi. En kısa sürede eklenecektir", "Uyarı");
+            }
         }
 
         private void locationForm(int widht = 355, int height = 250)
@@ -131,21 +163,15 @@ namespace FarmaKode.Client
 
         private void btnPrint_Click(object sender, EventArgs e)
         {
-
             try
             {
                 string tmpPDFPath = Printer.GetInstance().CreatePDF(selectedResponseBarcode);
                 Printer.GetInstance().Print(tmpPDFPath);
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
-                throw;
+                Logger.GetInstance().Error("Barkod yazdırılamadı", ex);
             }
-
-
-
-
         }
 
         private void btnSelectAll_Click(object sender, EventArgs e)
@@ -169,7 +195,7 @@ namespace FarmaKode.Client
                 {
                     DrugPreview drugPreview = new DrugPreview(drug);
                     drugPreview.Width = width;
-                    flowLayoutPanel1.Controls.Add(drugPreview); 
+                    flowLayoutPanel1.Controls.Add(drugPreview);
                 }
 
                 locationForm(380, 450);
@@ -178,7 +204,7 @@ namespace FarmaKode.Client
                 this.Text = "Reçete Detayları";
             }
 
-            
+
         }
     }
 }

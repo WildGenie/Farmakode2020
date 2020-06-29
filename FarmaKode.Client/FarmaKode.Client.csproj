@@ -13,10 +13,10 @@
     <FileAlignment>512</FileAlignment>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
-    <IsWebBootstrapper>true</IsWebBootstrapper>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
-    <InstallFrom>Web</InstallFrom>
+    <InstallFrom>Disk</InstallFrom>
     <UpdateEnabled>true</UpdateEnabled>
     <UpdateMode>Foreground</UpdateMode>
     <UpdateInterval>7</UpdateInterval>
@@ -24,10 +24,9 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <InstallUrl>https://raw.githubusercontent.com/ayagbasan/Farmakode2020/master/Farmakode2020/FarmaKode.Client/publish/</InstallUrl>
     <UpdateUrl>https://raw.githubusercontent.com/ayagbasan/Farmakode2020/master/Farmakode2020/FarmaKode.Client/publish/</UpdateUrl>
     <ApplicationRevision>10</ApplicationRevision>
-    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <ApplicationVersion>1.0.0.10</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
     <BootstrapperEnabled>true</BootstrapperEnabled>
@@ -69,10 +68,16 @@
     <ManifestKeyFile>FarmaKode.Client_TemporaryKey.pfx</ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
-    <GenerateManifests>true</GenerateManifests>
+    <GenerateManifests>false</GenerateManifests>
   </PropertyGroup>
   <PropertyGroup>
     <StartupObject>FarmaKode.Client.Program</StartupObject>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetZone>LocalIntranet</TargetZone>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="FastMember, Version=1.5.0.0, Culture=neutral, processorArchitecture=MSIL">
@@ -118,12 +123,6 @@
     <Compile Include="Component\DrugPreview.Designer.cs">
       <DependentUpon>DrugPreview.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormShowPreview.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormShowPreview.designer.cs">
-      <DependentUpon>FormShowPreview.cs</DependentUpon>
-    </Compile>
     <Compile Include="Model\Request\RequestBarcode.cs" />
     <Compile Include="Model\Response\ResponseData.cs" />
     <Compile Include="Model\Response\ResponseDrug.cs" />
@@ -154,14 +153,11 @@
     <EmbeddedResource Include="Component\PostListItem.resx">
       <DependentUpon>PostListItem.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormShowPreview.resx">
-      <DependentUpon>FormShowPreview.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <None Include="bin\Debug\Data\XPathConfig.json" />
+    <Content Include="bin\Debug\Data\XPathConfig.txt" />
     <Compile Include="Business\CacheBL.cs" />
     <Compile Include="Business\WatchDogBL.cs" />
     <Compile Include="Business\ParameterBL.cs" />
@@ -222,6 +218,7 @@
       <DependentUpon>FormSettings.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="App.config" />
+    <None Include="app.manifest" />
     <None Include="bin\Debug\Data\response.json" />
     <None Include="packages.config" />
     <None Include="Properties\DataSources\FarmaKode.Client.Model.ReportData.datasource" />

@@ -13,7 +13,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Web; 
+using System.Web;
 
 namespace FarmaKode.Client.Business
 {
@@ -46,7 +46,7 @@ namespace FarmaKode.Client.Business
             return str; //completely decoded string
         }
 
-       
+
 
         public List<ParsedData> Parse(string content)
         {
@@ -57,11 +57,7 @@ namespace FarmaKode.Client.Business
             List<ParsedData> parsedData = new List<ParsedData>();
 
             foreach (var parameter in CacheBL.parameterList)
-            {
-                if (parameter.VariableName == "Barkod")
-                {
-
-                }
+            {                 
                 try
                 {
                     string value = string.Empty;
@@ -134,29 +130,6 @@ namespace FarmaKode.Client.Business
                 }
             }
 
-
-
-            //Section section = new Section();
-            //section.DrugSection = new List<Drug>();
-            //section.HeaderSection = new List<ParsedData>();
-            //foreach (var item in parsedData)
-            //{
-            //    if (item.Section == "HeaderSection")
-            //        section.HeaderSection.Add(item);
-            //}
-
-            //List<ParsedData> parsedDrugList = parsedData.Where(p => p.Section == "DrugSection").ToList();
-
-            //var drugList = parsedDrugList.OrderBy(drug => drug.GroupId).GroupBy(drug => drug.GroupId);
-
-            //foreach (var drug in drugList)
-            //{
-            //    foreach (var drugDetail in drug)
-            //    {
-
-            //    }
-            //}
-
             Logger.GetInstance().Info("Medula reçetesi parametrelerine ayrıştırıldı");
             return parsedData;
 
@@ -190,8 +163,8 @@ namespace FarmaKode.Client.Business
                 headerSection.ProtokolNo = GetStringValue(data, nameof(headerSection.ProtokolNo));
                 headerSection.TesisKodu = GetStringValue(data, nameof(headerSection.TesisKodu));
                 headerSection.ReceteTarihi = GetStringValue(data, nameof(headerSection.ReceteTarihi));
-                headerSection.ReceteNo = GetStringValue(data, nameof(headerSection.DiplomaTescilNo));
-                headerSection.KarekodDurumu = GetStringValue(data, nameof(headerSection.ReceteNo));
+                headerSection.ReceteNo = GetStringValue(data, nameof(headerSection.ReceteNo));
+                headerSection.KarekodDurumu = GetStringValue(data, nameof(headerSection.KarekodDurumu));
                 headerSection.Kapsam = GetStringValue(data, nameof(headerSection.Kapsam));
                 headerSection.IlacAlimTarihi = GetStringValue(data, nameof(headerSection.IlacAlimTarihi));
                 headerSection.EReceteNo = GetStringValue(data, nameof(headerSection.EReceteNo));
@@ -226,9 +199,14 @@ namespace FarmaKode.Client.Business
                         item.Tutar = GetDoubleValue(data, nameof(item.Tutar), i);
                         item.Fark = GetDoubleValue(data, nameof(item.Fark), i);
                         item.Rapor = GetStringValue(data, nameof(item.Rapor), i);
-                        item.VerilecebilecegiTarih = GetStringValue(data, nameof(item.VerilecebilecegiTarih), i);
-                        if (string.IsNullOrEmpty(item.VerilecebilecegiTarih))
-                            item.VerilecebilecegiTarih = DateTime.MinValue.ToString("dd.MM.yyyy");
+                        string _VerilecebilecegiTarih = GetStringValue(data, nameof(item.VerilecebilecegiTarih), i);
+                        if (string.IsNullOrEmpty(_VerilecebilecegiTarih))
+                            item.VerilecebilecegiTarih = DateTime.MinValue;
+                        else
+                            item.VerilecebilecegiTarih = DateTime.Parse(_VerilecebilecegiTarih);
+
+
+
                         item.Mesaj = GetStringValue(data, nameof(item.Mesaj), i);
                         drugSection.Add(item);
                     }
@@ -304,14 +282,14 @@ namespace FarmaKode.Client.Business
 
                 List<RequestDrugSection> drugSection = new List<RequestDrugSection>();
                 #region drugSection
-               
+
                 for (int i = 0; i < barcods.Count; i++)
                 {
                     RequestDrugSection item = new RequestDrugSection();
-                    item.Id = i+1;
+                    item.Id = i + 1;
                     item.Barkod = barcods[i];
                     drugSection.Add(item);
-                    
+
                 }
                 #endregion
 
@@ -332,10 +310,10 @@ namespace FarmaKode.Client.Business
             }
         }
 
-        public T GetObjectFromJsonFile<T>(string jsonFilePath, JsonSerializerSettings serializerSettings =null)
+        public T GetObjectFromJsonFile<T>(string jsonFilePath, JsonSerializerSettings serializerSettings = null)
         {
             try
-            {                
+            {
                 string content = string.Empty;
                 using (FileStream fs = new FileStream(jsonFilePath, FileMode.Open, FileAccess.Read))
                 {
@@ -343,13 +321,13 @@ namespace FarmaKode.Client.Business
                     {
                         content = sw.ReadToEnd();
                         sw.Close();
-                       
-                    }                   
+
+                    }
                     fs.Close();
 
                     return JsonConvert.DeserializeObject<T>(content, serializerSettings);
                 }
-                
+
             }
             catch (Exception ex)
             {
@@ -357,13 +335,13 @@ namespace FarmaKode.Client.Business
             }
         }
 
-        private void SaveResponse(string folder,  ResponseBarcode responseBarcode)
+        private void SaveResponse(string folder, ResponseBarcode responseBarcode)
         {
             try
             {
                 if (!Directory.Exists(folder))
                     Directory.CreateDirectory(folder);
-                 
+
                 #region Save Response
 
                 string path = Path.Combine(folder, responseBarcode.ReceteNo + "_Response.json");
@@ -380,7 +358,7 @@ namespace FarmaKode.Client.Business
                 }
 
                 #endregion
-                 
+
 
                 Logger.GetInstance().Info("Reçete response son işlemler kalsörüne kayıt edildi");
             }
@@ -401,7 +379,7 @@ namespace FarmaKode.Client.Business
 
                 #region Save Response
 
-                string path = Path.Combine(folder, receteNo + "_Response.json");  
+                string path = Path.Combine(folder, receteNo + "_Response.json");
                 using (FileStream fs = new FileStream(path, FileMode.OpenOrCreate, FileAccess.Write))
                 {
                     using (StreamWriter sw = new StreamWriter(fs))
@@ -448,7 +426,7 @@ namespace FarmaKode.Client.Business
                 }
 
                 #endregion
-                            
+
 
                 Logger.GetInstance().Info("Reçete request i son işlemler klasörüne kayıt edildi");
             }
@@ -471,26 +449,15 @@ namespace FarmaKode.Client.Business
                 request.AddJsonBody(requestBarcode);
                 var response = client.Post(request);
 
-                SaveRequest(Constants.LatestPostFolder, requestBarcode);
-               
-
-                //string responseContent = File.ReadAllText(System.Windows.Forms.Application.StartupPath + "\\Data\\response.json");
-                //JsonSerializerSettings settings = new JsonSerializerSettings();
-                //settings.Culture = new System.Globalization.CultureInfo("tr-TR");
-                //settings.DateFormatString = "dd.MM.yyyy";
-                //ResponseBarcode responseBarcode = JsonConvert.DeserializeObject<ResponseBarcode>(responseContent, settings);
-
-                //responseBarcode.ReceteNo = requestBarcode.HeaderSection.ReceteNo;
-                //return responseBarcode;
+                SaveRequest(Constants.LatestPostFolder, requestBarcode); 
 
                 if (response.IsSuccessful)
                 {
-                    //string responseContent = File.ReadAllText(System.Windows.Forms.Application.StartupPath + "\\Data\\response.json");
-                    JsonSerializerSettings settings = new JsonSerializerSettings();
+                     JsonSerializerSettings settings = new JsonSerializerSettings();
                     settings.Culture = new System.Globalization.CultureInfo("tr-TR");
                     settings.DateFormatString = "dd.MM.yyyy";
                     ResponseBarcode responseBarcode = JsonConvert.DeserializeObject<ResponseBarcode>(response.Content, settings);
-
+                   
                     responseBarcode.ReceteNo = requestBarcode.HeaderSection.ReceteNo;
 
                     SaveResponse(Constants.LatestPostFolder, responseBarcode);
@@ -499,17 +466,17 @@ namespace FarmaKode.Client.Business
                 else
                 {
                     SaveResponse(Constants.LatestPostFolder, requestBarcode.HeaderSection.ReceteNo, response.Content);
-                    throw new Exception("Web servisten reçete detayları alınamadı");
+                    throw new Exception("Web servisten reçete detayları alınamadı."+ response.Content);
                 }
 
 
             }
             catch (Exception ex)
             {
-                Logger.GetInstance().Error("Post metodu çalışırken hata oluştu",ex);
+                Logger.GetInstance().Error("Post metodu çalışırken hata oluştu", ex);
                 throw ex;
             }
-           
+
         }
 
         public ResponseBarcode PostRetailRequest(RequestBarcode requestBarcode)
@@ -523,10 +490,11 @@ namespace FarmaKode.Client.Business
                 request.AddJsonBody(requestBarcode);
                 var response = client.Post(request);
 
+                SaveRequest(Constants.LatestPostFolder, requestBarcode);
+
                 if (response.IsSuccessful)
                 {
-                    //string responseContent = File.ReadAllText(System.Windows.Forms.Application.StartupPath + "\\Data\\response.json");
-                    JsonSerializerSettings settings = new JsonSerializerSettings();
+                     JsonSerializerSettings settings = new JsonSerializerSettings();
                     settings.Culture = new System.Globalization.CultureInfo("tr-TR");
                     settings.DateFormatString = "dd.MM.yyyy";
                     ResponseBarcode responseBarcode = JsonConvert.DeserializeObject<ResponseBarcode>(response.Content, settings);
@@ -544,7 +512,7 @@ namespace FarmaKode.Client.Business
             catch (Exception ex)
             {
                 Logger.GetInstance().Error("Post metodu çalışırken hata oluştu", ex);
-                throw new Exception("Web servisten reçete detayları alınamadı");              
+                throw new Exception("Web servisten reçete detayları alınamadı");
             }
 
         }

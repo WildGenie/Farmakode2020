@@ -13,7 +13,7 @@ namespace FarmaKode.Client.Util
     {
 
         public const string XPathConfigFileName = "XPathConfig.xml";
-        public static string LatestPostFolder = Path.Combine(Application.StartupPath, Settings.Default.LatestPostPath);
+        public static string LatestPostFolder = Path.Combine(Settings.Default.DestinationFolder, Settings.Default.LatestPostFolderName);
         public  struct ClearCahceType
         {
             public const int AfterParse = 0;

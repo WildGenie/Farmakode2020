@@ -19,7 +19,7 @@ namespace FarmaKode.Client.Model.Section
         public double Tutar { get; set; }
         public double Fark { get; set; }
         public string Rapor { get; set; }
-        public string VerilecebilecegiTarih { get; set; }
+        public DateTime VerilecebilecegiTarih { get; set; }
         public string Mesaj { get; set; }
 
        

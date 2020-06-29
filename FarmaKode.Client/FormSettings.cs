@@ -41,9 +41,8 @@ namespace FarmaKode.Client
 
             if (string.IsNullOrEmpty(Settings.Default.DestinationFolder))
             {
-                Settings.Default.DestinationFolder = Path.Combine(Application.StartupPath, Settings.Default.LatestPostPath);
-                if (!Directory.Exists(Settings.Default.DestinationFolder))
-                    Directory.CreateDirectory(Settings.Default.DestinationFolder); 
+                Settings.Default.DestinationFolder = Path.Combine(@"C:\Program Files\Farmakode", Settings.Default.LatestPostFolderName);
+                CacheBL.CheckSettings();
                 Settings.Default.Save();
             }
 
@@ -137,9 +136,14 @@ namespace FarmaKode.Client
         private void btnSelectDestinationFolder_Click(object sender, EventArgs e)
         {
             FolderBrowserDialog folder = new FolderBrowserDialog();
-            folder.RootFolder = Environment.SpecialFolder.DesktopDirectory;
+         
+            if (string.IsNullOrEmpty(txtDestinationFolder.Text))
+                folder.RootFolder = Environment.SpecialFolder.DesktopDirectory;
+            else
+                folder.SelectedPath = txtDestinationFolder.Text;
             folder.ShowDialog();
             txtDestinationFolder.Text = folder.SelectedPath;
+            CacheBL.CheckSettings();
         }
 
         private void Default_SettingChanging(object sender, System.Configuration.SettingChangingEventArgs e)

@@ -73,8 +73,6 @@ C:\Users\ay1438\Desktop\Farmakode2020\FarmaKode.Client\obj\Debug\FarmaKode.Clien
 C:\Users\ay1438\Desktop\Farmakode2020\FarmaKode.Client\obj\Debug\FarmaKode.Client.pdb
 C:\Users\ay1438\Desktop\Farmakode2020\FarmaKode.Client\obj\Debug\FarmaKode.Client.FormShowPreview.resources
 C:\Users\Administrator\Desktop\Farmakode2020\FarmaKode.Client\bin\Debug\FarmaKode.Client.exe.config
-C:\Users\Administrator\Desktop\Farmakode2020\FarmaKode.Client\bin\Debug\FarmaKode.Client.exe.manifest
-C:\Users\Administrator\Desktop\Farmakode2020\FarmaKode.Client\bin\Debug\FarmaKode.Client.application
 C:\Users\Administrator\Desktop\Farmakode2020\FarmaKode.Client\bin\Debug\FarmaKode.Client.exe
 C:\Users\Administrator\Desktop\Farmakode2020\FarmaKode.Client\bin\Debug\FarmaKode.Client.pdb
 C:\Users\Administrator\Desktop\Farmakode2020\FarmaKode.Client\bin\Debug\FastMember.dll
@@ -95,7 +93,6 @@ C:\Users\Administrator\Desktop\Farmakode2020\FarmaKode.Client\obj\Debug\FarmaKod
 C:\Users\Administrator\Desktop\Farmakode2020\FarmaKode.Client\obj\Debug\FarmaKode.Client.FormNotification.resources
 C:\Users\Administrator\Desktop\Farmakode2020\FarmaKode.Client\obj\Debug\FarmaKode.Client.FormPostList.resources
 C:\Users\Administrator\Desktop\Farmakode2020\FarmaKode.Client\obj\Debug\FarmaKode.Client.Component.PostListItem.resources
-C:\Users\Administrator\Desktop\Farmakode2020\FarmaKode.Client\obj\Debug\FarmaKode.Client.FormShowPreview.resources
 C:\Users\Administrator\Desktop\Farmakode2020\FarmaKode.Client\obj\Debug\FarmaKode.Client.Properties.Resources.resources
 C:\Users\Administrator\Desktop\Farmakode2020\FarmaKode.Client\obj\Debug\FarmaKode.Client.FormParameter.resources
 C:\Users\Administrator\Desktop\Farmakode2020\FarmaKode.Client\obj\Debug\FarmaKode.Client.FormSettings.resources
@@ -103,9 +100,6 @@ C:\Users\Administrator\Desktop\Farmakode2020\FarmaKode.Client\obj\Debug\FarmaKod
 C:\Users\Administrator\Desktop\Farmakode2020\FarmaKode.Client\obj\Debug\RdlCompile.cache
 C:\Users\Administrator\Desktop\Farmakode2020\FarmaKode.Client\obj\Debug\RdlCompile.compiled
 C:\Users\Administrator\Desktop\Farmakode2020\FarmaKode.Client\obj\Debug\FarmaKode.Client.csproj.CoreCompileInputs.cache
-C:\Users\Administrator\Desktop\Farmakode2020\FarmaKode.Client\obj\Debug\FarmaKode.Client.exe.manifest
-C:\Users\Administrator\Desktop\Farmakode2020\FarmaKode.Client\obj\Debug\FarmaKode.Client.application
 C:\Users\Administrator\Desktop\Farmakode2020\FarmaKode.Client\obj\Debug\FarmaKode.Client.csproj.CopyComplete
 C:\Users\Administrator\Desktop\Farmakode2020\FarmaKode.Client\obj\Debug\FarmaKode.Client.exe
 C:\Users\Administrator\Desktop\Farmakode2020\FarmaKode.Client\obj\Debug\FarmaKode.Client.pdb
-C:\Users\Administrator\Desktop\Farmakode2020\FarmaKode.Client\obj\Debug\FarmaKode.Client.csprojAssemblyReference.cache

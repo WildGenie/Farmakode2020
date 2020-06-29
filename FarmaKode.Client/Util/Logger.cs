@@ -35,7 +35,7 @@ namespace FarmaKode.Client.Util
                 if (appender.Name.CompareTo("FileAppender") == 0 && appender is log4net.Appender.FileAppender)
                 {
                     log4net.Appender.FileAppender fileAppender = (log4net.Appender.FileAppender)appender;
-                    fileAppender.File = System.IO.Path.Combine(Settings.Default.LogPath, logFileName);
+                    fileAppender.File = System.IO.Path.Combine(Settings.Default.DestinationFolder, Settings.Default.LogPath, logFileName);
                     fileAppender.ActivateOptions();
                 }
             }

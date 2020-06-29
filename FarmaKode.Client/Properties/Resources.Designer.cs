@@ -71,6 +71,93 @@ namespace FarmaKode.Client.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to 
+        ///.tablo {
+        ///    width: 60mm;
+        ///    height: 40mm;
+        ///    font-family: &quot;Tahoma&quot;;
+        ///    font-weight: bold;
+        ///    font-size: 8px;
+        ///    border-collapse: collapse;
+        ///}
+        ///
+        ///td {
+        ///    padding: 0px 4px;
+        ///}
+        ///
+        ///.ilacAdi {
+        ///    text-align: left;
+        ///}
+        ///
+        ///.tarih {
+        ///    text-align: right;
+        ///}
+        ///
+        ///.teshis {
+        ///    text-align: center;
+        ///    background-color: #000;
+        ///    color: #fff;
+        ///}
+        ///
+        ///.kullanim {
+        ///    color: #f0f;
+        ///}
+        ///
+        ///.oneri {
+        ///    color: #f0f;
+        ///}
+        ///
+        ///.adSoyad {
+        ///    text-align: left;
+        ///    background-color: #000;
+        ///    color: #fff;
+        ///}
+        ///
+        ///.bitisTarihi {
+        ///    text-align: right;
+        /// [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string barcode_css {
+            get {
+                return ResourceManager.GetString("barcode_css", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;html&gt;
+        ///		&lt;body&gt;
+        ///			&lt;table class=&quot;tablo&quot;&gt;
+        ///				&lt;tr&gt;
+        ///					&lt;td class=&quot;ilacAdi&quot;&gt;{0}&lt;/td&gt;
+        ///					&lt;td class=&quot;tarih&quot;&gt;{1}&lt;/td&gt;
+        ///				&lt;/tr&gt;
+        ///				&lt;tr&gt;
+        ///					&lt;td class=&quot;teshis&quot; colspan=&quot;2&quot;&gt;{2}&lt;/td&gt;
+        ///				&lt;/tr&gt;
+        ///				&lt;tr&gt;
+        ///					&lt;td class=&quot;kullanim&quot; colspan=&quot;2&quot;&gt;{3}&lt;/td&gt;
+        ///				&lt;/tr&gt;
+        ///				&lt;tr&gt;
+        ///					&lt;td class=&quot;oneri&quot; colspan=&quot;2&quot;&gt;{4}&lt;/td&gt;
+        ///				&lt;/tr&gt;
+        ///				&lt;tr&gt;
+        ///					&lt;td class=&quot;adSoyad&quot; &gt;{5}&lt;/td&gt;
+        ///					&lt;td class=&quot;bitisTarihi&quot; &gt; Bitiş Tarihi :  {6}&lt;/td&gt;
+        ///				&lt;/tr&gt;
+        ///				&lt;tr&gt;
+        ///					&lt;td class=&quot;eczane&quot; colspan=&quot;2&quot;&gt;{7} / {8}&lt;/td&gt;
+        ///				&lt;/tr&gt;
+        ///			&lt;/table&gt;
+        ///
+        /// [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string barcode_html {
+            get {
+                return ResourceManager.GetString("barcode_html", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap close {
@@ -167,6 +254,36 @@ namespace FarmaKode.Client.Properties {
             get {
                 object obj = ResourceManager.GetObject("warning", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to [
+        ///  {
+        ///    &quot;Id&quot;: 1,
+        ///    &quot;Enabled&quot;: true,
+        ///    &quot;Group&quot;: &quot;HeaderSection&quot;,
+        ///    &quot;Label&quot;: &quot;ReceteSahibiTC&quot;,
+        ///    &quot;VariableName&quot;: &quot;ReceteSahibiTC&quot;,
+        ///    &quot;XPath&quot;: &quot;//*[@id=\&quot;f:t18\&quot;]&quot;,
+        ///    &quot;IsRecursive&quot;: false,
+        ///    &quot;RecursiveCount&quot;: 0,
+        ///    &quot;IsCombobox&quot;: false,
+        ///    &quot;IsEditable&quot;: true
+        ///  },
+        ///  {
+        ///    &quot;Id&quot;: 2,
+        ///    &quot;Enabled&quot;: true,
+        ///    &quot;Group&quot;: &quot;HeaderSection&quot;,
+        ///    &quot;Label&quot;: &quot;TeslimAlanTC&quot;,
+        ///    &quot;VariableName&quot;: &quot;TeslimAlanTC&quot;,
+        ///    &quot;XPath&quot;: &quot;//*[@id=\&quot;f:text37\&quot;]&quot;,
+        ///    &quot;IsRecursive&quot;: false,
+        ///    &quot;RecursiveCo [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string XPathConfig {
+            get {
+                return ResourceManager.GetString("XPathConfig", resourceCulture);
             }
         }
     }

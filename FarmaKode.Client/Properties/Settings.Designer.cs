@@ -61,7 +61,7 @@ namespace FarmaKode.Client.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        [global::System.Configuration.DefaultSettingValueAttribute("C:\\Program Files\\Farmakode")]
         public string DestinationFolder {
             get {
                 return ((string)(this["DestinationFolder"]));
@@ -157,13 +157,13 @@ namespace FarmaKode.Client.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data\\XPathConfig.json")]
-        public string XPathConfigFilePath {
+        [global::System.Configuration.DefaultSettingValueAttribute("XPathConfig.json")]
+        public string XPathConfigFile {
             get {
-                return ((string)(this["XPathConfigFilePath"]));
+                return ((string)(this["XPathConfigFile"]));
             }
             set {
-                this["XPathConfigFilePath"] = value;
+                this["XPathConfigFile"] = value;
             }
         }
         
@@ -205,13 +205,13 @@ namespace FarmaKode.Client.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data\\LatestPost")]
-        public string LatestPostPath {
+        [global::System.Configuration.DefaultSettingValueAttribute("LatestPost")]
+        public string LatestPostFolderName {
             get {
-                return ((string)(this["LatestPostPath"]));
+                return ((string)(this["LatestPostFolderName"]));
             }
             set {
-                this["LatestPostPath"] = value;
+                this["LatestPostFolderName"] = value;
             }
         }
         
@@ -452,6 +452,20 @@ namespace FarmaKode.Client.Properties {
             }
             set {
                 this["BarcodeOnlyNumber"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("<?xml version=\"1.0\" encoding=\"utf-16\"?>\r\n<ArrayOfString xmlns:xsi=\"http://www.w3." +
+            "org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\">\r\n  <s" +
+            "tring>010</string>\r\n  <string>011</string>\r\n</ArrayOfString>")]
+        public global::System.Collections.Specialized.StringCollection QRCodeIgnore {
+            get {
+                return ((global::System.Collections.Specialized.StringCollection)(this["QRCodeIgnore"]));
+            }
+            set {
+                this["QRCodeIgnore"] = value;
             }
         }
     }

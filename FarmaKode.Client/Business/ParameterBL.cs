@@ -16,7 +16,7 @@ namespace FarmaKode.Client.Business
     public class ParameterBL
     {
         private string XmlPath = string.Empty;
-        private string ConfigFilePath = Path.Combine(Application.StartupPath, Settings.Default.XPathConfigFilePath);
+        private string ConfigFilePath = Path.Combine(Settings.Default.DestinationFolder, Settings.Default.XPathConfigFile);
 
         private static ParameterBL instance = null; 
         public static ParameterBL GetInstance()

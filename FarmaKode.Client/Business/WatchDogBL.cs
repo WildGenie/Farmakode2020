@@ -46,7 +46,7 @@ namespace FarmaKode.Client.Business
             }
             catch
             {
-                Logger.GetInstance().Error("Yol adını giriniz.örnek,C:\\dosya", null);
+                Logger.GetInstance().Error("Yol adını giriniz.örnek, C:\\dosya", null);
             }
         }
 
@@ -61,9 +61,9 @@ namespace FarmaKode.Client.Business
 
         void Created(object gelen, FileSystemEventArgs e)
         {
-            Logger.GetInstance().Info(string.Format("{0} dizininde {1} adında yeni dosya olusturuldu", source, e.Name));
+            Logger.GetInstance().Info(string.Format("{0}\\{1} adında yeni dosya olusturuldu", source, e.Name));
             CopyDestination(e.FullPath);
-
+            System.Threading.Thread.Sleep(500);
             ParseFileEvent?.Invoke(this, new ParseEventArgs(e.FullPath));
         }
 
@@ -86,6 +86,7 @@ namespace FarmaKode.Client.Business
 
         void CopyDestination(string source)
         {
+            return;
             try
             {
                 string fileName = Path.GetFileName(source);
