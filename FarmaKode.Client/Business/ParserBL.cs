@@ -135,6 +135,29 @@ namespace FarmaKode.Client.Business
 
         }
 
+        public bool IsValidHTML(string content)
+        {
+
+            HtmlDocument dokuman = new HtmlDocument();
+            dokuman.LoadHtml(content);
+            
+            var nodeReceteNo = dokuman.DocumentNode.SelectSingleNode("//*[@id=\"f:t13\"]");
+            string receteNo = nodeReceteNo == null ? string.Empty : nodeReceteNo.InnerHtml;
+
+            if (!(receteNo == "0" || receteNo=="")  && content.Contains(Settings.Default.IsParseableKeyword))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+
+
+
+
+        }
+
         public RequestBarcode CreateRequestModel(List<ParsedData> data)
         {
             try
@@ -233,7 +256,7 @@ namespace FarmaKode.Client.Business
                 priceSection.KatkiPayiMaastan = GetDoubleValue(data, nameof(priceSection.KatkiPayiMaastan));
                 priceSection.MuayeneKatkiPayi = GetDoubleValue(data, nameof(priceSection.MuayeneKatkiPayi));
                 priceSection.MuayeneKatkiMaastan = GetDoubleValue(data, nameof(priceSection.MuayeneKatkiMaastan));
-                priceSection.EczaneIndirimTutari = GetDoubleValue(data, nameof(priceSection.EczaneIndirimTutari));
+                priceSection.EczaneIndirimTutari = 0;// GetDoubleValue(data, nameof(priceSection.EczaneIndirimTutari));
                 priceSection.IlacKatkiPayiTutari = GetDoubleValue(data, nameof(priceSection.IlacKatkiPayiTutari));
                 priceSection.FiyatFarki = GetDoubleValue(data, nameof(priceSection.FiyatFarki));
                 priceSection.ToplamTutar = GetDoubleValue(data, nameof(priceSection.ToplamTutar));

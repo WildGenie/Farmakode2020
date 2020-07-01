@@ -129,9 +129,9 @@
     <Compile Include="Model\Response\ResponseBarcode.cs" />
     <Compile Include="Model\Section\RequestDrugSection.cs" />
     <Compile Include="Model\Section\RequestHeaderSection.cs" />
-    <Compile Include="Model\Section\RequestICDSection.cs" />
-    <Compile Include="Model\Section\RequestPharmacySection.cs" />
     <Compile Include="Model\Section\RequestPriceSection.cs" />
+    <Compile Include="Model\Section\RequestPharmacySection.cs" />
+    <Compile Include="Model\Section\RequestICDSection.cs" />
     <Compile Include="Util\HotKeys.cs" />
     <Compile Include="Util\KbdListener.cs" />
     <Compile Include="Util\Printer.cs" />

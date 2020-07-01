@@ -212,7 +212,7 @@ namespace FarmaKode.Client
                     }
 
                     manuelBarcods.Add(barcode);
-                    Logger.GetInstance().Info("Okunan Perakende Barkodu: "+ barcode);
+                    Logger.GetInstance().Info("Okunan Perakende Barkodu: " + barcode);
                     _barcode.Clear();
 
 
@@ -330,10 +330,13 @@ namespace FarmaKode.Client
                     using (StreamReader sr = new StreamReader(fs))
                     {
                         string content = sr.ReadToEnd();
-                        if (content.Contains(Settings.Default.IsParseableKeyword))
+                        if (BL.IsValidHTML(content))
                         {
                             List<ParsedData> parsedData = BL.Parse(content);
                             RequestBarcode requestBarcode = BL.CreateRequestModel(parsedData);
+
+
+
                             lastRequestBarcode = requestBarcode;
                             if (!Settings.Default.IsManuelMode)
                             {
@@ -346,7 +349,7 @@ namespace FarmaKode.Client
                         }
                         else
                         {
-                            Logger.GetInstance().Info(e.FilePath + " dosyasının içeriğinde \"" + Settings.Default.IsParseableKeyword + "\" ifadesi geçmiyor");
+                            Logger.GetInstance().Info(e.FilePath + " dosyasının içeriğinde \"" + Settings.Default.IsParseableKeyword + "\" geçemediği için ya da Recete No=0 olduğu için okunamadı");
                         }
                     }
                     fs.Close();
