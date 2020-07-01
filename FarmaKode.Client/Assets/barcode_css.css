@@ -1,0 +1,51 @@
+﻿
+.tablo {
+    width: 60mm;
+    height: 40mm;
+    font-family: "Tahoma";
+    font-weight: bold;
+    font-size: 8px;
+    border-collapse: collapse;
+}
+
+td {
+    padding: 0px 4px;
+}
+
+.ilacAdi {
+    text-align: left;
+}
+
+.tarih {
+    text-align: right;
+}
+
+.teshis {
+    text-align: center;
+    background-color: #000;
+    color: #fff;
+}
+
+.kullanim {
+    color: #f0f;
+}
+
+.oneri {
+    color: #f0f;
+}
+
+.adSoyad {
+    text-align: left;
+    background-color: #000;
+    color: #fff;
+}
+
+.bitisTarihi {
+    text-align: right;
+    background-color: #000;
+    color: #fff;
+}
+
+.eczane {
+    text-align: center;
+}
