@@ -14,14 +14,11 @@
     <Setting Name="DestinationFolder" Type="System.String" Scope="User">
       <Value Profile="(Default)">C:\Program Files\Farmakode</Value>
     </Setting>
-    <Setting Name="ClearCacheType" Type="System.Int32" Scope="User">
-      <Value Profile="(Default)">0</Value>
-    </Setting>
     <Setting Name="ApiURL" Type="System.String" Scope="User">
       <Value Profile="(Default)">https://farmakode.com/api/post-recipe</Value>
     </Setting>
     <Setting Name="NotificationDuration" Type="System.Decimal" Scope="User">
-      <Value Profile="(Default)">5</Value>
+      <Value Profile="(Default)">10</Value>
     </Setting>
     <Setting Name="NotificationPosition" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">0</Value>
@@ -57,7 +54,7 @@
       <Value Profile="(Default)">https://ipinfo.io/ip</Value>
     </Setting>
     <Setting Name="PharmacyPCNO" Type="System.String" Scope="User">
-      <Value Profile="(Default)">PC-02</Value>
+      <Value Profile="(Default)">BOŞ</Value>
     </Setting>
     <Setting Name="ShowPrinterDilaog" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
@@ -99,10 +96,10 @@
       <Value Profile="(Default)">100</Value>
     </Setting>
     <Setting Name="BarcodePostDuration" Type="System.Decimal" Scope="User">
-      <Value Profile="(Default)">2</Value>
+      <Value Profile="(Default)">60</Value>
     </Setting>
     <Setting Name="BarcodeClearDuration" Type="System.Decimal" Scope="User">
-      <Value Profile="(Default)">3</Value>
+      <Value Profile="(Default)">60</Value>
     </Setting>
     <Setting Name="BarcodeMinlength" Type="System.Decimal" Scope="User">
       <Value Profile="(Default)">8</Value>

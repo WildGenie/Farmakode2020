@@ -56,7 +56,7 @@ namespace FarmaKode.Client.Component
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
-            BackColor = chkIsPrint.Checked ? Color.SeaGreen: Color.DarkGray;
+            BackColor = chkIsPrint.Checked ? Color.Yellow: Color.DarkGray;
             this.Drug.IsPrint = chkIsPrint.Checked;
         }
 

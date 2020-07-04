@@ -46,7 +46,7 @@ namespace FarmaKode.Client
                 Settings.Default.Save();
             }
 
-            comboCahce.SelectedIndex = Settings.Default.ClearCacheType;
+            //comboCahce.SelectedIndex = Settings.Default.ClearCacheType;
             comboNotificationPosition.SelectedIndex = Settings.Default.NotificationPosition;
 
 
@@ -213,10 +213,7 @@ namespace FarmaKode.Client
             }
         }
 
-        private void comboCahce_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            Settings.Default.ClearCacheType = comboCahce.SelectedIndex;
-        }
+         
 
         private void comboNotificationPosition_SelectedIndexChanged(object sender, EventArgs e)
         {

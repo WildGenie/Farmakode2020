@@ -1,5 +1,6 @@
 ﻿using FarmaKode.Client.Model.Response;
 using FarmaKode.Client.Properties;
+using FarmaKode.Client.Util;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -28,13 +29,13 @@ namespace FarmaKode.Client
 
             btnEnglish.Visible = false;
             btnMobil.Visible = false;
-            btnBarkod.Visible = false;
+            btnGoruntule.Visible = false;
         }
 
         public FormNotification(ResponseBarcode responseBarcode)
         {
             InitializeComponent();
-            btnBarkod.Visible = true;
+            btnGoruntule.Visible = true;
             btnEnglish.Visible = responseBarcode.Data.Supported_multi_lang || false;
             btnMobil.Visible = responseBarcode.Data.Has_mobile_app || false;
 
@@ -78,7 +79,7 @@ namespace FarmaKode.Client
         public FormNotification(string messsage, NotificationType type)
         {
             InitializeComponent();
-            btnBarkod.Visible = false;
+            btnGoruntule.Visible = false;
             btnEnglish.Visible = false;
             btnMobil.Visible = false;
 
@@ -182,10 +183,25 @@ namespace FarmaKode.Client
             action = NotificationAction.close;
         }
 
-        private void btnBarkod_Click(object sender, EventArgs e)
+        private void btnGoruntule_Click(object sender, EventArgs e)
         {
             new FormPostList(selectedResponseBarcode).ShowDialog();
         }
+
+        private void btnYazdir_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string tmpPDFPath = Printer.GetInstance().CreatePDF(selectedResponseBarcode);
+                Printer.GetInstance().Print(tmpPDFPath);
+            }
+            catch (Exception ex)
+            {
+                Logger.GetInstance().Error("Barkod yazdırılamadı", ex);
+            }
+        }
+
+         
 
         //public void ShowAlert(string msg, NotificationType type)
         //{

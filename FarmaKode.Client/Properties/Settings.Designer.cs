@@ -73,18 +73,6 @@ namespace FarmaKode.Client.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("0")]
-        public int ClearCacheType {
-            get {
-                return ((int)(this["ClearCacheType"]));
-            }
-            set {
-                this["ClearCacheType"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("https://farmakode.com/api/post-recipe")]
         public string ApiURL {
             get {
@@ -97,7 +85,7 @@ namespace FarmaKode.Client.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("5")]
+        [global::System.Configuration.DefaultSettingValueAttribute("10")]
         public decimal NotificationDuration {
             get {
                 return ((decimal)(this["NotificationDuration"]));
@@ -241,7 +229,7 @@ namespace FarmaKode.Client.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("PC-02")]
+        [global::System.Configuration.DefaultSettingValueAttribute("BOŞ")]
         public string PharmacyPCNO {
             get {
                 return ((string)(this["PharmacyPCNO"]));
@@ -409,7 +397,7 @@ namespace FarmaKode.Client.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("2")]
+        [global::System.Configuration.DefaultSettingValueAttribute("60")]
         public decimal BarcodePostDuration {
             get {
                 return ((decimal)(this["BarcodePostDuration"]));
@@ -421,7 +409,7 @@ namespace FarmaKode.Client.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("3")]
+        [global::System.Configuration.DefaultSettingValueAttribute("60")]
         public decimal BarcodeClearDuration {
             get {
                 return ((decimal)(this["BarcodeClearDuration"]));

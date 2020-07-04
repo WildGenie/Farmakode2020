@@ -41,18 +41,12 @@
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.btnAdmin = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.spinNotificationDuration = new System.Windows.Forms.NumericUpDown();
-            this.spinNotificationCount = new System.Windows.Forms.NumericUpDown();
-            this.chkNotificationEnable = new System.Windows.Forms.CheckBox();
-            this.comboNotificationPosition = new System.Windows.Forms.ComboBox();
             this.groupManuelMode = new System.Windows.Forms.GroupBox();
+            this.label22 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.btnSelectSourceFolder = new System.Windows.Forms.Button();
+            this.btnSelectDestinationFolder = new System.Windows.Forms.Button();
             this.label18 = new System.Windows.Forms.Label();
-            this.numericUpDown7 = new System.Windows.Forms.NumericUpDown();
-            this.chkManuelKeysSHIFT = new System.Windows.Forms.CheckBox();
-            this.chkManuelKeysALT = new System.Windows.Forms.CheckBox();
-            this.chkManuelKeysCTRL = new System.Windows.Forms.CheckBox();
-            this.comboManuelKey = new System.Windows.Forms.ComboBox();
-            this.chkManuelMode = new System.Windows.Forms.CheckBox();
             this.label17 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
@@ -61,6 +55,27 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.chkBarcodeOnlyNumber = new System.Windows.Forms.CheckBox();
+            this.numBarcodeMinLength = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDown10 = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDown9 = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDown8 = new System.Windows.Forms.NumericUpDown();
+            this.txtDestinationFolder = new System.Windows.Forms.TextBox();
+            this.txtSourceFolder = new System.Windows.Forms.TextBox();
+            this.numericUpDown7 = new System.Windows.Forms.NumericUpDown();
+            this.chkManuelKeysSHIFT = new System.Windows.Forms.CheckBox();
+            this.chkManuelKeysALT = new System.Windows.Forms.CheckBox();
+            this.chkManuelKeysCTRL = new System.Windows.Forms.CheckBox();
+            this.comboManuelKey = new System.Windows.Forms.ComboBox();
+            this.chkManuelMode = new System.Windows.Forms.CheckBox();
             this.chkPrintDialog = new System.Windows.Forms.CheckBox();
             this.numericUpDown6 = new System.Windows.Forms.NumericUpDown();
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
@@ -69,63 +84,55 @@
             this.numericUpDown4 = new System.Windows.Forms.NumericUpDown();
             this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
             this.numericUpDown3 = new System.Windows.Forms.NumericUpDown();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.chkBarcodeOnlyNumber = new System.Windows.Forms.CheckBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.numBarcodeMinLength = new System.Windows.Forms.NumericUpDown();
-            this.label21 = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
-            this.label19 = new System.Windows.Forms.Label();
-            this.numericUpDown10 = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDown9 = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDown8 = new System.Windows.Forms.NumericUpDown();
+            this.spinNotificationDuration = new System.Windows.Forms.NumericUpDown();
+            this.spinNotificationCount = new System.Windows.Forms.NumericUpDown();
+            this.chkNotificationEnable = new System.Windows.Forms.CheckBox();
+            this.comboNotificationPosition = new System.Windows.Forms.ComboBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label22 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.txtPharmacyID = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.txtDestinationFolder = new System.Windows.Forms.TextBox();
-            this.txtSourceFolder = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.comboCahce = new System.Windows.Forms.ComboBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.btnSelectSourceFolder = new System.Windows.Forms.Button();
-            this.btnSelectDestinationFolder = new System.Windows.Forms.Button();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.imageList = new System.Windows.Forms.ImageList(this.components);
+            this.tabPage4 = new System.Windows.Forms.TabPage();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.groupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.spinNotificationDuration)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.spinNotificationCount)).BeginInit();
             this.groupManuelMode.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown7)).BeginInit();
             this.groupBox5.SuspendLayout();
+            this.groupBox4.SuspendLayout();
+            this.tabControl1.SuspendLayout();
+            this.tabPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numBarcodeMinLength)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown10)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown9)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).BeginInit();
-            this.groupBox4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numBarcodeMinLength)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown10)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown9)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.spinNotificationDuration)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.spinNotificationCount)).BeginInit();
             this.groupBox1.SuspendLayout();
+            this.tabPage3.SuspendLayout();
             this.SuspendLayout();
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(99, 34);
+            this.label6.Location = new System.Drawing.Point(332, 32);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(30, 13);
+            this.label6.Size = new System.Drawing.Size(78, 13);
             this.label6.TabIndex = 1;
-            this.label6.Text = "Adet";
+            this.label6.Text = "Son İşlem Adeti";
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(184, 34);
+            this.label8.Location = new System.Drawing.Point(99, 34);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(40, 13);
             this.label8.TabIndex = 3;
@@ -142,9 +149,9 @@
             // 
             // btnHide
             // 
-            this.btnHide.Location = new System.Drawing.Point(432, 558);
+            this.btnHide.Location = new System.Drawing.Point(412, 423);
             this.btnHide.Name = "btnHide";
-            this.btnHide.Size = new System.Drawing.Size(63, 26);
+            this.btnHide.Size = new System.Drawing.Size(91, 26);
             this.btnHide.TabIndex = 2;
             this.btnHide.Text = "Gizle";
             this.btnHide.UseVisualStyleBackColor = true;
@@ -152,7 +159,7 @@
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(335, 558);
+            this.btnSave.Location = new System.Drawing.Point(318, 423);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(91, 26);
             this.btnSave.TabIndex = 1;
@@ -164,7 +171,7 @@
             // 
             this.label11.AutoSize = true;
             this.label11.ForeColor = System.Drawing.Color.Black;
-            this.label11.Location = new System.Drawing.Point(25, 22);
+            this.label11.Location = new System.Drawing.Point(33, 18);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(95, 13);
             this.label11.TabIndex = 0;
@@ -174,7 +181,7 @@
             // 
             this.lblAppStatus.AutoSize = true;
             this.lblAppStatus.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.lblAppStatus.Location = new System.Drawing.Point(132, 22);
+            this.lblAppStatus.Location = new System.Drawing.Point(140, 18);
             this.lblAppStatus.Name = "lblAppStatus";
             this.lblAppStatus.Size = new System.Drawing.Size(33, 13);
             this.lblAppStatus.TabIndex = 0;
@@ -182,7 +189,7 @@
             // 
             // btnIsAppEnabled
             // 
-            this.btnIsAppEnabled.Location = new System.Drawing.Point(347, 22);
+            this.btnIsAppEnabled.Location = new System.Drawing.Point(355, 18);
             this.btnIsAppEnabled.Name = "btnIsAppEnabled";
             this.btnIsAppEnabled.Size = new System.Drawing.Size(148, 23);
             this.btnIsAppEnabled.TabIndex = 0;
@@ -196,7 +203,7 @@
             // 
             // btnAdmin
             // 
-            this.btnAdmin.Location = new System.Drawing.Point(12, 558);
+            this.btnAdmin.Location = new System.Drawing.Point(20, 423);
             this.btnAdmin.Name = "btnAdmin";
             this.btnAdmin.Size = new System.Drawing.Size(91, 26);
             this.btnAdmin.TabIndex = 1;
@@ -213,89 +220,20 @@
             this.groupBox3.Controls.Add(this.label8);
             this.groupBox3.Controls.Add(this.chkNotificationEnable);
             this.groupBox3.Controls.Add(this.comboNotificationPosition);
-            this.groupBox3.Location = new System.Drawing.Point(12, 201);
+            this.groupBox3.Location = new System.Drawing.Point(20, 128);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(483, 67);
             this.groupBox3.TabIndex = 17;
             this.groupBox3.TabStop = false;
             // 
-            // spinNotificationDuration
-            // 
-            this.spinNotificationDuration.DataBindings.Add(new System.Windows.Forms.Binding("Enabled", global::FarmaKode.Client.Properties.Settings.Default, "IsEnableNotification", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.spinNotificationDuration.DataBindings.Add(new System.Windows.Forms.Binding("Value", global::FarmaKode.Client.Properties.Settings.Default, "NotificationDuration", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.spinNotificationDuration.Enabled = global::FarmaKode.Client.Properties.Settings.Default.IsEnableNotification;
-            this.spinNotificationDuration.Location = new System.Drawing.Point(35, 30);
-            this.spinNotificationDuration.Maximum = new decimal(new int[] {
-            10,
-            0,
-            0,
-            0});
-            this.spinNotificationDuration.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.spinNotificationDuration.Name = "spinNotificationDuration";
-            this.spinNotificationDuration.Size = new System.Drawing.Size(44, 21);
-            this.spinNotificationDuration.TabIndex = 0;
-            this.spinNotificationDuration.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.spinNotificationDuration.Value = global::FarmaKode.Client.Properties.Settings.Default.NotificationDuration;
-            // 
-            // spinNotificationCount
-            // 
-            this.spinNotificationCount.DataBindings.Add(new System.Windows.Forms.Binding("Enabled", global::FarmaKode.Client.Properties.Settings.Default, "IsEnableNotification", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.spinNotificationCount.DataBindings.Add(new System.Windows.Forms.Binding("Value", global::FarmaKode.Client.Properties.Settings.Default, "NotificationMaxCount", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.spinNotificationCount.Enabled = global::FarmaKode.Client.Properties.Settings.Default.IsEnableNotification;
-            this.spinNotificationCount.Location = new System.Drawing.Point(135, 30);
-            this.spinNotificationCount.Maximum = new decimal(new int[] {
-            10,
-            0,
-            0,
-            0});
-            this.spinNotificationCount.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.spinNotificationCount.Name = "spinNotificationCount";
-            this.spinNotificationCount.Size = new System.Drawing.Size(40, 21);
-            this.spinNotificationCount.TabIndex = 1;
-            this.spinNotificationCount.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.spinNotificationCount.Value = global::FarmaKode.Client.Properties.Settings.Default.NotificationMaxCount;
-            // 
-            // chkNotificationEnable
-            // 
-            this.chkNotificationEnable.AutoSize = true;
-            this.chkNotificationEnable.Checked = global::FarmaKode.Client.Properties.Settings.Default.IsEnableNotification;
-            this.chkNotificationEnable.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chkNotificationEnable.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::FarmaKode.Client.Properties.Settings.Default, "IsEnableNotification", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.chkNotificationEnable.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.chkNotificationEnable.ForeColor = System.Drawing.Color.DarkRed;
-            this.chkNotificationEnable.Location = new System.Drawing.Point(10, 0);
-            this.chkNotificationEnable.Name = "chkNotificationEnable";
-            this.chkNotificationEnable.Size = new System.Drawing.Size(90, 17);
-            this.chkNotificationEnable.TabIndex = 0;
-            this.chkNotificationEnable.Text = "BİLDİRİMLER";
-            this.chkNotificationEnable.UseVisualStyleBackColor = true;
-            // 
-            // comboNotificationPosition
-            // 
-            this.comboNotificationPosition.DataBindings.Add(new System.Windows.Forms.Binding("Enabled", global::FarmaKode.Client.Properties.Settings.Default, "IsEnableNotification", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.comboNotificationPosition.Enabled = global::FarmaKode.Client.Properties.Settings.Default.IsEnableNotification;
-            this.comboNotificationPosition.FormattingEnabled = true;
-            this.comboNotificationPosition.Items.AddRange(new object[] {
-            "Sağ üst",
-            "Sağ alt",
-            "Sol alt",
-            "Sol üst"});
-            this.comboNotificationPosition.Location = new System.Drawing.Point(230, 30);
-            this.comboNotificationPosition.Name = "comboNotificationPosition";
-            this.comboNotificationPosition.Size = new System.Drawing.Size(96, 21);
-            this.comboNotificationPosition.TabIndex = 2;
-            this.comboNotificationPosition.SelectedIndexChanged += new System.EventHandler(this.comboNotificationPosition_SelectedIndexChanged);
-            // 
             // groupManuelMode
             // 
+            this.groupManuelMode.Controls.Add(this.label22);
+            this.groupManuelMode.Controls.Add(this.txtDestinationFolder);
+            this.groupManuelMode.Controls.Add(this.txtSourceFolder);
+            this.groupManuelMode.Controls.Add(this.label3);
+            this.groupManuelMode.Controls.Add(this.btnSelectSourceFolder);
+            this.groupManuelMode.Controls.Add(this.btnSelectDestinationFolder);
             this.groupManuelMode.Controls.Add(this.label18);
             this.groupManuelMode.Controls.Add(this.numericUpDown7);
             this.groupManuelMode.Controls.Add(this.chkManuelKeysSHIFT);
@@ -303,12 +241,50 @@
             this.groupManuelMode.Controls.Add(this.chkManuelKeysCTRL);
             this.groupManuelMode.Controls.Add(this.comboManuelKey);
             this.groupManuelMode.Controls.Add(this.chkManuelMode);
-            this.groupManuelMode.Location = new System.Drawing.Point(12, 485);
+            this.groupManuelMode.Location = new System.Drawing.Point(25, 38);
             this.groupManuelMode.Name = "groupManuelMode";
-            this.groupManuelMode.Size = new System.Drawing.Size(483, 67);
+            this.groupManuelMode.Size = new System.Drawing.Size(483, 141);
             this.groupManuelMode.TabIndex = 18;
             this.groupManuelMode.TabStop = false;
             this.groupManuelMode.Visible = false;
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.ForeColor = System.Drawing.Color.Black;
+            this.label22.Location = new System.Drawing.Point(14, 88);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(35, 13);
+            this.label22.TabIndex = 24;
+            this.label22.Text = "Hedef";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.ForeColor = System.Drawing.Color.Black;
+            this.label3.Location = new System.Drawing.Point(10, 65);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(39, 13);
+            this.label3.TabIndex = 19;
+            this.label3.Text = "Kaynak";
+            // 
+            // btnSelectSourceFolder
+            // 
+            this.btnSelectSourceFolder.Location = new System.Drawing.Point(442, 59);
+            this.btnSelectSourceFolder.Name = "btnSelectSourceFolder";
+            this.btnSelectSourceFolder.Size = new System.Drawing.Size(28, 24);
+            this.btnSelectSourceFolder.TabIndex = 21;
+            this.btnSelectSourceFolder.Text = "...";
+            this.btnSelectSourceFolder.UseVisualStyleBackColor = true;
+            // 
+            // btnSelectDestinationFolder
+            // 
+            this.btnSelectDestinationFolder.Location = new System.Drawing.Point(442, 84);
+            this.btnSelectDestinationFolder.Name = "btnSelectDestinationFolder";
+            this.btnSelectDestinationFolder.Size = new System.Drawing.Size(28, 22);
+            this.btnSelectDestinationFolder.TabIndex = 23;
+            this.btnSelectDestinationFolder.Text = "...";
+            this.btnSelectDestinationFolder.UseVisualStyleBackColor = true;
             // 
             // label18
             // 
@@ -318,6 +294,303 @@
             this.label18.Size = new System.Drawing.Size(94, 13);
             this.label18.TabIndex = 18;
             this.label18.Text = "Kontrol Süresi (dk.)";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(398, 29);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(21, 13);
+            this.label17.TabIndex = 16;
+            this.label17.Text = "Alt";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(320, 29);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(22, 13);
+            this.label16.TabIndex = 16;
+            this.label16.Text = "Üst";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(242, 29);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(22, 13);
+            this.label15.TabIndex = 16;
+            this.label15.Text = "Sağ";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(164, 29);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(21, 13);
+            this.label14.TabIndex = 16;
+            this.label14.Text = "Sol";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(85, 29);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(24, 13);
+            this.label13.TabIndex = 16;
+            this.label13.Text = "Boy";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(12, 29);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(18, 13);
+            this.label4.TabIndex = 16;
+            this.label4.Text = "En";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(12, 66);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(73, 13);
+            this.label10.TabIndex = 13;
+            this.label10.Text = "Barkod Yazıcısı";
+            // 
+            // groupBox5
+            // 
+            this.groupBox5.Controls.Add(this.chkPrintDialog);
+            this.groupBox5.Controls.Add(this.numericUpDown6);
+            this.groupBox5.Controls.Add(this.label17);
+            this.groupBox5.Controls.Add(this.numericUpDown1);
+            this.groupBox5.Controls.Add(this.label10);
+            this.groupBox5.Controls.Add(this.numericUpDown5);
+            this.groupBox5.Controls.Add(this.label4);
+            this.groupBox5.Controls.Add(this.label16);
+            this.groupBox5.Controls.Add(this.comboDefaultBarcodePrinter);
+            this.groupBox5.Controls.Add(this.label13);
+            this.groupBox5.Controls.Add(this.numericUpDown4);
+            this.groupBox5.Controls.Add(this.numericUpDown2);
+            this.groupBox5.Controls.Add(this.label15);
+            this.groupBox5.Controls.Add(this.label14);
+            this.groupBox5.Controls.Add(this.numericUpDown3);
+            this.groupBox5.Location = new System.Drawing.Point(20, 201);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(483, 114);
+            this.groupBox5.TabIndex = 17;
+            this.groupBox5.TabStop = false;
+            this.groupBox5.Text = "YAZICI";
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.chkBarcodeOnlyNumber);
+            this.groupBox4.Controls.Add(this.label2);
+            this.groupBox4.Controls.Add(this.numBarcodeMinLength);
+            this.groupBox4.Controls.Add(this.label21);
+            this.groupBox4.Controls.Add(this.label20);
+            this.groupBox4.Controls.Add(this.label19);
+            this.groupBox4.Controls.Add(this.numericUpDown10);
+            this.groupBox4.Controls.Add(this.numericUpDown9);
+            this.groupBox4.Controls.Add(this.numericUpDown8);
+            this.groupBox4.Location = new System.Drawing.Point(20, 321);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(483, 81);
+            this.groupBox4.TabIndex = 19;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Perakende";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(250, 28);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(70, 13);
+            this.label2.TabIndex = 22;
+            this.label2.Text = "Min. Karakter";
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(164, 28);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(75, 13);
+            this.label21.TabIndex = 20;
+            this.label21.Text = "Temizleme (sn)";
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(71, 28);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(72, 13);
+            this.label20.TabIndex = 20;
+            this.label20.Text = "Gönderim (sn)";
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(9, 28);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(21, 13);
+            this.label19.TabIndex = 20;
+            this.label19.Text = "Hız";
+            // 
+            // tabControl1
+            // 
+            this.tabControl1.Controls.Add(this.tabPage1);
+            this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Controls.Add(this.tabPage4);
+            this.tabControl1.Controls.Add(this.tabPage3);
+            this.tabControl1.ImageList = this.imageList;
+            this.tabControl1.Location = new System.Drawing.Point(12, 12);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(543, 486);
+            this.tabControl1.TabIndex = 20;
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.BackColor = System.Drawing.SystemColors.Control;
+            this.tabPage1.Controls.Add(this.groupBox1);
+            this.tabPage1.Controls.Add(this.groupBox4);
+            this.tabPage1.Controls.Add(this.btnAdmin);
+            this.tabPage1.Controls.Add(this.label11);
+            this.tabPage1.Controls.Add(this.btnSave);
+            this.tabPage1.Controls.Add(this.lblAppStatus);
+            this.tabPage1.Controls.Add(this.btnHide);
+            this.tabPage1.Controls.Add(this.groupBox5);
+            this.tabPage1.Controls.Add(this.btnIsAppEnabled);
+            this.tabPage1.Controls.Add(this.groupBox3);
+            this.tabPage1.ImageIndex = 0;
+            this.tabPage1.Location = new System.Drawing.Point(4, 27);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(535, 455);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "AYARLAR";
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.BackColor = System.Drawing.SystemColors.Control;
+            this.tabPage2.ImageIndex = 4;
+            this.tabPage2.Location = new System.Drawing.Point(4, 27);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(535, 455);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "DUYURULAR";
+            // 
+            // chkBarcodeOnlyNumber
+            // 
+            this.chkBarcodeOnlyNumber.AutoSize = true;
+            this.chkBarcodeOnlyNumber.Checked = global::FarmaKode.Client.Properties.Settings.Default.BarcodeOnlyNumber;
+            this.chkBarcodeOnlyNumber.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::FarmaKode.Client.Properties.Settings.Default, "BarcodeOnlyNumber", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.chkBarcodeOnlyNumber.Location = new System.Drawing.Point(373, 46);
+            this.chkBarcodeOnlyNumber.Name = "chkBarcodeOnlyNumber";
+            this.chkBarcodeOnlyNumber.Size = new System.Drawing.Size(91, 17);
+            this.chkBarcodeOnlyNumber.TabIndex = 23;
+            this.chkBarcodeOnlyNumber.Text = "Sadece Rakam";
+            this.chkBarcodeOnlyNumber.UseVisualStyleBackColor = true;
+            // 
+            // numBarcodeMinLength
+            // 
+            this.numBarcodeMinLength.DataBindings.Add(new System.Windows.Forms.Binding("Value", global::FarmaKode.Client.Properties.Settings.Default, "BarcodeMinlength", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.numBarcodeMinLength.Location = new System.Drawing.Point(253, 44);
+            this.numBarcodeMinLength.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
+            this.numBarcodeMinLength.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numBarcodeMinLength.Name = "numBarcodeMinLength";
+            this.numBarcodeMinLength.Size = new System.Drawing.Size(73, 21);
+            this.numBarcodeMinLength.TabIndex = 21;
+            this.numBarcodeMinLength.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.numBarcodeMinLength.Value = global::FarmaKode.Client.Properties.Settings.Default.BarcodeMinlength;
+            // 
+            // numericUpDown10
+            // 
+            this.numericUpDown10.DataBindings.Add(new System.Windows.Forms.Binding("Value", global::FarmaKode.Client.Properties.Settings.Default, "BarcodeClearDuration", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.numericUpDown10.Location = new System.Drawing.Point(167, 44);
+            this.numericUpDown10.Maximum = new decimal(new int[] {
+            999999,
+            0,
+            0,
+            0});
+            this.numericUpDown10.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numericUpDown10.Name = "numericUpDown10";
+            this.numericUpDown10.Size = new System.Drawing.Size(73, 21);
+            this.numericUpDown10.TabIndex = 19;
+            this.numericUpDown10.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.numericUpDown10.Value = global::FarmaKode.Client.Properties.Settings.Default.BarcodeClearDuration;
+            // 
+            // numericUpDown9
+            // 
+            this.numericUpDown9.DataBindings.Add(new System.Windows.Forms.Binding("Value", global::FarmaKode.Client.Properties.Settings.Default, "BarcodePostDuration", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.numericUpDown9.Location = new System.Drawing.Point(74, 44);
+            this.numericUpDown9.Maximum = new decimal(new int[] {
+            999999,
+            0,
+            0,
+            0});
+            this.numericUpDown9.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numericUpDown9.Name = "numericUpDown9";
+            this.numericUpDown9.Size = new System.Drawing.Size(70, 21);
+            this.numericUpDown9.TabIndex = 19;
+            this.numericUpDown9.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.numericUpDown9.Value = global::FarmaKode.Client.Properties.Settings.Default.BarcodePostDuration;
+            // 
+            // numericUpDown8
+            // 
+            this.numericUpDown8.DataBindings.Add(new System.Windows.Forms.Binding("Value", global::FarmaKode.Client.Properties.Settings.Default, "BarcodeSpeed", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.numericUpDown8.Location = new System.Drawing.Point(10, 44);
+            this.numericUpDown8.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
+            this.numericUpDown8.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numericUpDown8.Name = "numericUpDown8";
+            this.numericUpDown8.Size = new System.Drawing.Size(58, 21);
+            this.numericUpDown8.TabIndex = 19;
+            this.numericUpDown8.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.numericUpDown8.Value = global::FarmaKode.Client.Properties.Settings.Default.BarcodeSpeed;
+            // 
+            // txtDestinationFolder
+            // 
+            this.txtDestinationFolder.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::FarmaKode.Client.Properties.Settings.Default, "DestinationFolder", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.txtDestinationFolder.Location = new System.Drawing.Point(55, 84);
+            this.txtDestinationFolder.Name = "txtDestinationFolder";
+            this.txtDestinationFolder.Size = new System.Drawing.Size(381, 21);
+            this.txtDestinationFolder.TabIndex = 22;
+            this.txtDestinationFolder.Text = global::FarmaKode.Client.Properties.Settings.Default.DestinationFolder;
+            // 
+            // txtSourceFolder
+            // 
+            this.txtSourceFolder.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::FarmaKode.Client.Properties.Settings.Default, "SourceFolder", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.txtSourceFolder.Location = new System.Drawing.Point(55, 61);
+            this.txtSourceFolder.Name = "txtSourceFolder";
+            this.txtSourceFolder.Size = new System.Drawing.Size(381, 21);
+            this.txtSourceFolder.TabIndex = 20;
+            this.txtSourceFolder.Text = global::FarmaKode.Client.Properties.Settings.Default.SourceFolder;
             // 
             // numericUpDown7
             // 
@@ -408,94 +681,6 @@
             this.chkManuelMode.TabIndex = 0;
             this.chkManuelMode.Text = "MANUEL MOD";
             this.chkManuelMode.UseVisualStyleBackColor = true;
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(398, 29);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(21, 13);
-            this.label17.TabIndex = 16;
-            this.label17.Text = "Alt";
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(320, 29);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(22, 13);
-            this.label16.TabIndex = 16;
-            this.label16.Text = "Üst";
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(242, 29);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(22, 13);
-            this.label15.TabIndex = 16;
-            this.label15.Text = "Sağ";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(164, 29);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(21, 13);
-            this.label14.TabIndex = 16;
-            this.label14.Text = "Sol";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(85, 29);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(24, 13);
-            this.label13.TabIndex = 16;
-            this.label13.Text = "Boy";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(12, 29);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(18, 13);
-            this.label4.TabIndex = 16;
-            this.label4.Text = "En";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(12, 66);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(73, 13);
-            this.label10.TabIndex = 13;
-            this.label10.Text = "Barkod Yazıcısı";
-            // 
-            // groupBox5
-            // 
-            this.groupBox5.Controls.Add(this.chkPrintDialog);
-            this.groupBox5.Controls.Add(this.numericUpDown6);
-            this.groupBox5.Controls.Add(this.label17);
-            this.groupBox5.Controls.Add(this.numericUpDown1);
-            this.groupBox5.Controls.Add(this.label10);
-            this.groupBox5.Controls.Add(this.numericUpDown5);
-            this.groupBox5.Controls.Add(this.label4);
-            this.groupBox5.Controls.Add(this.label16);
-            this.groupBox5.Controls.Add(this.comboDefaultBarcodePrinter);
-            this.groupBox5.Controls.Add(this.label13);
-            this.groupBox5.Controls.Add(this.numericUpDown4);
-            this.groupBox5.Controls.Add(this.numericUpDown2);
-            this.groupBox5.Controls.Add(this.label15);
-            this.groupBox5.Controls.Add(this.label14);
-            this.groupBox5.Controls.Add(this.numericUpDown3);
-            this.groupBox5.Location = new System.Drawing.Point(12, 278);
-            this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(483, 114);
-            this.groupBox5.TabIndex = 17;
-            this.groupBox5.TabStop = false;
-            this.groupBox5.Text = "YAZICI";
             // 
             // chkPrintDialog
             // 
@@ -602,194 +787,106 @@
             this.numericUpDown3.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.numericUpDown3.Value = global::FarmaKode.Client.Properties.Settings.Default.MarginLeft;
             // 
-            // groupBox4
+            // spinNotificationDuration
             // 
-            this.groupBox4.Controls.Add(this.chkBarcodeOnlyNumber);
-            this.groupBox4.Controls.Add(this.label2);
-            this.groupBox4.Controls.Add(this.numBarcodeMinLength);
-            this.groupBox4.Controls.Add(this.label21);
-            this.groupBox4.Controls.Add(this.label20);
-            this.groupBox4.Controls.Add(this.label19);
-            this.groupBox4.Controls.Add(this.numericUpDown10);
-            this.groupBox4.Controls.Add(this.numericUpDown9);
-            this.groupBox4.Controls.Add(this.numericUpDown8);
-            this.groupBox4.Location = new System.Drawing.Point(12, 398);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(483, 81);
-            this.groupBox4.TabIndex = 19;
-            this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "Perakende";
-            // 
-            // chkBarcodeOnlyNumber
-            // 
-            this.chkBarcodeOnlyNumber.AutoSize = true;
-            this.chkBarcodeOnlyNumber.Checked = global::FarmaKode.Client.Properties.Settings.Default.BarcodeOnlyNumber;
-            this.chkBarcodeOnlyNumber.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::FarmaKode.Client.Properties.Settings.Default, "BarcodeOnlyNumber", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.chkBarcodeOnlyNumber.Location = new System.Drawing.Point(345, 46);
-            this.chkBarcodeOnlyNumber.Name = "chkBarcodeOnlyNumber";
-            this.chkBarcodeOnlyNumber.Size = new System.Drawing.Size(91, 17);
-            this.chkBarcodeOnlyNumber.TabIndex = 23;
-            this.chkBarcodeOnlyNumber.Text = "Sadece Rakam";
-            this.chkBarcodeOnlyNumber.UseVisualStyleBackColor = true;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(250, 28);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(70, 13);
-            this.label2.TabIndex = 22;
-            this.label2.Text = "Min. Karakter";
-            // 
-            // numBarcodeMinLength
-            // 
-            this.numBarcodeMinLength.DataBindings.Add(new System.Windows.Forms.Binding("Value", global::FarmaKode.Client.Properties.Settings.Default, "BarcodeMinlength", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.numBarcodeMinLength.Location = new System.Drawing.Point(253, 44);
-            this.numBarcodeMinLength.Maximum = new decimal(new int[] {
-            1000,
+            this.spinNotificationDuration.DataBindings.Add(new System.Windows.Forms.Binding("Enabled", global::FarmaKode.Client.Properties.Settings.Default, "IsEnableNotification", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.spinNotificationDuration.DataBindings.Add(new System.Windows.Forms.Binding("Value", global::FarmaKode.Client.Properties.Settings.Default, "NotificationDuration", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.spinNotificationDuration.Enabled = global::FarmaKode.Client.Properties.Settings.Default.IsEnableNotification;
+            this.spinNotificationDuration.Location = new System.Drawing.Point(35, 30);
+            this.spinNotificationDuration.Maximum = new decimal(new int[] {
+            180,
             0,
             0,
             0});
-            this.numBarcodeMinLength.Minimum = new decimal(new int[] {
+            this.spinNotificationDuration.Minimum = new decimal(new int[] {
             1,
             0,
             0,
             0});
-            this.numBarcodeMinLength.Name = "numBarcodeMinLength";
-            this.numBarcodeMinLength.Size = new System.Drawing.Size(73, 21);
-            this.numBarcodeMinLength.TabIndex = 21;
-            this.numBarcodeMinLength.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.numBarcodeMinLength.Value = global::FarmaKode.Client.Properties.Settings.Default.BarcodeMinlength;
+            this.spinNotificationDuration.Name = "spinNotificationDuration";
+            this.spinNotificationDuration.Size = new System.Drawing.Size(44, 21);
+            this.spinNotificationDuration.TabIndex = 0;
+            this.spinNotificationDuration.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.spinNotificationDuration.Value = global::FarmaKode.Client.Properties.Settings.Default.NotificationDuration;
             // 
-            // label21
+            // spinNotificationCount
             // 
-            this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(164, 28);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(76, 13);
-            this.label21.TabIndex = 20;
-            this.label21.Text = "Temizleme (dk)";
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(71, 28);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(73, 13);
-            this.label20.TabIndex = 20;
-            this.label20.Text = "Gönderim (dk)";
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(9, 28);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(21, 13);
-            this.label19.TabIndex = 20;
-            this.label19.Text = "Hız";
-            // 
-            // numericUpDown10
-            // 
-            this.numericUpDown10.DataBindings.Add(new System.Windows.Forms.Binding("Value", global::FarmaKode.Client.Properties.Settings.Default, "BarcodeClearDuration", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.numericUpDown10.Location = new System.Drawing.Point(167, 44);
-            this.numericUpDown10.Maximum = new decimal(new int[] {
-            1000,
+            this.spinNotificationCount.DataBindings.Add(new System.Windows.Forms.Binding("Enabled", global::FarmaKode.Client.Properties.Settings.Default, "IsEnableNotification", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.spinNotificationCount.DataBindings.Add(new System.Windows.Forms.Binding("Value", global::FarmaKode.Client.Properties.Settings.Default, "NotificationMaxCount", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.spinNotificationCount.Enabled = global::FarmaKode.Client.Properties.Settings.Default.IsEnableNotification;
+            this.spinNotificationCount.Location = new System.Drawing.Point(427, 26);
+            this.spinNotificationCount.Maximum = new decimal(new int[] {
+            10,
             0,
             0,
             0});
-            this.numericUpDown10.Minimum = new decimal(new int[] {
+            this.spinNotificationCount.Minimum = new decimal(new int[] {
             1,
             0,
             0,
             0});
-            this.numericUpDown10.Name = "numericUpDown10";
-            this.numericUpDown10.Size = new System.Drawing.Size(73, 21);
-            this.numericUpDown10.TabIndex = 19;
-            this.numericUpDown10.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.numericUpDown10.Value = global::FarmaKode.Client.Properties.Settings.Default.BarcodeClearDuration;
+            this.spinNotificationCount.Name = "spinNotificationCount";
+            this.spinNotificationCount.Size = new System.Drawing.Size(40, 21);
+            this.spinNotificationCount.TabIndex = 1;
+            this.spinNotificationCount.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.spinNotificationCount.Value = global::FarmaKode.Client.Properties.Settings.Default.NotificationMaxCount;
             // 
-            // numericUpDown9
+            // chkNotificationEnable
             // 
-            this.numericUpDown9.DataBindings.Add(new System.Windows.Forms.Binding("Value", global::FarmaKode.Client.Properties.Settings.Default, "BarcodePostDuration", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.numericUpDown9.Location = new System.Drawing.Point(74, 44);
-            this.numericUpDown9.Maximum = new decimal(new int[] {
-            1000,
-            0,
-            0,
-            0});
-            this.numericUpDown9.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.numericUpDown9.Name = "numericUpDown9";
-            this.numericUpDown9.Size = new System.Drawing.Size(70, 21);
-            this.numericUpDown9.TabIndex = 19;
-            this.numericUpDown9.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.numericUpDown9.Value = global::FarmaKode.Client.Properties.Settings.Default.BarcodePostDuration;
+            this.chkNotificationEnable.AutoSize = true;
+            this.chkNotificationEnable.Checked = global::FarmaKode.Client.Properties.Settings.Default.IsEnableNotification;
+            this.chkNotificationEnable.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chkNotificationEnable.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::FarmaKode.Client.Properties.Settings.Default, "IsEnableNotification", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.chkNotificationEnable.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.chkNotificationEnable.ForeColor = System.Drawing.Color.DarkRed;
+            this.chkNotificationEnable.Location = new System.Drawing.Point(10, 0);
+            this.chkNotificationEnable.Name = "chkNotificationEnable";
+            this.chkNotificationEnable.Size = new System.Drawing.Size(90, 17);
+            this.chkNotificationEnable.TabIndex = 0;
+            this.chkNotificationEnable.Text = "BİLDİRİMLER";
+            this.chkNotificationEnable.UseVisualStyleBackColor = true;
             // 
-            // numericUpDown8
+            // comboNotificationPosition
             // 
-            this.numericUpDown8.DataBindings.Add(new System.Windows.Forms.Binding("Value", global::FarmaKode.Client.Properties.Settings.Default, "BarcodeSpeed", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.numericUpDown8.Location = new System.Drawing.Point(10, 44);
-            this.numericUpDown8.Maximum = new decimal(new int[] {
-            1000,
-            0,
-            0,
-            0});
-            this.numericUpDown8.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.numericUpDown8.Name = "numericUpDown8";
-            this.numericUpDown8.Size = new System.Drawing.Size(58, 21);
-            this.numericUpDown8.TabIndex = 19;
-            this.numericUpDown8.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.numericUpDown8.Value = global::FarmaKode.Client.Properties.Settings.Default.BarcodeSpeed;
+            this.comboNotificationPosition.DataBindings.Add(new System.Windows.Forms.Binding("Enabled", global::FarmaKode.Client.Properties.Settings.Default, "IsEnableNotification", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.comboNotificationPosition.Enabled = global::FarmaKode.Client.Properties.Settings.Default.IsEnableNotification;
+            this.comboNotificationPosition.FormattingEnabled = true;
+            this.comboNotificationPosition.Items.AddRange(new object[] {
+            "Sağ üst",
+            "Sağ alt",
+            "Sol alt",
+            "Sol üst"});
+            this.comboNotificationPosition.Location = new System.Drawing.Point(145, 30);
+            this.comboNotificationPosition.Name = "comboNotificationPosition";
+            this.comboNotificationPosition.Size = new System.Drawing.Size(96, 21);
+            this.comboNotificationPosition.TabIndex = 2;
+            this.comboNotificationPosition.SelectedIndexChanged += new System.EventHandler(this.comboNotificationPosition_SelectedIndexChanged);
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.label22);
             this.groupBox1.Controls.Add(this.comboBox1);
             this.groupBox1.Controls.Add(this.txtPharmacyID);
             this.groupBox1.Controls.Add(this.label7);
-            this.groupBox1.Controls.Add(this.txtDestinationFolder);
-            this.groupBox1.Controls.Add(this.txtSourceFolder);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.comboCahce);
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.btnSelectSourceFolder);
-            this.groupBox1.Controls.Add(this.btnSelectDestinationFolder);
             this.groupBox1.DataBindings.Add(new System.Windows.Forms.Binding("Enabled", global::FarmaKode.Client.Properties.Settings.Default, "AppIsEnabled", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.groupBox1.Enabled = global::FarmaKode.Client.Properties.Settings.Default.AppIsEnabled;
-            this.groupBox1.Location = new System.Drawing.Point(12, 46);
+            this.groupBox1.Location = new System.Drawing.Point(20, 42);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(483, 149);
+            this.groupBox1.Size = new System.Drawing.Size(483, 79);
             this.groupBox1.TabIndex = 14;
             this.groupBox1.TabStop = false;
-            // 
-            // label22
-            // 
-            this.label22.AutoSize = true;
-            this.label22.ForeColor = System.Drawing.Color.Black;
-            this.label22.Location = new System.Drawing.Point(21, 93);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(35, 13);
-            this.label22.TabIndex = 7;
-            this.label22.Text = "Hedef";
             // 
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
+            "BOŞ",
             "PC-01",
             "PC-02",
             "PC-03",
             "PC-04",
             "PC-05",
-            "BOŞ"});
+            "PC-06"});
             this.comboBox1.Location = new System.Drawing.Point(62, 43);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(128, 21);
@@ -816,24 +913,6 @@
             this.label7.TabIndex = 0;
             this.label7.Text = "PC No";
             // 
-            // txtDestinationFolder
-            // 
-            this.txtDestinationFolder.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::FarmaKode.Client.Properties.Settings.Default, "DestinationFolder", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.txtDestinationFolder.Location = new System.Drawing.Point(62, 89);
-            this.txtDestinationFolder.Name = "txtDestinationFolder";
-            this.txtDestinationFolder.Size = new System.Drawing.Size(381, 21);
-            this.txtDestinationFolder.TabIndex = 4;
-            this.txtDestinationFolder.Text = global::FarmaKode.Client.Properties.Settings.Default.DestinationFolder;
-            // 
-            // txtSourceFolder
-            // 
-            this.txtSourceFolder.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::FarmaKode.Client.Properties.Settings.Default, "SourceFolder", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.txtSourceFolder.Location = new System.Drawing.Point(62, 66);
-            this.txtSourceFolder.Name = "txtSourceFolder";
-            this.txtSourceFolder.Size = new System.Drawing.Size(381, 21);
-            this.txtSourceFolder.TabIndex = 2;
-            this.txtSourceFolder.Text = global::FarmaKode.Client.Properties.Settings.Default.SourceFolder;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -843,81 +922,48 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Eczane ID";
             // 
-            // label5
+            // tabPage3
             // 
-            this.label5.AutoSize = true;
-            this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(9, 120);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(87, 13);
-            this.label5.TabIndex = 0;
-            this.label5.Text = "Cache Temizleme";
-            this.label5.Visible = false;
+            this.tabPage3.Controls.Add(this.groupManuelMode);
+            this.tabPage3.Location = new System.Drawing.Point(4, 27);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage3.Size = new System.Drawing.Size(535, 455);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "Gizli Sekme";
+            this.tabPage3.UseVisualStyleBackColor = true;
             // 
-            // comboCahce
+            // imageList
             // 
-            this.comboCahce.FormattingEnabled = true;
-            this.comboCahce.Items.AddRange(new object[] {
-            "Okuma işlemi bittikten sonra sil",
-            "Günde 1 kere sil",
-            "Silme işlemi yapma"});
-            this.comboCahce.Location = new System.Drawing.Point(102, 116);
-            this.comboCahce.Name = "comboCahce";
-            this.comboCahce.Size = new System.Drawing.Size(224, 21);
-            this.comboCahce.TabIndex = 6;
-            this.comboCahce.Visible = false;
-            this.comboCahce.SelectedIndexChanged += new System.EventHandler(this.comboCahce_SelectedIndexChanged);
+            this.imageList.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList.ImageStream")));
+            this.imageList.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageList.Images.SetKeyName(0, "gears.png");
+            this.imageList.Images.SetKeyName(1, "completed-task.png");
+            this.imageList.Images.SetKeyName(2, "task.png");
+            this.imageList.Images.SetKeyName(3, "mobile-phone.png");
+            this.imageList.Images.SetKeyName(4, "notification.png");
             // 
-            // label3
+            // tabPage4
             // 
-            this.label3.AutoSize = true;
-            this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(17, 70);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(39, 13);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "Kaynak";
-            // 
-            // btnSelectSourceFolder
-            // 
-            this.btnSelectSourceFolder.Location = new System.Drawing.Point(449, 64);
-            this.btnSelectSourceFolder.Name = "btnSelectSourceFolder";
-            this.btnSelectSourceFolder.Size = new System.Drawing.Size(28, 24);
-            this.btnSelectSourceFolder.TabIndex = 3;
-            this.btnSelectSourceFolder.Text = "...";
-            this.btnSelectSourceFolder.UseVisualStyleBackColor = true;
-            this.btnSelectSourceFolder.Click += new System.EventHandler(this.btnSelectSourceFolder_Click);
-            // 
-            // btnSelectDestinationFolder
-            // 
-            this.btnSelectDestinationFolder.Location = new System.Drawing.Point(449, 89);
-            this.btnSelectDestinationFolder.Name = "btnSelectDestinationFolder";
-            this.btnSelectDestinationFolder.Size = new System.Drawing.Size(28, 22);
-            this.btnSelectDestinationFolder.TabIndex = 5;
-            this.btnSelectDestinationFolder.Text = "...";
-            this.btnSelectDestinationFolder.UseVisualStyleBackColor = true;
-            this.btnSelectDestinationFolder.Click += new System.EventHandler(this.btnSelectDestinationFolder_Click);
+            this.tabPage4.BackColor = System.Drawing.SystemColors.Control;
+            this.tabPage4.ImageIndex = 3;
+            this.tabPage4.Location = new System.Drawing.Point(4, 27);
+            this.tabPage4.Name = "tabPage4";
+            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage4.Size = new System.Drawing.Size(535, 455);
+            this.tabPage4.TabIndex = 3;
+            this.tabPage4.Text = "İLETİŞİM";
             // 
             // FormSettings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(507, 613);
-            this.Controls.Add(this.groupBox4);
-            this.Controls.Add(this.groupManuelMode);
-            this.Controls.Add(this.groupBox5);
-            this.Controls.Add(this.groupBox3);
-            this.Controls.Add(this.btnIsAppEnabled);
-            this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.btnAdmin);
-            this.Controls.Add(this.btnSave);
-            this.Controls.Add(this.btnHide);
-            this.Controls.Add(this.lblAppStatus);
-            this.Controls.Add(this.label11);
+            this.ClientSize = new System.Drawing.Size(566, 506);
+            this.Controls.Add(this.tabControl1);
             this.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MaximumSize = new System.Drawing.Size(523, 652);
-            this.MinimumSize = new System.Drawing.Size(523, 652);
+            this.MaximumSize = new System.Drawing.Size(582, 545);
+            this.MinimumSize = new System.Drawing.Size(582, 545);
             this.Name = "FormSettings";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Ayarlar";
@@ -927,51 +973,47 @@
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.spinNotificationDuration)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.spinNotificationCount)).EndInit();
             this.groupManuelMode.ResumeLayout(false);
             this.groupManuelMode.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown7)).EndInit();
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
+            this.tabControl1.ResumeLayout(false);
+            this.tabPage1.ResumeLayout(false);
+            this.tabPage1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numBarcodeMinLength)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown10)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown9)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).EndInit();
-            this.groupBox4.ResumeLayout(false);
-            this.groupBox4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numBarcodeMinLength)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown10)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown9)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.spinNotificationDuration)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.spinNotificationCount)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.tabPage3.ResumeLayout(false);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox txtPharmacyID;
-        private System.Windows.Forms.TextBox txtSourceFolder;
-        private System.Windows.Forms.TextBox txtDestinationFolder;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.ComboBox comboCahce;
         private System.Windows.Forms.CheckBox chkNotificationEnable;
         private System.Windows.Forms.NumericUpDown spinNotificationDuration;
         private System.Windows.Forms.NumericUpDown spinNotificationCount;
         private System.Windows.Forms.ComboBox comboNotificationPosition;
         private System.Windows.Forms.ComboBox comboDefaultBarcodePrinter;
-        private System.Windows.Forms.Button btnSelectDestinationFolder;
-        private System.Windows.Forms.Button btnSelectSourceFolder;
         private System.Windows.Forms.Button btnHide;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Label label10;
@@ -1013,9 +1055,20 @@
         private System.Windows.Forms.NumericUpDown numericUpDown10;
         private System.Windows.Forms.NumericUpDown numericUpDown9;
         private System.Windows.Forms.NumericUpDown numericUpDown8;
-        private System.Windows.Forms.Label label22;
         private System.Windows.Forms.CheckBox chkBarcodeOnlyNumber;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.NumericUpDown numBarcodeMinLength;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.TextBox txtDestinationFolder;
+        private System.Windows.Forms.TextBox txtSourceFolder;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button btnSelectSourceFolder;
+        private System.Windows.Forms.Button btnSelectDestinationFolder;
+        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.TabPage tabPage3;
+        private System.Windows.Forms.ImageList imageList;
+        private System.Windows.Forms.TabPage tabPage4;
     }
 }

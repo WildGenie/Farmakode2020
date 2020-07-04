@@ -45,41 +45,41 @@
             // 
             this.drug_name.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.drug_name.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.drug_name.Location = new System.Drawing.Point(66, 3);
+            this.drug_name.Location = new System.Drawing.Point(80, 3);
             this.drug_name.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.drug_name.Name = "drug_name";
-            this.drug_name.Size = new System.Drawing.Size(285, 19);
+            this.drug_name.Size = new System.Drawing.Size(271, 19);
             this.drug_name.TabIndex = 1;
             this.drug_name.TextChanged += new System.EventHandler(this.drug_name_TextChanged);
             // 
             // warnings
             // 
             this.warnings.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.warnings.Location = new System.Drawing.Point(66, 71);
+            this.warnings.Location = new System.Drawing.Point(80, 71);
             this.warnings.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.warnings.Multiline = true;
             this.warnings.Name = "warnings";
-            this.warnings.Size = new System.Drawing.Size(285, 65);
+            this.warnings.Size = new System.Drawing.Size(271, 65);
             this.warnings.TabIndex = 1;
             this.warnings.TextChanged += new System.EventHandler(this.warnings_TextChanged);
             // 
             // suggestions
             // 
             this.suggestions.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.suggestions.Location = new System.Drawing.Point(66, 49);
+            this.suggestions.Location = new System.Drawing.Point(80, 49);
             this.suggestions.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.suggestions.Name = "suggestions";
-            this.suggestions.Size = new System.Drawing.Size(285, 19);
+            this.suggestions.Size = new System.Drawing.Size(271, 19);
             this.suggestions.TabIndex = 1;
             this.suggestions.TextChanged += new System.EventHandler(this.suggestions_TextChanged);
             // 
             // diagnosis
             // 
             this.diagnosis.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.diagnosis.Location = new System.Drawing.Point(66, 26);
+            this.diagnosis.Location = new System.Drawing.Point(80, 26);
             this.diagnosis.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.diagnosis.Name = "diagnosis";
-            this.diagnosis.Size = new System.Drawing.Size(285, 19);
+            this.diagnosis.Size = new System.Drawing.Size(271, 19);
             this.diagnosis.TabIndex = 1;
             this.diagnosis.TextChanged += new System.EventHandler(this.diagnosis_TextChanged);
             // 
@@ -87,7 +87,7 @@
             // 
             this.tableLayoutPanel1.ColumnCount = 3;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 17F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 47F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 61F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.Controls.Add(this.label4, 1, 3);
             this.tableLayoutPanel1.Controls.Add(this.label3, 1, 2);
@@ -116,11 +116,10 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label4.ForeColor = System.Drawing.Color.White;
             this.label4.Location = new System.Drawing.Point(19, 68);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(43, 71);
+            this.label4.Size = new System.Drawing.Size(57, 71);
             this.label4.TabIndex = 5;
             this.label4.Text = "Uyarılar";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -129,11 +128,10 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label3.ForeColor = System.Drawing.Color.White;
             this.label3.Location = new System.Drawing.Point(19, 46);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(43, 22);
+            this.label3.Size = new System.Drawing.Size(57, 22);
             this.label3.TabIndex = 4;
             this.label3.Text = "Kullanım";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -142,13 +140,12 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(19, 23);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(43, 23);
+            this.label2.Size = new System.Drawing.Size(57, 23);
             this.label2.TabIndex = 3;
-            this.label2.Text = "Teşhis";
+            this.label2.Text = "Endikasyon";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // chkIsPrint
@@ -167,11 +164,10 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(19, 0);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(43, 23);
+            this.label1.Size = new System.Drawing.Size(57, 23);
             this.label1.TabIndex = 2;
             this.label1.Text = "İlaç Adı";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;

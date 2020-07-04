@@ -43,7 +43,7 @@ namespace FarmaKode.Client
         void initializeForm()
         {
             DirectoryInfo di = new DirectoryInfo(Path.Combine(Settings.Default.DestinationFolder, Settings.Default.LatestPostFolderName));
-            List<FileInfo> latestFiles = di.GetFiles("*_Response.json").ToList().OrderByDescending(p => p.CreationTime).ToList();
+            List<FileInfo> latestFiles = di.GetFiles("*_Response.json").ToList().OrderByDescending(p => p.LastWriteTime).ToList();
 
             PostListItem postListItem = null;
             ResponseBarcode tmpParsedData = null;

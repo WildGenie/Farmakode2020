@@ -71,12 +71,12 @@ namespace FarmaKode.Client
 
             manuelBarcodePostTimer = new Timer();
             manuelBarcodePostTimer.Enabled = true;
-            manuelBarcodePostTimer.Interval = 1000 * 60 * (int)Settings.Default.BarcodePostDuration;
+            manuelBarcodePostTimer.Interval = 1000 * (int)Settings.Default.BarcodePostDuration;
             manuelBarcodePostTimer.Tick += ManuelBarcodePostTimer_Tick;
 
             manuelBarcodeCleanTimer = new Timer();
             manuelBarcodeCleanTimer.Enabled = true;
-            manuelBarcodeCleanTimer.Interval = 1000 * 60 * (int)Settings.Default.BarcodeClearDuration;
+            manuelBarcodeCleanTimer.Interval = 1000 * (int)Settings.Default.BarcodeClearDuration;
             manuelBarcodeCleanTimer.Tick += ManuelBarcodeCleanTimer_Tick; ;
 
             KeyboardListener.s_KeyEventHandler += new EventHandler(KeyboardListener_s_KeyEventHandler);
