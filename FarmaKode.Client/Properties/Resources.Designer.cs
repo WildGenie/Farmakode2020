@@ -111,11 +111,7 @@ namespace FarmaKode.Client.Properties {
         ///    text-align: left;
         ///    background-color: #000;
         ///    color: #fff;
-        ///}
-        ///
-        ///.bitisTarihi {
-        ///    text-align: right;
-        /// [rest of string was truncated]&quot;;.
+        ///} [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string barcode_css {
             get {
@@ -146,10 +142,7 @@ namespace FarmaKode.Client.Properties {
         ///				&lt;/tr&gt;
         ///				&lt;tr&gt;
         ///					&lt;td class=&quot;eczane&quot; colspan=&quot;2&quot;&gt;{7} / {8}&lt;/td&gt;
-        ///				&lt;/tr&gt;
-        ///			&lt;/table&gt;
-        ///
-        /// [rest of string was truncated]&quot;;.
+        ///	 [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string barcode_html {
             get {
@@ -160,9 +153,29 @@ namespace FarmaKode.Client.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap bell {
+            get {
+                object obj = ResourceManager.GetObject("bell", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap close {
             get {
                 object obj = ResourceManager.GetObject("close", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap cog {
+            get {
+                object obj = ResourceManager.GetObject("cog", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -220,6 +233,16 @@ namespace FarmaKode.Client.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap information {
+            get {
+                object obj = ResourceManager.GetObject("information", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap logo {
             get {
                 object obj = ResourceManager.GetObject("logo", resourceCulture);
@@ -233,6 +256,16 @@ namespace FarmaKode.Client.Properties {
         internal static System.Drawing.Bitmap phone {
             get {
                 object obj = ResourceManager.GetObject("phone", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap setting_tools {
+            get {
+                object obj = ResourceManager.GetObject("setting_tools", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

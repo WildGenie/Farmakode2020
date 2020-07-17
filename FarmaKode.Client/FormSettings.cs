@@ -70,6 +70,7 @@ namespace FarmaKode.Client
                 comboManuelKey.Items.Add(item.ToString());
             }
 
+            chkNotificationEnable.SwitchState = Settings.Default.IsEnableNotification ? XanderUI.XUISwitch.State.On : XanderUI.XUISwitch.State.Off;
         }
 
 
@@ -239,6 +240,12 @@ namespace FarmaKode.Client
         private void chkCopyDestinationFolder_CheckedChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void chkNotificationEnable_SwitchStateChanged(object sender, EventArgs e)
+        {
+            Settings.Default.IsEnableNotification = chkNotificationEnable.SwitchState == XanderUI.XUISwitch.State.Off ? false : true;
+            Settings.Default.Save();
         }
     }
 }

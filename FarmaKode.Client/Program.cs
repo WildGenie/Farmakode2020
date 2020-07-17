@@ -63,7 +63,7 @@ namespace FarmaKode.Client
                 // We are running as administrator
                 Application.EnableVisualStyles();
                 Application.SetCompatibleTextRenderingDefault(false);
-                Application.Run(new FormButton());
+                Application.Run(new Form1());
             }
 
 
