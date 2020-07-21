@@ -37,6 +37,7 @@
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.menuItemExit = new System.Windows.Forms.ToolStripMenuItem();
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
+            this.lblManuelBarcode = new System.Windows.Forms.Label();
             this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -97,18 +98,32 @@
             this.notifyIcon1.Text = "FarmaKode";
             this.notifyIcon1.Visible = true;
             // 
+            // lblManuelBarcode
+            // 
+            this.lblManuelBarcode.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblManuelBarcode.BackColor = System.Drawing.Color.Red;
+            this.lblManuelBarcode.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblManuelBarcode.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblManuelBarcode.ForeColor = System.Drawing.Color.White;
+            this.lblManuelBarcode.Location = new System.Drawing.Point(24, 0);
+            this.lblManuelBarcode.Name = "lblManuelBarcode";
+            this.lblManuelBarcode.Padding = new System.Windows.Forms.Padding(2);
+            this.lblManuelBarcode.Size = new System.Drawing.Size(26, 22);
+            this.lblManuelBarcode.TabIndex = 1;
+            this.lblManuelBarcode.Text = "5";
+            this.lblManuelBarcode.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblManuelBarcode.Click += new System.EventHandler(this.lblManuelBarcode_Click);
+            // 
             // FormButton
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.BackColor = System.Drawing.Color.OliveDrab;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(50, 50);
+            this.Controls.Add(this.lblManuelBarcode);
             this.Controls.Add(this.btnShowPostList);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.KeyPreview = true;
-            this.MaximumSize = new System.Drawing.Size(50, 50);
             this.MinimumSize = new System.Drawing.Size(50, 50);
             this.Name = "FormButton";
             this.ShowIcon = false;
@@ -131,5 +146,6 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripMenuItem menuItemExit;
         private System.Windows.Forms.NotifyIcon notifyIcon1;
+        private System.Windows.Forms.Label lblManuelBarcode;
     }
 }

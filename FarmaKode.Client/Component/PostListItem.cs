@@ -1,6 +1,7 @@
 ﻿using System;
 using System.ComponentModel;
 using System.Windows.Forms;
+using ComponentFactory.Krypton.Toolkit;
 using FarmaKode.Client.Model.Response;
 
 namespace FarmaKode.Client.Component
@@ -18,7 +19,7 @@ namespace FarmaKode.Client.Component
 
         public PostListItem()
         {
-            InitializeComponent();
+            InitializeComponent(); 
         }
 
         public PostListItem(int orderNo, ResponseBarcode Data)

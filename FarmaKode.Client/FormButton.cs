@@ -1,4 +1,5 @@
-﻿using FarmaKode.Client.Business;
+﻿using ComponentFactory.Krypton.Toolkit;
+using FarmaKode.Client.Business;
 using FarmaKode.Client.Model;
 using FarmaKode.Client.Model.Request;
 using FarmaKode.Client.Model.Response;
@@ -15,6 +16,7 @@ using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static FarmaKode.Client.Util.Constants;
@@ -33,9 +35,9 @@ namespace FarmaKode.Client
         public ParserBL BL = ParserBL.GetInstance();
         public WatchDogBL watchDog = null;
         RequestBarcode lastRequestBarcode = null;
-        Timer manuelModeTimer = null;
-        Timer manuelBarcodePostTimer = null;
-        Timer manuelBarcodeCleanTimer = null;
+        System.Windows.Forms.Timer manuelModeTimer = null;
+        System.Windows.Forms.Timer manuelBarcodePostTimer = null;
+        System.Windows.Forms.Timer manuelBarcodeCleanTimer = null;
         DateTime _lastKeystroke = new DateTime(0);
         List<char> _barcode = new List<char>();
         List<string> manuelBarcods = new List<string>();
@@ -48,16 +50,14 @@ namespace FarmaKode.Client
 
             if (!CacheBL.CheckSettings())
             {
-                MessageBox.Show("Lütfen öncelikle uygulama için gereki olan bilgileri giriniz", "Uyarı");
+                KryptonMessageBox.Show("Lütfen öncelikle uygulama için gereki olan bilgileri giriniz", "Uyarı");
                 new FormSettings().ShowDialog();
             }
 
             InitializeWatchDog();
             LocationForm();
-            ManuelModeCheck();
             CatchManuelBarcode();
-
-
+            CheckForIllegalCrossThreadCalls = false;
 
         }
 
@@ -68,13 +68,7 @@ namespace FarmaKode.Client
 
         void CatchManuelBarcode()
         {
-
-            manuelBarcodePostTimer = new Timer();
-            manuelBarcodePostTimer.Enabled = true;
-            manuelBarcodePostTimer.Interval = 1000 * (int)Settings.Default.BarcodePostDuration;
-            manuelBarcodePostTimer.Tick += ManuelBarcodePostTimer_Tick;
-
-            manuelBarcodeCleanTimer = new Timer();
+            manuelBarcodeCleanTimer = new System.Windows.Forms.Timer();
             manuelBarcodeCleanTimer.Enabled = true;
             manuelBarcodeCleanTimer.Interval = 1000 * (int)Settings.Default.BarcodeClearDuration;
             manuelBarcodeCleanTimer.Tick += ManuelBarcodeCleanTimer_Tick; ;
@@ -82,64 +76,12 @@ namespace FarmaKode.Client
             KeyboardListener.s_KeyEventHandler += new EventHandler(KeyboardListener_s_KeyEventHandler);
 
         }
-        protected override void WndProc(ref Message m)
-        {
-            if (m.Msg == 0x0312 && m.WParam.ToInt32() == Hotkeys.MYACTION_HOTKEY_ID)
-            {
-                if (lastRequestBarcode == null)
-                {
-                    MessageBox.Show("Son " + Settings.Default.ManuelModeTimerInterval + " dakika içinde reçete işlemi yapılmadığı için işlem yapılamıyor", "Uyarı");
-                }
-                else
-                {
-                    try
-                    {
-                        ResponseBarcode responseBarcode = BL.PostRequest(lastRequestBarcode);
-                        new FormNotification(responseBarcode).ShowDialog();
-                    }
-                    catch (Exception ex)
-                    {
-                        new FormNotification("FarmaKode hata. " + ex.Message, NotificationType.Error).ShowDialog();
-
-                    }
-
-                }
-            }
-
-            base.WndProc(ref m);
-        }
-
-
-
-        void ManuelModeCheck()
-        {
-            if (Settings.Default.IsManuelMode)
-            {
-                Hotkeys.SetHotKeys(this.Handle);
-                manuelModeTimer = new Timer();
-                manuelModeTimer.Enabled = true;
-                manuelModeTimer.Interval = 1000 * 60 * (int)Settings.Default.ManuelModeTimerInterval;
-                manuelModeTimer.Tick += ManuelModeTimer_Tick;
-            }
-            else
-            {
-                Hotkeys.UnsetHotKeys(this.Handle);
-                if (manuelModeTimer != null)
-                {
-                    manuelModeTimer.Stop();
-                    manuelModeTimer.Enabled = false;
-                    manuelModeTimer = null;
-                }
-
-            }
-
-        }
 
         private void LocationForm()
         {
             TopMost = true;
             StartPosition = FormStartPosition.Manual;
-            this.Size = new Size(20, 50);
+            this.Size = new Size(50, 50);
 
             foreach (var scrn in Screen.AllScreens)
             {
@@ -212,6 +154,8 @@ namespace FarmaKode.Client
                     }
 
                     manuelBarcods.Add(barcode);
+                    lblManuelBarcode.Text = manuelBarcods.Count.ToString();
+                    lblManuelBarcode.Visible = true;
                     Logger.GetInstance().Info("Okunan Perakende Barkodu: " + barcode);
                     _barcode.Clear();
 
@@ -229,6 +173,8 @@ namespace FarmaKode.Client
         {
             _barcode.Clear();
             manuelBarcods.Clear();
+            lblManuelBarcode.Text = string.Empty;
+            lblManuelBarcode.Visible = false;
             // new FormNotification().ShowAlert("Perakende önbellek temizlendi",NotificationType.Info);
         }
 
@@ -267,7 +213,21 @@ namespace FarmaKode.Client
 
         private void btnShowPostList_Click(object sender, EventArgs e)
         {
-            new FormPostList().ShowDialog();
+            //new FormPostList().ShowDialog();
+
+            List<string> barcodes = new List<string>(); 
+            barcodes.Add("8699522521456");
+            barcodes.Add("8699525590435");
+            barcodes.Add("8699717010093");
+            barcodes.Add("8699580510027");
+
+            RequestBarcode requestBarcode = BL.CreatRetailRequest(barcodes);
+            ResponseBarcode responseBarcode = BL.PostRetailRequest(requestBarcode);
+            responseBarcode.ReceteNo = requestBarcode.HeaderSection.ReceteNo;
+
+            
+            new Thread(() => ShowNotification(responseBarcode,true)).Start();
+
         }
 
         private void menuItemOpenSettings_Click(object sender, EventArgs e)
@@ -283,11 +243,11 @@ namespace FarmaKode.Client
 
         private void menuItemExit_Click(object sender, EventArgs e)
         {
-            DialogResult dr = MessageBox.Show("Farmakode uygulamasından çıkmak istediğinizden emim misiniz?", "Uyarı", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+            DialogResult dr = KryptonMessageBox.Show("Farmakode uygulamasından çıkmak istediğinizden emim misiniz?", "Uyarı", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
 
             if (dr == DialogResult.Yes)
             {
-                new FormNotification("Uygulama kapatıldı", NotificationType.Info).ShowDialog();
+                // new FormNotification("Uygulama kapatıldı", NotificationType.Info).ShowDialog();
                 Application.Exit();
             }
 
@@ -325,34 +285,40 @@ namespace FarmaKode.Client
             Logger.GetInstance().Info(e.FilePath + " dosyası okunacak");
             try
             {
-                using (FileStream fs = new FileStream(e.FilePath, FileMode.Open, FileAccess.Read, FileShare.Read))
+                if (File.Exists(e.FilePath))
                 {
-                    using (StreamReader sr = new StreamReader(fs))
+                    using (FileStream fs = new FileStream(e.FilePath, FileMode.Open, FileAccess.Read, FileShare.Read))
                     {
-                        string content = sr.ReadToEnd();
-                        if (BL.IsValidHTML(content))
+                        using (StreamReader sr = new StreamReader(fs))
                         {
-                            List<ParsedData> parsedData = BL.Parse(content);
-                            RequestBarcode requestBarcode = BL.CreateRequestModel(parsedData);
-
-
-
-                            lastRequestBarcode = requestBarcode;
-                            if (!Settings.Default.IsManuelMode)
+                            string content = sr.ReadToEnd();
+                            if (BL.IsValidHTML(content))
                             {
-                                ResponseBarcode responseBarcode = BL.PostRequest(requestBarcode);
-                                if (responseBarcode.Data != null)
-                                    new FormNotification(responseBarcode).ShowDialog();
-                                else
-                                    new FormNotification("Aradığınız ilaç için veriler henüz eklenmedi. En kısa sürede eklenecektir", NotificationType.Warning).ShowDialog();
+                                List<ParsedData> parsedData = BL.Parse(content);
+                                RequestBarcode requestBarcode = BL.CreateRequestModel(parsedData);
+
+
+
+                                lastRequestBarcode = requestBarcode;
+                                if (!Settings.Default.IsManuelMode)
+                                {
+                                    ResponseBarcode responseBarcode = BL.PostRequest(requestBarcode);
+                                    if (responseBarcode.Data != null)
+                                    {
+                                        new Thread(() => ShowNotification(responseBarcode)).Start();
+                                    }
+
+                                    else
+                                        new FormNotification("Aradığınız ilaç için veriler henüz eklenmedi. En kısa sürede eklenecektir", NotificationType.Warning).ShowDialog();
+                                }
+                            }
+                            else
+                            {
+                                Logger.GetInstance().Info(e.FilePath + " dosyasının içeriğinde \"" + Settings.Default.IsParseableKeyword + "\" geçemediği için ya da Recete No=0 olduğu için okunamadı");
                             }
                         }
-                        else
-                        {
-                            Logger.GetInstance().Info(e.FilePath + " dosyasının içeriğinde \"" + Settings.Default.IsParseableKeyword + "\" geçemediği için ya da Recete No=0 olduğu için okunamadı");
-                        }
+                        fs.Close();
                     }
-                    fs.Close();
                 }
             }
             catch (Exception ex)
@@ -370,6 +336,19 @@ namespace FarmaKode.Client
             manuelModeTimer = null;
             manuelBarcodePostTimer = null;
             manuelBarcodeCleanTimer = null;
+        }
+
+        private void lblManuelBarcode_Click(object sender, EventArgs e)
+        {
+            new FormManuelBarcode(manuelBarcods).ShowDialog();
+        }
+
+        private void ShowNotification(ResponseBarcode responseBarcode, bool isRetail=false)
+        {
+            FormNotification fn = new FormNotification(responseBarcode, isRetail);
+            fn.TopLevel = true;
+            fn.TopMost = true;
+            fn.ShowDialog();
         }
     }
 }

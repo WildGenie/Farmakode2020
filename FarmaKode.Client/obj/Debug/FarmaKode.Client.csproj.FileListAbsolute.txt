@@ -64,7 +64,6 @@ C:\Users\Administrator\Desktop\Farmakode2020\FarmaKode.Client\obj\Debug\FarmaKod
 C:\Users\Administrator\Desktop\Farmakode2020\FarmaKode.Client\obj\Debug\FarmaKode.Client.csproj.CopyComplete
 C:\Users\Administrator\Desktop\Farmakode2020\FarmaKode.Client\obj\Debug\FarmaKode.Client.exe
 C:\Users\Administrator\Desktop\Farmakode2020\FarmaKode.Client\obj\Debug\FarmaKode.Client.pdb
-C:\Users\Administrator\Desktop\Farmakode2020\FarmaKode.Client\obj\Debug\FarmaKode.Client.csprojAssemblyReference.cache
 C:\Users\Administrator\Desktop\Farmakode2020\FarmaKode.Client\obj\Debug\FarmaKode.Client.TrustInfo.xml
 C:\Users\Administrator\Desktop\Farmakode2020\FarmaKode.Client\obj\Debug\FarmaKode.Client.exe.manifest
 C:\Users\Administrator\Desktop\Farmakode2020\FarmaKode.Client\bin\Debug\FarmaKode.Client.exe.manifest
@@ -118,3 +117,10 @@ C:\Users\ay1438\Desktop\Farmakode2020\FarmaKode.Client\bin\Debug\ComponentFactor
 C:\Users\ay1438\Desktop\Farmakode2020\FarmaKode.Client\bin\Debug\ComponentFactory.Krypton.Ribbon.pdb
 C:\Users\ay1438\Desktop\Farmakode2020\FarmaKode.Client\bin\Debug\ComponentFactory.Krypton.Toolkit.pdb
 C:\Users\ay1438\Desktop\Farmakode2020\FarmaKode.Client\bin\Debug\ComponentFactory.Krypton.Workspace.pdb
+C:\Users\Administrator\Desktop\Farmakode2020\FarmaKode.Client\bin\Debug\ComponentFactory.Krypton.Docking.dll
+C:\Users\Administrator\Desktop\Farmakode2020\FarmaKode.Client\bin\Debug\ComponentFactory.Krypton.Navigator.dll
+C:\Users\Administrator\Desktop\Farmakode2020\FarmaKode.Client\bin\Debug\ComponentFactory.Krypton.Ribbon.dll
+C:\Users\Administrator\Desktop\Farmakode2020\FarmaKode.Client\bin\Debug\ComponentFactory.Krypton.Toolkit.dll
+C:\Users\Administrator\Desktop\Farmakode2020\FarmaKode.Client\bin\Debug\ComponentFactory.Krypton.Workspace.dll
+C:\Users\Administrator\Desktop\Farmakode2020\FarmaKode.Client\obj\Debug\FarmaKode.Client.csprojAssemblyReference.cache
+C:\Users\Administrator\Desktop\Farmakode2020\FarmaKode.Client\obj\Debug\FarmaKode.Client.FormManuelBarcode.resources

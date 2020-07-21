@@ -7,9 +7,13 @@ using System.Reflection;
 using System.Runtime.InteropServices;
 using System.Security.Principal;
 using System.Windows.Forms;
+using ComponentFactory.Krypton.Toolkit;
 using FarmaKode.Client.Business;
 using FarmaKode.Client.Model.Section;
+using FarmaKode.Client.Util;
 using HtmlAgilityPack;
+using Microsoft.Win32;
+
 namespace FarmaKode.Client
 {
     static class Program
@@ -27,6 +31,9 @@ namespace FarmaKode.Client
  
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+
+
+            Common.AddShortcutToStartup();
 
 
             var wi = WindowsIdentity.GetCurrent();
@@ -52,7 +59,7 @@ namespace FarmaKode.Client
                 catch (Exception)
                 {
                     // The user did not allow the application to run as administrator
-                    MessageBox.Show("Sorry, but I don't seem to be able to start this program with administrator rights!");
+                    KryptonMessageBox.Show("Yönetici (Admin) rolünde olmadığınız için uygulamayı çalıştıramazsınız");
                 }
 
                 // Shut down the current process
@@ -63,12 +70,13 @@ namespace FarmaKode.Client
                 // We are running as administrator
                 Application.EnableVisualStyles();
                 Application.SetCompatibleTextRenderingDefault(false);
-                Application.Run(new Form1());
+                Application.Run(new FormButton());
             }
 
+            //RegistryKey rk = Registry.CurrentUser.OpenSubKey(@"Computer\HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Run", true);
+            //rk.SetValue("FarmaKode.Client.exe", Application.ExecutablePath);
 
-
-           
+          
         }
 
 

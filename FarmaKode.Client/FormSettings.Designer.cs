@@ -30,1161 +30,840 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormSettings));
-            this.label6 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.btnHide = new System.Windows.Forms.Button();
-            this.btnSave = new System.Windows.Forms.Button();
-            this.label11 = new System.Windows.Forms.Label();
-            this.lblAppStatus = new System.Windows.Forms.Label();
-            this.btnIsAppEnabled = new System.Windows.Forms.Button();
+            this.kryptonNavigator = new ComponentFactory.Krypton.Navigator.KryptonNavigator();
+            this.kryptonPage1 = new ComponentFactory.Krypton.Navigator.KryptonPage();
+            this.kryptonLabel8 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
+            this.kryptonLabel7 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
+            this.kryptonLabel6 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
+            this.kryptonLabel4 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
+            this.btnHide = new ComponentFactory.Krypton.Toolkit.KryptonButton();
+            this.btnSave = new ComponentFactory.Krypton.Toolkit.KryptonButton();
+            this.kryptonGroupBox5 = new ComponentFactory.Krypton.Toolkit.KryptonGroupBox();
+            this.btnIsAppEnabled = new ComponentFactory.Krypton.Toolkit.KryptonButton();
+            this.lblAppStatus = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
+            this.pictureBoxAppStatus = new System.Windows.Forms.PictureBox();
+            this.kryptonGroupBox4 = new ComponentFactory.Krypton.Toolkit.KryptonGroupBox();
+            this.spinBarcodeSpeed = new ComponentFactory.Krypton.Toolkit.KryptonNumericUpDown();
+            this.kryptonLabel20 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
+            this.kryptonNumericUpDown5 = new ComponentFactory.Krypton.Toolkit.KryptonNumericUpDown();
+            this.spinManuelBarcodeOnlyNumbers = new ComponentFactory.Krypton.Toolkit.KryptonCheckBox();
+            this.kryptonNumericUpDown6 = new ComponentFactory.Krypton.Toolkit.KryptonNumericUpDown();
+            this.spinManuelBarcodeMinSize = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
+            this.spinManuelBarcodeClearDuration = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
+            this.kryptonGroupBox3 = new ComponentFactory.Krypton.Toolkit.KryptonGroupBox();
+            this.kryptonLabel2 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
+            this.txtBarcodeMargins = new ComponentFactory.Krypton.Toolkit.KryptonMaskedTextBox();
+            this.kryptonLabel1 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
+            this.txtBarcodePrintSize = new ComponentFactory.Krypton.Toolkit.KryptonMaskedTextBox();
+            this.kryptonLabel16 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
+            this.comboDefaultBarcodePrinter = new ComponentFactory.Krypton.Toolkit.KryptonComboBox();
+            this.chkPrintDialog = new ComponentFactory.Krypton.Toolkit.KryptonCheckBox();
+            this.kryptonGroupBox2 = new ComponentFactory.Krypton.Toolkit.KryptonGroupBox();
+            this.kryptonLabel5 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
+            this.chkNotificationEnable = new ComponentFactory.Krypton.Toolkit.KryptonCheckBox();
+            this.kryptonLabel13 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
+            this.spinNotificationDuration = new ComponentFactory.Krypton.Toolkit.KryptonNumericUpDown();
+            this.comboNotificationPosition = new ComponentFactory.Krypton.Toolkit.KryptonComboBox();
+            this.kryptonLabel14 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
+            this.spinNotificationCount = new ComponentFactory.Krypton.Toolkit.KryptonNumericUpDown();
+            this.kryptonLabel15 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
+            this.kryptonGroupBox1 = new ComponentFactory.Krypton.Toolkit.KryptonGroupBox();
+            this.kryptonLabel11 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
+            this.txtPharmacyID = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
+            this.kryptonLabel12 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
+            this.comboPCNO = new ComponentFactory.Krypton.Toolkit.KryptonComboBox();
+            this.kryptonPage2 = new ComponentFactory.Krypton.Navigator.KryptonPage();
+            this.webBrowser1 = new System.Windows.Forms.WebBrowser();
+            this.kryptonPage3 = new ComponentFactory.Krypton.Navigator.KryptonPage();
+            this.webBrowser2 = new System.Windows.Forms.WebBrowser();
+            this.kryptonPage4 = new ComponentFactory.Krypton.Navigator.KryptonPage();
+            this.btnOpenEReceteParameterScreen = new ComponentFactory.Krypton.Toolkit.KryptonButton();
+            this.btnOpenSourceFolder = new ComponentFactory.Krypton.Toolkit.KryptonButton();
+            this.btnSelectSourceFolder = new ComponentFactory.Krypton.Toolkit.KryptonButton();
+            this.kryptonLabel3 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
+            this.txtSourceFolder = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.btnAdmin = new System.Windows.Forms.Button();
-            this.spinNotificationDuration = new System.Windows.Forms.NumericUpDown();
-            this.spinNotificationCount = new System.Windows.Forms.NumericUpDown();
-            this.comboNotificationPosition = new System.Windows.Forms.ComboBox();
-            this.groupManuelMode = new System.Windows.Forms.GroupBox();
-            this.label22 = new System.Windows.Forms.Label();
-            this.txtDestinationFolder = new System.Windows.Forms.TextBox();
-            this.txtSourceFolder = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.btnSelectSourceFolder = new System.Windows.Forms.Button();
-            this.btnSelectDestinationFolder = new System.Windows.Forms.Button();
-            this.label18 = new System.Windows.Forms.Label();
-            this.numericUpDown7 = new System.Windows.Forms.NumericUpDown();
-            this.chkManuelKeysSHIFT = new System.Windows.Forms.CheckBox();
-            this.chkManuelKeysALT = new System.Windows.Forms.CheckBox();
-            this.chkManuelKeysCTRL = new System.Windows.Forms.CheckBox();
-            this.comboManuelKey = new System.Windows.Forms.ComboBox();
-            this.chkManuelMode = new System.Windows.Forms.CheckBox();
-            this.label17 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.chkPrintDialog = new System.Windows.Forms.CheckBox();
-            this.numericUpDown6 = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDown5 = new System.Windows.Forms.NumericUpDown();
-            this.comboDefaultBarcodePrinter = new System.Windows.Forms.ComboBox();
-            this.numericUpDown4 = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDown3 = new System.Windows.Forms.NumericUpDown();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.chkBarcodeOnlyNumber = new System.Windows.Forms.CheckBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.numBarcodeMinLength = new System.Windows.Forms.NumericUpDown();
-            this.label21 = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
-            this.label19 = new System.Windows.Forms.Label();
-            this.numericUpDown10 = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDown9 = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDown8 = new System.Windows.Forms.NumericUpDown();
-            this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.imageList = new System.Windows.Forms.ImageList(this.components);
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.txtPharmacyID = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.xuıCustomGroupbox1 = new XanderUI.XUICustomGroupbox();
-            this.xuıCustomGroupbox2 = new XanderUI.XUICustomGroupbox();
-            this.chkNotificationEnable = new XanderUI.XUISwitch();
-            this.label5 = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.kryptonNavigator)).BeginInit();
+            this.kryptonNavigator.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.kryptonPage1)).BeginInit();
+            this.kryptonPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.kryptonGroupBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kryptonGroupBox5.Panel)).BeginInit();
+            this.kryptonGroupBox5.Panel.SuspendLayout();
+            this.kryptonGroupBox5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAppStatus)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kryptonGroupBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kryptonGroupBox4.Panel)).BeginInit();
+            this.kryptonGroupBox4.Panel.SuspendLayout();
+            this.kryptonGroupBox4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.kryptonGroupBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kryptonGroupBox3.Panel)).BeginInit();
+            this.kryptonGroupBox3.Panel.SuspendLayout();
+            this.kryptonGroupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.comboDefaultBarcodePrinter)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kryptonGroupBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kryptonGroupBox2.Panel)).BeginInit();
+            this.kryptonGroupBox2.Panel.SuspendLayout();
+            this.kryptonGroupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.comboNotificationPosition)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kryptonGroupBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kryptonGroupBox1.Panel)).BeginInit();
+            this.kryptonGroupBox1.Panel.SuspendLayout();
+            this.kryptonGroupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.comboPCNO)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kryptonPage2)).BeginInit();
+            this.kryptonPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.kryptonPage3)).BeginInit();
+            this.kryptonPage3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.kryptonPage4)).BeginInit();
+            this.kryptonPage4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.spinNotificationDuration)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.spinNotificationCount)).BeginInit();
-            this.groupManuelMode.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown7)).BeginInit();
-            this.groupBox5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).BeginInit();
-            this.groupBox4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numBarcodeMinLength)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown10)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown9)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown8)).BeginInit();
-            this.tabControl1.SuspendLayout();
-            this.tabPage3.SuspendLayout();
-            this.panel1.SuspendLayout();
-            this.xuıCustomGroupbox1.SuspendLayout();
-            this.xuıCustomGroupbox2.SuspendLayout();
             this.SuspendLayout();
             // 
-            // label6
+            // kryptonNavigator
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(389, 25);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(74, 13);
-            this.label6.TabIndex = 1;
-            this.label6.Text = "Son İşlem Adeti";
+            this.kryptonNavigator.Bar.ItemSizing = ComponentFactory.Krypton.Navigator.BarItemSizing.SameWidthAndHeight;
+            this.kryptonNavigator.Bar.TabBorderStyle = ComponentFactory.Krypton.Toolkit.TabBorderStyle.SlantEqualNear;
+            this.kryptonNavigator.Button.ButtonDisplayLogic = ComponentFactory.Krypton.Navigator.ButtonDisplayLogic.None;
+            this.kryptonNavigator.Button.CloseButtonAction = ComponentFactory.Krypton.Navigator.CloseButtonAction.None;
+            this.kryptonNavigator.Button.CloseButtonDisplay = ComponentFactory.Krypton.Navigator.ButtonDisplay.Hide;
+            this.kryptonNavigator.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.kryptonNavigator.Group.GroupBackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.ButtonStandalone;
+            this.kryptonNavigator.Location = new System.Drawing.Point(0, 0);
+            this.kryptonNavigator.Name = "kryptonNavigator";
+            this.kryptonNavigator.NavigatorMode = ComponentFactory.Krypton.Navigator.NavigatorMode.HeaderBarCheckButtonGroup;
+            this.kryptonNavigator.PageBackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.ButtonStandalone;
+            this.kryptonNavigator.Pages.AddRange(new ComponentFactory.Krypton.Navigator.KryptonPage[] {
+            this.kryptonPage1,
+            this.kryptonPage2,
+            this.kryptonPage3,
+            this.kryptonPage4});
+            this.kryptonNavigator.SelectedIndex = 0;
+            this.kryptonNavigator.Size = new System.Drawing.Size(759, 676);
+            this.kryptonNavigator.TabIndex = 2;
             // 
-            // label8
+            // kryptonPage1
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(269, 25);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(40, 13);
-            this.label8.TabIndex = 3;
-            this.label8.Text = "Konum";
+            this.kryptonPage1.AutoHiddenSlideSize = new System.Drawing.Size(200, 200);
+            this.kryptonPage1.Controls.Add(this.kryptonLabel8);
+            this.kryptonPage1.Controls.Add(this.kryptonLabel7);
+            this.kryptonPage1.Controls.Add(this.kryptonLabel6);
+            this.kryptonPage1.Controls.Add(this.kryptonLabel4);
+            this.kryptonPage1.Controls.Add(this.btnHide);
+            this.kryptonPage1.Controls.Add(this.btnSave);
+            this.kryptonPage1.Controls.Add(this.kryptonGroupBox5);
+            this.kryptonPage1.Controls.Add(this.kryptonGroupBox4);
+            this.kryptonPage1.Controls.Add(this.kryptonGroupBox3);
+            this.kryptonPage1.Controls.Add(this.kryptonGroupBox2);
+            this.kryptonPage1.Controls.Add(this.kryptonGroupBox1);
+            this.kryptonPage1.Flags = 65534;
+            this.kryptonPage1.ImageSmall = global::FarmaKode.Client.Properties.Resources.cog;
+            this.kryptonPage1.LastVisibleSet = true;
+            this.kryptonPage1.MinimumSize = new System.Drawing.Size(50, 50);
+            this.kryptonPage1.Name = "kryptonPage1";
+            this.kryptonPage1.Size = new System.Drawing.Size(757, 629);
+            this.kryptonPage1.Text = "Ayarlar";
+            this.kryptonPage1.TextDescription = "Farmakode ayarları";
+            this.kryptonPage1.TextTitle = "AYARLAR";
+            this.kryptonPage1.ToolTipTitle = "Page ToolTip";
+            this.kryptonPage1.UniqueName = "54A97628146444F644BA92F878B8C53A";
             // 
-            // label9
+            // kryptonLabel8
             // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(112, 25);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(27, 13);
-            this.label9.TabIndex = 4;
-            this.label9.Text = "Süre";
+            this.kryptonLabel8.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.TitleControl;
+            this.kryptonLabel8.Location = new System.Drawing.Point(97, 93);
+            this.kryptonLabel8.Name = "kryptonLabel8";
+            this.kryptonLabel8.Size = new System.Drawing.Size(161, 29);
+            this.kryptonLabel8.TabIndex = 55;
+            this.kryptonLabel8.Values.Image = global::FarmaKode.Client.Properties.Resources.user_medical;
+            this.kryptonLabel8.Values.Text = "Eczane Bilgileri";
+            // 
+            // kryptonLabel7
+            // 
+            this.kryptonLabel7.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.TitleControl;
+            this.kryptonLabel7.Location = new System.Drawing.Point(377, 199);
+            this.kryptonLabel7.Name = "kryptonLabel7";
+            this.kryptonLabel7.Size = new System.Drawing.Size(121, 29);
+            this.kryptonLabel7.TabIndex = 54;
+            this.kryptonLabel7.Values.Image = global::FarmaKode.Client.Properties.Resources.shopping_cart_reset;
+            this.kryptonLabel7.Values.Text = "Perakende";
+            // 
+            // kryptonLabel6
+            // 
+            this.kryptonLabel6.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.TitleControl;
+            this.kryptonLabel6.Location = new System.Drawing.Point(100, 199);
+            this.kryptonLabel6.Name = "kryptonLabel6";
+            this.kryptonLabel6.Size = new System.Drawing.Size(121, 29);
+            this.kryptonLabel6.TabIndex = 53;
+            this.kryptonLabel6.Values.Image = global::FarmaKode.Client.Properties.Resources.card_echeck;
+            this.kryptonLabel6.Values.Text = "Bildirimler";
+            // 
+            // kryptonLabel4
+            // 
+            this.kryptonLabel4.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.TitleControl;
+            this.kryptonLabel4.Location = new System.Drawing.Point(97, 410);
+            this.kryptonLabel4.Name = "kryptonLabel4";
+            this.kryptonLabel4.Size = new System.Drawing.Size(79, 29);
+            this.kryptonLabel4.TabIndex = 52;
+            this.kryptonLabel4.Values.Image = global::FarmaKode.Client.Properties.Resources.printer;
+            this.kryptonLabel4.Values.Text = "Yazıcı";
             // 
             // btnHide
             // 
-            this.btnHide.Location = new System.Drawing.Point(420, 458);
+            this.btnHide.Location = new System.Drawing.Point(543, 581);
             this.btnHide.Name = "btnHide";
-            this.btnHide.Size = new System.Drawing.Size(91, 26);
-            this.btnHide.TabIndex = 2;
-            this.btnHide.Text = "Gizle";
-            this.btnHide.UseVisualStyleBackColor = true;
+            this.btnHide.Size = new System.Drawing.Size(96, 37);
+            this.btnHide.StateNormal.Content.Image.ImageH = ComponentFactory.Krypton.Toolkit.PaletteRelativeAlign.Center;
+            this.btnHide.TabIndex = 51;
+            this.btnHide.Values.Image = global::FarmaKode.Client.Properties.Resources.door_out;
+            this.btnHide.Values.Text = "Kapat";
             this.btnHide.Click += new System.EventHandler(this.btnHide_Click);
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(305, 458);
+            this.btnSave.Location = new System.Drawing.Point(415, 581);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(91, 26);
-            this.btnSave.TabIndex = 1;
-            this.btnSave.Text = "Kaydet";
-            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Size = new System.Drawing.Size(96, 37);
+            this.btnSave.StateNormal.Content.Image.ImageH = ComponentFactory.Krypton.Toolkit.PaletteRelativeAlign.Center;
+            this.btnSave.TabIndex = 50;
+            this.btnSave.Values.Image = global::FarmaKode.Client.Properties.Resources.save_as1;
+            this.btnSave.Values.Text = "Kaydet";
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
-            // label11
+            // kryptonGroupBox5
             // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(25, 16);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(94, 13);
-            this.label11.TabIndex = 0;
-            this.label11.Text = "Uygulama Durumu:";
+            this.kryptonGroupBox5.Location = new System.Drawing.Point(97, 20);
+            this.kryptonGroupBox5.Name = "kryptonGroupBox5";
             // 
-            // lblAppStatus
+            // kryptonGroupBox5.Panel
             // 
-            this.lblAppStatus.AutoSize = true;
-            this.lblAppStatus.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.lblAppStatus.Location = new System.Drawing.Point(126, 16);
-            this.lblAppStatus.Name = "lblAppStatus";
-            this.lblAppStatus.Size = new System.Drawing.Size(32, 13);
-            this.lblAppStatus.TabIndex = 0;
-            this.lblAppStatus.Text = "AKTİF";
+            this.kryptonGroupBox5.Panel.Controls.Add(this.btnIsAppEnabled);
+            this.kryptonGroupBox5.Panel.Controls.Add(this.lblAppStatus);
+            this.kryptonGroupBox5.Panel.Controls.Add(this.pictureBoxAppStatus);
+            this.kryptonGroupBox5.Size = new System.Drawing.Size(542, 50);
+            this.kryptonGroupBox5.TabIndex = 49;
+            this.kryptonGroupBox5.Values.Heading = "";
             // 
             // btnIsAppEnabled
             // 
-            this.btnIsAppEnabled.Location = new System.Drawing.Point(351, 11);
+            this.btnIsAppEnabled.Location = new System.Drawing.Point(406, 8);
             this.btnIsAppEnabled.Name = "btnIsAppEnabled";
-            this.btnIsAppEnabled.Size = new System.Drawing.Size(160, 23);
-            this.btnIsAppEnabled.TabIndex = 0;
-            this.btnIsAppEnabled.Text = "Uygulamayı Pasif Yap";
-            this.btnIsAppEnabled.UseVisualStyleBackColor = true;
+            this.btnIsAppEnabled.Size = new System.Drawing.Size(129, 29);
+            this.btnIsAppEnabled.TabIndex = 48;
+            this.btnIsAppEnabled.Values.Text = "Aktif ET";
             this.btnIsAppEnabled.Click += new System.EventHandler(this.btnIsAppEnabled_Click);
             // 
-            // errorProvider1
+            // lblAppStatus
             // 
-            this.errorProvider1.ContainerControl = this;
+            this.lblAppStatus.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.TitlePanel;
+            this.lblAppStatus.Location = new System.Drawing.Point(51, 8);
+            this.lblAppStatus.Name = "lblAppStatus";
+            this.lblAppStatus.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Office2010Black;
+            this.lblAppStatus.Size = new System.Drawing.Size(156, 29);
+            this.lblAppStatus.TabIndex = 46;
+            this.lblAppStatus.Values.Text = "Uygulama PASİF";
             // 
-            // btnAdmin
+            // pictureBoxAppStatus
             // 
-            this.btnAdmin.Location = new System.Drawing.Point(806, 105);
-            this.btnAdmin.Name = "btnAdmin";
-            this.btnAdmin.Size = new System.Drawing.Size(91, 26);
-            this.btnAdmin.TabIndex = 1;
-            this.btnAdmin.Text = "Admin";
-            this.btnAdmin.UseVisualStyleBackColor = true;
-            this.btnAdmin.Click += new System.EventHandler(this.btnAdmin_Click);
+            this.pictureBoxAppStatus.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBoxAppStatus.Image = global::FarmaKode.Client.Properties.Resources.delete;
+            this.pictureBoxAppStatus.Location = new System.Drawing.Point(13, 6);
+            this.pictureBoxAppStatus.Name = "pictureBoxAppStatus";
+            this.pictureBoxAppStatus.Size = new System.Drawing.Size(32, 32);
+            this.pictureBoxAppStatus.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBoxAppStatus.TabIndex = 47;
+            this.pictureBoxAppStatus.TabStop = false;
+            // 
+            // kryptonGroupBox4
+            // 
+            this.kryptonGroupBox4.Location = new System.Drawing.Point(377, 234);
+            this.kryptonGroupBox4.Name = "kryptonGroupBox4";
+            // 
+            // kryptonGroupBox4.Panel
+            // 
+            this.kryptonGroupBox4.Panel.Controls.Add(this.spinBarcodeSpeed);
+            this.kryptonGroupBox4.Panel.Controls.Add(this.kryptonLabel20);
+            this.kryptonGroupBox4.Panel.Controls.Add(this.kryptonNumericUpDown5);
+            this.kryptonGroupBox4.Panel.Controls.Add(this.spinManuelBarcodeOnlyNumbers);
+            this.kryptonGroupBox4.Panel.Controls.Add(this.kryptonNumericUpDown6);
+            this.kryptonGroupBox4.Panel.Controls.Add(this.spinManuelBarcodeMinSize);
+            this.kryptonGroupBox4.Panel.Controls.Add(this.spinManuelBarcodeClearDuration);
+            this.kryptonGroupBox4.Size = new System.Drawing.Size(262, 150);
+            this.kryptonGroupBox4.TabIndex = 45;
+            this.kryptonGroupBox4.Values.Heading = "";
+            // 
+            // spinBarcodeSpeed
+            // 
+            this.spinBarcodeSpeed.DataBindings.Add(new System.Windows.Forms.Binding("Value", global::FarmaKode.Client.Properties.Settings.Default, "BarcodeSpeed", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.spinBarcodeSpeed.Location = new System.Drawing.Point(151, 13);
+            this.spinBarcodeSpeed.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
+            this.spinBarcodeSpeed.Name = "spinBarcodeSpeed";
+            this.spinBarcodeSpeed.Size = new System.Drawing.Size(84, 22);
+            this.spinBarcodeSpeed.TabIndex = 21;
+            this.spinBarcodeSpeed.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.spinBarcodeSpeed.Value = global::FarmaKode.Client.Properties.Settings.Default.BarcodeSpeed;
+            // 
+            // kryptonLabel20
+            // 
+            this.kryptonLabel20.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalPanel;
+            this.kryptonLabel20.Location = new System.Drawing.Point(13, 14);
+            this.kryptonLabel20.Name = "kryptonLabel20";
+            this.kryptonLabel20.Size = new System.Drawing.Size(142, 20);
+            this.kryptonLabel20.TabIndex = 27;
+            this.kryptonLabel20.Values.Text = "Barkod Okuma Hızı (ms)";
+            // 
+            // kryptonNumericUpDown5
+            // 
+            this.kryptonNumericUpDown5.DataBindings.Add(new System.Windows.Forms.Binding("Value", global::FarmaKode.Client.Properties.Settings.Default, "BarcodeClearDuration", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.kryptonNumericUpDown5.Location = new System.Drawing.Point(151, 39);
+            this.kryptonNumericUpDown5.Maximum = new decimal(new int[] {
+            180,
+            0,
+            0,
+            0});
+            this.kryptonNumericUpDown5.Name = "kryptonNumericUpDown5";
+            this.kryptonNumericUpDown5.Size = new System.Drawing.Size(84, 22);
+            this.kryptonNumericUpDown5.TabIndex = 21;
+            this.kryptonNumericUpDown5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.kryptonNumericUpDown5.Value = global::FarmaKode.Client.Properties.Settings.Default.BarcodeClearDuration;
+            // 
+            // spinManuelBarcodeOnlyNumbers
+            // 
+            this.spinManuelBarcodeOnlyNumbers.Checked = global::FarmaKode.Client.Properties.Settings.Default.BarcodeOnlyNumber;
+            this.spinManuelBarcodeOnlyNumbers.CheckPosition = ComponentFactory.Krypton.Toolkit.VisualOrientation.Right;
+            this.spinManuelBarcodeOnlyNumbers.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::FarmaKode.Client.Properties.Settings.Default, "BarcodeOnlyNumber", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.spinManuelBarcodeOnlyNumbers.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalPanel;
+            this.spinManuelBarcodeOnlyNumbers.Location = new System.Drawing.Point(63, 91);
+            this.spinManuelBarcodeOnlyNumbers.Name = "spinManuelBarcodeOnlyNumbers";
+            this.spinManuelBarcodeOnlyNumbers.Size = new System.Drawing.Size(102, 20);
+            this.spinManuelBarcodeOnlyNumbers.TabIndex = 40;
+            this.spinManuelBarcodeOnlyNumbers.Values.Text = "Sadece Rakam";
+            // 
+            // kryptonNumericUpDown6
+            // 
+            this.kryptonNumericUpDown6.DataBindings.Add(new System.Windows.Forms.Binding("Value", global::FarmaKode.Client.Properties.Settings.Default, "BarcodeMinlength", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.kryptonNumericUpDown6.Location = new System.Drawing.Point(151, 65);
+            this.kryptonNumericUpDown6.Maximum = new decimal(new int[] {
+            180,
+            0,
+            0,
+            0});
+            this.kryptonNumericUpDown6.Name = "kryptonNumericUpDown6";
+            this.kryptonNumericUpDown6.Size = new System.Drawing.Size(84, 22);
+            this.kryptonNumericUpDown6.TabIndex = 21;
+            this.kryptonNumericUpDown6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.kryptonNumericUpDown6.Value = global::FarmaKode.Client.Properties.Settings.Default.BarcodeMinlength;
+            // 
+            // spinManuelBarcodeMinSize
+            // 
+            this.spinManuelBarcodeMinSize.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalPanel;
+            this.spinManuelBarcodeMinSize.Location = new System.Drawing.Point(69, 66);
+            this.spinManuelBarcodeMinSize.Name = "spinManuelBarcodeMinSize";
+            this.spinManuelBarcodeMinSize.Size = new System.Drawing.Size(83, 20);
+            this.spinManuelBarcodeMinSize.TabIndex = 31;
+            this.spinManuelBarcodeMinSize.Values.Text = "Min. Karakter";
+            // 
+            // spinManuelBarcodeClearDuration
+            // 
+            this.spinManuelBarcodeClearDuration.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalPanel;
+            this.spinManuelBarcodeClearDuration.Location = new System.Drawing.Point(24, 40);
+            this.spinManuelBarcodeClearDuration.Name = "spinManuelBarcodeClearDuration";
+            this.spinManuelBarcodeClearDuration.Size = new System.Drawing.Size(128, 20);
+            this.spinManuelBarcodeClearDuration.TabIndex = 30;
+            this.spinManuelBarcodeClearDuration.Values.Text = "Temizleme Süresi (sn)";
+            // 
+            // kryptonGroupBox3
+            // 
+            this.kryptonGroupBox3.CaptionOrientation = ComponentFactory.Krypton.Toolkit.ButtonOrientation.FixedTop;
+            this.kryptonGroupBox3.Location = new System.Drawing.Point(95, 440);
+            this.kryptonGroupBox3.Name = "kryptonGroupBox3";
+            // 
+            // kryptonGroupBox3.Panel
+            // 
+            this.kryptonGroupBox3.Panel.Controls.Add(this.kryptonLabel2);
+            this.kryptonGroupBox3.Panel.Controls.Add(this.txtBarcodeMargins);
+            this.kryptonGroupBox3.Panel.Controls.Add(this.kryptonLabel1);
+            this.kryptonGroupBox3.Panel.Controls.Add(this.txtBarcodePrintSize);
+            this.kryptonGroupBox3.Panel.Controls.Add(this.kryptonLabel16);
+            this.kryptonGroupBox3.Panel.Controls.Add(this.comboDefaultBarcodePrinter);
+            this.kryptonGroupBox3.Panel.Controls.Add(this.chkPrintDialog);
+            this.kryptonGroupBox3.Size = new System.Drawing.Size(544, 135);
+            this.kryptonGroupBox3.TabIndex = 44;
+            this.kryptonGroupBox3.Values.Heading = "";
+            // 
+            // kryptonLabel2
+            // 
+            this.kryptonLabel2.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalPanel;
+            this.kryptonLabel2.Location = new System.Drawing.Point(33, 69);
+            this.kryptonLabel2.Name = "kryptonLabel2";
+            this.kryptonLabel2.Size = new System.Drawing.Size(95, 20);
+            this.kryptonLabel2.TabIndex = 44;
+            this.kryptonLabel2.Values.Text = "Sol-Üst-Sağ-Alt";
+            // 
+            // txtBarcodeMargins
+            // 
+            this.txtBarcodeMargins.BeepOnError = true;
+            this.txtBarcodeMargins.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::FarmaKode.Client.Properties.Settings.Default, "BarcodePaperMargins", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.txtBarcodeMargins.Location = new System.Drawing.Point(130, 69);
+            this.txtBarcodeMargins.Mask = "###-###-###-###";
+            this.txtBarcodeMargins.Name = "txtBarcodeMargins";
+            this.txtBarcodeMargins.Size = new System.Drawing.Size(111, 23);
+            this.txtBarcodeMargins.TabIndex = 43;
+            this.txtBarcodeMargins.Text = global::FarmaKode.Client.Properties.Settings.Default.BarcodePaperMargins;
+            // 
+            // kryptonLabel1
+            // 
+            this.kryptonLabel1.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalPanel;
+            this.kryptonLabel1.Location = new System.Drawing.Point(37, 40);
+            this.kryptonLabel1.Name = "kryptonLabel1";
+            this.kryptonLabel1.Size = new System.Drawing.Size(91, 20);
+            this.kryptonLabel1.TabIndex = 42;
+            this.kryptonLabel1.Values.Text = "Barkod Boyutu";
+            // 
+            // txtBarcodePrintSize
+            // 
+            this.txtBarcodePrintSize.BeepOnError = true;
+            this.txtBarcodePrintSize.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::FarmaKode.Client.Properties.Settings.Default, "BarcodePaperSize", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.txtBarcodePrintSize.Location = new System.Drawing.Point(130, 40);
+            this.txtBarcodePrintSize.Mask = "###-###";
+            this.txtBarcodePrintSize.Name = "txtBarcodePrintSize";
+            this.txtBarcodePrintSize.Size = new System.Drawing.Size(111, 23);
+            this.txtBarcodePrintSize.TabIndex = 41;
+            this.txtBarcodePrintSize.Text = global::FarmaKode.Client.Properties.Settings.Default.BarcodePaperSize;
+            // 
+            // kryptonLabel16
+            // 
+            this.kryptonLabel16.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalPanel;
+            this.kryptonLabel16.Location = new System.Drawing.Point(37, 14);
+            this.kryptonLabel16.Name = "kryptonLabel16";
+            this.kryptonLabel16.Size = new System.Drawing.Size(91, 20);
+            this.kryptonLabel16.TabIndex = 24;
+            this.kryptonLabel16.Values.Text = "Barkod Yazıcısı";
+            // 
+            // comboDefaultBarcodePrinter
+            // 
+            this.comboDefaultBarcodePrinter.DropDownWidth = 121;
+            this.comboDefaultBarcodePrinter.Location = new System.Drawing.Point(130, 13);
+            this.comboDefaultBarcodePrinter.Name = "comboDefaultBarcodePrinter";
+            this.comboDefaultBarcodePrinter.Size = new System.Drawing.Size(239, 21);
+            this.comboDefaultBarcodePrinter.TabIndex = 25;
+            this.comboDefaultBarcodePrinter.Text = "Seçiniz...";
+            this.comboDefaultBarcodePrinter.SelectedIndexChanged += new System.EventHandler(this.comboDefaultBarcodePrinter_SelectedIndexChanged);
+            // 
+            // chkPrintDialog
+            // 
+            this.chkPrintDialog.Checked = global::FarmaKode.Client.Properties.Settings.Default.ShowPrinterDilaog;
+            this.chkPrintDialog.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::FarmaKode.Client.Properties.Settings.Default, "ShowPrinterDilaog", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.chkPrintDialog.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalPanel;
+            this.chkPrintDialog.Location = new System.Drawing.Point(130, 94);
+            this.chkPrintDialog.Name = "chkPrintDialog";
+            this.chkPrintDialog.Size = new System.Drawing.Size(148, 20);
+            this.chkPrintDialog.TabIndex = 40;
+            this.chkPrintDialog.Values.Text = "Yazıcı Ayarlarını Göster";
+            // 
+            // kryptonGroupBox2
+            // 
+            this.kryptonGroupBox2.Location = new System.Drawing.Point(97, 234);
+            this.kryptonGroupBox2.Name = "kryptonGroupBox2";
+            // 
+            // kryptonGroupBox2.Panel
+            // 
+            this.kryptonGroupBox2.Panel.Controls.Add(this.kryptonLabel5);
+            this.kryptonGroupBox2.Panel.Controls.Add(this.chkNotificationEnable);
+            this.kryptonGroupBox2.Panel.Controls.Add(this.kryptonLabel13);
+            this.kryptonGroupBox2.Panel.Controls.Add(this.spinNotificationDuration);
+            this.kryptonGroupBox2.Panel.Controls.Add(this.comboNotificationPosition);
+            this.kryptonGroupBox2.Panel.Controls.Add(this.kryptonLabel14);
+            this.kryptonGroupBox2.Panel.Controls.Add(this.spinNotificationCount);
+            this.kryptonGroupBox2.Panel.Controls.Add(this.kryptonLabel15);
+            this.kryptonGroupBox2.Size = new System.Drawing.Size(262, 150);
+            this.kryptonGroupBox2.TabIndex = 43;
+            this.kryptonGroupBox2.Values.Heading = "";
+            // 
+            // kryptonLabel5
+            // 
+            this.kryptonLabel5.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalPanel;
+            this.kryptonLabel5.Location = new System.Drawing.Point(20, 13);
+            this.kryptonLabel5.Name = "kryptonLabel5";
+            this.kryptonLabel5.Size = new System.Drawing.Size(108, 20);
+            this.kryptonLabel5.TabIndex = 38;
+            this.kryptonLabel5.Values.Text = "Bildirimleri Göster";
+            // 
+            // chkNotificationEnable
+            // 
+            this.chkNotificationEnable.Checked = global::FarmaKode.Client.Properties.Settings.Default.IsEnableNotification;
+            this.chkNotificationEnable.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::FarmaKode.Client.Properties.Settings.Default, "IsEnableNotification", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.chkNotificationEnable.Location = new System.Drawing.Point(131, 17);
+            this.chkNotificationEnable.Name = "chkNotificationEnable";
+            this.chkNotificationEnable.Size = new System.Drawing.Size(19, 13);
+            this.chkNotificationEnable.TabIndex = 18;
+            this.chkNotificationEnable.Values.Text = "";
+            // 
+            // kryptonLabel13
+            // 
+            this.kryptonLabel13.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalPanel;
+            this.kryptonLabel13.Location = new System.Drawing.Point(9, 41);
+            this.kryptonLabel13.Name = "kryptonLabel13";
+            this.kryptonLabel13.Size = new System.Drawing.Size(119, 20);
+            this.kryptonLabel13.TabIndex = 19;
+            this.kryptonLabel13.Values.Text = "Gösterim Süresi (sn)";
             // 
             // spinNotificationDuration
             // 
-            this.spinNotificationDuration.DataBindings.Add(new System.Windows.Forms.Binding("Enabled", global::FarmaKode.Client.Properties.Settings.Default, "IsEnableNotification", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.spinNotificationDuration.DataBindings.Add(new System.Windows.Forms.Binding("Value", global::FarmaKode.Client.Properties.Settings.Default, "NotificationDuration", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.spinNotificationDuration.Enabled = global::FarmaKode.Client.Properties.Settings.Default.IsEnableNotification;
-            this.spinNotificationDuration.Location = new System.Drawing.Point(112, 46);
+            this.spinNotificationDuration.Location = new System.Drawing.Point(131, 40);
             this.spinNotificationDuration.Maximum = new decimal(new int[] {
             180,
             0,
             0,
             0});
-            this.spinNotificationDuration.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
             this.spinNotificationDuration.Name = "spinNotificationDuration";
-            this.spinNotificationDuration.Size = new System.Drawing.Size(72, 21);
-            this.spinNotificationDuration.TabIndex = 0;
+            this.spinNotificationDuration.Size = new System.Drawing.Size(84, 22);
+            this.spinNotificationDuration.TabIndex = 20;
             this.spinNotificationDuration.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.spinNotificationDuration.Value = global::FarmaKode.Client.Properties.Settings.Default.NotificationDuration;
             // 
-            // spinNotificationCount
-            // 
-            this.spinNotificationCount.DataBindings.Add(new System.Windows.Forms.Binding("Enabled", global::FarmaKode.Client.Properties.Settings.Default, "IsEnableNotification", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.spinNotificationCount.DataBindings.Add(new System.Windows.Forms.Binding("Value", global::FarmaKode.Client.Properties.Settings.Default, "NotificationMaxCount", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.spinNotificationCount.Enabled = global::FarmaKode.Client.Properties.Settings.Default.IsEnableNotification;
-            this.spinNotificationCount.Location = new System.Drawing.Point(389, 46);
-            this.spinNotificationCount.Maximum = new decimal(new int[] {
-            10,
-            0,
-            0,
-            0});
-            this.spinNotificationCount.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.spinNotificationCount.Name = "spinNotificationCount";
-            this.spinNotificationCount.Size = new System.Drawing.Size(70, 21);
-            this.spinNotificationCount.TabIndex = 1;
-            this.spinNotificationCount.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.spinNotificationCount.Value = global::FarmaKode.Client.Properties.Settings.Default.NotificationMaxCount;
-            // 
             // comboNotificationPosition
             // 
-            this.comboNotificationPosition.DataBindings.Add(new System.Windows.Forms.Binding("Enabled", global::FarmaKode.Client.Properties.Settings.Default, "IsEnableNotification", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.comboNotificationPosition.Enabled = global::FarmaKode.Client.Properties.Settings.Default.IsEnableNotification;
-            this.comboNotificationPosition.FormattingEnabled = true;
+            this.comboNotificationPosition.DropDownWidth = 121;
             this.comboNotificationPosition.Items.AddRange(new object[] {
             "Sağ üst",
             "Sağ alt",
             "Sol alt",
             "Sol üst"});
-            this.comboNotificationPosition.Location = new System.Drawing.Point(269, 46);
+            this.comboNotificationPosition.Location = new System.Drawing.Point(131, 69);
             this.comboNotificationPosition.Name = "comboNotificationPosition";
-            this.comboNotificationPosition.Size = new System.Drawing.Size(96, 21);
-            this.comboNotificationPosition.TabIndex = 2;
+            this.comboNotificationPosition.Size = new System.Drawing.Size(84, 21);
+            this.comboNotificationPosition.TabIndex = 23;
+            this.comboNotificationPosition.Text = "Seçiniz...";
             this.comboNotificationPosition.SelectedIndexChanged += new System.EventHandler(this.comboNotificationPosition_SelectedIndexChanged);
             // 
-            // groupManuelMode
+            // kryptonLabel14
             // 
-            this.groupManuelMode.Controls.Add(this.label22);
-            this.groupManuelMode.Controls.Add(this.txtDestinationFolder);
-            this.groupManuelMode.Controls.Add(this.txtSourceFolder);
-            this.groupManuelMode.Controls.Add(this.label3);
-            this.groupManuelMode.Controls.Add(this.btnSelectSourceFolder);
-            this.groupManuelMode.Controls.Add(this.btnSelectDestinationFolder);
-            this.groupManuelMode.Controls.Add(this.label18);
-            this.groupManuelMode.Controls.Add(this.numericUpDown7);
-            this.groupManuelMode.Controls.Add(this.chkManuelKeysSHIFT);
-            this.groupManuelMode.Controls.Add(this.chkManuelKeysALT);
-            this.groupManuelMode.Controls.Add(this.chkManuelKeysCTRL);
-            this.groupManuelMode.Controls.Add(this.comboManuelKey);
-            this.groupManuelMode.Controls.Add(this.chkManuelMode);
-            this.groupManuelMode.Location = new System.Drawing.Point(25, 38);
-            this.groupManuelMode.Name = "groupManuelMode";
-            this.groupManuelMode.Size = new System.Drawing.Size(483, 141);
-            this.groupManuelMode.TabIndex = 18;
-            this.groupManuelMode.TabStop = false;
-            this.groupManuelMode.Visible = false;
+            this.kryptonLabel14.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalPanel;
+            this.kryptonLabel14.Location = new System.Drawing.Point(20, 97);
+            this.kryptonLabel14.Name = "kryptonLabel14";
+            this.kryptonLabel14.Size = new System.Drawing.Size(108, 20);
+            this.kryptonLabel14.TabIndex = 13;
+            this.kryptonLabel14.Values.Text = "Son Bildirim Adeti";
             // 
-            // label22
+            // spinNotificationCount
             // 
-            this.label22.AutoSize = true;
-            this.label22.ForeColor = System.Drawing.Color.Black;
-            this.label22.Location = new System.Drawing.Point(14, 88);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(33, 13);
-            this.label22.TabIndex = 24;
-            this.label22.Text = "Hedef";
-            // 
-            // txtDestinationFolder
-            // 
-            this.txtDestinationFolder.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::FarmaKode.Client.Properties.Settings.Default, "DestinationFolder", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.txtDestinationFolder.Location = new System.Drawing.Point(55, 84);
-            this.txtDestinationFolder.Name = "txtDestinationFolder";
-            this.txtDestinationFolder.Size = new System.Drawing.Size(381, 21);
-            this.txtDestinationFolder.TabIndex = 22;
-            this.txtDestinationFolder.Text = global::FarmaKode.Client.Properties.Settings.Default.DestinationFolder;
-            // 
-            // txtSourceFolder
-            // 
-            this.txtSourceFolder.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::FarmaKode.Client.Properties.Settings.Default, "SourceFolder", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.txtSourceFolder.Location = new System.Drawing.Point(55, 61);
-            this.txtSourceFolder.Name = "txtSourceFolder";
-            this.txtSourceFolder.Size = new System.Drawing.Size(381, 21);
-            this.txtSourceFolder.TabIndex = 20;
-            this.txtSourceFolder.Text = global::FarmaKode.Client.Properties.Settings.Default.SourceFolder;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(10, 65);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(39, 13);
-            this.label3.TabIndex = 19;
-            this.label3.Text = "Kaynak";
-            // 
-            // btnSelectSourceFolder
-            // 
-            this.btnSelectSourceFolder.Location = new System.Drawing.Point(442, 59);
-            this.btnSelectSourceFolder.Name = "btnSelectSourceFolder";
-            this.btnSelectSourceFolder.Size = new System.Drawing.Size(28, 24);
-            this.btnSelectSourceFolder.TabIndex = 21;
-            this.btnSelectSourceFolder.Text = "...";
-            this.btnSelectSourceFolder.UseVisualStyleBackColor = true;
-            // 
-            // btnSelectDestinationFolder
-            // 
-            this.btnSelectDestinationFolder.Location = new System.Drawing.Point(442, 84);
-            this.btnSelectDestinationFolder.Name = "btnSelectDestinationFolder";
-            this.btnSelectDestinationFolder.Size = new System.Drawing.Size(28, 22);
-            this.btnSelectDestinationFolder.TabIndex = 23;
-            this.btnSelectDestinationFolder.Text = "...";
-            this.btnSelectDestinationFolder.UseVisualStyleBackColor = true;
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(332, 38);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(91, 13);
-            this.label18.TabIndex = 18;
-            this.label18.Text = "Kontrol Süresi (dk.)";
-            // 
-            // numericUpDown7
-            // 
-            this.numericUpDown7.DataBindings.Add(new System.Windows.Forms.Binding("Value", global::FarmaKode.Client.Properties.Settings.Default, "ManuelModeTimerInterval", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.numericUpDown7.DataBindings.Add(new System.Windows.Forms.Binding("Enabled", global::FarmaKode.Client.Properties.Settings.Default, "IsManuelMode", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.numericUpDown7.Enabled = global::FarmaKode.Client.Properties.Settings.Default.IsManuelMode;
-            this.numericUpDown7.Location = new System.Drawing.Point(427, 34);
-            this.numericUpDown7.Maximum = new decimal(new int[] {
-            1000,
+            this.spinNotificationCount.DataBindings.Add(new System.Windows.Forms.Binding("Value", global::FarmaKode.Client.Properties.Settings.Default, "NotificationMaxCount", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.spinNotificationCount.Location = new System.Drawing.Point(130, 96);
+            this.spinNotificationCount.Maximum = new decimal(new int[] {
+            180,
             0,
             0,
             0});
-            this.numericUpDown7.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.numericUpDown7.Name = "numericUpDown7";
-            this.numericUpDown7.Size = new System.Drawing.Size(44, 21);
-            this.numericUpDown7.TabIndex = 16;
-            this.numericUpDown7.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.numericUpDown7.Value = global::FarmaKode.Client.Properties.Settings.Default.ManuelModeTimerInterval;
-            // 
-            // chkManuelKeysSHIFT
-            // 
-            this.chkManuelKeysSHIFT.AutoSize = true;
-            this.chkManuelKeysSHIFT.Checked = global::FarmaKode.Client.Properties.Settings.Default.ManuelKeysSHIFT;
-            this.chkManuelKeysSHIFT.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::FarmaKode.Client.Properties.Settings.Default, "ManuelKeysSHIFT", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.chkManuelKeysSHIFT.DataBindings.Add(new System.Windows.Forms.Binding("Enabled", global::FarmaKode.Client.Properties.Settings.Default, "IsManuelMode", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.chkManuelKeysSHIFT.Enabled = global::FarmaKode.Client.Properties.Settings.Default.IsManuelMode;
-            this.chkManuelKeysSHIFT.Location = new System.Drawing.Point(116, 36);
-            this.chkManuelKeysSHIFT.Name = "chkManuelKeysSHIFT";
-            this.chkManuelKeysSHIFT.Size = new System.Drawing.Size(51, 17);
-            this.chkManuelKeysSHIFT.TabIndex = 3;
-            this.chkManuelKeysSHIFT.Text = "SHIFT";
-            this.chkManuelKeysSHIFT.UseVisualStyleBackColor = true;
-            // 
-            // chkManuelKeysALT
-            // 
-            this.chkManuelKeysALT.AutoSize = true;
-            this.chkManuelKeysALT.Checked = global::FarmaKode.Client.Properties.Settings.Default.ManuelKeysALT;
-            this.chkManuelKeysALT.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::FarmaKode.Client.Properties.Settings.Default, "ManuelKeysALT", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.chkManuelKeysALT.DataBindings.Add(new System.Windows.Forms.Binding("Enabled", global::FarmaKode.Client.Properties.Settings.Default, "IsManuelMode", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.chkManuelKeysALT.Enabled = global::FarmaKode.Client.Properties.Settings.Default.IsManuelMode;
-            this.chkManuelKeysALT.Location = new System.Drawing.Point(68, 36);
-            this.chkManuelKeysALT.Name = "chkManuelKeysALT";
-            this.chkManuelKeysALT.Size = new System.Drawing.Size(41, 17);
-            this.chkManuelKeysALT.TabIndex = 3;
-            this.chkManuelKeysALT.Text = "ALT";
-            this.chkManuelKeysALT.UseVisualStyleBackColor = true;
-            // 
-            // chkManuelKeysCTRL
-            // 
-            this.chkManuelKeysCTRL.AutoSize = true;
-            this.chkManuelKeysCTRL.Checked = global::FarmaKode.Client.Properties.Settings.Default.ManuelKeysCTRL;
-            this.chkManuelKeysCTRL.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::FarmaKode.Client.Properties.Settings.Default, "ManuelKeysCTRL", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.chkManuelKeysCTRL.DataBindings.Add(new System.Windows.Forms.Binding("Enabled", global::FarmaKode.Client.Properties.Settings.Default, "IsManuelMode", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.chkManuelKeysCTRL.Enabled = global::FarmaKode.Client.Properties.Settings.Default.IsManuelMode;
-            this.chkManuelKeysCTRL.Location = new System.Drawing.Point(14, 36);
-            this.chkManuelKeysCTRL.Name = "chkManuelKeysCTRL";
-            this.chkManuelKeysCTRL.Size = new System.Drawing.Size(48, 17);
-            this.chkManuelKeysCTRL.TabIndex = 3;
-            this.chkManuelKeysCTRL.Text = "CTRL";
-            this.chkManuelKeysCTRL.UseVisualStyleBackColor = true;
-            // 
-            // comboManuelKey
-            // 
-            this.comboManuelKey.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::FarmaKode.Client.Properties.Settings.Default, "ManuelKeysCustom", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.comboManuelKey.DataBindings.Add(new System.Windows.Forms.Binding("Enabled", global::FarmaKode.Client.Properties.Settings.Default, "IsManuelMode", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.comboManuelKey.Enabled = global::FarmaKode.Client.Properties.Settings.Default.IsManuelMode;
-            this.comboManuelKey.FormattingEnabled = true;
-            this.comboManuelKey.Location = new System.Drawing.Point(173, 34);
-            this.comboManuelKey.Name = "comboManuelKey";
-            this.comboManuelKey.Size = new System.Drawing.Size(138, 21);
-            this.comboManuelKey.TabIndex = 2;
-            this.comboManuelKey.Text = global::FarmaKode.Client.Properties.Settings.Default.ManuelKeysCustom;
-            // 
-            // chkManuelMode
-            // 
-            this.chkManuelMode.AutoSize = true;
-            this.chkManuelMode.Checked = global::FarmaKode.Client.Properties.Settings.Default.IsManuelMode;
-            this.chkManuelMode.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::FarmaKode.Client.Properties.Settings.Default, "IsManuelMode", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.chkManuelMode.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.chkManuelMode.ForeColor = System.Drawing.Color.DarkRed;
-            this.chkManuelMode.Location = new System.Drawing.Point(6, 0);
-            this.chkManuelMode.Name = "chkManuelMode";
-            this.chkManuelMode.Size = new System.Drawing.Size(99, 17);
-            this.chkManuelMode.TabIndex = 0;
-            this.chkManuelMode.Text = "MANUEL MOD";
-            this.chkManuelMode.UseVisualStyleBackColor = true;
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(398, 29);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(19, 13);
-            this.label17.TabIndex = 16;
-            this.label17.Text = "Alt";
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(320, 29);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(22, 13);
-            this.label16.TabIndex = 16;
-            this.label16.Text = "Üst";
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(242, 29);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(22, 13);
-            this.label15.TabIndex = 16;
-            this.label15.Text = "Sağ";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(164, 29);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(20, 13);
-            this.label14.TabIndex = 16;
-            this.label14.Text = "Sol";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(85, 29);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(24, 13);
-            this.label13.TabIndex = 16;
-            this.label13.Text = "Boy";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(12, 29);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(18, 13);
-            this.label4.TabIndex = 16;
-            this.label4.Text = "En";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(12, 66);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(69, 13);
-            this.label10.TabIndex = 13;
-            this.label10.Text = "Barkod Yazıcısı";
-            // 
-            // groupBox5
-            // 
-            this.groupBox5.Controls.Add(this.chkPrintDialog);
-            this.groupBox5.Controls.Add(this.numericUpDown6);
-            this.groupBox5.Controls.Add(this.label17);
-            this.groupBox5.Controls.Add(this.numericUpDown1);
-            this.groupBox5.Controls.Add(this.label10);
-            this.groupBox5.Controls.Add(this.numericUpDown5);
-            this.groupBox5.Controls.Add(this.label4);
-            this.groupBox5.Controls.Add(this.label16);
-            this.groupBox5.Controls.Add(this.comboDefaultBarcodePrinter);
-            this.groupBox5.Controls.Add(this.label13);
-            this.groupBox5.Controls.Add(this.numericUpDown4);
-            this.groupBox5.Controls.Add(this.numericUpDown2);
-            this.groupBox5.Controls.Add(this.label15);
-            this.groupBox5.Controls.Add(this.label14);
-            this.groupBox5.Controls.Add(this.numericUpDown3);
-            this.groupBox5.ForeColor = System.Drawing.SystemColors.Window;
-            this.groupBox5.Location = new System.Drawing.Point(28, 265);
-            this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(483, 114);
-            this.groupBox5.TabIndex = 17;
-            this.groupBox5.TabStop = false;
-            this.groupBox5.Text = "YAZICI";
-            // 
-            // chkPrintDialog
-            // 
-            this.chkPrintDialog.AutoSize = true;
-            this.chkPrintDialog.Checked = global::FarmaKode.Client.Properties.Settings.Default.ShowPrinterDilaog;
-            this.chkPrintDialog.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::FarmaKode.Client.Properties.Settings.Default, "ShowPrinterDilaog", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.chkPrintDialog.Location = new System.Drawing.Point(91, 89);
-            this.chkPrintDialog.Name = "chkPrintDialog";
-            this.chkPrintDialog.Size = new System.Drawing.Size(203, 17);
-            this.chkPrintDialog.TabIndex = 14;
-            this.chkPrintDialog.Text = "Yazdırmadan önce yazıcı ayarlarını göster";
-            this.chkPrintDialog.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.chkPrintDialog.UseVisualStyleBackColor = true;
-            // 
-            // numericUpDown6
-            // 
-            this.numericUpDown6.DataBindings.Add(new System.Windows.Forms.Binding("Value", global::FarmaKode.Client.Properties.Settings.Default, "MarginBottom", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.numericUpDown6.Location = new System.Drawing.Point(422, 25);
-            this.numericUpDown6.Name = "numericUpDown6";
-            this.numericUpDown6.Size = new System.Drawing.Size(44, 21);
-            this.numericUpDown6.TabIndex = 17;
-            this.numericUpDown6.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.numericUpDown6.Value = global::FarmaKode.Client.Properties.Settings.Default.MarginBottom;
-            // 
-            // numericUpDown1
-            // 
-            this.numericUpDown1.DataBindings.Add(new System.Windows.Forms.Binding("Value", global::FarmaKode.Client.Properties.Settings.Default, "PaperWidth", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.numericUpDown1.Location = new System.Drawing.Point(32, 25);
-            this.numericUpDown1.Maximum = new decimal(new int[] {
-            1000,
-            0,
-            0,
-            0});
-            this.numericUpDown1.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(44, 21);
-            this.numericUpDown1.TabIndex = 15;
-            this.numericUpDown1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.numericUpDown1.Value = global::FarmaKode.Client.Properties.Settings.Default.PaperWidth;
-            // 
-            // numericUpDown5
-            // 
-            this.numericUpDown5.DataBindings.Add(new System.Windows.Forms.Binding("Value", global::FarmaKode.Client.Properties.Settings.Default, "MarginTop", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.numericUpDown5.Location = new System.Drawing.Point(345, 25);
-            this.numericUpDown5.Name = "numericUpDown5";
-            this.numericUpDown5.Size = new System.Drawing.Size(44, 21);
-            this.numericUpDown5.TabIndex = 17;
-            this.numericUpDown5.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.numericUpDown5.Value = global::FarmaKode.Client.Properties.Settings.Default.MarginTop;
-            // 
-            // comboDefaultBarcodePrinter
-            // 
-            this.comboDefaultBarcodePrinter.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::FarmaKode.Client.Properties.Settings.Default, "DefaultBarcodePrinter", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.comboDefaultBarcodePrinter.FormattingEnabled = true;
-            this.comboDefaultBarcodePrinter.Location = new System.Drawing.Point(91, 62);
-            this.comboDefaultBarcodePrinter.Name = "comboDefaultBarcodePrinter";
-            this.comboDefaultBarcodePrinter.Size = new System.Drawing.Size(375, 21);
-            this.comboDefaultBarcodePrinter.TabIndex = 7;
-            this.comboDefaultBarcodePrinter.Text = global::FarmaKode.Client.Properties.Settings.Default.DefaultBarcodePrinter;
-            this.comboDefaultBarcodePrinter.SelectedIndexChanged += new System.EventHandler(this.comboDefaultBarcodePrinter_SelectedIndexChanged);
-            // 
-            // numericUpDown4
-            // 
-            this.numericUpDown4.DataBindings.Add(new System.Windows.Forms.Binding("Value", global::FarmaKode.Client.Properties.Settings.Default, "MarginRight", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.numericUpDown4.Location = new System.Drawing.Point(267, 25);
-            this.numericUpDown4.Name = "numericUpDown4";
-            this.numericUpDown4.Size = new System.Drawing.Size(44, 21);
-            this.numericUpDown4.TabIndex = 17;
-            this.numericUpDown4.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.numericUpDown4.Value = global::FarmaKode.Client.Properties.Settings.Default.MarginRight;
-            // 
-            // numericUpDown2
-            // 
-            this.numericUpDown2.DataBindings.Add(new System.Windows.Forms.Binding("Value", global::FarmaKode.Client.Properties.Settings.Default, "PaperHeight", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.numericUpDown2.Location = new System.Drawing.Point(112, 25);
-            this.numericUpDown2.Maximum = new decimal(new int[] {
-            1000,
-            0,
-            0,
-            0});
-            this.numericUpDown2.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.numericUpDown2.Name = "numericUpDown2";
-            this.numericUpDown2.Size = new System.Drawing.Size(44, 21);
-            this.numericUpDown2.TabIndex = 17;
-            this.numericUpDown2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.numericUpDown2.Value = global::FarmaKode.Client.Properties.Settings.Default.PaperHeight;
-            // 
-            // numericUpDown3
-            // 
-            this.numericUpDown3.DataBindings.Add(new System.Windows.Forms.Binding("Value", global::FarmaKode.Client.Properties.Settings.Default, "MarginLeft", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.numericUpDown3.Location = new System.Drawing.Point(189, 25);
-            this.numericUpDown3.Name = "numericUpDown3";
-            this.numericUpDown3.Size = new System.Drawing.Size(44, 21);
-            this.numericUpDown3.TabIndex = 17;
-            this.numericUpDown3.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.numericUpDown3.Value = global::FarmaKode.Client.Properties.Settings.Default.MarginLeft;
-            // 
-            // groupBox4
-            // 
-            this.groupBox4.Controls.Add(this.chkBarcodeOnlyNumber);
-            this.groupBox4.Controls.Add(this.label2);
-            this.groupBox4.Controls.Add(this.numBarcodeMinLength);
-            this.groupBox4.Controls.Add(this.label21);
-            this.groupBox4.Controls.Add(this.label20);
-            this.groupBox4.Controls.Add(this.label19);
-            this.groupBox4.Controls.Add(this.numericUpDown10);
-            this.groupBox4.Controls.Add(this.numericUpDown9);
-            this.groupBox4.Controls.Add(this.numericUpDown8);
-            this.groupBox4.ForeColor = System.Drawing.SystemColors.Window;
-            this.groupBox4.Location = new System.Drawing.Point(28, 385);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(483, 81);
-            this.groupBox4.TabIndex = 19;
-            this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "Perakende";
-            // 
-            // chkBarcodeOnlyNumber
-            // 
-            this.chkBarcodeOnlyNumber.AutoSize = true;
-            this.chkBarcodeOnlyNumber.Checked = global::FarmaKode.Client.Properties.Settings.Default.BarcodeOnlyNumber;
-            this.chkBarcodeOnlyNumber.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::FarmaKode.Client.Properties.Settings.Default, "BarcodeOnlyNumber", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.chkBarcodeOnlyNumber.Location = new System.Drawing.Point(373, 46);
-            this.chkBarcodeOnlyNumber.Name = "chkBarcodeOnlyNumber";
-            this.chkBarcodeOnlyNumber.Size = new System.Drawing.Size(89, 17);
-            this.chkBarcodeOnlyNumber.TabIndex = 23;
-            this.chkBarcodeOnlyNumber.Text = "Sadece Rakam";
-            this.chkBarcodeOnlyNumber.UseVisualStyleBackColor = true;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(250, 28);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(67, 13);
-            this.label2.TabIndex = 22;
-            this.label2.Text = "Min. Karakter";
-            // 
-            // numBarcodeMinLength
-            // 
-            this.numBarcodeMinLength.DataBindings.Add(new System.Windows.Forms.Binding("Value", global::FarmaKode.Client.Properties.Settings.Default, "BarcodeMinlength", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.numBarcodeMinLength.Location = new System.Drawing.Point(253, 44);
-            this.numBarcodeMinLength.Maximum = new decimal(new int[] {
-            1000,
-            0,
-            0,
-            0});
-            this.numBarcodeMinLength.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.numBarcodeMinLength.Name = "numBarcodeMinLength";
-            this.numBarcodeMinLength.Size = new System.Drawing.Size(73, 21);
-            this.numBarcodeMinLength.TabIndex = 21;
-            this.numBarcodeMinLength.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.numBarcodeMinLength.Value = global::FarmaKode.Client.Properties.Settings.Default.BarcodeMinlength;
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(164, 28);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(70, 13);
-            this.label21.TabIndex = 20;
-            this.label21.Text = "Temizleme (sn)";
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(71, 28);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(70, 13);
-            this.label20.TabIndex = 20;
-            this.label20.Text = "Gönderim (sn)";
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(9, 28);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(20, 13);
-            this.label19.TabIndex = 20;
-            this.label19.Text = "Hız";
-            // 
-            // numericUpDown10
-            // 
-            this.numericUpDown10.DataBindings.Add(new System.Windows.Forms.Binding("Value", global::FarmaKode.Client.Properties.Settings.Default, "BarcodeClearDuration", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.numericUpDown10.Location = new System.Drawing.Point(167, 44);
-            this.numericUpDown10.Maximum = new decimal(new int[] {
-            999999,
-            0,
-            0,
-            0});
-            this.numericUpDown10.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.numericUpDown10.Name = "numericUpDown10";
-            this.numericUpDown10.Size = new System.Drawing.Size(73, 21);
-            this.numericUpDown10.TabIndex = 19;
-            this.numericUpDown10.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.numericUpDown10.Value = global::FarmaKode.Client.Properties.Settings.Default.BarcodeClearDuration;
-            // 
-            // numericUpDown9
-            // 
-            this.numericUpDown9.DataBindings.Add(new System.Windows.Forms.Binding("Value", global::FarmaKode.Client.Properties.Settings.Default, "BarcodePostDuration", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.numericUpDown9.Location = new System.Drawing.Point(74, 44);
-            this.numericUpDown9.Maximum = new decimal(new int[] {
-            999999,
-            0,
-            0,
-            0});
-            this.numericUpDown9.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.numericUpDown9.Name = "numericUpDown9";
-            this.numericUpDown9.Size = new System.Drawing.Size(70, 21);
-            this.numericUpDown9.TabIndex = 19;
-            this.numericUpDown9.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.numericUpDown9.Value = global::FarmaKode.Client.Properties.Settings.Default.BarcodePostDuration;
-            // 
-            // numericUpDown8
-            // 
-            this.numericUpDown8.DataBindings.Add(new System.Windows.Forms.Binding("Value", global::FarmaKode.Client.Properties.Settings.Default, "BarcodeSpeed", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.numericUpDown8.Location = new System.Drawing.Point(10, 44);
-            this.numericUpDown8.Maximum = new decimal(new int[] {
-            1000,
-            0,
-            0,
-            0});
-            this.numericUpDown8.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.numericUpDown8.Name = "numericUpDown8";
-            this.numericUpDown8.Size = new System.Drawing.Size(58, 21);
-            this.numericUpDown8.TabIndex = 19;
-            this.numericUpDown8.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.numericUpDown8.Value = global::FarmaKode.Client.Properties.Settings.Default.BarcodeSpeed;
-            // 
-            // tabControl1
-            // 
-            this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Controls.Add(this.tabPage4);
-            this.tabControl1.Controls.Add(this.tabPage3);
-            this.tabControl1.ImageList = this.imageList;
-            this.tabControl1.Location = new System.Drawing.Point(922, 135);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(668, 602);
-            this.tabControl1.TabIndex = 20;
-            // 
-            // tabPage1
-            // 
-            this.tabPage1.BackColor = System.Drawing.SystemColors.Control;
-            this.tabPage1.ImageIndex = 0;
-            this.tabPage1.Location = new System.Drawing.Point(4, 39);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(660, 559);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "AYARLAR";
-            // 
-            // tabPage2
-            // 
-            this.tabPage2.BackColor = System.Drawing.SystemColors.Control;
-            this.tabPage2.ImageIndex = 4;
-            this.tabPage2.Location = new System.Drawing.Point(4, 39);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(660, 559);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "DUYURULAR";
-            // 
-            // tabPage4
-            // 
-            this.tabPage4.BackColor = System.Drawing.SystemColors.Control;
-            this.tabPage4.ImageIndex = 3;
-            this.tabPage4.Location = new System.Drawing.Point(4, 39);
-            this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(660, 559);
-            this.tabPage4.TabIndex = 3;
-            this.tabPage4.Text = "İLETİŞİM";
-            // 
-            // tabPage3
-            // 
-            this.tabPage3.Controls.Add(this.groupManuelMode);
-            this.tabPage3.Location = new System.Drawing.Point(4, 39);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(660, 559);
-            this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "Gizli Sekme";
-            this.tabPage3.UseVisualStyleBackColor = true;
-            // 
-            // imageList
-            // 
-            this.imageList.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList.ImageStream")));
-            this.imageList.TransparentColor = System.Drawing.Color.Transparent;
-            this.imageList.Images.SetKeyName(0, "gears.png");
-            this.imageList.Images.SetKeyName(1, "completed-task.png");
-            this.imageList.Images.SetKeyName(2, "task.png");
-            this.imageList.Images.SetKeyName(3, "mobile-phone.png");
-            this.imageList.Images.SetKeyName(4, "notification.png");
-            this.imageList.Images.SetKeyName(5, "setting_tools.png");
-            this.imageList.Images.SetKeyName(6, "bell.png");
-            this.imageList.Images.SetKeyName(7, "information.png");
-            this.imageList.Images.SetKeyName(8, "shared_private.png");
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "BOŞ",
-            "PC-01",
-            "PC-02",
-            "PC-03",
-            "PC-04",
-            "PC-05",
-            "PC-06"});
-            this.comboBox1.Location = new System.Drawing.Point(308, 17);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(128, 21);
-            this.comboBox1.TabIndex = 1;
-            this.comboBox1.Text = global::FarmaKode.Client.Properties.Settings.Default.PharmacyPCNO;
+            this.spinNotificationCount.Name = "spinNotificationCount";
+            this.spinNotificationCount.Size = new System.Drawing.Size(84, 22);
+            this.spinNotificationCount.TabIndex = 21;
+            this.spinNotificationCount.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.spinNotificationCount.Value = global::FarmaKode.Client.Properties.Settings.Default.NotificationMaxCount;
+            // 
+            // kryptonLabel15
+            // 
+            this.kryptonLabel15.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalPanel;
+            this.kryptonLabel15.Location = new System.Drawing.Point(71, 69);
+            this.kryptonLabel15.Name = "kryptonLabel15";
+            this.kryptonLabel15.Size = new System.Drawing.Size(57, 20);
+            this.kryptonLabel15.TabIndex = 22;
+            this.kryptonLabel15.Values.Text = "Konumu";
+            // 
+            // kryptonGroupBox1
+            // 
+            this.kryptonGroupBox1.Location = new System.Drawing.Point(97, 128);
+            this.kryptonGroupBox1.Name = "kryptonGroupBox1";
+            // 
+            // kryptonGroupBox1.Panel
+            // 
+            this.kryptonGroupBox1.Panel.Controls.Add(this.kryptonLabel11);
+            this.kryptonGroupBox1.Panel.Controls.Add(this.txtPharmacyID);
+            this.kryptonGroupBox1.Panel.Controls.Add(this.kryptonLabel12);
+            this.kryptonGroupBox1.Panel.Controls.Add(this.comboPCNO);
+            this.kryptonGroupBox1.Size = new System.Drawing.Size(542, 51);
+            this.kryptonGroupBox1.TabIndex = 42;
+            this.kryptonGroupBox1.Values.Heading = "";
+            // 
+            // kryptonLabel11
+            // 
+            this.kryptonLabel11.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalPanel;
+            this.kryptonLabel11.Location = new System.Drawing.Point(42, 14);
+            this.kryptonLabel11.Name = "kryptonLabel11";
+            this.kryptonLabel11.Size = new System.Drawing.Size(63, 20);
+            this.kryptonLabel11.TabIndex = 17;
+            this.kryptonLabel11.Values.Text = "Eczane ID";
             // 
             // txtPharmacyID
             // 
             this.txtPharmacyID.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::FarmaKode.Client.Properties.Settings.Default, "PharmacyID", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.txtPharmacyID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.txtPharmacyID.Location = new System.Drawing.Point(66, 17);
+            this.txtPharmacyID.Location = new System.Drawing.Point(111, 13);
             this.txtPharmacyID.Name = "txtPharmacyID";
-            this.txtPharmacyID.Size = new System.Drawing.Size(128, 21);
-            this.txtPharmacyID.TabIndex = 0;
+            this.txtPharmacyID.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Office2010Black;
+            this.txtPharmacyID.Size = new System.Drawing.Size(121, 23);
+            this.txtPharmacyID.TabIndex = 16;
             this.txtPharmacyID.Text = global::FarmaKode.Client.Properties.Settings.Default.PharmacyID;
+            this.txtPharmacyID.WordWrap = false;
             // 
-            // label7
+            // kryptonLabel12
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(264, 20);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(34, 13);
-            this.label7.TabIndex = 0;
-            this.label7.Text = "PC No";
+            this.kryptonLabel12.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalPanel;
+            this.kryptonLabel12.Location = new System.Drawing.Point(267, 14);
+            this.kryptonLabel12.Name = "kryptonLabel12";
+            this.kryptonLabel12.Size = new System.Drawing.Size(47, 20);
+            this.kryptonLabel12.TabIndex = 4;
+            this.kryptonLabel12.Values.Text = "PC NO";
             // 
-            // label1
+            // comboPCNO
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 20);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(49, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Eczane ID";
+            this.comboPCNO.DropDownWidth = 121;
+            this.comboPCNO.Location = new System.Drawing.Point(316, 14);
+            this.comboPCNO.Name = "comboPCNO";
+            this.comboPCNO.Size = new System.Drawing.Size(179, 21);
+            this.comboPCNO.TabIndex = 5;
+            this.comboPCNO.SelectedIndexChanged += new System.EventHandler(this.comboPCNO_SelectedIndexChanged);
             // 
-            // button1
+            // kryptonPage2
             // 
-            this.button1.BackColor = System.Drawing.Color.SeaGreen;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Calibri Light", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(45)))), ((int)(((byte)(55)))));
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.ImageKey = "setting_tools.png";
-            this.button1.ImageList = this.imageList;
-            this.button1.Location = new System.Drawing.Point(42, 33);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(160, 50);
-            this.button1.TabIndex = 21;
-            this.button1.Text = "AYARLAR";
-            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button1.UseVisualStyleBackColor = false;
+            this.kryptonPage2.AutoHiddenSlideSize = new System.Drawing.Size(200, 200);
+            this.kryptonPage2.Controls.Add(this.webBrowser1);
+            this.kryptonPage2.Flags = 65534;
+            this.kryptonPage2.ImageSmall = global::FarmaKode.Client.Properties.Resources.bell;
+            this.kryptonPage2.LastVisibleSet = true;
+            this.kryptonPage2.MinimumSize = new System.Drawing.Size(50, 50);
+            this.kryptonPage2.Name = "kryptonPage2";
+            this.kryptonPage2.Size = new System.Drawing.Size(757, 629);
+            this.kryptonPage2.Text = "Duyurular";
+            this.kryptonPage2.TextDescription = "Farmakode hakkında duyuru ve haberler";
+            this.kryptonPage2.TextTitle = "DUYURULAR";
+            this.kryptonPage2.ToolTipTitle = "Page ToolTip";
+            this.kryptonPage2.UniqueName = "5052F5354EDF47FA7EB7F3B90B70B064";
             // 
-            // button2
+            // webBrowser1
             // 
-            this.button2.BackColor = System.Drawing.Color.SeaGreen;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Calibri Light", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.button2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(45)))), ((int)(((byte)(55)))));
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.ImageKey = "bell.png";
-            this.button2.ImageList = this.imageList;
-            this.button2.Location = new System.Drawing.Point(210, 33);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(160, 50);
-            this.button2.TabIndex = 21;
-            this.button2.Text = "DUYURULAR";
-            this.button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button2.UseVisualStyleBackColor = false;
+            this.webBrowser1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.webBrowser1.Location = new System.Drawing.Point(0, 0);
+            this.webBrowser1.MinimumSize = new System.Drawing.Size(20, 20);
+            this.webBrowser1.Name = "webBrowser1";
+            this.webBrowser1.ScriptErrorsSuppressed = true;
+            this.webBrowser1.Size = new System.Drawing.Size(757, 629);
+            this.webBrowser1.TabIndex = 0;
+            this.webBrowser1.Url = new System.Uri("https://www.farmakode.com/panel/news/all", System.UriKind.Absolute);
             // 
-            // button3
+            // kryptonPage3
             // 
-            this.button3.BackColor = System.Drawing.Color.SeaGreen;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Calibri Light", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.button3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(45)))), ((int)(((byte)(55)))));
-            this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button3.ImageKey = "information.png";
-            this.button3.ImageList = this.imageList;
-            this.button3.Location = new System.Drawing.Point(378, 33);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(160, 50);
-            this.button3.TabIndex = 21;
-            this.button3.Text = "İLETİŞİM";
-            this.button3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button3.UseVisualStyleBackColor = false;
+            this.kryptonPage3.AutoHiddenSlideSize = new System.Drawing.Size(200, 200);
+            this.kryptonPage3.Controls.Add(this.webBrowser2);
+            this.kryptonPage3.Flags = 65534;
+            this.kryptonPage3.ImageSmall = global::FarmaKode.Client.Properties.Resources.information;
+            this.kryptonPage3.LastVisibleSet = true;
+            this.kryptonPage3.MinimumSize = new System.Drawing.Size(50, 50);
+            this.kryptonPage3.Name = "kryptonPage3";
+            this.kryptonPage3.Size = new System.Drawing.Size(757, 629);
+            this.kryptonPage3.Text = "İletişim";
+            this.kryptonPage3.TextDescription = "İletişim bilgilerimiz";
+            this.kryptonPage3.TextTitle = "İLETİŞİM";
+            this.kryptonPage3.ToolTipTitle = "Page ToolTip";
+            this.kryptonPage3.UniqueName = "7B0C91BD07A04E1B35ABA9CB253A1F1F";
             // 
-            // button4
+            // webBrowser2
             // 
-            this.button4.BackColor = System.Drawing.Color.SeaGreen;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Calibri Light", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.button4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(45)))), ((int)(((byte)(55)))));
-            this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button4.ImageKey = "shared_private.png";
-            this.button4.ImageList = this.imageList;
-            this.button4.Location = new System.Drawing.Point(546, 33);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(160, 50);
-            this.button4.TabIndex = 22;
-            this.button4.Text = "YÖNETİCİ";
-            this.button4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button4.UseVisualStyleBackColor = false;
+            this.webBrowser2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.webBrowser2.Location = new System.Drawing.Point(0, 0);
+            this.webBrowser2.MinimumSize = new System.Drawing.Size(20, 20);
+            this.webBrowser2.Name = "webBrowser2";
+            this.webBrowser2.ScriptErrorsSuppressed = true;
+            this.webBrowser2.Size = new System.Drawing.Size(757, 629);
+            this.webBrowser2.TabIndex = 1;
+            this.webBrowser2.Url = new System.Uri("https://farmakode.com/", System.UriKind.Absolute);
             // 
-            // panel1
+            // kryptonPage4
             // 
-            this.panel1.Controls.Add(this.xuıCustomGroupbox2);
-            this.panel1.Controls.Add(this.xuıCustomGroupbox1);
-            this.panel1.Controls.Add(this.btnHide);
-            this.panel1.Controls.Add(this.btnSave);
-            this.panel1.Controls.Add(this.groupBox4);
-            this.panel1.Controls.Add(this.label11);
-            this.panel1.Controls.Add(this.lblAppStatus);
-            this.panel1.Controls.Add(this.btnIsAppEnabled);
-            this.panel1.Controls.Add(this.groupBox5);
-            this.panel1.Location = new System.Drawing.Point(42, 105);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(664, 471);
-            this.panel1.TabIndex = 23;
+            this.kryptonPage4.AutoHiddenSlideSize = new System.Drawing.Size(200, 200);
+            this.kryptonPage4.Controls.Add(this.btnOpenEReceteParameterScreen);
+            this.kryptonPage4.Controls.Add(this.btnOpenSourceFolder);
+            this.kryptonPage4.Controls.Add(this.btnSelectSourceFolder);
+            this.kryptonPage4.Controls.Add(this.kryptonLabel3);
+            this.kryptonPage4.Controls.Add(this.txtSourceFolder);
+            this.kryptonPage4.Flags = 65534;
+            this.kryptonPage4.ImageSmall = global::FarmaKode.Client.Properties.Resources.administrator;
+            this.kryptonPage4.LastVisibleSet = true;
+            this.kryptonPage4.MinimumSize = new System.Drawing.Size(50, 50);
+            this.kryptonPage4.Name = "kryptonPage4";
+            this.kryptonPage4.Size = new System.Drawing.Size(757, 629);
+            this.kryptonPage4.Text = "Yönetici Paneli";
+            this.kryptonPage4.TextDescription = "Yönetici Paneli";
+            this.kryptonPage4.TextTitle = "YÖNETİCİ PANELİ";
+            this.kryptonPage4.ToolTipTitle = "Yönetici paneli";
+            this.kryptonPage4.UniqueName = "8E870E82A01E4A896D8DA7582E63031D";
             // 
-            // xuıCustomGroupbox1
+            // btnOpenEReceteParameterScreen
             // 
-            this.xuıCustomGroupbox1.BorderColor = System.Drawing.Color.SeaGreen;
-            this.xuıCustomGroupbox1.BorderWidth = 1;
-            this.xuıCustomGroupbox1.Controls.Add(this.comboBox1);
-            this.xuıCustomGroupbox1.Controls.Add(this.label7);
-            this.xuıCustomGroupbox1.Controls.Add(this.label1);
-            this.xuıCustomGroupbox1.Controls.Add(this.txtPharmacyID);
-            this.xuıCustomGroupbox1.Location = new System.Drawing.Point(28, 39);
-            this.xuıCustomGroupbox1.Name = "xuıCustomGroupbox1";
-            this.xuıCustomGroupbox1.ShowText = true;
-            this.xuıCustomGroupbox1.Size = new System.Drawing.Size(483, 51);
-            this.xuıCustomGroupbox1.TabIndex = 20;
-            this.xuıCustomGroupbox1.TabStop = false;
-            this.xuıCustomGroupbox1.Text = "Eczane Bilgileri";
-            this.xuıCustomGroupbox1.TextColor = System.Drawing.Color.SeaGreen;
+            this.btnOpenEReceteParameterScreen.Location = new System.Drawing.Point(80, 86);
+            this.btnOpenEReceteParameterScreen.Name = "btnOpenEReceteParameterScreen";
+            this.btnOpenEReceteParameterScreen.Size = new System.Drawing.Size(199, 25);
+            this.btnOpenEReceteParameterScreen.TabIndex = 22;
+            this.btnOpenEReceteParameterScreen.Values.Text = "eReçete Parametre Ekranı";
+            this.btnOpenEReceteParameterScreen.Click += new System.EventHandler(this.btnOpenEReceteParameterScreen_Click);
             // 
-            // xuıCustomGroupbox2
+            // btnOpenSourceFolder
             // 
-            this.xuıCustomGroupbox2.BorderColor = System.Drawing.Color.SeaGreen;
-            this.xuıCustomGroupbox2.BorderWidth = 1;
-            this.xuıCustomGroupbox2.Controls.Add(this.label5);
-            this.xuıCustomGroupbox2.Controls.Add(this.chkNotificationEnable);
-            this.xuıCustomGroupbox2.Controls.Add(this.spinNotificationDuration);
-            this.xuıCustomGroupbox2.Controls.Add(this.spinNotificationCount);
-            this.xuıCustomGroupbox2.Controls.Add(this.comboNotificationPosition);
-            this.xuıCustomGroupbox2.Controls.Add(this.label9);
-            this.xuıCustomGroupbox2.Controls.Add(this.label8);
-            this.xuıCustomGroupbox2.Controls.Add(this.label6);
-            this.xuıCustomGroupbox2.Location = new System.Drawing.Point(28, 97);
-            this.xuıCustomGroupbox2.Name = "xuıCustomGroupbox2";
-            this.xuıCustomGroupbox2.ShowText = true;
-            this.xuıCustomGroupbox2.Size = new System.Drawing.Size(483, 89);
-            this.xuıCustomGroupbox2.TabIndex = 21;
-            this.xuıCustomGroupbox2.TabStop = false;
-            this.xuıCustomGroupbox2.Text = "BİLDİRİMLER";
-            this.xuıCustomGroupbox2.TextColor = System.Drawing.Color.SeaGreen;
+            this.btnOpenSourceFolder.Location = new System.Drawing.Point(493, 56);
+            this.btnOpenSourceFolder.Name = "btnOpenSourceFolder";
+            this.btnOpenSourceFolder.Size = new System.Drawing.Size(63, 25);
+            this.btnOpenSourceFolder.TabIndex = 21;
+            this.btnOpenSourceFolder.Values.Text = "Git";
+            this.btnOpenSourceFolder.Click += new System.EventHandler(this.btnOpenSourceFolder_Click);
             // 
-            // chkNotificationEnable
+            // btnSelectSourceFolder
             // 
-            this.chkNotificationEnable.BackColor = System.Drawing.Color.Transparent;
-            this.chkNotificationEnable.ForeColor = System.Drawing.Color.Yellow;
-            this.chkNotificationEnable.HandleOffColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.chkNotificationEnable.HandleOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.chkNotificationEnable.Location = new System.Drawing.Point(20, 41);
-            this.chkNotificationEnable.Name = "chkNotificationEnable";
-            this.chkNotificationEnable.OffColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.chkNotificationEnable.OnColor = System.Drawing.Color.SeaGreen;
-            this.chkNotificationEnable.Size = new System.Drawing.Size(60, 30);
-            this.chkNotificationEnable.SwitchState = XanderUI.XUISwitch.State.On;
-            this.chkNotificationEnable.SwitchStyle = XanderUI.XUISwitch.Style.iOS;
-            this.chkNotificationEnable.TabIndex = 5;
-            this.chkNotificationEnable.Text = "xuıSwitch1";
-            this.chkNotificationEnable.SwitchStateChanged += new System.EventHandler(this.chkNotificationEnable_SwitchStateChanged);
+            this.btnSelectSourceFolder.Location = new System.Drawing.Point(435, 56);
+            this.btnSelectSourceFolder.Name = "btnSelectSourceFolder";
+            this.btnSelectSourceFolder.Size = new System.Drawing.Size(52, 25);
+            this.btnSelectSourceFolder.TabIndex = 20;
+            this.btnSelectSourceFolder.Values.Text = "Gözat...";
+            this.btnSelectSourceFolder.Click += new System.EventHandler(this.btnSelectSourceFolder_Click);
             // 
-            // label5
+            // kryptonLabel3
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(21, 25);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(27, 13);
-            this.label5.TabIndex = 6;
-            this.label5.Text = "Aktif";
+            this.kryptonLabel3.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalPanel;
+            this.kryptonLabel3.Location = new System.Drawing.Point(25, 58);
+            this.kryptonLabel3.Name = "kryptonLabel3";
+            this.kryptonLabel3.Size = new System.Drawing.Size(49, 20);
+            this.kryptonLabel3.TabIndex = 19;
+            this.kryptonLabel3.Values.Text = "Kaynak";
+            // 
+            // txtSourceFolder
+            // 
+            this.txtSourceFolder.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::FarmaKode.Client.Properties.Settings.Default, "SourceFolder", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.txtSourceFolder.Location = new System.Drawing.Point(82, 57);
+            this.txtSourceFolder.Name = "txtSourceFolder";
+            this.txtSourceFolder.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Office2010Black;
+            this.txtSourceFolder.Size = new System.Drawing.Size(347, 23);
+            this.txtSourceFolder.TabIndex = 18;
+            this.txtSourceFolder.Text = global::FarmaKode.Client.Properties.Settings.Default.SourceFolder;
+            this.txtSourceFolder.WordWrap = false;
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
             // 
             // FormSettings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(45)))), ((int)(((byte)(55)))));
-            this.ClientSize = new System.Drawing.Size(1481, 763);
-            this.Controls.Add(this.btnAdmin);
-            this.Controls.Add(this.panel1);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.tabControl1);
-            this.Font = new System.Drawing.Font("Calibri Light", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.ForeColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(759, 676);
+            this.Controls.Add(this.kryptonNavigator);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MinimumSize = new System.Drawing.Size(582, 545);
             this.Name = "FormSettings";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Ayarlar";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormSettings_FormClosing);
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormSettings_FormClosed);
-            this.Load += new System.EventHandler(this.FormSettings_Load);
+            this.Text = "Farmakode - AYARLAR";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
+            ((System.ComponentModel.ISupportInitialize)(this.kryptonNavigator)).EndInit();
+            this.kryptonNavigator.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.kryptonPage1)).EndInit();
+            this.kryptonPage1.ResumeLayout(false);
+            this.kryptonPage1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.kryptonGroupBox5.Panel)).EndInit();
+            this.kryptonGroupBox5.Panel.ResumeLayout(false);
+            this.kryptonGroupBox5.Panel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.kryptonGroupBox5)).EndInit();
+            this.kryptonGroupBox5.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAppStatus)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kryptonGroupBox4.Panel)).EndInit();
+            this.kryptonGroupBox4.Panel.ResumeLayout(false);
+            this.kryptonGroupBox4.Panel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.kryptonGroupBox4)).EndInit();
+            this.kryptonGroupBox4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.kryptonGroupBox3.Panel)).EndInit();
+            this.kryptonGroupBox3.Panel.ResumeLayout(false);
+            this.kryptonGroupBox3.Panel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.kryptonGroupBox3)).EndInit();
+            this.kryptonGroupBox3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.comboDefaultBarcodePrinter)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kryptonGroupBox2.Panel)).EndInit();
+            this.kryptonGroupBox2.Panel.ResumeLayout(false);
+            this.kryptonGroupBox2.Panel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.kryptonGroupBox2)).EndInit();
+            this.kryptonGroupBox2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.comboNotificationPosition)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kryptonGroupBox1.Panel)).EndInit();
+            this.kryptonGroupBox1.Panel.ResumeLayout(false);
+            this.kryptonGroupBox1.Panel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.kryptonGroupBox1)).EndInit();
+            this.kryptonGroupBox1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.comboPCNO)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kryptonPage2)).EndInit();
+            this.kryptonPage2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.kryptonPage3)).EndInit();
+            this.kryptonPage3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.kryptonPage4)).EndInit();
+            this.kryptonPage4.ResumeLayout(false);
+            this.kryptonPage4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.spinNotificationDuration)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.spinNotificationCount)).EndInit();
-            this.groupManuelMode.ResumeLayout(false);
-            this.groupManuelMode.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown7)).EndInit();
-            this.groupBox5.ResumeLayout(false);
-            this.groupBox5.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).EndInit();
-            this.groupBox4.ResumeLayout(false);
-            this.groupBox4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numBarcodeMinLength)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown10)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown9)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown8)).EndInit();
-            this.tabControl1.ResumeLayout(false);
-            this.tabPage3.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            this.xuıCustomGroupbox1.ResumeLayout(false);
-            this.xuıCustomGroupbox1.PerformLayout();
-            this.xuıCustomGroupbox2.ResumeLayout(false);
-            this.xuıCustomGroupbox2.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox txtPharmacyID;
-        private System.Windows.Forms.NumericUpDown spinNotificationDuration;
-        private System.Windows.Forms.NumericUpDown spinNotificationCount;
-        private System.Windows.Forms.ComboBox comboNotificationPosition;
-        private System.Windows.Forms.ComboBox comboDefaultBarcodePrinter;
-        private System.Windows.Forms.Button btnHide;
-        private System.Windows.Forms.Button btnSave;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label lblAppStatus;
-        private System.Windows.Forms.Button btnIsAppEnabled;
+        private ComponentFactory.Krypton.Navigator.KryptonNavigator kryptonNavigator;
+        private ComponentFactory.Krypton.Navigator.KryptonPage kryptonPage1;
+        private ComponentFactory.Krypton.Navigator.KryptonPage kryptonPage2;
+        private ComponentFactory.Krypton.Navigator.KryptonPage kryptonPage3;
+        private ComponentFactory.Krypton.Toolkit.KryptonGroupBox kryptonGroupBox1;
+        private ComponentFactory.Krypton.Toolkit.KryptonCheckBox spinManuelBarcodeOnlyNumbers;
+        private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel5;
+        private ComponentFactory.Krypton.Toolkit.KryptonLabel spinManuelBarcodeMinSize;
+        private ComponentFactory.Krypton.Toolkit.KryptonLabel spinManuelBarcodeClearDuration;
+        private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel20;
+        private ComponentFactory.Krypton.Toolkit.KryptonComboBox comboDefaultBarcodePrinter;
+        private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel16;
+        private ComponentFactory.Krypton.Toolkit.KryptonComboBox comboNotificationPosition;
+        private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel15;
+        private ComponentFactory.Krypton.Toolkit.KryptonNumericUpDown kryptonNumericUpDown6;
+        private ComponentFactory.Krypton.Toolkit.KryptonNumericUpDown kryptonNumericUpDown5;
+        private ComponentFactory.Krypton.Toolkit.KryptonNumericUpDown spinBarcodeSpeed;
+        private ComponentFactory.Krypton.Toolkit.KryptonNumericUpDown spinNotificationCount;
+        private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel14;
+        private ComponentFactory.Krypton.Toolkit.KryptonNumericUpDown spinNotificationDuration;
+        private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel13;
+        private ComponentFactory.Krypton.Toolkit.KryptonCheckBox chkNotificationEnable;
+        private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel12;
+        private ComponentFactory.Krypton.Toolkit.KryptonTextBox txtPharmacyID;
+        private ComponentFactory.Krypton.Toolkit.KryptonComboBox comboPCNO;
+        private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel11;
+        private ComponentFactory.Krypton.Toolkit.KryptonGroupBox kryptonGroupBox4;
+        private ComponentFactory.Krypton.Toolkit.KryptonGroupBox kryptonGroupBox3;
+        private ComponentFactory.Krypton.Toolkit.KryptonMaskedTextBox txtBarcodePrintSize;
+        private ComponentFactory.Krypton.Toolkit.KryptonGroupBox kryptonGroupBox2;
+        private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel2;
+        private ComponentFactory.Krypton.Toolkit.KryptonMaskedTextBox txtBarcodeMargins;
+        private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel1;
+        private ComponentFactory.Krypton.Toolkit.KryptonCheckBox chkPrintDialog;
+        private ComponentFactory.Krypton.Toolkit.KryptonButton btnIsAppEnabled;
+        private System.Windows.Forms.PictureBox pictureBoxAppStatus;
+        private ComponentFactory.Krypton.Toolkit.KryptonLabel lblAppStatus;
+        private ComponentFactory.Krypton.Toolkit.KryptonButton btnSave;
+        private ComponentFactory.Krypton.Toolkit.KryptonGroupBox kryptonGroupBox5;
+        private ComponentFactory.Krypton.Toolkit.KryptonButton btnHide;
+        private ComponentFactory.Krypton.Navigator.KryptonPage kryptonPage4;
+        private System.Windows.Forms.WebBrowser webBrowser1;
+        private System.Windows.Forms.WebBrowser webBrowser2;
+        private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel8;
+        private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel7;
+        private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel6;
+        private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel4;
         private System.Windows.Forms.ErrorProvider errorProvider1;
-        private System.Windows.Forms.Button btnAdmin;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.GroupBox groupManuelMode;
-        private System.Windows.Forms.CheckBox chkManuelMode;
-        private System.Windows.Forms.CheckBox chkPrintDialog;
-        private System.Windows.Forms.NumericUpDown numericUpDown6;
-        private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.NumericUpDown numericUpDown5;
-        private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.NumericUpDown numericUpDown4;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.NumericUpDown numericUpDown3;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.NumericUpDown numericUpDown2;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
-        private System.Windows.Forms.GroupBox groupBox5;
-        private System.Windows.Forms.ComboBox comboManuelKey;
-        private System.Windows.Forms.CheckBox chkManuelKeysSHIFT;
-        private System.Windows.Forms.CheckBox chkManuelKeysALT;
-        private System.Windows.Forms.CheckBox chkManuelKeysCTRL;
-        private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.NumericUpDown numericUpDown7;
-        private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.NumericUpDown numericUpDown10;
-        private System.Windows.Forms.NumericUpDown numericUpDown9;
-        private System.Windows.Forms.NumericUpDown numericUpDown8;
-        private System.Windows.Forms.CheckBox chkBarcodeOnlyNumber;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.NumericUpDown numBarcodeMinLength;
-        private System.Windows.Forms.Label label22;
-        private System.Windows.Forms.TextBox txtDestinationFolder;
-        private System.Windows.Forms.TextBox txtSourceFolder;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button btnSelectSourceFolder;
-        private System.Windows.Forms.Button btnSelectDestinationFolder;
-        private System.Windows.Forms.TabControl tabControl1;
-        private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.TabPage tabPage3;
-        private System.Windows.Forms.ImageList imageList;
-        private System.Windows.Forms.TabPage tabPage4;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-        private XanderUI.XUICustomGroupbox xuıCustomGroupbox2;
-        private System.Windows.Forms.Label label5;
-        private XanderUI.XUISwitch chkNotificationEnable;
-        private XanderUI.XUICustomGroupbox xuıCustomGroupbox1;
+        private ComponentFactory.Krypton.Toolkit.KryptonButton btnSelectSourceFolder;
+        private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel3;
+        private ComponentFactory.Krypton.Toolkit.KryptonTextBox txtSourceFolder;
+        private ComponentFactory.Krypton.Toolkit.KryptonButton btnOpenSourceFolder;
+        private ComponentFactory.Krypton.Toolkit.KryptonButton btnOpenEReceteParameterScreen;
     }
 }

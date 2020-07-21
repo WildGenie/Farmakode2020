@@ -1,38 +1,52 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Drawing;
-using System.IO;
-using System.Printing;
-using System.Windows.Forms;
+﻿using ComponentFactory.Krypton.Toolkit;
 using FarmaKode.Client.Business;
 using FarmaKode.Client.Properties;
 using FarmaKode.Client.Util;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Diagnostics;
+using System.Drawing;
+using System.IO;
+using System.Linq;
+using System.Printing;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace FarmaKode.Client
 {
-    public partial class FormSettings : Form
+    public partial class FormSettings : KryptonForm
     {
         public bool isChanged = false;
 
         public FormSettings()
         {
             InitializeComponent();
+
             Settings.Default.SettingChanging += Default_SettingChanging;
 
+            
+            
+
+
+            #region Uygulama Durumu
             if (!Settings.Default.AppIsEnabled)
             {
-                btnIsAppEnabled.Text = "Uygulamayı AKTİF yap";
-                lblAppStatus.Text = "PASİF";
-                lblAppStatus.ForeColor = Color.Red;
+                btnIsAppEnabled.Text = "AKTİF yap";
+                lblAppStatus.Text = "Uygulama PASİF";
+                pictureBoxAppStatus.Image = Resources.delete;
             }
             else
             {
-                btnIsAppEnabled.Text = "Uygulamayı PASİF yap";
-                lblAppStatus.Text = "AKTİF";
-                lblAppStatus.ForeColor = Color.Green;
+                btnIsAppEnabled.Text = "PASİF yap";
+                lblAppStatus.Text = "Uygulama AKTİF";
+                pictureBoxAppStatus.Image = Resources.accept;
             }
+            #endregion
 
+            #region Kaynak ve Hedef Klasör Ayarları
             if (string.IsNullOrEmpty(Settings.Default.SourceFolder))
             {
                 Settings.Default.SourceFolder = Environment.GetFolderPath(Environment.SpecialFolder.InternetCache);
@@ -45,11 +59,9 @@ namespace FarmaKode.Client
                 CacheBL.CheckSettings();
                 Settings.Default.Save();
             }
+            #endregion
 
-            //comboCahce.SelectedIndex = Settings.Default.ClearCacheType;
-            comboNotificationPosition.SelectedIndex = Settings.Default.NotificationPosition;
-
-
+            #region Yazıcı ayarları
             System.Drawing.Printing.PrinterSettings.StringCollection printerList = System.Drawing.Printing.PrinterSettings.InstalledPrinters;
             List<string> _printerList = new List<string>();
 
@@ -63,27 +75,41 @@ namespace FarmaKode.Client
             {
                 comboDefaultBarcodePrinter.SelectedItem = LocalPrintServer.GetDefaultPrintQueue().FullName;
             }
+            #endregion
 
-            var values = Enum.GetValues(typeof(Keys));
-            foreach (var item in values)
+
+            comboPCNO.Items.Clear();
+            foreach (var item in Common.GetPcNumberList())            
+                comboPCNO.Items.Add(item);             
+
+            if(!string.IsNullOrEmpty( Settings.Default.PharmacyPCNO))
             {
-                comboManuelKey.Items.Add(item.ToString());
+                comboPCNO.SelectedItem = Settings.Default.PharmacyPCNO;
             }
 
-            chkNotificationEnable.SwitchState = Settings.Default.IsEnableNotification ? XanderUI.XUISwitch.State.On : XanderUI.XUISwitch.State.Off;
+            this.Text = "Ayarlar | " + CacheBL.IPAddress;
+
+            comboNotificationPosition.SelectedIndex = Settings.Default.NotificationPosition;
+
+
         }
 
-
+        private void Default_SettingChanging(object sender, System.Configuration.SettingChangingEventArgs e)
+        {
+            object oldValue = Settings.Default[e.SettingName];
+            if (!e.NewValue.Equals(oldValue))
+                isChanged = true;
+        }
+        
         bool validation()
         {
             bool isValid = true;
 
             if (string.IsNullOrEmpty(txtPharmacyID.Text.Trim()))
             {
-                errorProvider1.SetError(txtPharmacyID, "Bu alan boş geçilemez");
-                isValid = false;
+                errorProvider1.SetError(txtPharmacyID, "Bu alan boş geçilemez");                
+                txtPharmacyID.Focus();
             }
-
 
             //if (string.IsNullOrEmpty(txtExtension.Text.Trim()))
             //{
@@ -96,6 +122,7 @@ namespace FarmaKode.Client
             {
                 errorProvider1.SetError(txtSourceFolder, "Bu alan boş geçilemez");
                 isValid = false;
+                txtSourceFolder.Focus();
             }
 
 
@@ -105,22 +132,21 @@ namespace FarmaKode.Client
 
         }
 
-
         private void btnSave_Click(object sender, EventArgs e)
         {
             if (validation())
             {
                 Settings.Default.Save();
                 isChanged = false;
-                MessageBox.Show("Ayarlar kayıt edilmiştir. Uygulama yeniden başlatılacaktır", "Farmakode", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+                KryptonMessageBox.Show("Ayarlar kayıt edilmiştir. Uygulama yeniden başlatılacaktır", "Farmakode", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
                 errorProvider1.Clear();
-             
-                Application.Exit(); 
+
+                Application.Exit();
                 Process.Start(Application.ExecutablePath, "/restart" + Process.GetCurrentProcess().Id);
+               
             }
 
         }
-
         
         private void btnSelectSourceFolder_Click(object sender, EventArgs e)
         {
@@ -134,24 +160,9 @@ namespace FarmaKode.Client
             txtSourceFolder.Text = folder.SelectedPath;
         }
 
-        private void btnSelectDestinationFolder_Click(object sender, EventArgs e)
+        private void btnOpenSourceFolder_Click(object sender, EventArgs e)
         {
-            FolderBrowserDialog folder = new FolderBrowserDialog();
-         
-            if (string.IsNullOrEmpty(txtDestinationFolder.Text))
-                folder.RootFolder = Environment.SpecialFolder.DesktopDirectory;
-            else
-                folder.SelectedPath = txtDestinationFolder.Text;
-            folder.ShowDialog();
-            txtDestinationFolder.Text = folder.SelectedPath;
-            CacheBL.CheckSettings();
-        }
-
-        private void Default_SettingChanging(object sender, System.Configuration.SettingChangingEventArgs e)
-        {
-            object oldValue = Settings.Default[e.SettingName];
-            if (!e.NewValue.Equals(oldValue))
-                isChanged = true;
+            Process.Start(txtSourceFolder.Text);
         }
 
         private void btnHide_Click(object sender, EventArgs e)
@@ -162,13 +173,13 @@ namespace FarmaKode.Client
             }
         }
 
-        private void FormSettings_FormClosing(object sender, FormClosingEventArgs e)
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
             if (validation())
             {
                 if (isChanged)
                 {
-                    DialogResult r = MessageBox.Show("Değişiklik var", "Uyarı", MessageBoxButtons.YesNo);
+                    DialogResult r = KryptonMessageBox.Show("Değişiklik var. Değişiklikleri kayıt etmek istiyor musunuz?", "Uyarı", MessageBoxButtons.YesNo);
                     if (r == DialogResult.No)
                     {
                         Settings.Default.Reload();
@@ -185,67 +196,50 @@ namespace FarmaKode.Client
             }
             else
             {
-                MessageBox.Show("Gerekli alanlar girilmediği için uygulama çalışmayacaktır", "Uyarı");
-                Application.Exit();
+                KryptonMessageBox.Show("Gerekli alanlar girilmediği için uygulama çalışmayacaktır", "Uyarı");
+                //Application.Exit();
                 //e.Cancel = true;
             }
-        }
-
-        private void FormSettings_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            //FormButton.notifyIcon.ShowBalloonTip(1000, "FarmaKode", "Uygulama çalışıyor", ToolTipIcon.Info);
         }
 
         private void btnIsAppEnabled_Click(object sender, EventArgs e)
         {
             if (Settings.Default.AppIsEnabled)
             {
-                btnIsAppEnabled.Text = "Uygulamayı AKTİF yap";
+                btnIsAppEnabled.Text = "AKTİF yap";
                 Settings.Default.AppIsEnabled = false;
-                lblAppStatus.Text = "PASİF";
-                lblAppStatus.ForeColor = Color.Red;
+                lblAppStatus.Text = "Uygulama PASİF";
+                pictureBoxAppStatus.Image = Resources.delete;
             }
             else
             {
-                btnIsAppEnabled.Text = "Uygulamayı PASİF yap";
+                btnIsAppEnabled.Text = "PASİF yap";
                 Settings.Default.AppIsEnabled = true;
-                lblAppStatus.Text = "AKTİF";
-                lblAppStatus.ForeColor = Color.Green;
+                lblAppStatus.Text = "Uygulama AKTİF";
+                pictureBoxAppStatus.Image = Resources.accept;
             }
         }
 
-         
-
-        private void comboNotificationPosition_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            Settings.Default.NotificationPosition = comboNotificationPosition.SelectedIndex;
-        }
-
-        private void btnAdmin_Click(object sender, EventArgs e)
+        private void btnOpenEReceteParameterScreen_Click(object sender, EventArgs e)
         {
             new FormParameter().ShowDialog();
         }
 
-        private void FormSettings_Load(object sender, EventArgs e)
+        private void comboPCNO_SelectedIndexChanged(object sender, EventArgs e)
         {
-            this.Text = "Ayarlar | " + CacheBL.IPAddress;
+            Settings.Default.PharmacyPCNO = comboPCNO.SelectedItem != null ? comboPCNO.SelectedItem.ToString() : "# BOŞ #";
         }
 
         private void comboDefaultBarcodePrinter_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (comboDefaultBarcodePrinter.SelectedIndex > -1)
-                Settings.Default.DefaultBarcodePrinter = comboDefaultBarcodePrinter.SelectedItem.ToString();
+                    Settings.Default.DefaultBarcodePrinter = comboDefaultBarcodePrinter.SelectedText.ToString();
+             
         }
 
-        private void chkCopyDestinationFolder_CheckedChanged(object sender, EventArgs e)
+        private void comboNotificationPosition_SelectedIndexChanged(object sender, EventArgs e)
         {
-
-        }
-
-        private void chkNotificationEnable_SwitchStateChanged(object sender, EventArgs e)
-        {
-            Settings.Default.IsEnableNotification = chkNotificationEnable.SwitchState == XanderUI.XUISwitch.State.Off ? false : true;
-            Settings.Default.Save();
+            Settings.Default.NotificationPosition = comboNotificationPosition.SelectedIndex;
         }
     }
 }

@@ -23,7 +23,7 @@
     <Setting Name="NotificationPosition" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">0</Value>
     </Setting>
-    <Setting Name="NotificationMaxCount" Type="System.Int32" Scope="User">
+    <Setting Name="NotificationMaxCount" Type="System.Decimal" Scope="User">
       <Value Profile="(Default)">5</Value>
     </Setting>
     <Setting Name="IsEnableNotification" Type="System.Boolean" Scope="User">
@@ -54,49 +54,19 @@
       <Value Profile="(Default)">https://ipinfo.io/ip</Value>
     </Setting>
     <Setting Name="PharmacyPCNO" Type="System.String" Scope="User">
-      <Value Profile="(Default)">BOŞ</Value>
+      <Value Profile="(Default)"># BOŞ #</Value>
     </Setting>
     <Setting Name="ShowPrinterDilaog" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
     </Setting>
-    <Setting Name="PaperWidth" Type="System.Decimal" Scope="User">
-      <Value Profile="(Default)">60</Value>
+    <Setting Name="BarcodePaperSize" Type="System.String" Scope="User">
+      <Value Profile="(Default)">060-040</Value>
     </Setting>
-    <Setting Name="PaperHeight" Type="System.Decimal" Scope="User">
-      <Value Profile="(Default)">40</Value>
-    </Setting>
-    <Setting Name="MarginLeft" Type="System.Decimal" Scope="User">
-      <Value Profile="(Default)">0</Value>
-    </Setting>
-    <Setting Name="MarginRight" Type="System.Decimal" Scope="User">
-      <Value Profile="(Default)">0</Value>
-    </Setting>
-    <Setting Name="MarginTop" Type="System.Decimal" Scope="User">
-      <Value Profile="(Default)">0</Value>
-    </Setting>
-    <Setting Name="MarginBottom" Type="System.Decimal" Scope="User">
-      <Value Profile="(Default)">0</Value>
-    </Setting>
-    <Setting Name="ManuelKeysCTRL" Type="System.Boolean" Scope="User">
-      <Value Profile="(Default)">False</Value>
-    </Setting>
-    <Setting Name="ManuelKeysSHIFT" Type="System.Boolean" Scope="User">
-      <Value Profile="(Default)">False</Value>
-    </Setting>
-    <Setting Name="ManuelKeysALT" Type="System.Boolean" Scope="User">
-      <Value Profile="(Default)">False</Value>
-    </Setting>
-    <Setting Name="ManuelKeysCustom" Type="System.String" Scope="User">
-      <Value Profile="(Default)" />
-    </Setting>
-    <Setting Name="ManuelModeTimerInterval" Type="System.Decimal" Scope="User">
-      <Value Profile="(Default)">3</Value>
+    <Setting Name="BarcodePaperMargins" Type="System.String" Scope="User">
+      <Value Profile="(Default)">010-010-010-010</Value>
     </Setting>
     <Setting Name="BarcodeSpeed" Type="System.Decimal" Scope="User">
       <Value Profile="(Default)">100</Value>
-    </Setting>
-    <Setting Name="BarcodePostDuration" Type="System.Decimal" Scope="User">
-      <Value Profile="(Default)">60</Value>
     </Setting>
     <Setting Name="BarcodeClearDuration" Type="System.Decimal" Scope="User">
       <Value Profile="(Default)">60</Value>
@@ -113,6 +83,9 @@
   &lt;string&gt;010&lt;/string&gt;
   &lt;string&gt;011&lt;/string&gt;
 &lt;/ArrayOfString&gt;</Value>
+    </Setting>
+    <Setting Name="PerakendeApiURL" Type="System.String" Scope="User">
+      <Value Profile="(Default)">https://farmakode.com/api/post-perakende</Value>
     </Setting>
   </Settings>
 </SettingsFile>

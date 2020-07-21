@@ -5,6 +5,7 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
+using ComponentFactory.Krypton.Toolkit;
 using FarmaKode.Client.Business;
 using FarmaKode.Client.Component;
 using FarmaKode.Client.Model;
@@ -19,7 +20,7 @@ using static FarmaKode.Client.Util.Constants;
 
 namespace FarmaKode.Client
 {
-    public partial class FormPostList : Form
+    public partial class FormPostList : KryptonForm
     {
         ResponseBarcode selectedResponseBarcode = null;
         public FormPostList()
@@ -57,36 +58,43 @@ namespace FarmaKode.Client
 
                 foreach (var item in latestFiles)
                 {
-                    tmpParsedData = ParserBL.GetInstance().GetObjectFromJsonFile<ResponseBarcode>(item.FullName, serializerSettings);
-                    if (tmpParsedData != null)
+                    try
                     {
-                        postListItem = new PostListItem(i, tmpParsedData);
-                        postListItem.Dock = DockStyle.Top;
-                        postListItem.Name = item.Name;
-                        postListItem.Height = 28;
-                        postListItem.Width = 315;
-                        postListItem.PostItemDetailClicked += PostListItem_PostItemDetailClicked;
-                        postListItem.PostItemPrint += PostListItem_PostItemPrint;
-                        panel1.Controls.Add(postListItem);
+                        tmpParsedData = ParserBL.GetInstance().GetObjectFromJsonFile<ResponseBarcode>(item.FullName, serializerSettings);
 
+                        if (tmpParsedData != null)
+                        {
+                            postListItem = new PostListItem(i, tmpParsedData);
+                            postListItem.Dock = DockStyle.Top;
+                            postListItem.Name = item.Name;
+                            postListItem.Height = 28;
+                            postListItem.Width = 315;
+                            postListItem.PostItemDetailClicked += PostListItem_PostItemDetailClicked;
+                            postListItem.PostItemPrint += PostListItem_PostItemPrint;
+                            panel1.Controls.Add(postListItem);
+
+                        }
+                        else
+                        {
+                            Logger.GetInstance().Info(item.FullName + " dosyası convert edilemedi");
+                        }
+
+
+                        if (i >= Settings.Default.NotificationMaxCount)
+                            break;
+
+                        i++;
                     }
-                    else
+                    catch (Exception ex)
                     {
-                        Logger.GetInstance().Info(item.FullName + " dosyası convert edilemedi");
+                        Logger.GetInstance().Error(item.FullName +" dosyası parse edilemedi", ex);
                     }
-
-
-                    if (i >= Settings.Default.NotificationMaxCount)
-                        break;
-
-                    i++;
                 }
             }
             catch (Exception ex)
             {
                 Logger.GetInstance().Error("Son işlem yapılan reçete dosyaları okunamadı", ex);
-                new FormNotification("Son işlem yapılan reçete dosyaları okunamadı", NotificationType.Error).ShowDialog();
-                this.Close();
+                new FormNotification("Son işlem yapılan reçete dosyaları okunamadı", NotificationType.Error).ShowDialog();                
             }
         }
 
@@ -102,7 +110,7 @@ namespace FarmaKode.Client
                 }
                 else
                 {
-                    MessageBox.Show("Aradığınız ilaç için veriler henüz eklenmedi. En kısa sürede eklenecektir", "Uyarı");
+                    KryptonMessageBox.Show("Aradığınız ilaç için veriler henüz eklenmedi. En kısa sürede eklenecektir", "Uyarı");
                 }
 
             }
@@ -115,29 +123,31 @@ namespace FarmaKode.Client
 
         private void PostListItem_PostItemDetailClicked(object sender, EventArgs e)
         {
-           
-                selectedResponseBarcode = sender as ResponseBarcode;
+
+            selectedResponseBarcode = sender as ResponseBarcode;
             if (selectedResponseBarcode.Data != null)
             {
                 ShowResponseDetails();
             }
             else
             {
-                MessageBox.Show("Aradığınız ilaç için veriler henüz eklenmedi. En kısa sürede eklenecektir", "Uyarı");
+                KryptonMessageBox.Show("Aradığınız ilaç için veriler henüz eklenmedi. En kısa sürede eklenecektir", "Uyarı");
             }
         }
 
-        private void locationForm(int widht = 355, int height = 250)
+        private void locationForm(int height = 250)
         {
             StartPosition = FormStartPosition.Manual;
-            MaximumSize = new Size(widht, height);
-            this.Width = widht;
-            this.Height = height;
+            //MaximumSize = new Size(widht, height);
+            MaximumSize = new Size(375, height > 250 ? height : 250);
+            MinimumSize = new Size(375, 250);
+            Width = 375;
+            Height = height;
             foreach (var scrn in Screen.AllScreens)
             {
                 if (scrn.Bounds.Contains(this.Location))
                 {
-                    Location = new Point(scrn.Bounds.Right - 410, scrn.Bounds.Height - Height - 150);
+                    Location = new Point(scrn.Bounds.Right - 440, scrn.Bounds.Height-Height-150);
                     return;
                 }
             }
@@ -174,14 +184,6 @@ namespace FarmaKode.Client
             }
         }
 
-        private void btnSelectAll_Click(object sender, EventArgs e)
-        {
-            foreach (DrugPreview item in flowLayoutPanel1.Controls)
-            {
-                item.Drug.IsPrint = true;
-                item.chkIsPrint.Checked = true;
-            }
-        }
 
 
         void ShowResponseDetails()
@@ -198,12 +200,25 @@ namespace FarmaKode.Client
                     flowLayoutPanel1.Controls.Add(drugPreview);
                 }
 
-                locationForm(380, 450);
+                locationForm(450);
                 splitContainer1.Panel1Collapsed = true;
                 splitContainer1.Panel2Collapsed = false;
                 this.Text = "Reçete Detayları";
             }
 
+
+        }
+
+        private void btnSelectAll_CheckedChanged(object sender, EventArgs e)
+        {
+            foreach (DrugPreview item in flowLayoutPanel1.Controls)
+            {
+                item.Drug.IsPrint = btnSelectAll.Checked;
+                item.chkIsPrint.Checked = btnSelectAll.Checked;
+            }
+
+            btnSelectAll.Text = btnSelectAll.Checked ? "Temizle" : "Tümünü Seç";
+            btnSelectAll.Values.Image = btnSelectAll.Checked ? Resources.delete : Resources.check_box;
 
         }
     }

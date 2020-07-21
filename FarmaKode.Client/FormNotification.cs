@@ -1,4 +1,5 @@
-﻿using FarmaKode.Client.Model.Response;
+﻿using ComponentFactory.Krypton.Toolkit;
+using FarmaKode.Client.Model.Response;
 using FarmaKode.Client.Properties;
 using FarmaKode.Client.Util;
 using System;
@@ -30,20 +31,29 @@ namespace FarmaKode.Client
             btnEnglish.Visible = false;
             btnMobil.Visible = false;
             btnGoruntule.Visible = false;
+            btnYazdir.Visible = false;
+           
         }
 
-        public FormNotification(ResponseBarcode responseBarcode)
+        public FormNotification(ResponseBarcode responseBarcode, bool isRetail =false)
         {
             InitializeComponent();
+
             btnGoruntule.Visible = true;
-            btnEnglish.Visible = responseBarcode.Data.Supported_multi_lang || false;
-            btnMobil.Visible = responseBarcode.Data.Has_mobile_app || false;
+            btnYazdir.Visible = true;
+
+            if(isRetail)
+            {
+                btnEnglish.Visible = responseBarcode.Data.Supported_multi_lang || false;
+                btnMobil.Visible = responseBarcode.Data.Has_mobile_app || false;
+            }
+            
 
             selectedResponseBarcode = responseBarcode;
 
             TopMost = true;
-            Opacity = 0.0;
-            StartPosition = FormStartPosition.Manual;
+            Opacity = 1;
+            StartPosition = FormStartPosition.Manual; 
             string fname;
 
             for (int i = 1; i < 10; i++)
@@ -68,13 +78,19 @@ namespace FarmaKode.Client
 
 
             string messsage = string.Format("{0} reçetesi hazır", responseBarcode.Data.Patient_name);
+            if (isRetail)
+                messsage = responseBarcode.Title;
+
             pictureBox1.Image = Resources.success;
             BackColor = Color.SeaGreen;
             lblMsg.Text = messsage;
             action = NotificationAction.start;
             timer1.Interval = 1;
             timer1.Start();
+
         }
+
+        
 
         public FormNotification(string messsage, NotificationType type)
         {
@@ -82,6 +98,7 @@ namespace FarmaKode.Client
             btnGoruntule.Visible = false;
             btnEnglish.Visible = false;
             btnMobil.Visible = false;
+            btnYazdir.Visible = false;
 
 
             TopMost = true;
@@ -106,7 +123,6 @@ namespace FarmaKode.Client
 
             }
             x = Screen.PrimaryScreen.WorkingArea.Width - base.Width - 5;
-
 
             switch (type)
             {
@@ -181,6 +197,7 @@ namespace FarmaKode.Client
         {
             timer1.Interval = 1;
             action = NotificationAction.close;
+           
         }
 
         private void btnGoruntule_Click(object sender, EventArgs e)

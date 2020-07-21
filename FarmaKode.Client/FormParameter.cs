@@ -1,4 +1,5 @@
-﻿using FarmaKode.Client.Business;
+﻿using ComponentFactory.Krypton.Toolkit;
+using FarmaKode.Client.Business;
 using FarmaKode.Client.Model;
 using FarmaKode.Client.Properties;
 using FastMember;
@@ -196,7 +197,7 @@ namespace FarmaKode.Client
             if (CacheBL.parameterList != null)
             {
                 ParameterBL.GetInstance().SetParameters(CacheBL.parameterList);
-                MessageBox.Show("Değişiklikler kayıt edildi", "Başarılı", MessageBoxButtons.OK);
+                KryptonMessageBox.Show("Değişiklikler kayıt edildi", "Başarılı", MessageBoxButtons.OK);
             }
         }
 

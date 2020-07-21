@@ -28,12 +28,13 @@
             this.components = new System.ComponentModel.Container();
             this.lblMsg = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.btnGoruntule = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btnEnglish = new System.Windows.Forms.Button();
-            this.btnMobil = new System.Windows.Forms.Button();
-            this.btnYazdir = new System.Windows.Forms.Button();
+            this.btnGoruntule = new ComponentFactory.Krypton.Toolkit.KryptonButton();
+            this.btnYazdir = new ComponentFactory.Krypton.Toolkit.KryptonButton();
+            this.kryptonPaletteOffice2010Black = new ComponentFactory.Krypton.Toolkit.KryptonPalette(this.components);
+            this.btnMobil = new ComponentFactory.Krypton.Toolkit.KryptonButton();
+            this.btnEnglish = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -45,7 +46,7 @@
             this.lblMsg.ForeColor = System.Drawing.Color.White;
             this.lblMsg.Location = new System.Drawing.Point(62, 0);
             this.lblMsg.Name = "lblMsg";
-            this.lblMsg.Size = new System.Drawing.Size(301, 69);
+            this.lblMsg.Size = new System.Drawing.Size(301, 63);
             this.lblMsg.TabIndex = 0;
             this.lblMsg.Text = "Message Text";
             this.lblMsg.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -53,19 +54,6 @@
             // timer1
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
-            // btnGoruntule
-            // 
-            this.btnGoruntule.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGoruntule.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnGoruntule.ForeColor = System.Drawing.Color.White;
-            this.btnGoruntule.Location = new System.Drawing.Point(129, 72);
-            this.btnGoruntule.Name = "btnGoruntule";
-            this.btnGoruntule.Size = new System.Drawing.Size(84, 23);
-            this.btnGoruntule.TabIndex = 4;
-            this.btnGoruntule.Text = "GÖRÜNTÜLE";
-            this.btnGoruntule.UseVisualStyleBackColor = true;
-            this.btnGoruntule.Click += new System.EventHandler(this.btnGoruntule_Click);
             // 
             // pictureBox2
             // 
@@ -90,55 +78,60 @@
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
             // 
-            // btnEnglish
+            // btnGoruntule
             // 
-            this.btnEnglish.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEnglish.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnEnglish.ForeColor = System.Drawing.Color.White;
-            this.btnEnglish.Location = new System.Drawing.Point(328, 72);
-            this.btnEnglish.Name = "btnEnglish";
-            this.btnEnglish.Size = new System.Drawing.Size(33, 22);
-            this.btnEnglish.TabIndex = 7;
-            this.btnEnglish.Text = "EN";
-            this.btnEnglish.UseVisualStyleBackColor = true;
-            this.btnEnglish.Visible = false;
-            // 
-            // btnMobil
-            // 
-            this.btnMobil.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMobil.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnMobil.ForeColor = System.Drawing.Color.White;
-            this.btnMobil.Location = new System.Drawing.Point(271, 72);
-            this.btnMobil.Name = "btnMobil";
-            this.btnMobil.Size = new System.Drawing.Size(51, 22);
-            this.btnMobil.TabIndex = 8;
-            this.btnMobil.Text = "Mobil";
-            this.btnMobil.UseVisualStyleBackColor = true;
-            this.btnMobil.Visible = false;
+            this.btnGoruntule.Location = new System.Drawing.Point(144, 66);
+            this.btnGoruntule.Name = "btnGoruntule";
+            this.btnGoruntule.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Office2010Silver;
+            this.btnGoruntule.Size = new System.Drawing.Size(99, 32);
+            this.btnGoruntule.TabIndex = 10;
+            this.btnGoruntule.Values.Text = "GÖRÜNTÜLE";
+            this.btnGoruntule.Click += new System.EventHandler(this.btnGoruntule_Click);
             // 
             // btnYazdir
             // 
-            this.btnYazdir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnYazdir.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnYazdir.ForeColor = System.Drawing.Color.White;
-            this.btnYazdir.Location = new System.Drawing.Point(68, 71);
+            this.btnYazdir.Location = new System.Drawing.Point(66, 66);
             this.btnYazdir.Name = "btnYazdir";
-            this.btnYazdir.Size = new System.Drawing.Size(55, 23);
-            this.btnYazdir.TabIndex = 9;
-            this.btnYazdir.Text = "YAZDIR";
-            this.btnYazdir.UseVisualStyleBackColor = true;
+            this.btnYazdir.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Office2010Silver;
+            this.btnYazdir.Size = new System.Drawing.Size(72, 32);
+            this.btnYazdir.TabIndex = 11;
+            this.btnYazdir.Values.Text = "YAZDIR";
             this.btnYazdir.Click += new System.EventHandler(this.btnYazdir_Click);
+            // 
+            // kryptonPaletteOffice2010Black
+            // 
+            this.kryptonPaletteOffice2010Black.BasePaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Office2010Black;
+            // 
+            // btnMobil
+            // 
+            this.btnMobil.Location = new System.Drawing.Point(322, 66);
+            this.btnMobil.Name = "btnMobil";
+            this.btnMobil.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Office2010Silver;
+            this.btnMobil.Size = new System.Drawing.Size(41, 32);
+            this.btnMobil.TabIndex = 12;
+            this.btnMobil.Values.Image = global::FarmaKode.Client.Properties.Resources.phone1;
+            this.btnMobil.Values.Text = "";
+            // 
+            // btnEnglish
+            // 
+            this.btnEnglish.Location = new System.Drawing.Point(278, 66);
+            this.btnEnglish.Name = "btnEnglish";
+            this.btnEnglish.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Office2010Silver;
+            this.btnEnglish.Size = new System.Drawing.Size(41, 32);
+            this.btnEnglish.TabIndex = 13;
+            this.btnEnglish.Values.Image = global::FarmaKode.Client.Properties.Resources.flag_usa1;
+            this.btnEnglish.Values.Text = "";
             // 
             // FormNotification
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.SeaGreen;
             this.ClientSize = new System.Drawing.Size(400, 100);
-            this.Controls.Add(this.btnYazdir);
-            this.Controls.Add(this.btnMobil);
             this.Controls.Add(this.btnEnglish);
-            this.Controls.Add(this.lblMsg);
+            this.Controls.Add(this.btnMobil);
+            this.Controls.Add(this.btnYazdir);
             this.Controls.Add(this.btnGoruntule);
+            this.Controls.Add(this.lblMsg);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
             this.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
@@ -159,9 +152,10 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         internal System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.Button btnGoruntule;
-        private System.Windows.Forms.Button btnEnglish;
-        private System.Windows.Forms.Button btnMobil;
-        private System.Windows.Forms.Button btnYazdir;
+        private ComponentFactory.Krypton.Toolkit.KryptonButton btnGoruntule;
+        private ComponentFactory.Krypton.Toolkit.KryptonButton btnYazdir;
+        private ComponentFactory.Krypton.Toolkit.KryptonPalette kryptonPaletteOffice2010Black;
+        private ComponentFactory.Krypton.Toolkit.KryptonButton btnMobil;
+        private ComponentFactory.Krypton.Toolkit.KryptonButton btnEnglish;
     }
 }

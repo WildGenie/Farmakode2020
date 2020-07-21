@@ -1,4 +1,5 @@
-﻿using FarmaKode.Client.Model;
+﻿using ComponentFactory.Krypton.Toolkit;
+using FarmaKode.Client.Model;
 using FarmaKode.Client.Properties;
 using FarmaKode.Client.Util;
 using System;
@@ -63,7 +64,7 @@ namespace FarmaKode.Client.Business
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Uygulama ayar dosyaları klasörü oluşturulamadı","Hata");
+                KryptonMessageBox.Show("Uygulama ayar dosyaları klasörü oluşturulamadı","Hata");
                 Logger.GetInstance().Error("Uygulama ayar dosyaları klasörü oluşturulamadı", ex);
                 return false;
             }

@@ -14,7 +14,7 @@ namespace FarmaKode.Client.Model.Section
         public int PeriyodDeger { get; set; }
         public string PeriyodTipi { get; set; }
         public int Doz { get; set; }
-        public int DozMiktari { get; set; }
+        public double DozMiktari { get; set; }
         public string Adi { get; set; }
         public double Tutar { get; set; }
         public double Fark { get; set; }

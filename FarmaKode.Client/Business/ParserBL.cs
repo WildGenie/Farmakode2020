@@ -57,7 +57,11 @@ namespace FarmaKode.Client.Business
             List<ParsedData> parsedData = new List<ParsedData>();
 
             foreach (var parameter in CacheBL.parameterList)
-            {                 
+            {        
+                if(parameter.Id==33)
+                {
+                    
+                }
                 try
                 {
                     string value = string.Empty;
@@ -206,7 +210,7 @@ namespace FarmaKode.Client.Business
 
                 List<RequestDrugSection> drugSection = new List<RequestDrugSection>();
                 #region drugSection
-                for (int i = 1; i < 6; i++)
+                for (int i = 1; i < 11; i++)
                 {
                     RequestDrugSection item = new RequestDrugSection();
                     item.Id = i;
@@ -217,7 +221,7 @@ namespace FarmaKode.Client.Business
                         item.PeriyodDeger = GetIntValue(data, nameof(item.PeriyodDeger), i);
                         item.PeriyodTipi = GetStringValue(data, nameof(item.PeriyodTipi), i);
                         item.Doz = GetIntValue(data, nameof(item.Doz), i);
-                        item.DozMiktari = GetIntValue(data, nameof(item.DozMiktari), i);
+                        item.DozMiktari = GetDoubleValue(data, nameof(item.DozMiktari), i);
                         item.Adi = GetStringValue(data, nameof(item.Adi), i);
                         item.Tutar = GetDoubleValue(data, nameof(item.Tutar), i);
                         item.Fark = GetDoubleValue(data, nameof(item.Fark), i);
@@ -506,18 +510,24 @@ namespace FarmaKode.Client.Business
         {
             try
             {
-                var client = new RestClient(Settings.Default.ApiURL);
+                var client = new RestClient(Settings.Default.PerakendeApiURL);
                 string jsonContent = JsonConvert.SerializeObject(requestBarcode, Formatting.Indented);
                 var request = new RestRequest();
                 request.RequestFormat = DataFormat.Json;
                 request.AddJsonBody(requestBarcode);
                 var response = client.Post(request);
+                response.Content = response.Content.Replace("app_data","data");
 
                 SaveRequest(Constants.LatestPostFolder, requestBarcode);
 
                 if (response.IsSuccessful)
                 {
-                     JsonSerializerSettings settings = new JsonSerializerSettings();
+                     
+                    JsonSerializerSettings settings = new JsonSerializerSettings
+                    {
+                        NullValueHandling = NullValueHandling.Ignore,
+                        MissingMemberHandling = MissingMemberHandling.Ignore
+                    };
                     settings.Culture = new System.Globalization.CultureInfo("tr-TR");
                     settings.DateFormatString = "dd.MM.yyyy";
                     ResponseBarcode responseBarcode = JsonConvert.DeserializeObject<ResponseBarcode>(response.Content, settings);

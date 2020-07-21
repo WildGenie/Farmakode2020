@@ -110,9 +110,9 @@ namespace FarmaKode.Client.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("5")]
-        public int NotificationMaxCount {
+        public decimal NotificationMaxCount {
             get {
-                return ((int)(this["NotificationMaxCount"]));
+                return ((decimal)(this["NotificationMaxCount"]));
             }
             set {
                 this["NotificationMaxCount"] = value;
@@ -229,7 +229,7 @@ namespace FarmaKode.Client.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("BOŞ")]
+        [global::System.Configuration.DefaultSettingValueAttribute("# BOŞ #")]
         public string PharmacyPCNO {
             get {
                 return ((string)(this["PharmacyPCNO"]));
@@ -253,133 +253,25 @@ namespace FarmaKode.Client.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("60")]
-        public decimal PaperWidth {
+        [global::System.Configuration.DefaultSettingValueAttribute("060-040")]
+        public string BarcodePaperSize {
             get {
-                return ((decimal)(this["PaperWidth"]));
+                return ((string)(this["BarcodePaperSize"]));
             }
             set {
-                this["PaperWidth"] = value;
+                this["BarcodePaperSize"] = value;
             }
         }
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("40")]
-        public decimal PaperHeight {
+        [global::System.Configuration.DefaultSettingValueAttribute("010-010-010-010")]
+        public string BarcodePaperMargins {
             get {
-                return ((decimal)(this["PaperHeight"]));
+                return ((string)(this["BarcodePaperMargins"]));
             }
             set {
-                this["PaperHeight"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("0")]
-        public decimal MarginLeft {
-            get {
-                return ((decimal)(this["MarginLeft"]));
-            }
-            set {
-                this["MarginLeft"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("0")]
-        public decimal MarginRight {
-            get {
-                return ((decimal)(this["MarginRight"]));
-            }
-            set {
-                this["MarginRight"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("0")]
-        public decimal MarginTop {
-            get {
-                return ((decimal)(this["MarginTop"]));
-            }
-            set {
-                this["MarginTop"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("0")]
-        public decimal MarginBottom {
-            get {
-                return ((decimal)(this["MarginBottom"]));
-            }
-            set {
-                this["MarginBottom"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("False")]
-        public bool ManuelKeysCTRL {
-            get {
-                return ((bool)(this["ManuelKeysCTRL"]));
-            }
-            set {
-                this["ManuelKeysCTRL"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("False")]
-        public bool ManuelKeysSHIFT {
-            get {
-                return ((bool)(this["ManuelKeysSHIFT"]));
-            }
-            set {
-                this["ManuelKeysSHIFT"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("False")]
-        public bool ManuelKeysALT {
-            get {
-                return ((bool)(this["ManuelKeysALT"]));
-            }
-            set {
-                this["ManuelKeysALT"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
-        public string ManuelKeysCustom {
-            get {
-                return ((string)(this["ManuelKeysCustom"]));
-            }
-            set {
-                this["ManuelKeysCustom"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("3")]
-        public decimal ManuelModeTimerInterval {
-            get {
-                return ((decimal)(this["ManuelModeTimerInterval"]));
-            }
-            set {
-                this["ManuelModeTimerInterval"] = value;
+                this["BarcodePaperMargins"] = value;
             }
         }
         
@@ -392,18 +284,6 @@ namespace FarmaKode.Client.Properties {
             }
             set {
                 this["BarcodeSpeed"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("60")]
-        public decimal BarcodePostDuration {
-            get {
-                return ((decimal)(this["BarcodePostDuration"]));
-            }
-            set {
-                this["BarcodePostDuration"] = value;
             }
         }
         
@@ -454,6 +334,18 @@ namespace FarmaKode.Client.Properties {
             }
             set {
                 this["QRCodeIgnore"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("https://farmakode.com/api/post-perakende")]
+        public string PerakendeApiURL {
+            get {
+                return ((string)(this["PerakendeApiURL"]));
+            }
+            set {
+                this["PerakendeApiURL"] = value;
             }
         }
     }

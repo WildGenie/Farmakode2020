@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
+using System.Drawing.Printing;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices;
@@ -104,16 +106,17 @@ namespace FarmaKode.Client.Util
 
                 using (var memoryStream = new MemoryStream())
                 {
+                    Size paperSize = Common.GetBarcodePaperSize();
+                    Margins paperMargins = Common.GetBarcodePaperMargins();
+                    float width = (float)Math.Ceiling((float)paperSize.Width * 0.039370078740158 * 72);
+                    float height = (float)Math.Ceiling((float)paperSize.Height * 0.039370078740158 * 72);
 
-                    float width = (float)Math.Ceiling((float)Settings.Default.PaperWidth * 0.039370078740158 * 72);
-                    float height = (float)Math.Ceiling((float)Settings.Default.PaperHeight * 0.039370078740158 * 72);
- 
-                    Rectangle rectangle = new Rectangle(width, height);
+                    iTextSharp.text.Rectangle rectangle = new iTextSharp.text.Rectangle(width, height);
                     var document = new Document(rectangle,
-                        (float)Settings.Default.MarginLeft,
-                        (float)Settings.Default.MarginRight,
-                        (float)Settings.Default.MarginTop,
-                        (float)Settings.Default.MarginBottom);
+                        paperMargins.Left,
+                        paperMargins.Right,
+                        paperMargins.Top,
+                        paperMargins.Bottom);
                     var writer = PdfWriter.GetInstance(document, memoryStream);
                     document.Open();
 

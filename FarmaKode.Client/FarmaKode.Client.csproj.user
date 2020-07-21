@@ -2,10 +2,10 @@
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <ProjectView>ProjectFiles</ProjectView>
-    <PublishUrlHistory>publish\</PublishUrlHistory>
-    <InstallUrlHistory>https://raw.githubusercontent.com/ayagbasan/Farmakode2020/master/Farmakode2020/FarmaKode.Client/publish/|https://raw.githubusercontent.com/ayagbasan/Farmakode2020/master/FarmaKode/FarmaKode.Client/publish/|https://raw.githubusercontent.com/ayagbasan/Farmakode2020/master/FarmaKode.Client/publish/|https://raw.githubusercontent.com/ayagbasan/Farmakode2020/master/[solution_name]/FarmaKode.Client/publish/|https://github.com/ayagbasan/Farmakode2020/master/FarmaKode/FarmaKode.Client/publish/</InstallUrlHistory>
+    <PublishUrlHistory>C:\Users\Administrator\Desktop\publish\|ftp://farmakode.com/|publish\</PublishUrlHistory>
+    <InstallUrlHistory>https://www.farmakode.com/application/|https://raw.githubusercontent.com/ayagbasan/Farmakode2020/master/Farmakode2020/FarmaKode.Client/publish/|https://raw.githubusercontent.com/ayagbasan/Farmakode2020/master/FarmaKode/FarmaKode.Client/publish/|https://raw.githubusercontent.com/ayagbasan/Farmakode2020/master/FarmaKode.Client/publish/|https://raw.githubusercontent.com/ayagbasan/Farmakode2020/master/[solution_name]/FarmaKode.Client/publish/</InstallUrlHistory>
     <SupportUrlHistory />
-    <UpdateUrlHistory>https://raw.githubusercontent.com/ayagbasan/Farmakode2020/master/FarmaKode/FarmaKode.Client/publish/|https://github.com/ayagbasan/Farmakode2020/master/FarmaKode/FarmaKode.Client/publish/</UpdateUrlHistory>
+    <UpdateUrlHistory>https://www.farmakode.com/application/publish/|https://raw.githubusercontent.com/ayagbasan/Farmakode2020/master/Farmakode2020/FarmaKode.Client/publish/|https://raw.githubusercontent.com/ayagbasan/Farmakode2020/master/FarmaKode/FarmaKode.Client/publish/|https://github.com/ayagbasan/Farmakode2020/master/FarmaKode/FarmaKode.Client/publish/</UpdateUrlHistory>
     <BootstrapperUrlHistory />
     <ErrorReportUrlHistory />
     <FallbackCulture>en-US</FallbackCulture>

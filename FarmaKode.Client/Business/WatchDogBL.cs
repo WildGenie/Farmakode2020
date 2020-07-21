@@ -39,7 +39,7 @@ namespace FarmaKode.Client.Business
                 fsw.Created += new FileSystemEventHandler(Created);
                 //fsw.Changed += new FileSystemEventHandler(Changed);
                 //fsw.Renamed += new RenamedEventHandler(Renamed);
-                fsw.Deleted += new FileSystemEventHandler(Deleted);
+                //fsw.Deleted += new FileSystemEventHandler(Deleted);
                 //
                 fsw.EnableRaisingEvents = true;
                 Logger.GetInstance().Info(string.Format("[{0}] Klasöründe dosya izleme basladi", source));
